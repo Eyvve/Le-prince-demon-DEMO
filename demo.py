@@ -1,21 +1,60 @@
 from time import sleep
 from maps import skip_touch
 from intro import *
+from combat import *
+from Music_sounds import *
+
+def demo():
+    Sentence("Vous êtes le Roi-Démon ou S'rhaal (Dieu-Roi) lors des derniers instants de la grande guerre...")
+    King_Stats[0] = str(input("Quel est votre nom : "))
+    validation_sound.play()
+    sleep(2.0)
+    os.system("cls")
+    jingle.play()
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("""
+                                          ██████╗ ███████╗███╗   ███╗ ██████╗           
+                                          ██╔══██╗██╔════╝████╗ ████║██╔═══██╗          
+                                █████╗    ██║  ██║█████╗  ██╔████╔██║██║   ██║    █████╗
+                                ╚════╝    ██║  ██║██╔══╝  ██║╚██╔╝██║██║   ██║    ╚════╝
+                                          ██████╔╝███████╗██║ ╚═╝ ██║╚██████╔╝          
+                                          ╚═════╝ ╚══════╝╚═╝     ╚═╝ ╚═════╝           
+                                                        
+                                                     Le Dieu-Roi                                                                                       
+        """)
+    sleep(4.0)
+    os.system("cls")
+    portes()
 
 def portes():
     Sentence("La bataille faisait rage. Les cieux étaient aussi rougeatres que le sol devant la citadelle dorée des hommes.")
+    sleep(2.0)
     Sentence("Les corps, de différentes formes et couleurs, jonchaient le sol.")
+    sleep(2.0)
     Sentence("Dans le flou du combat, impossible pour le Dieu-roi S'rhaal de faire le point sur la situation.")
     skip_touch()
-    Sentence("Se débarrassant de son opposant d'un lourd coup de lame, fendant du même mouvement")
-    Sentence("la lourde armure et le corps du paladin, avant de lancer un long cri de ralliement.")
+    Sentence("Se débarrassant de son opposant d'un lourd coup de lame, ")
+    Sentence("fendant du même mouvement la lourde armure et le corps du paladin, avant de lancer un long cri de ralliement.")
     Sentence("La situation des forces en présence est désastreuse.")
     skip_touch()
-    Sentence("Les brutes ont bien encaissé la mêlée, mais tous ses suivants plus fragiles se sont fais tous ses suivants")
-    Sentence("plus fragiles se sont fait découper par l'acier chantant des créatures célestes.Avant de pouvoir lancer")
-    Sentence("une série d'ordres, deux silhouettes d'or et de sang se dressent devant lui. A vue d'oeil,")
+    Sentence("Les brutes ont bien encaissé la mêlée,")
+    Sentence("mais tous les plus fragiles se sont fait découper par l'acier chantant des créatures célestes. ")
+    sleep(2.0)
+    Sentence("Avant de pouvoir lancer une série d'ordres, deux silhouettes d'or et de sang se dressent devant lui, A vue d'oeil,")
     Sentence("un chef de cotterie et un déva.")
     skip_touch()
+
+    combat(King_Stats, Deva_stats, )
+
     # combat()  # Un déva et un chef d'escouade  paladins, ennemis puissants mais nomatch pour le Dieu-roi qui les retourne
 
 
@@ -64,11 +103,11 @@ def assautportes():
     Sentence("Ginn pris la parole d'un ton consterné pour exprimer ce que toute la petite escouade ressentait devant ce spectacle")
     Sentence("Ca a l'air vrai quand on à ça sous les yeux... Ils veulent vraiment s'en prendre a des dragons. Soit pour leur")
     Sentence("pouvoir soit pour autre chose... D'un claquement de doigt, Zazranoth rappelle la petite troupe à l'ordre, et")
+    Sentence("le groupe de démons armés jusqu'aux dents reprit sa route en silence, l'esprit troublé par ce spectacle.")
+    skip_touch()
 
           #Moment d'inventaire ou le roi récupère un de ces objets pour l'étudier plus tard
 
-    Sentence("le groupe de démons armés jusqu'aux dents reprit sa route en silence, l'esprit troublé par ce spectacle.")
-    skip_touch()
     Sentence("Ils finirent par arriver au centre de la place forte, au coeur du pouvoir des humains. La grande porte de la")
     Sentence("salle du trône déjà éventrée, avec parmi les décombres un nombre de cadavres humains trop grand pour avoir")
     Sentence("été le fait de bataille. Des cadavres disposés en ordre précis si l'on excepte la chutes des la maçonnerie")

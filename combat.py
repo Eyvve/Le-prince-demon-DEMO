@@ -1,6 +1,6 @@
 from random import *
 from time import sleep
-from intro import Sentence
+from intro import *
 from Music_sounds import *
 from data import *
 from maps import *

@@ -1,4 +1,6 @@
 from inventaire import *
+from intro import *
+from combat import *
 
 roi_demon = {
     'xp' : {
@@ -14,6 +16,7 @@ roi_demon = {
         'Argent' : 666,
     },
     'inv' : {
+        'baton des enfer' : 5,
         'Potion de soin n3' : 20,
         'Potion de mana n3' : 10,
         },
@@ -44,13 +47,11 @@ def pierre_sword_roi(): #mettre le numéro du coffre
         if str(choix) == "":
             print("Choix indisponnible.")
         else:
-            if int(choix) >= 1 or int(choix) <= 2:
+            if int(choix) >= 1 and int(choix) <= 2:
                 if int(choix) == 1:
                     use_equipement_wapon_roi()
-                    choix =0
                     return
                 elif int(choix) == 2:
-                    choix = 0
                     return
                 else:
                    print("Choix indisponnible.")
@@ -72,7 +73,7 @@ def use_objet_roi() :
     Kinv = roi_demon['inv'].keys()
     Kinv_list = list(Kinv)
     while True :
-        Ninv = input("Utiliser quel obejt ? :")
+        Ninv = input("Utiliser quel objet ? :")
         if str(Ninv) == "":
             print("Choix indisponnible.")
         else:
@@ -80,7 +81,7 @@ def use_objet_roi() :
                 print("Choix indisponnible.")
             else:
                 objet = Kinv_list[int(Ninv)-1]
-                if len(index_objet[str(objet)]) >= 2:
+                if len(index_objet[str(objet)]) >= 2 and len(index_objet[str(objet)]) <= 3 :
                     print("Vous utilisez ",objet,".")
                     if index_objet[str(objet)][2] == 1:
                         print("Vous gagnez ",index_objet[str(objet)][1],"Pv.")
@@ -89,7 +90,7 @@ def use_objet_roi() :
                             Roi_demon_stats[5] = Roi_demon_stats[13]
                         print("")
                         print("Vie :", Roi_demon_stats[5],"/",Roi_demon_stats[13], "Mana :", Roi_demon_stats[10], "/", Roi_demon_stats[14])
-                        return
+
                     elif index_objet[str(objet)][2] == 2:
                         print("Vous gagnez ",index_objet[str(objet)][1], "Pm.")
                         Roi_demon_stats[10] += index_objet[str(objet)][1]
@@ -97,25 +98,25 @@ def use_objet_roi() :
                             Roi_demon_stats[10] = Roi_demon_stats[14]
                         print("")
                         print("Vie :", Roi_demon_stats[5],"/",Roi_demon_stats[13], "Mana :", Roi_demon_stats[10], "/", Roi_demon_stats[14])
-                        print("Utiliser un autre obejt ? :")
-                        print("1. oui")
-                        print("2. non")
-                        while True:
-                            choix = input("Choix :")
-                            if str(choix) == "":
-                                print("Choix indisponnible.")
+                    print("Utiliser un autre obejt ? :")
+                    print("1. oui")
+                    print("2. non")
+                    while True:
+                        choix = input("Choix :")
+                        if str(choix) == "":
+                            print("Choix indisponnible.")
+                        else:
+                            if int(choix) >= 1 and int(choix) <= 2:
+                                if int(choix) == 1:
+                                    use_objet_roi()
+                                    return
+                                elif int(choix) == 2:
+                                    return
                             else:
-                                if int(choix) >= 1 or int(choix) <= 2:
-                                    if int(choix) == 1:
-                                        use_objet_roi()
-                                        return
-                                    elif int(choix) == 2:
-                                        return
-                                else:
-                                    print("Choix indisponnible.")
-
-
-
+                                print("Choix indisponnible.")
+                else:
+                    print("Ceci n'est pas un objet utilisable")
+                    use_objet_roi()
 
 def print_equipement_roi():
     Kequipement = roi_demon['equipement'].keys()
@@ -136,7 +137,7 @@ def use_equipement_wapon_roi():
         wapone_equipement = Kequipement_list[int(wapone)-1]
         roi_demon['hands']['hand1'] = str(wapone_equipement)
         bonus = index_wapone[str(wapone_equipement)][0]
-        combat.Roi_demon_stats[4] += bonus
+        Roi_demon_stats[4] += bonus
         print("Vous équipez", wapone_equipement)
         roi_demon['equipement'][str(wapone_equipement)] -= 1
         return
@@ -145,13 +146,12 @@ def use_equipement_wapon_roi():
         print("Voulez vous le retirer ?")
         print("1. Oui")
         print("2. Non")
-        choix = 0
         while True:
             choix = input("Choix :")
             if str(choix) == "":
                 print("Choix indisponnible.")
             else:
-                if int(choix) >= 1 or int(choix) <= 2:
+                if int(choix) >= 1 and int(choix) <= 2:
                     if int(choix) == 1:
                         remove_equipement_roi(roi_demon['hands']['hand1'])
                         return
@@ -163,7 +163,7 @@ def use_equipement_wapon_roi():
 
 def remove_equipement_roi(wapone) :
     roi_demon['hands']['hand1'] = None
-    combat.Roi_demon_stats[4] = 1
+    Roi_demon_stats[4] = 1
     roi_demon['equipement'][str(wapone)] = 1
     print("Équiper un objet à la place ?")
     print("1. Oui")
@@ -173,13 +173,11 @@ def remove_equipement_roi(wapone) :
         if str(choix) == "":
             print("Choix indisponnible.")
         else:
-            if int(choix) >= 1 or int(choix) <= 2:
+            if int(choix) >= 1 and int(choix) <= 2:
                 if int(choix) == 1:
                     use_equipement_wapon_roi()
-                    choix =0
                     return
                 elif int(choix) == 2:
-                    choix = 0
                     return
             else:
                 print("Choix indisponnible.")
@@ -204,7 +202,7 @@ def use_equipement_armor_roi():
         armor_equipement = Karmor_list[int(armor)-1]
         roi_demon['hands']['armor'] = str(armor_equipement)
         bonus = index_armor[str(armor_equipement)][0]
-        combat.Roi_demon_stats[3] += bonus
+        Roi_demon_stats[3] += bonus
         print("Vous équipez", armor_equipement)
         roi_demon['armor'][str(armor_equipement)] += 1
         return
@@ -213,26 +211,23 @@ def use_equipement_armor_roi():
         print("Voulez vous le retirer ?")
         print("1. Oui")
         print("2. Non")
-        choix = 0
         while True:
             choix = input("Choix :")
             if str(choix) == "":
                 print("Choix indisponnible.")
             else:
-                if int(choix) >= 1 or int(choix) <= 2:
+                if int(choix) >= 1 and int(choix) <= 2:
                     if int(choix) == 1:
                         remove_armor_roi(roi_demon['hands']['armor'])
-                        choix = 0
                         return
                     elif int(choix) == 2:
-                        choix = 0
                         return
                 else:
                     print("Choix indisponnible.")
 
 
 def remove_armor_roi(armor) :
-    combat.Roi_demon_stats[3] = combat.Roi_demon_stats[15]
+    Roi_demon_stats[3] = Roi_demon_stats[15]
     roi_demon['armor'][str(armor)] += 1
     roi_demon['hands']['armor'] = None
     print("Équiper un objet à la place ?")
@@ -243,13 +238,11 @@ def remove_armor_roi(armor) :
         if str(choix) == "":
             print("Choix indisponnible.")
         else:
-            if int(choix) >= 1 or int(choix) <= 2:
+            if int(choix) >= 1 and int(choix) <= 2:
                 if int(choix) == 1:
                     use_equipement_armor_roi()
-                    choix = 0
                     return
                 elif int(choix) == 2:
-                    choix = 0
                     return
             else:
                 print("Choix indisponnible.")
@@ -266,7 +259,7 @@ def menu_roi() :
         if str(choix) == "":
             print("Choix indisponnible.")
         else:
-            if int(choix) >= 1 or int(choix) <= 3:
+            if int(choix) >= 1 and int(choix) <= 3:
                 if int(choix) == 1 : #inventaire
                     print(roi_demon['gold']['Argent'], "or.")
                     print("1. Objet")
@@ -277,7 +270,7 @@ def menu_roi() :
                         if str(choix) == "":
                             print("Choix indisponnible.")
                         else:
-                            if int(choix) >= 1 or int(choix) <= 3:
+                            if int(choix) >= 1 and int(choix) <= 3:
                                 if int(choix) == 1:
                                     print("Vie :", Roi_demon_stats[5],"/",Roi_demon_stats[13], "Mana :", Roi_demon_stats[10],"/",Roi_demon_stats[14])
                                     print_objet_roi()
@@ -288,7 +281,7 @@ def menu_roi() :
                                         if str(choix) == "":
                                             print("Choix indisponnible.")
                                         else:
-                                            if int(choix) >= 1 or int(choix) <= 2:
+                                            if int(choix) >= 1 and int(choix) <= 2:
                                                 if int(choix) == 1:
                                                     use_objet_roi()
                                                     menu_roi()
@@ -309,7 +302,7 @@ def menu_roi() :
                                         if str(choix) == "":
                                             print("Choix indisponnible.")
                                         else:
-                                            if int(choix) >= 1 or int(choix) <= 2:
+                                            if int(choix) >= 1 and int(choix) <= 2:
                                                 if int(choix) == 1:
                                                     use_equipement_wapon_roi()
                                                     menu_roi()
@@ -333,7 +326,7 @@ def menu_roi() :
                         if str(choix) == "":
                             print("Choix indisponnible.")
                         else:
-                            if int(choix) >= 1 or int(choix) <= 2:
+                            if int(choix) >= 1 and int(choix) <= 2:
                                 if int(choix) == 1:
                                     save(roi_demon, history)
                                     print("Voulez vous quiter ?")
@@ -343,7 +336,7 @@ def menu_roi() :
                                         choix = input("Choix :")
                                         if str(choix) == "":
                                             print("Choix indisponnible.")
-                                        if int(choix) == 1 or int(choix) == 2:
+                                        if int(choix) >= 1 and int(choix) <= 2:
                                             if int(choix) == 1:
                                                 titlebis()
                                                 return
@@ -360,5 +353,32 @@ def menu_roi() :
             else:
                 print("Choix indisponnible.")
 
+def use_objet_roi_baton() :
+    print_objet_roi()
+    Kinv = roi_demon['inv'].keys()
+    Kinv_list = list(Kinv)
+    while True:
+        Ninv = input("Utiliser quel objet ? :")
+        if str(Ninv) == "":
+            print("Choix indisponnible.")
+        else:
+            if int(Ninv) >= 1 and int(Ninv) <= len(Kinv_list):
+                objet = Kinv_list[int(Ninv)-1]
+                if len(index_objet[str(objet)]) == 4:
+                    print("Vous utilisez ", objet, ".")
+                    return
 
-menu_roi()
+                else:
+                    print("Vous tentez d'utiliser ", objet, ".")
+                    print("Ceci n'est pas un baton des enfers")
+                    use_objet_roi_baton()
+            else:
+                print("Choix indisponnible.")
+                use_objet_roi_baton()
+
+
+def menu_roi_baton() :
+    print(roi_demon['gold']['Argent'], "or.")
+    print("Utiliser un baton de fer")
+    use_objet_roi_baton()
+

@@ -102,9 +102,7 @@ def use_objet() :
         if str(Ninv) == "":
             print("Choix indisponnible.")
         else:
-            if int(Ninv) < 1 or int(Ninv) > len(index_objet):
-                print("Choix indisponnible.")
-            else:
+            if int(Ninv) >= 1 and int(Ninv) <= len(Kinv_list):
                 objet = Kinv_list[int(Ninv)-1]
                 if len(index_objet[str(objet)]) >= 2:
                     print("Vous utilisez ",objet,".")
@@ -131,7 +129,7 @@ def use_objet() :
                             if str(choix) == "":
                                 print("Choix indisponnible.")
                             else:
-                                if int(choix) >= 1 or int(choix) <= 2:
+                                if int(choix) >= 1 and int(choix) <= 2:
                                     if int(choix) == 1:
                                         use_objet()
                                         return
@@ -140,9 +138,12 @@ def use_objet() :
                                 else:
                                     print("Choix indisponnible.")
 
+            else:
+                print("Choix indisponnible.")
 
 
 
+use_objet()
 def print_equipement():
     Kequipement = char['equipement'].keys()
     Iequipement = char['equipement'].values()
@@ -171,13 +172,12 @@ def use_equipement_wapon():
         print("Voulez vous le retirer ?")
         print("1. Oui")
         print("2. Non")
-        choix = 0
         while True:
             choix = input("Choix :")
             if str(choix) == "":
                 print("Choix indisponnible.")
             else:
-                if int(choix) >= 1 or int(choix) <= 2:
+                if int(choix) >= 1 and int(choix) <= 2:
                     if int(choix) == 1:
                         remove_equipement(char['hands']['hand1'])
                         return
@@ -199,13 +199,11 @@ def remove_equipement(wapone) :
         if str(choix) == "":
             print("Choix indisponnible.")
         else:
-            if int(choix) >= 1 or int(choix) <= 2:
+            if int(choix) >= 1 and int(choix) <= 2:
                 if int(choix) == 1:
                     use_equipement_wapon()
-                    choix =0
                     return
                 elif int(choix) == 2:
-                    choix = 0
                     return
             else:
                 print("Choix indisponnible.")
@@ -239,19 +237,16 @@ def use_equipement_armor():
         print("Voulez vous le retirer ?")
         print("1. Oui")
         print("2. Non")
-        choix = 0
         while True:
             choix = input("Choix :")
             if str(choix) == "":
                 print("Choix indisponnible.")
             else:
-                if int(choix) >= 1 or int(choix) <= 2:
+                if int(choix) >= 1 and int(choix) <= 2:
                     if int(choix) == 1:
                         remove_armor(char['hands']['armor'])
-                        choix = 0
                         return
                     elif int(choix) == 2:
-                        choix = 0
                         return
                 else:
                     print("Choix indisponnible.")
@@ -269,13 +264,11 @@ def remove_armor(armor) :
         if str(choix) == "":
             print("Choix indisponnible.")
         else:
-            if int(choix) >= 1 or int(choix) <= 2:
+            if int(choix) >= 1 and int(choix) <= 2:
                 if int(choix) == 1:
                     use_equipement_armor()
-                    choix = 0
                     return
                 elif int(choix) == 2:
-                    choix = 0
                     return
             else:
                 print("Choix indisponnible.")
@@ -292,7 +285,7 @@ def menu() :
         if str(choix) == "":
             print("Choix indisponnible.")
         else:
-            if int(choix) >= 1 or int(choix) <= 3:
+            if int(choix) >= 1 and int(choix) <= 3:
                 if int(choix) == 1 : #inventaire
                     print(char['gold']['Argent'], "or.")
                     print("1. Objet")
@@ -303,7 +296,7 @@ def menu() :
                         if str(choix) == "":
                             print("Choix indisponnible.")
                         else:
-                            if int(choix) >= 1 or int(choix) <= 3:
+                            if int(choix) >= 1 and int(choix) <= 3:
                                 if int(choix) == 1:
                                     print("Vie :", Prince_stats[5],"/",Prince_stats[13], "Mana :", Prince_stats[10],"/",Prince_stats[14])
                                     print_objet()
@@ -314,13 +307,11 @@ def menu() :
                                         if str(choix) == "":
                                             print("Choix indisponnible.")
                                         else:
-                                            if int(choix) >= 1 or int(choix) <= 2:
+                                            if int(choix) >= 1 and int(choix) <= 2:
                                                 if int(choix) == 1:
                                                     use_objet()
-                                                    choix = 0
                                                     return
                                                 elif int(choix) == 2:
-                                                    choix = 0
                                                     return
                                             else:
                                                 print("Choix indisponnible.")
@@ -337,22 +328,18 @@ def menu() :
                                         if str(choix) == "":
                                             print("Choix indisponnible.")
                                         else:
-                                            if int(choix) >= 1 or int(choix) <= 2:
+                                            if int(choix) >= 1 and int(choix) <= 3:
                                                 if int(choix) == 1:
                                                     use_equipement_wapon()
-                                                    choix = 0
                                                     return
                                                 elif int(choix) == 2:
                                                     use_equipement_armor()
-                                                    choix = 0
                                                     return
                                                 elif int(choix) == 3:
-                                                    choix = 0
                                                     return
                                             else:
                                                 print("Choix indisponnible.")
                                 elif int(choix) == 3:
-                                    choix = 0
                                     return
                             else:
                                 print("Choix indisponnible.")
@@ -365,7 +352,7 @@ def menu() :
                         if str(choix) == "":
                             print("Choix indisponnible.")
                         else:
-                            if int(choix) >= 1 or int(choix) <= 2:
+                            if int(choix) >= 1 and int(choix) <= 2:
                                 if int(choix) == 1:
                                     save(char, history)
                                     print("Voulez vous quiter ?")
@@ -375,21 +362,17 @@ def menu() :
                                         choix = input("Choix :")
                                         if str(choix) == "":
                                             print("Choix indisponnible.")
-                                        if int(choix) == 1 or int(choix) == 2:
+                                        if int(choix) >= 1 and int(choix) <= 2:
                                             if int(choix) == 1:
-                                                choix = 0
                                                 titlebis()
                                                 return
                                             elif int(choix) == 2:
-                                                choix = 0
                                                 return
                                         else:
                                             print("Choix indisponnible.")
                             else:
                                 print("Choix indisponnible.")
                 elif int(choix) == 3:
-                    choix = 0
                     return
             else:
                 print("Choix indisponnible.")
-

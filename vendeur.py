@@ -92,13 +92,12 @@ def rebuy(vendeur):
     print("Voulez vous acheter autre chose ?")
     print("1. Oui")
     print("2. Non")
-    choix = 0
     while True:
         choix = input("Choix :")
         if str(choix) == "":
             print("Choix indisponnible.")
         else:
-            if int(choix) >= 1 or int(choix) <= 2:
+            if int(choix) >= 1 and int(choix) <= 2:
                 if int(choix) == 1:
                     final = buy(vendeur)
                     return
@@ -112,13 +111,12 @@ def resell():
     print("Voulez vous vendre autre chose ?")
     print("1. Oui")
     print("2. Non")
-    choix = 0
     while True:
         choix = input("Choix :")
         if str(choix) == "":
             print("Choix indisponnible.")
         else:
-            if int(choix) >= 1 or int(choix) <= 2:
+            if int(choix) >= 1 and int(choix) <= 2:
                 if int(choix) == 1:
                     final = sell()
                     return
@@ -137,7 +135,7 @@ def vendeur(vendeur):
         if str(choix) == "":
             print("Choix indisponnible.")
         else:
-            if int(choix) >= 1 or int(choix) <= 2:
+            if int(choix) >= 1 and int(choix) <= 2:
                 if int(choix) == 1:
                     buy(vendeur)
                     return

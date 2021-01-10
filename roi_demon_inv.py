@@ -37,24 +37,60 @@ def win_roi(enemie): #use in demo (en cas de victoire)
     print("Vous gagnez contre", enemie["nom"],".")
 
 
-#a utiliser quand le hero trouve un coffre
-def pierre_sword_roi(): #mettre le numéro du coffre
-    print("Voulez vous retirer l'épée ?.")
-    print("1. Oui")
-    print("2. Non")    
-    while True:
-        choix = input("Choix :")
-        if str(choix) == "":
-            print("Choix indisponnible.")
-        else:
-            if int(choix) >= 1 and int(choix) <= 2:
-                if int(choix) == 1:
-                    use_equipement_wapon_roi()
-                    return
-                elif int(choix) == 2:
-                    return
-                else:
-                   print("Choix indisponnible.")
+# # permet la monter de niveau du hero
+# # exemple : update_niv_roi(char['xp'])
+# def update_niv_roi(xp1) :
+#     while xp1['xp'] >= xp1['lvlnext'] :
+#         xp1['lvl'] += 1
+#         xp1['xp'] -= xp1['lvlnext']
+#         xp1['lvlnext'] = round(xp1['lvlnext'] * 1.5)
+#         print("Félicitation vous avez gagner 1 niveau")
+#         print("vous êtes au niveau", xp1['lvl'])
+#         update_stats_roi()
+#
+#
+# def update_stats_roi():
+#     Roi_demon_stats[1] += 1
+#     Roi_demon_stats[2] += 1
+#     Sentence("Votre puissance augmente de 0.5 point !")
+#     Roi_demon_stats[3] += 0.5
+#     Roi_demon_stats[15] += 0.5
+#     Sentence("Votre défense augmente de 1 point !")
+#     Roi_demon_stats[5] += 10
+#     Roi_demon_stats[13] += 10
+#     Sentence("Votre vie augmente de 10 points !")
+#     Roi_demon_stats[10] += 5
+#     Roi_demon_stats[14] += 5
+#     Sentence("Votre mana augmente de 5 points !")
+#
+#
+# #a utiliser quand le hero gagne un combat
+# def win(enemie): #update de niveau
+#     print("Victoire !")
+#     print("Vous gagnez", enemie["xp"],".")
+#     print("Le ", enemie["nom"], " avait sur lui ", enemie["inv"], "et", enemie["gold"],"or.")
+#     updating(roi_demon['inv'], enemie['inv']) #gaint des drops de l'enemie
+#     updating(roi_demon['xp'], enemie['xp']) # gaint de l'xp de l'enemie
+#     updating(roi_demon['gold'], enemie['or'])
+#     update_niv_roi(roi_demon['xp']) #monté de niveau du hero si possible
+
+# def pierre_sword_roi():
+#     print("Voulez vous retirer l'épée ?.")
+#     print("1. Oui")
+#     print("2. Non")
+#     while True:
+#         choix = input("Choix :")
+#         if str(choix) == "":
+#             print("Choix indisponnible.")
+#         else:
+#             if int(choix) >= 1 and int(choix) <= 2:
+#                 if int(choix) == 1:
+#                     use_equipement_wapon_roi()
+#                     return
+#                 elif int(choix) == 2:
+#                     return
+#                 else:
+#                    print("Choix indisponnible.")
 
 
 def print_objet_roi():

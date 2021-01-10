@@ -16,7 +16,7 @@ roi_demon = {
         'Argent' : 666,
     },
     'inv' : {
-        'baton des enfer' : 5,
+        'sceptre de pouvoir' : 2,
         'Potion de soin n3' : 20,
         'Potion de mana n3' : 10,
         },
@@ -32,7 +32,7 @@ Roi_demon_stats = ["Roi Démon", 180, 200, 150, 1, 1600, 90, 5, 4, 0, 150, 5, 4,
 
 
 
-def win_roi(enemie):
+def win_roi(enemie): #use in demo (en cas de victoire)
     print("Victoire !")
     print("Vous gagnez contre", enemie["nom"],".")
 
@@ -249,7 +249,7 @@ def remove_armor_roi(armor) :
 
 
 
-def menu_roi() :
+def menu_roi() :#use in demo (entré de map et sortie de map)
     print("Voulez vous faire quelque chause ?")
     print("1. Inventaire")
     print("2. Sauvgarder")
@@ -353,7 +353,7 @@ def menu_roi() :
             else:
                 print("Choix indisponnible.")
 
-def use_objet_roi_baton() :
+def use_objet_roi_sceptre() :
     print_objet_roi()
     Kinv = roi_demon['inv'].keys()
     Kinv_list = list(Kinv)
@@ -366,19 +366,19 @@ def use_objet_roi_baton() :
                 objet = Kinv_list[int(Ninv)-1]
                 if len(index_objet[str(objet)]) == 4:
                     print("Vous utilisez ", objet, ".")
+                    roi_demon['inv']['sceptre de pouvoir'] -= 1
                     return
 
                 else:
                     print("Vous tentez d'utiliser ", objet, ".")
-                    print("Ceci n'est pas un baton des enfers")
-                    use_objet_roi_baton()
+                    print("Ceci n'est pas un sceptre de pouvoir")
+                    use_objet_roi_sceptre()
             else:
                 print("Choix indisponnible.")
-                use_objet_roi_baton()
+                use_objet_roi_sceptre()
 
 
-def menu_roi_baton() :
+def menu_roi_sceptre() :#use in demo (utilisation quand tu dois planter un sceptre de pouvoir)
     print(roi_demon['gold']['Argent'], "or.")
-    print("Utiliser un baton de fer")
-    use_objet_roi_baton()
-
+    print("Utiliser un sceptre de pouvoir.")
+    use_objet_roi_sceptre()

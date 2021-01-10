@@ -143,7 +143,6 @@ def use_objet() :
 
 
 
-use_objet()
 def print_equipement():
     Kequipement = char['equipement'].keys()
     Iequipement = char['equipement'].values()

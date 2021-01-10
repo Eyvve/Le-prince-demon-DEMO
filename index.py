@@ -17,7 +17,7 @@ index_armor = {
 }
 
 index_objet = {
-    'baton des enfers' : ["Pas vendable", None, None, 1],
+    'sceptre de pouvoir' : ["Pas vendable", None, None, 1],
     #'nom de l'objet'   : [Prix, effet donné]
     #objet de soin
     #Potion

@@ -65,7 +65,7 @@ def win_roi(enemie): #use in demo (en cas de victoire)
 #
 #
 # #a utiliser quand le hero gagne un combat
-# def win(enemie): #update de niveau
+# def win_roi(enemie): #update de niveau
 #     print("Victoire !")
 #     print("Vous gagnez", enemie["xp"],".")
 #     print("Le ", enemie["nom"], " avait sur lui ", enemie["inv"], "et", enemie["gold"],"or.")

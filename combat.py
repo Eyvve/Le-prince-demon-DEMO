@@ -947,7 +947,7 @@ def demo_Magic_action(nivatkmag, MobStats):
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
-            mob_hp_remaining = action()
+            mob_hp_remaining = demo_action(MobStats)
             return mob_hp_remaining
         else:
             print("veuillez entrer un chiffre valide")

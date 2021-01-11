@@ -85,21 +85,49 @@ def demo():
     sleep(1.0)
     os.system("cls")
     sleep(1.0)
-    narration_intro_music.play(-1, 10)
     # fin des deux combats, si le joueur est pas mort il à pris un peu cher, hop sequence gameplay potion
     Sentence("Vous ressortez de ce combat blessé, vous trouvez judicieux de regagner de la santé avant de retourner au voir vos troupes.")
+    sleep(1.5)
     Sentence("Par chance vous avez suffisemment de potions sur vous pour reprendre des forces.")
+    sleep(2.0)
+    os.system("cls")
 
     menu_roi()
 
-    Sentence("Dominant de toute sa hauteur le cadavre de ses ennemis, le S'rhaal entendit un cri d'alerte puissant et familier.")
-    Sentence("Zazranoth, son général, et Ginn, fils du précédent et son aide de camp viennent vers lui, se mouvant dans le charnier")
-    Sentence("avec difficulté, le visage de l'un grave, celui de l'autre en détresse. Mon seigneur, l'interpelle le vétéran,")
-    Sentence("nous sommes en train de perdre. Ces maudits pourceaux ont obtenu l'aide de créatures de lumière inconnues.")
+    os.system("cls")
+    gates_music.play(-1)
+    Sentence("Vous vous relevez et regardez à vos pieds.")
+    sleep(1.5)
+    Sentence("Dominant de toute votre hauteur le cadavre de ses ennemis, vous entendez un cri d'alerte puissant et familier.")
+    sleep(1.5)
+    Sentence("Zazranoth, votre général, et Ginn, son fils et aide de camp viennent vers vous,")
+    Sentence("se mouvant dans le charnier avec difficulté, le visage de l'un grave, celui de l'autre en détresse. ")
     skip_touch()
-    Sentence("Il nous faut prendre une décision avant la débâcle complète. Deux choix s'offrent à nous, sonner la retraite")
-    Sentence("ou tenter d'abattre les portes, trouver leur leader et le tuer, pour arracher la victoire.")
-    skip_touch()
+    os.system("cls")
+    print("Zazranoth :")
+    Sentence("Mon seigneur, nous sommes en train de perdre. Ces maudits pourceaux ont obtenu l'aide de créatures de lumière inconnues.")
+    sleep(1.5)
+    Sentence("Il nous faut prendre une décision avant la débâcle complète. Deux choix s'offrent à nous,")
+    Sentence("sonner la retraite ou tenter d'abattre les portes, trouver leur leader et le tuer, pour arracher la victoire.")
+    sleep(1.5)
+    Sentence("*Fuir se résumerait à faire un aveu de faiblesse, ceci ne nous ressemble pas...*")
+    Sentence("*Vaut-il vraiment mieux nous battre et risquer plus de troupes ou bien fuir quitte à perdre notre honneur ?..*")
+    print("1. Abattre les portes")
+    print("2. fuir")
+    print("Zazranoth :")
+    choixportes = str(input("Quel est votre choix mon seigneur ?"))
+    while choixportes != 1 or choixportes != 2:
+        if choixportes == 1:
+            qassautportes()
+            return
+        elif choixportes == 2:
+            Retraite()
+            return
+        else:
+            Sentence("Vous n'avez aucune autre option mon seigneur, nous vous suivront quelle que soit votre décision.")
+
+
+
 
 #    - choix a faire:
 #       attaquer les portes
@@ -132,6 +160,8 @@ def Retraite():
     Sentence("semble avoir remplacé le roi précédent, et règne sur Ljosalfer d'une main juste, ferme, et désinteressée.")
 
 def qassautportes():
+    print(Roi_demon_stats[0])
+    Sentence("Nous ne fuiront pas, il est hors de question d'abandonner, je ne suis pas encore mort !")
     Sentence("'Ces portes sont bardés de magie défensives, il va me falloir utiliser une puissante magie pour en venir à bout.")
     Sentence("Ginn ! Libère moi le chemin jusqu'aux charniers les plus proches. Je vais devoir planter deux sceptres de pouvoir")
     Sentence("pour en canaliser l'énergie!")

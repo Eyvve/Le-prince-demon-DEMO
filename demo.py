@@ -8,7 +8,9 @@ from intro import *
 def demo():
     from intro import Sentence
     from combat import demofight
+    # signif1ications : nom, attaque mini, attaque max, défense, multiplicateur de dégat (arme), vie, précision, esquive
     deva_stats = ["Deva", 25, 38, 15, 1.2, 250, 85, 5]
+    cotterie_stats = ["Chef de Cotterie", 30, 45, 25, 1.2, 350, 85, 5]
     Sentence("Conformement au lore établi, le Roi démon ou Dieu-Roi porte le nom d'Ibliss Nizidramanii'yt.")
     Sentence("Quel est votre nom ? Si vous souhaitez le nom lore friendly, appuyez simplement sur Entrée.")
     kingsName = str(input("=> "))
@@ -68,6 +70,9 @@ def demo():
     demo_deva_combat.play(-1)
     sleep(10.0)
     demofight(deva_stats)
+    os.system("cls")
+    Sentence("Alors que vous veniez à peine de tuer le deva, le chef de cotterie tente de vous porter un coup épee.")
+    demofight(cotterie_stats)
     demo_deva_combat.fadeout(1000)
     sleep(1.0)
     # combat()  # Un déva et un chef d'escouade  paladins, ennemis puissants mais nomatch pour le Dieu-roi qui les retourne

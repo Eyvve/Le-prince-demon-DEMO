@@ -1017,7 +1017,7 @@ def demo_action(MobStats):
 
     elif rep == "2":
         Sentence("Vous concentrez votre mana")
-        degats = Magic_action(Roi_demon_stats[12])
+        degats = demo_Magic_action(Roi_demon_stats[12], MobStats)
         return degats
     elif rep == "3":
         Sentence("Pensez vous que la fuite est digne du roi des démons ?")

@@ -1,6 +1,7 @@
 from inventaire import *
 from intro import *
 from combat import *
+from index import *
 
 roi_demon = {
     'xp' : {
@@ -322,8 +323,10 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                                 if int(choix) == 1:
                                                     use_objet_roi()
                                                     menu_roi()
+                                                    return
                                                 elif int(choix) == 2:
                                                     menu_roi()
+                                                    return
                                             else:
                                                 print("Choix indisponnible.")
                                 elif int(choix) == 2:
@@ -343,15 +346,19 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                                 if int(choix) == 1:
                                                     use_equipement_wapon_roi()
                                                     menu_roi()
+                                                    return
                                                 elif int(choix) == 2:
                                                     use_equipement_armor_roi()
                                                     menu_roi()
+                                                    return
                                                 elif int(choix) == 3:
                                                     menu_roi()
+                                                    return
                                             else:
                                                 print("Choix indisponnible.")
                                 elif int(choix) == 3:
                                     menu_roi()
+                                    return
                             else:
                                 print("Choix indisponnible.")
                 elif int(choix) == 2 : #sauvgarder :
@@ -379,10 +386,12 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                                 return
                                             elif int(choix) == 2:
                                                 menu_roi()
+                                                return
                                         else:
                                             print("Choix indisponnible.")
                                 elif int(choix) == 2:
                                     menu_roi()
+                                    return
                             else:
                                 print("Choix indisponnible.")
                 elif int(choix) == 3:

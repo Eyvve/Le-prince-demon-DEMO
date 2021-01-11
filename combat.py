@@ -893,14 +893,13 @@ def demo_Magic_action(nivatkmag, MobStats):
         print("1. Rayon Infernal | coût : 16 mana")
         print("2. Grande moisson | coût : 25 mana")
         print("3. Peau du Seigneur démon | coût : 20 mana")
-        print("4. Résurgence Royale | coût : 30 mana")
-        print("5. retour au menu des actions")
+        print("4. retour au menu des actions")
         rep = str(input("=> "))
         if rep == "1":
             if Roi_demon_stats[10] >= 16:
                 evil_beam_spell.play()
                 Roi_demon_stats[10] = Roi_demon_stats[10] - 16
-                magic_attack = 25
+                magic_attack = 35
                 print("vous infligez", magic_attack, "dégats magiques !")
                 mob_hp_remaining = MobStats[5] - magic_attack
                 return mob_hp_remaining
@@ -912,10 +911,10 @@ def demo_Magic_action(nivatkmag, MobStats):
             if Roi_demon_stats[10] >= 15:
                 absorbtion_soundeffect.play()
                 Roi_demon_stats[10] = Roi_demon_stats[10] - 15
-                magic_attack = randint(15, 20)
+                magic_attack = randint(25, 35)
                 print("vous absorbez", magic_attack, "dégats magiques !")
                 sleep(1.0)
-                recup = randint(15, 20)
+                recup = randint(25, 35)
                 Roi_demon_stats[5] = Roi_demon_stats[5] + recup
                 absorbtion_gain_hp.play(3)
                 print("vous récupérez", recup, "points de vie !")
@@ -945,10 +944,6 @@ def demo_Magic_action(nivatkmag, MobStats):
                 mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
                 return mob_hp_remaining
         elif rep == "4":
-            print("a compléter")
-            mob_hp_remaining = MobStats[5]
-            return mob_hp_remaining
-        elif rep == "5":
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])

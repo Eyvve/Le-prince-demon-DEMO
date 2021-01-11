@@ -119,7 +119,7 @@ def use_objet_roi() :
                 print("Choix indisponnible.")
             else:
                 objet = Kinv_list[int(Ninv)-1]
-                if len(index_objet[str(objet)]) >= 2 and len(index_objet[str(objet)]) <= 3 :
+                if len(index_objet[str(objet)]) >= 2 and len(index_objet[str(objet)]) <= 4 :
                     print("Vous utilisez ",objet,".")
                     if index_objet[str(objet)][2] == 1:
                         print("Vous gagnez ",index_objet[str(objet)][1],"Pv.")
@@ -136,6 +136,10 @@ def use_objet_roi() :
                             Roi_demon_stats[10] = Roi_demon_stats[14]
                         print("")
                         print("Vie :", Roi_demon_stats[5],"/",Roi_demon_stats[13], "Mana :", Roi_demon_stats[10], "/", Roi_demon_stats[14])
+                    elif index_objet[str(objet)][2] == None:
+                        print("Vous ne pouvez pas utiliser le sceptre tout de suite.")
+                        use_objet_roi()
+                        return
                     print("Utiliser un autre obejt ? :")
                     print("1. oui")
                     print("2. non")
@@ -428,3 +432,4 @@ def menu_roi_sceptre() :#use in demo (utilisation quand tu dois planter un scept
     print(roi_demon['gold']['Argent'], "or.")
     print("Utiliser un sceptre de pouvoir.")
     use_objet_roi_sceptre()
+

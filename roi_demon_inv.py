@@ -27,7 +27,8 @@ roi_demon = {
         'Armure des Abysse' : 0,
     }
 }
-Roi_demon_stats = ["Roi Démon", 180, 200, 150, 1, 1600, 90, 5, 4, 0, 150, 5, 4, 60, 150]
+Roi_demon_stats = ["Dieu-Roi", 45, 67, 25, 1.0, 400, 90, 5, 4, 0, 50, 5, 3, 400, 50]
+Deva_stats = ["Deva", 25, 38, 15, 1.2, 250, 85, 5]
 # significations : (0)nom, (1)attaque mini, (2)attaque max, (3)défense, (4)multiplicateur de dégat (arme), (5)vie, (6)précision, (7)chance de coup bas, (8)niveau de coup bas, (9)xp coup bas, (10)mana, (11)esquive, (12)attques magiques, (13) PV max, (14) MP max, (15) defense mini
 
 

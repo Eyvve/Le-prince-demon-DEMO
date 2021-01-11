@@ -24,3 +24,11 @@ crack = pygame.mixer.Sound("music/bone_crack.ogg")
 broken_armor = pygame.mixer.Sound("music/broken_armor.ogg")
 acid_sound = pygame.mixer.Sound("music/acid.ogg")
 combat_music_2 = pygame.mixer.Sound("music/decisive_battle.ogg")
+
+demo_intro_sound = pygame.mixer.Sound("music/demo_intro_sound.ogg")
+demo_deva_combat = pygame.mixer.Sound("music/deva_figght.ogg")
+# demo_paladin_combat
+# demo_boss_combat
+battle_sound_effect = pygame.mixer.Sound("music/battle_sound.ogg")
+narration_intro_music = pygame.mixer.Sound("music/demo_intro_narration.ogg")
+wind_thunder_sound = pygame.mixer.Sound("music/Thunderstorm.ogg")

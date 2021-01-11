@@ -18,7 +18,7 @@ def skip_touch():
 def beginning():
     from intro import Sentence
     from combat import Prince_stats
-    from combat import combat
+    from combat import fight
     Prince_stats[0] = str(input("Quel est votre nom : "))
     validation_sound.play()
     sleep(2.0)

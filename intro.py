@@ -5,7 +5,7 @@ from maps import *
 from Music_sounds import *
 from about import *
 from combat import *
-from demo import *
+from demo import demo
 
 pygame.init()
 

@@ -1,22 +1,75 @@
 from time import sleep
 from maps import skip_touch
-from maps import sentence
+from Music_sounds import *
+from roi_demon_inv import *
+from combat import *
 from intro import *
 
-def portes():
-    Sentence("La bataille faisait rage. Les cieux étaient aussi rougeatres que le sol devant la citadelle dorée des hommes.")
-    Sentence("Les corps, de différentes formes et couleurs, jonchaient le sol.")
-    Sentence("Dans le flou du combat, impossible pour le Dieu-roi S'rhaal de faire le point sur la situation.")
+def demo():
+    from intro import Sentence
+    from combat import demofight
+    deva_stats = ["Deva", 25, 38, 15, 1.2, 250, 85, 5]
+    Sentence("Conformement au lore établi, le Roi démon ou Dieu-Roi porte le nom d'Ibliss Nizidramanii'yt.")
+    Sentence("Quel est votre nom ? Si vous souhaitez le nom lore friendly, appuyez simplement sur Entrée.")
+    kingsName = str(input("=> "))
+    if kingsName == "":
+        Roi_demon_stats[0] = "Ibliss"
+    else:
+        Roi_demon_stats[0] = kingsName
+    validation_sound.play()
+    sleep(2.0)
+    os.system("cls")
+    demo_intro_sound.play()
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("""
+                              ██████╗ ██████╗  ██████╗ ██╗      ██████╗  ██████╗ ██╗   ██╗███████╗          
+                              ██╔══██╗██╔══██╗██╔═══██╗██║     ██╔═══██╗██╔════╝ ██║   ██║██╔════╝          
+                    █████╗    ██████╔╝██████╔╝██║   ██║██║     ██║   ██║██║  ███╗██║   ██║█████╗      █████╗
+                    ╚════╝    ██╔═══╝ ██╔══██╗██║   ██║██║     ██║   ██║██║   ██║██║   ██║██╔══╝      ╚════╝
+                              ██║     ██║  ██║╚██████╔╝███████╗╚██████╔╝╚██████╔╝╚██████╔╝███████╗          
+                              ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝   
+
+                                                        Le Dieu Roi                                                                                       
+        """)
+    sleep(11.0)
+    os.system("cls")
+    narration_intro_music.play(-1)
+    # wind_thunder_sound.play(-1)
+    battle_sound_effect.play(-1)
+    # os.system("cls")
+    # print("")
+    # print("")
+    # Sentence("La bataille faisait rage. Les cieux étaient aussi rougeatres que le sol devant la citadelle dorée des hommes.")
+    # Sentence("Les corps, de différentes formes et couleurs, jonchaient le sol.")
+    # Sentence("Dans le flou du combat, impossible pour le Dieu-roi S'rhaal de faire le point sur la situation.")
+    # skip_touch()
+    # Sentence("Se débarrassant de son opposant d'un lourd coup de lame, fendant du même mouvement")
+    # Sentence("la lourde armure et le corps du paladin, avant de lancer un long cri de ralliement.")
+    # Sentence("La situation des forces en présence est désastreuse.")
+    # skip_touch()
+    # Sentence("Les brutes ont bien encaissé la mêlée, mais tous ses suivants plus fragiles ")
+    # Sentence("se sont fait découper par l'acier chantant des créatures célestes.Avant de pouvoir lancer")
+    # Sentence("une série d'ordres, deux silhouettes d'or et de sang se dressent devant lui. A vue d'oeil,")
+    # Sentence("un chef de cotterie et un déva.")
+
     skip_touch()
-    Sentence("Se débarrassant de son opposant d'un lourd coup de lame, fendant du même mouvement")
-    Sentence("la lourde armure et le corps du paladin, avant de lancer un long cri de ralliement.")
-    Sentence("La situation des forces en présence est désastreuse.")
-    skip_touch()
-    Sentence("Les brutes ont bien encaissé la mêlée, mais tous ses suivants plus fragiles ")
-    Sentence("se sont fait découper par l'acier chantant des créatures célestes.Avant de pouvoir lancer")
-    Sentence("une série d'ordres, deux silhouettes d'or et de sang se dressent devant lui. A vue d'oeil,")
-    Sentence("un chef de cotterie et un déva.")
-    skip_touch()
+    narration_intro_music.fadeout(1000)
+    sleep(3.0)
+    Sentence("Ils ne sont rien.")
+    demo_deva_combat.play(-1)
+    sleep(10.0)
+    demofight(deva_stats)
+    demo_deva_combat.fadeout(1000)
+    sleep(1.0)
     # combat()  # Un déva et un chef d'escouade  paladins, ennemis puissants mais nomatch pour le Dieu-roi qui les retourne
 
 
@@ -34,7 +87,7 @@ def portes():
 #       fuir
 
 
-def Retraite()
+def Retraite():
     Sentence("Laissant son regard planer sur le  désastre de ce champ de bataille, la résolution du Roi-dieu flanche.")
     Sentence("A quoi bon changer l'ordre des choses et instaurer un ordre nouveau pour les nouvelles générations si presque")
     Sentence("tout son peuple doit périr dans la tentative ? Les mots de l'arcaniste Seraphos lui revinrent en tête.")
@@ -49,7 +102,7 @@ def Retraite()
     Sentence("Je ne serais pas l'instigateur de la destruction des nôtres... Ils sont plus redoutables que ce qu'il semblait.'")
     Sentence("L'ordre fut donné, relayé, sonné. La retraite, à deux doigts de se transformer en fuite ou en débandade, se fit.")
     Sentence("Aucun contact ne fut jamais pris avec les humains qui se contentèrent des de bouter les démons dans les montagnes")
-    Sentence("d'Aurgelmirtann, au nord de Ljosalfer.
+    Sentence("d'Aurgelmirtann, au nord de Ljosalfer.")
 
     # petit écran de fin de démo
 
@@ -78,7 +131,7 @@ def qassautportesest():
     Sentence("de l'enfoncer profondément dans le sol. Surpris par le fracas du métal juste derrière lui, le Roi-Dieu se retourne,")
     Sentence("juste à temps pour voir son second repousser un assaut de plusieurs humains d'un vaste mouvment de bouclier.")
 
-# Si assautportesouest() pas déjà fait, passer à assautportesouest(). Si déjà fait, passer à assautportes()
+# Si assautportesouest() pas déjà fait, passer à assautportesest(). Si déjà fait, passer à assautportes()
     Sentence("'Le premier sceptre est en place ! On bouge, et repousse moi ces vermisseaux!' Assuré par un échange de regard")
     Sentence("que son second a bien entendu les ordres et se met en marche.")
 
@@ -132,11 +185,10 @@ def assautportes():
     Sentence("Ginn pris la parole d'un ton consterné pour exprimer ce que toute la petite escouade ressentait devant ce spectacle")
     Sentence("Ca a l'air vrai quand on à ça sous les yeux... Ils veulent vraiment s'en prendre a des dragons. Soit pour leur")
     Sentence("pouvoir soit pour autre chose... D'un claquement de doigt, Zazranoth rappelle la petite troupe à l'ordre, et")
-
-          #Moment d'inventaire ou le roi récupère un de ces objets pour l'étudier plus tard
-
     Sentence("le groupe de démons armés jusqu'aux dents reprit sa route en silence, l'esprit troublé par ce spectacle.")
     skip_touch()
+
+          #Moment d'inventaire ou le roi récupère un de ces objets pour l'étudier plus tard
 
     Sentence("Ils finirent par arriver au centre de la place forte, au coeur du pouvoir des humains. La grande porte de la")
     Sentence("salle du trône déjà éventrée, avec parmi les décombres un nombre de cadavres humains trop grand pour avoir")

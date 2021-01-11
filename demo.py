@@ -82,9 +82,13 @@ def demo():
     demofight(cotterie_stats)
     demo_deva_combat.fadeout(1000)
     sleep(1.0)
+    os.system("cls")
+    sleep(1.0)
     narration_intro_music.play(-1, 10.0)
-    # combat()  # Un déva et un chef d'escouade  paladins, ennemis puissants mais nomatch pour le Dieu-roi qui les retourne
-
+    # fin des deux combats, si le joueur est pas mort il à pris un peu cher, hop sequence gameplay potion
+    Sentence("Vous ressortez de ce combat blessé, vous trouvez judicieux de regagner de la santé avant de retourner au voir vos troupes.")
+    Sentence("Par chance vous avez suffisemment de potions sur vous pour reprendre des forces.")
+    # integrer menu (gabriel)
 
     Sentence("Dominant de toute sa hauteur le cadavre de ses ennemis, le S'rhaal entendit un cri d'alerte puissant et familier.")
     Sentence("Zazranoth, son général, et Ginn, fils du précédent et son aide de camp viennent vers lui, se mouvant dans le charnier")

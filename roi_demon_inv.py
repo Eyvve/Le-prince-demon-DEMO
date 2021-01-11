@@ -454,5 +454,3 @@ def menu_roi_sceptre() :#use in demo (utilisation quand tu dois planter un scept
     print(roi_demon['gold']['Argent'], "or.")
     print("Utiliser un sceptre de pouvoir.")
     use_objet_roi_sceptre()
-
-menu_roi()

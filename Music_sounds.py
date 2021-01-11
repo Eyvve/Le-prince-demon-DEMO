@@ -27,6 +27,7 @@ combat_music_2 = pygame.mixer.Sound("music/decisive_battle.ogg")
 
 demo_intro_sound = pygame.mixer.Sound("music/demo_intro_sound.ogg")
 demo_deva_combat = pygame.mixer.Sound("music/deva_figght.ogg")
+king_scream = pygame.mixer.Sound("music/roi_demon_cri.ogg")
 # demo_paladin_combat
 # demo_boss_combat
 battle_sound_effect = pygame.mixer.Sound("music/battle_sound.ogg")

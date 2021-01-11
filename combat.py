@@ -734,7 +734,7 @@ def demo_attaque(name, atkmini, atkmax, df, mult, hp):
     mob_hp_remaining = hp - final_atk
     round(mob_hp_remaining, 0)
     print("vous infligez", int(final_atk), "dégats", "à", name)
-    return mob_hp_remaining
+    return round(mob_hp_remaining)
 
 
 def demo_Magic_action(nivatkmag, MobStats):
@@ -1003,7 +1003,7 @@ def demo_action(MobStats):
         if rateaccuracy < Roi_demon_stats[6]:
             rateesq = randint(1,100)
             if rateesq <= MobStats[7]:
-                print(Mob_stats[0], "esquive votre attaque !")
+                print(MobStats[0], "esquive votre attaque !")
                 degats = MobStats[5]
                 return degats
             else:
@@ -1040,7 +1040,6 @@ def demo_action(MobStats):
 
 
 def demofight(MobStats):
-    import demo
     first = randint(1, 10)
     prince_life = Roi_demon_stats[5]
     mob_life = MobStats[5]

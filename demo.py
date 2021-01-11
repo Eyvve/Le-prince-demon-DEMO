@@ -9,9 +9,10 @@ def demo():
     from intro import Sentence
     from combat import demofight
     # signif1ications : nom, attaque mini, attaque max, défense, multiplicateur de dégat (arme), vie, précision, esquive
-    deva_stats = ["Deva", 25, 38, 15, 1.2, 250, 85, 5]
-    cotterie_stats = ["Chef de Cotterie", 30, 45, 25, 1.2, 350, 85, 5]
+    deva_stats = ["Deva", 30, 40, 15, 1.2, 250, 85, 5]
+    cotterie_stats = ["Chef de Cotterie", 45, 55, 25, 1.2, 350, 85, 5]
     Sentence("Conformement au lore établi, le Roi démon ou Dieu-Roi porte le nom d'Ibliss Nizidramanii'yt.")
+    print("")
     Sentence("Quel est votre nom ? Si vous souhaitez le nom lore friendly, appuyez simplement sur Entrée.")
     kingsName = str(input("=> "))
     if kingsName == "":
@@ -50,18 +51,24 @@ def demo():
     os.system("cls")
     print("")
     print("")
-    Sentence("La bataille faisait rage. Les cieux étaient aussi rougeatres que le sol devant la citadelle dorée des hommes.")
+    Sentence("La bataille faisait rage.")
+    sleep(1.5)
+    Sentence("Les cieux étaient aussi rougeatres que le sol devant la citadelle dorée des hommes.")
+    sleep(1.5)
     Sentence("Les corps, de différentes formes et couleurs, jonchaient le sol.")
-    Sentence("Dans le flou du combat, impossible pour le Dieu-roi S'rhaal de faire le point sur la situation.")
+    sleep(1.5)
+    Sentence("Dans le flou du combat, impossible pour vous, le Dieu-roi S'rhaal, de faire le point sur la situation.")
     skip_touch()
-    Sentence("Se débarrassant de son opposant d'un lourd coup de lame, fendant du même mouvement")
-    Sentence("la lourde armure et le corps du paladin, avant de lancer un long cri de ralliement.")
+    Sentence("Vous débarrassant de votre opposant d'un lourd coup de lame,")
+    Sentence("fendant du même mouvement la lourde armure et le corps du paladin, avant de lancer un long cri de ralliement.")
+    sleep(1.5)
     Sentence("La situation des forces en présence est désastreuse.")
     skip_touch()
-    Sentence("Les brutes ont bien encaissé la mêlée, mais tous ses suivants plus fragiles ")
-    Sentence("se sont fait découper par l'acier chantant des créatures célestes.Avant de pouvoir lancer")
-    Sentence("une série d'ordres, deux silhouettes d'or et de sang se dressent devant lui. A vue d'oeil,")
-    Sentence("un chef de cotterie et un déva.")
+    Sentence("Les brutes ont bien encaissé la mêlée,")
+    Sentence("mais tous vos suivants plus fragiles se sont fait découper par l'acier chantant des créatures célestes...")
+    sleep(1.5)
+    Sentence("Avant de pouvoir lancer une série d'ordres, deux silhouettes d'or et de sang se dressent devant vous. ")
+    Sentence("A vue d'oeil, un chef de cotterie et un déva.")
 
     skip_touch()
     narration_intro_music.fadeout(1000)
@@ -75,6 +82,7 @@ def demo():
     demofight(cotterie_stats)
     demo_deva_combat.fadeout(1000)
     sleep(1.0)
+    narration_intro_music.play(-1, 10.0)
     # combat()  # Un déva et un chef d'escouade  paladins, ennemis puissants mais nomatch pour le Dieu-roi qui les retourne
 
 

@@ -12,6 +12,7 @@ history = {
 
 
 def save(char, history):
+    # bruitage sauvgarde
     f = open("save", "wb")
     pickle.dump(char, f)
     pickle.dump(history, f)

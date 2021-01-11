@@ -35,8 +35,10 @@ Deva_stats = ["Deva", 25, 38, 15, 1.2, 250, 85, 5]
 
 
 def win_roi(enemie): #use in demo (en cas de victoire)
+    os.system("cls")
     print("Victoire !")
     print("Vous gagnez contre", enemie["nom"],".")
+    #bruitage de victoir (optinelle)
 
 
 # # permet la monter de niveau du hero
@@ -105,23 +107,32 @@ def print_objet_roi():
 
 
 def use_objet_roi() :
+    os.system("cls")
     print("objet")
     print("Vie :", Roi_demon_stats[5],"/",Roi_demon_stats[13], "Mana :", Roi_demon_stats[10], "/", Roi_demon_stats[14])
     print_objet_roi()
     Kinv = roi_demon['inv'].keys()
     Kinv_list = list(Kinv)
+    plop = len(Kinv_list) + 1
+    print(plop, "Retour")
+
     while True :
         Ninv = input("Utiliser quel objet ? :")
         if str(Ninv) == "":
             print("Choix indisponnible.")
+        elif int(Ninv) == plop:
+            menu_roi()
+            return
         else:
-            if int(Ninv) < 1 or int(Ninv) > len(index_objet):
+            if int(Ninv) < 1 or int(Ninv) > len(Kinv_list)+1:
                 print("Choix indisponnible.")
             else:
                 objet = Kinv_list[int(Ninv)-1]
                 if len(index_objet[str(objet)]) >= 2 and len(index_objet[str(objet)]) <= 4 :
+                    os.system("cls")
                     print("Vous utilisez ",objet,".")
                     if index_objet[str(objet)][2] == 1:
+                        # bruitage de heal popo
                         print("Vous gagnez ",index_objet[str(objet)][1],"Pv.")
                         Roi_demon_stats[5] += index_objet[str(objet)][1]
                         if Roi_demon_stats[5] > Roi_demon_stats[13] :
@@ -130,6 +141,7 @@ def use_objet_roi() :
                         print("Vie :", Roi_demon_stats[5],"/",Roi_demon_stats[13], "Mana :", Roi_demon_stats[10], "/", Roi_demon_stats[14])
 
                     elif index_objet[str(objet)][2] == 2:
+                        #bruitage de heal popo
                         print("Vous gagnez ",index_objet[str(objet)][1], "Pm.")
                         Roi_demon_stats[10] += index_objet[str(objet)][1]
                         if Roi_demon_stats[10] > Roi_demon_stats[14] :
@@ -140,6 +152,8 @@ def use_objet_roi() :
                         print("Vous ne pouvez pas utiliser le sceptre tout de suite.")
                         use_objet_roi()
                         return
+
+                    os.system("cls")
                     print("Utiliser un autre obejt ? :")
                     print("1. oui")
                     print("2. non")
@@ -150,6 +164,7 @@ def use_objet_roi() :
                         else:
                             if int(choix) >= 1 and int(choix) <= 2:
                                 if int(choix) == 1:
+                                    os.system("cls")
                                     use_objet_roi()
                                     return
                                 elif int(choix) == 2:
@@ -172,6 +187,7 @@ def print_equipement_roi():
 def use_equipement_wapon_roi():
     from index import index_wapone
     if roi_demon['hands']['hand1'] == None:
+        os.system("cls")
         print_equipement_roi()
         wapone = str(input("Quelle equipement :"))
         Kequipement = roi_demon['equipement'].keys()
@@ -180,11 +196,13 @@ def use_equipement_wapon_roi():
         roi_demon['hands']['hand1'] = str(wapone_equipement)
         bonus = index_wapone[str(wapone_equipement)][0]
         Roi_demon_stats[4] += bonus
+        # bruitage equipement épée
         print("Vous équipez", wapone_equipement)
         roi_demon['equipement'][str(wapone_equipement)] -= 1
         return
 
     elif roi_demon['hands']['hand1'] != None:
+        os.system("cls")
         print("Voulez vous le retirer ?")
         print("1. Oui")
         print("2. Non")
@@ -204,9 +222,11 @@ def use_equipement_wapon_roi():
 
 
 def remove_equipement_roi(wapone) :
+    os.system("cls")
     roi_demon['hands']['hand1'] = None
     Roi_demon_stats[4] = 1
     roi_demon['equipement'][str(wapone)] = 1
+    # bruitage retire equipement épée
     print("Équiper un objet à la place ?")
     print("1. Oui")
     print("2. Non")
@@ -237,6 +257,7 @@ def print_armor_roi():
 def use_equipement_armor_roi():
     from index import index_wapone
     if roi_demon['hands']['armor'] == None:
+        os.system("cls")
         print_armor_roi()
         armor = str(input("Quelle armure :"))
         Karmor = roi_demon['armor'].keys()
@@ -245,11 +266,13 @@ def use_equipement_armor_roi():
         roi_demon['hands']['armor'] = str(armor_equipement)
         bonus = index_armor[str(armor_equipement)][0]
         Roi_demon_stats[3] += bonus
+        # bruitage equipement armure
         print("Vous équipez", armor_equipement)
         roi_demon['armor'][str(armor_equipement)] += 1
         return
 
     elif roi_demon['hands']['armor'] != None:
+        os.system("cls")
         print("Voulez vous le retirer ?")
         print("1. Oui")
         print("2. Non")
@@ -272,6 +295,8 @@ def remove_armor_roi(armor) :
     Roi_demon_stats[3] = Roi_demon_stats[15]
     roi_demon['armor'][str(armor)] += 1
     roi_demon['hands']['armor'] = None
+    os.system("cls")
+    # bruitage retire equipement armure
     print("Équiper un objet à la place ?")
     print("1. Oui")
     print("2. Non")
@@ -292,6 +317,7 @@ def remove_armor_roi(armor) :
 
 
 def menu_roi() :#use in demo (entré de map et sortie de map)
+    os.system("cls")
     print("Voulez vous faire quelque chause ?")
     print("1. Inventaire")
     print("2. Sauvgarder")
@@ -303,6 +329,7 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
         else:
             if int(choix) >= 1 and int(choix) <= 3:
                 if int(choix) == 1 : #inventaire
+                    os.system("cls")
                     print(roi_demon['gold']['Argent'], "or.")
                     print("1. Objet")
                     print("2. Équipement")
@@ -314,26 +341,11 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                         else:
                             if int(choix) >= 1 and int(choix) <= 3:
                                 if int(choix) == 1:
-                                    print("Vie :", Roi_demon_stats[5],"/",Roi_demon_stats[13], "Mana :", Roi_demon_stats[10],"/",Roi_demon_stats[14])
-                                    print_objet_roi()
-                                    print("1. Utiliser un objet")
-                                    print("2. Retour")
-                                    while True:
-                                        choix = input("Choix :")
-                                        if str(choix) == "":
-                                            print("Choix indisponnible.")
-                                        else:
-                                            if int(choix) >= 1 and int(choix) <= 2:
-                                                if int(choix) == 1:
-                                                    use_objet_roi()
-                                                    menu_roi()
-                                                    return
-                                                elif int(choix) == 2:
-                                                    menu_roi()
-                                                    return
-                                            else:
-                                                print("Choix indisponnible.")
+                                    os.system("cls")
+                                    use_objet_roi()
+                                    return
                                 elif int(choix) == 2:
+                                    os.system("cls")
                                     if roi_demon['hands']['hand1'] != None:
                                         print("Vous avez", roi_demon['hands']['hand1'], "d'équipé.")
                                     if roi_demon['hands']['armor'] != None:
@@ -348,24 +360,29 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                         else:
                                             if int(choix) >= 1 and int(choix) <= 2:
                                                 if int(choix) == 1:
+                                                    os.system("cls")
                                                     use_equipement_wapon_roi()
                                                     menu_roi()
                                                     return
                                                 elif int(choix) == 2:
+                                                    os.system("cls")
                                                     use_equipement_armor_roi()
                                                     menu_roi()
                                                     return
                                                 elif int(choix) == 3:
+                                                    os.system("cls")
                                                     menu_roi()
                                                     return
                                             else:
                                                 print("Choix indisponnible.")
                                 elif int(choix) == 3:
+                                    os.system("cls")
                                     menu_roi()
                                     return
                             else:
                                 print("Choix indisponnible.")
                 elif int(choix) == 2 : #sauvgarder :
+                    os.system("cls")
                     print("Êtes vous sur de vouloir sauvegarder ?")
                     print("1. oui")
                     print("2. non")
@@ -376,6 +393,7 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                         else:
                             if int(choix) >= 1 and int(choix) <= 2:
                                 if int(choix) == 1:
+                                    os.system("cls")
                                     save(roi_demon, history)
                                     print("Voulez vous quiter ?")
                                     print("1. oui")
@@ -386,19 +404,23 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                             print("Choix indisponnible.")
                                         if int(choix) >= 1 and int(choix) <= 2:
                                             if int(choix) == 1:
+                                                os.system("cls")
                                                 titlebis()
                                                 return
                                             elif int(choix) == 2:
+                                                os.system("cls")
                                                 menu_roi()
                                                 return
                                         else:
                                             print("Choix indisponnible.")
                                 elif int(choix) == 2:
+                                    os.system("cls")
                                     menu_roi()
                                     return
                             else:
                                 print("Choix indisponnible.")
                 elif int(choix) == 3:
+                    os.system("cls")
                     return
             else:
                 print("Choix indisponnible.")
@@ -433,3 +455,4 @@ def menu_roi_sceptre() :#use in demo (utilisation quand tu dois planter un scept
     print("Utiliser un sceptre de pouvoir.")
     use_objet_roi_sceptre()
 
+menu_roi()

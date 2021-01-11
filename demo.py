@@ -34,14 +34,14 @@ def demo():
     print("")
     print("")
     print("""
-                              ██████╗ ██████╗  ██████╗ ██╗      ██████╗  ██████╗ ██╗   ██╗███████╗          
-                              ██╔══██╗██╔══██╗██╔═══██╗██║     ██╔═══██╗██╔════╝ ██║   ██║██╔════╝          
+                              ██████╗ ██████╗  ██████╗ ██╗      ██████╗  ██████╗ ██╗   ██╗███████╗
+                              ██╔══██╗██╔══██╗██╔═══██╗██║     ██╔═══██╗██╔════╝ ██║   ██║██╔════╝
                     █████╗    ██████╔╝██████╔╝██║   ██║██║     ██║   ██║██║  ███╗██║   ██║█████╗      █████╗
                     ╚════╝    ██╔═══╝ ██╔══██╗██║   ██║██║     ██║   ██║██║   ██║██║   ██║██╔══╝      ╚════╝
-                              ██║     ██║  ██║╚██████╔╝███████╗╚██████╔╝╚██████╔╝╚██████╔╝███████╗          
-                              ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝   
+                              ██║     ██║  ██║╚██████╔╝███████╗╚██████╔╝╚██████╔╝╚██████╔╝███████╗
+                              ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝
 
-                                                        Le Dieu Roi                                                                                       
+                                                        Le Dieu Roi
         """)
     sleep(11.0)
     os.system("cls")
@@ -115,18 +115,16 @@ def demo():
     print("1. Abattre les portes")
     print("2. fuir")
     print("Zazranoth :")
-    choixportes = str(input("Quel est votre choix mon seigneur ?"))
-    while choixportes != 1 or choixportes != 2:
-        if choixportes == 1:
+    Sentence("Quel est votre choix mon seigneur ?")
+    rep = str(input())
+    while rep != "1" or rep != "2":
+        if rep == "1":
             qassautportes()
-            return
-        elif choixportes == 2:
+        elif rep == "2":
             Retraite()
-            return
-        else:
-            Sentence("Vous n'avez aucune autre option mon seigneur, nous vous suivront quelle que soit votre décision.")
-
-
+        if rep != "1" or rep != "2":
+            Sentence("Malheureusement, il n'y à pas d'autres options mon seigneur.")
+        rep = str(input())
 
 
 #    - choix a faire:
@@ -160,14 +158,23 @@ def Retraite():
     Sentence("semble avoir remplacé le roi précédent, et règne sur Ljosalfer d'une main juste, ferme, et désinteressée.")
 
 def qassautportes():
+    from intro import Sentence
+    from combat import demofight
+    os.system("cls")
+    sleep(2.0)
     print(Roi_demon_stats[0])
-    Sentence("Nous ne fuiront pas, il est hors de question d'abandonner, je ne suis pas encore mort !")
+    Sentence("Nous ne fuiront pas, il est hors de question d'abandonner, je ne suis pas encore mort...")
+    sleep(1.5)
     Sentence("'Ces portes sont bardés de magie défensives, il va me falloir utiliser une puissante magie pour en venir à bout.")
-    Sentence("Ginn ! Libère moi le chemin jusqu'aux charniers les plus proches. Je vais devoir planter deux sceptres de pouvoir")
-    Sentence("pour en canaliser l'énergie!")
-    Sentence("'Bien mon Roi!' L'aide de camp réagit au quart de tour, avec le zèle qui le caractérise. Jouant de sa masse")
-    Sentence("et de son bouclier, il commence à faire le ménage sur le champ de bataille dans la direction indiquée par son")
-    Sentence("supérieur.")
+    sleep(1.5)
+    Sentence("Ginn ! Libère moi le chemin jusqu'aux charniers les plus proches.")
+    Sentence("Je vais devoir planter deux sceptres de pouvoir pour en canaliser l'énergie!")
+    skip_touch()
+    print("Ginn")
+    Sentence("'Bien mon Roi!")
+    print("")
+    Sentence("L'aide de camp réagit au quart de tour, avec le zèle qui le caractérise. Jouant de sa masse et de son bouclier, ")
+    Sentence("il commence à faire le ménage sur le champ de bataille dans la direction indiquée par son supérieur.")
 
 #      - Choix à faire, aller planter l'un des sceptres sceptre à gauche ou a droite.
 

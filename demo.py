@@ -10,7 +10,7 @@ def demo():
     from combat import demofight
     # signif1ications : nom, attaque mini, attaque max, défense, multiplicateur de dégat (arme), vie, précision, esquive
     deva_stats = ["Deva", 30, 40, 15, 1.2, 250, 85, 5]
-    cotterie_stats = ["Chef de Cotterie", 45, 55, 25, 1.2, 350, 85, 5]
+    cotterie_stats = ["Chef de Cotterie", 45, 55, 20, 1.2, 350, 85, 5]
     Sentence("Conformement au lore établi, le Roi démon ou Dieu-Roi porte le nom d'Ibliss Nizidramanii'yt.")
     print("")
     Sentence("Quel est votre nom ? Si vous souhaitez le nom lore friendly, appuyez simplement sur Entrée.")
@@ -79,12 +79,13 @@ def demo():
     demofight(deva_stats)
     os.system("cls")
     Sentence("Alors que vous veniez à peine de tuer le deva, le chef de cotterie tente de vous porter un coup épee.")
+    sleep(1.5)
     demofight(cotterie_stats)
     demo_deva_combat.fadeout(1000)
     sleep(1.0)
     os.system("cls")
     sleep(1.0)
-    narration_intro_music.play(-1, 10.0)
+    narration_intro_music.play(-1, 10)
     # fin des deux combats, si le joueur est pas mort il à pris un peu cher, hop sequence gameplay potion
     Sentence("Vous ressortez de ce combat blessé, vous trouvez judicieux de regagner de la santé avant de retourner au voir vos troupes.")
     Sentence("Par chance vous avez suffisemment de potions sur vous pour reprendre des forces.")

@@ -88,7 +88,8 @@ def demo():
     # fin des deux combats, si le joueur est pas mort il à pris un peu cher, hop sequence gameplay potion
     Sentence("Vous ressortez de ce combat blessé, vous trouvez judicieux de regagner de la santé avant de retourner au voir vos troupes.")
     Sentence("Par chance vous avez suffisemment de potions sur vous pour reprendre des forces.")
-    # integrer menu (gabriel)
+
+    menu_roi()
 
     Sentence("Dominant de toute sa hauteur le cadavre de ses ennemis, le S'rhaal entendit un cri d'alerte puissant et familier.")
     Sentence("Zazranoth, son général, et Ginn, fils du précédent et son aide de camp viennent vers lui, se mouvant dans le charnier")

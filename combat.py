@@ -1196,7 +1196,7 @@ def demo_Low_Blow(MobStats):
             return mob_hp_remaining
     elif rep == "3":
         rate = randint(1, 10)
-        if rate > 5:
+        if rate >= 5:
             print("Vous trouvez une faille dans l'armure de votre adversaire !")
             broken_armor.play()
             print("La protection de votre adversaire se fragilise !")

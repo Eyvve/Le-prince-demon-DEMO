@@ -1038,6 +1038,28 @@ def demo_action(MobStats):
 
 
 def demofight(MobStats):
+    os.system("cls")
+    sleep(0.3)
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("""
+                                 ██████╗ ██████╗ ███╗   ███╗██████╗  █████╗ ████████╗    ██╗
+                                ██╔════╝██╔═══██╗████╗ ████║██╔══██╗██╔══██╗╚══██╔══╝    ██║
+                                ██║     ██║   ██║██╔████╔██║██████╔╝███████║   ██║       ██║
+                                ██║     ██║   ██║██║╚██╔╝██║██╔══██╗██╔══██║   ██║       ╚═╝
+                                ╚██████╗╚██████╔╝██║ ╚═╝ ██║██████╔╝██║  ██║   ██║       ██╗
+                                 ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═════╝ ╚═╝  ╚═╝   ╚═╝       ╚═╝
+                """)
+    sleep(2.0)
+    os.system("cls")
     first = randint(1, 10)
     prince_life = Roi_demon_stats[5]
     mob_life = MobStats[5]

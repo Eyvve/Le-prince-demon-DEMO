@@ -9,8 +9,8 @@ from demo import *
 pygame.init()
 
 # qassautportesest()
-# demo()
-PlayGame()
+demo()
+# PlayGame()
 # About()
 # beginning()
 # choice_mode()

@@ -5,8 +5,6 @@ from roi_demon_inv import *
 from combat import *
 from intro import *
 
-demo_deva_combat.play(-1)
-
 
 def demo():
     from intro import Sentence
@@ -87,7 +85,7 @@ def demo():
     sleep(2)
     demo_deva_combat.play(-1)
     Sentence("Ils ne sont rien.")
-    sleep(8.0)
+    sleep(6.0)
     demofight(deva_stats)
     os.system("cls")
     Sentence("Alors que vous veniez à peine de tuer le deva, le chef de cotterie tente de vous porter un coup épee.")

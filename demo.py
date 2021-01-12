@@ -14,82 +14,82 @@ def demo():
     Sentence("Conformement au lore établi, le Roi démon ou Dieu-Roi porte le nom d'Ibliss Nizidramanii'yt.")
     print("")
     Sentence("Quel est votre nom ? Si vous souhaitez le nom lore friendly, appuyez simplement sur Entrée.")
-    kingsName = str(input("=> "))
-    if kingsName == "":
-        Roi_demon_stats[0] = "Ibliss"
-    else:
-        Roi_demon_stats[0] = kingsName
-    validation_sound.play()
-    sleep(2.0)
-    os.system("cls")
-    demo_intro_sound.play()
-    print("")
-    print("")
-    print("")
-    print("")
-    print("")
-    print("")
-    print("")
-    print("")
-    print("")
-    print("")
-    print("""
-                              ██████╗ ██████╗  ██████╗ ██╗      ██████╗  ██████╗ ██╗   ██╗███████╗
-                              ██╔══██╗██╔══██╗██╔═══██╗██║     ██╔═══██╗██╔════╝ ██║   ██║██╔════╝
-                    █████╗    ██████╔╝██████╔╝██║   ██║██║     ██║   ██║██║  ███╗██║   ██║█████╗      █████╗
-                    ╚════╝    ██╔═══╝ ██╔══██╗██║   ██║██║     ██║   ██║██║   ██║██║   ██║██╔══╝      ╚════╝
-                              ██║     ██║  ██║╚██████╔╝███████╗╚██████╔╝╚██████╔╝╚██████╔╝███████╗
-                              ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝
-
-                                                        Le Dieu Roi
-        """)
-    sleep(11.0)
-    os.system("cls")
-    narration_intro_music.play(-1)
-    # wind_thunder_sound.play(-1)
-    battle_sound_effect.play(-1)
-    os.system("cls")
-    print("")
-    print("")
-    Sentence("La bataille faisait rage.")
-    sleep(1.5)
-    Sentence("Les cieux étaient aussi rougeatres que le sol devant la citadelle dorée des hommes.")
-    sleep(1.5)
-    Sentence("Les corps, de différentes formes et couleurs, jonchaient le sol.")
-    sleep(1.5)
-    Sentence("Dans le flou du combat, impossible pour vous, le Dieu-roi S'rhaal, de faire le point sur la situation.")
-    skip_touch()
-    Sentence("Vous débarrassant de votre opposant d'un lourd coup de lame,")
-    Sentence("fendant du même mouvement la lourde armure et le corps du paladin, avant de lancer un long cri de ralliement.")
-    sleep(1.5)
-    Sentence("La situation des forces en présence est désastreuse.")
-    skip_touch()
-    Sentence("Les brutes ont bien encaissé la mêlée,")
-    Sentence("mais tous vos suivants plus fragiles se sont fait découper par l'acier chantant des créatures célestes...")
-    sleep(1.5)
-    Sentence("Avant de pouvoir lancer une série d'ordres, deux silhouettes d'or et de sang se dressent devant vous. ")
-    Sentence("A vue d'oeil, un chef de cotterie et un déva.")
-
-    skip_touch()
-    narration_intro_music.fadeout(1000)
-    sleep(3.0)
-    Sentence("Ils ne sont rien.")
-    demo_deva_combat.play(-1)
-    sleep(10.0)
-    demofight(deva_stats)
-    os.system("cls")
-    Sentence("Alors que vous veniez à peine de tuer le deva, le chef de cotterie tente de vous porter un coup épee.")
-    sleep(1.5)
-    demofight(cotterie_stats)
-    demo_deva_combat.fadeout(1000)
-    sleep(1.0)
-    os.system("cls")
-    sleep(1.0)
-    # fin des deux combats, si le joueur est pas mort il à pris un peu cher, hop sequence gameplay potion
-    Sentence("Vous ressortez de ce combat blessé, vous trouvez judicieux de regagner de la santé avant de retourner au voir vos troupes.")
-    sleep(1.5)
-    Sentence("Par chance vous avez suffisemment de potions sur vous pour reprendre des forces.")
-    sleep(2.0)
+    # kingsName = str(input("=> "))
+    # if kingsName == "":
+    #     Roi_demon_stats[0] = "Ibliss"
+    # else:
+    #     Roi_demon_stats[0] = kingsName
+    # validation_sound.play()
+    # sleep(2.0)
+    # os.system("cls")
+    # demo_intro_sound.play()
+    # print("")
+    # print("")
+    # print("")
+    # print("")
+    # print("")
+    # print("")
+    # print("")
+    # print("")
+    # print("")
+    # print("")
+    # print("""
+    #                           ██████╗ ██████╗  ██████╗ ██╗      ██████╗  ██████╗ ██╗   ██╗███████╗
+    #                           ██╔══██╗██╔══██╗██╔═══██╗██║     ██╔═══██╗██╔════╝ ██║   ██║██╔════╝
+    #                 █████╗    ██████╔╝██████╔╝██║   ██║██║     ██║   ██║██║  ███╗██║   ██║█████╗      █████╗
+    #                 ╚════╝    ██╔═══╝ ██╔══██╗██║   ██║██║     ██║   ██║██║   ██║██║   ██║██╔══╝      ╚════╝
+    #                           ██║     ██║  ██║╚██████╔╝███████╗╚██████╔╝╚██████╔╝╚██████╔╝███████╗
+    #                           ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝
+    #
+    #                                                     Le Dieu Roi
+    #     """)
+    # sleep(11.0)
+    # os.system("cls")
+    # narration_intro_music.play(-1)
+    # # wind_thunder_sound.play(-1)
+    # battle_sound_effect.play(-1)
+    # os.system("cls")
+    # print("")
+    # print("")
+    # Sentence("La bataille faisait rage.")
+    # sleep(1.5)
+    # Sentence("Les cieux étaient aussi rougeatres que le sol devant la citadelle dorée des hommes.")
+    # sleep(1.5)
+    # Sentence("Les corps, de différentes formes et couleurs, jonchaient le sol.")
+    # sleep(1.5)
+    # Sentence("Dans le flou du combat, impossible pour vous, le Dieu-roi S'rhaal, de faire le point sur la situation.")
+    # skip_touch()
+    # Sentence("Vous débarrassant de votre opposant d'un lourd coup de lame,")
+    # Sentence("fendant du même mouvement la lourde armure et le corps du paladin, avant de lancer un long cri de ralliement.")
+    # sleep(1.5)
+    # Sentence("La situation des forces en présence est désastreuse.")
+    # skip_touch()
+    # Sentence("Les brutes ont bien encaissé la mêlée,")
+    # Sentence("mais tous vos suivants plus fragiles se sont fait découper par l'acier chantant des créatures célestes...")
+    # sleep(1.5)
+    # Sentence("Avant de pouvoir lancer une série d'ordres, deux silhouettes d'or et de sang se dressent devant vous. ")
+    # Sentence("A vue d'oeil, un chef de cotterie et un déva.")
+    #
+    # skip_touch()
+    # narration_intro_music.fadeout(1000)
+    # sleep(3.0)
+    # Sentence("Ils ne sont rien.")
+    # demo_deva_combat.play(-1)
+    # sleep(10.0)
+    # demofight(deva_stats)
+    # os.system("cls")
+    # Sentence("Alors que vous veniez à peine de tuer le deva, le chef de cotterie tente de vous porter un coup épee.")
+    # sleep(1.5)
+    # demofight(cotterie_stats)
+    # demo_deva_combat.fadeout(1000)
+    # sleep(1.0)
+    # os.system("cls")
+    # sleep(1.0)
+    # # fin des deux combats, si le joueur est pas mort il à pris un peu cher, hop sequence gameplay potion
+    # Sentence("Vous ressortez de ce combat blessé, vous trouvez judicieux de regagner de la santé avant de retourner au voir vos troupes.")
+    # sleep(1.5)
+    # Sentence("Par chance vous avez suffisemment de potions sur vous pour reprendre des forces.")
+    # sleep(2.0)
     os.system("cls")
 
     menu_roi()
@@ -167,6 +167,7 @@ def qassautportes():
     sleep(1.5)
     Sentence("'Ces portes sont bardés de magie défensives, il va me falloir utiliser une puissante magie pour en venir à bout.")
     sleep(1.5)
+    Sentence("Zazranoth, retourne auprès des troupes, nous lançons l'assaut final.")
     Sentence("Ginn ! Libère moi le chemin jusqu'aux charniers les plus proches.")
     Sentence("Je vais devoir planter deux sceptres de pouvoir pour en canaliser l'énergie!")
     skip_touch()

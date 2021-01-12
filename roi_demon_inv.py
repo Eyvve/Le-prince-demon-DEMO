@@ -2,6 +2,8 @@ from inventaire import *
 from intro import *
 from combat import *
 from index import *
+from time import sleep
+import Music_sounds
 
 roi_demon = {
     'xp' : {
@@ -85,7 +87,7 @@ def win_roi(enemie): #use in demo (en cas de victoire)
 #     while True:
 #         choix = input("Choix :")
 #         if str(choix) == "":
-#             print("Choix indisponnible.")
+#             print("Choix indisponible.")
 #         else:
 #             if int(choix) >= 1 and int(choix) <= 2:
 #                 if int(choix) == 1:
@@ -94,7 +96,7 @@ def win_roi(enemie): #use in demo (en cas de victoire)
 #                 elif int(choix) == 2:
 #                     return
 #                 else:
-#                    print("Choix indisponnible.")
+#                    print("Choix indisponible.")
 
 
 def print_objet_roi():
@@ -119,13 +121,13 @@ def use_objet_roi() :
     while True :
         Ninv = input("Utiliser quel objet ? :")
         if str(Ninv) == "":
-            print("Choix indisponnible.")
+            print("Choix indisponible.")
         elif int(Ninv) == plop:
             menu_roi()
             return
         else:
             if int(Ninv) < 1 or int(Ninv) > len(Kinv_list)+1:
-                print("Choix indisponnible.")
+                print("Choix indisponible.")
             else:
                 objet = Kinv_list[int(Ninv)-1]
                 if len(index_objet[str(objet)]) >= 2 and len(index_objet[str(objet)]) <= 4 :
@@ -149,18 +151,19 @@ def use_objet_roi() :
                         print("")
                         print("Vie :", Roi_demon_stats[5],"/",Roi_demon_stats[13], "Mana :", Roi_demon_stats[10], "/", Roi_demon_stats[14])
                     elif index_objet[str(objet)][2] == None:
-                        print("Vous ne pouvez pas utiliser le sceptre tout de suite.")
+                        print("Vous ne pouvez pas utiliser cet objet tout de suite.")
                         use_objet_roi()
                         return
 
                     os.system("cls")
-                    print("Utiliser un autre obejt ? :")
+                    print("Utiliser un autre objet ? :")
                     print("1. oui")
                     print("2. non")
                     while True:
                         choix = input("Choix :")
+                        menu_sound.play()
                         if str(choix) == "":
-                            print("Choix indisponnible.")
+                            print("Choix indisponible.")
                         else:
                             if int(choix) >= 1 and int(choix) <= 2:
                                 if int(choix) == 1:
@@ -170,7 +173,7 @@ def use_objet_roi() :
                                 elif int(choix) == 2:
                                     return
                             else:
-                                print("Choix indisponnible.")
+                                print("Choix indisponible.")
                 else:
                     print("Ceci n'est pas un objet utilisable")
                     use_objet_roi()
@@ -189,7 +192,7 @@ def use_equipement_wapon_roi():
     if roi_demon['hands']['hand1'] == None:
         os.system("cls")
         print_equipement_roi()
-        wapone = str(input("Quelle equipement :"))
+        wapone = str(input("Quel equipement :"))
         Kequipement = roi_demon['equipement'].keys()
         Kequipement_list = list(Kequipement)
         wapone_equipement = Kequipement_list[int(wapone)-1]
@@ -203,13 +206,14 @@ def use_equipement_wapon_roi():
 
     elif roi_demon['hands']['hand1'] != None:
         os.system("cls")
-        print("Voulez vous le retirer ?")
+        print("Voulez-vous le retirer ?")
         print("1. Oui")
         print("2. Non")
         while True:
             choix = input("Choix :")
+            menu_sound.play()
             if str(choix) == "":
-                print("Choix indisponnible.")
+                print("Choix indisponible.")
             else:
                 if int(choix) >= 1 and int(choix) <= 2:
                     if int(choix) == 1:
@@ -218,7 +222,7 @@ def use_equipement_wapon_roi():
                     elif int(choix) == 2:
                         return
                 else:
-                    print("Choix indisponnible.")
+                    print("Choix indisponible.")
 
 
 def remove_equipement_roi(wapone) :
@@ -227,13 +231,14 @@ def remove_equipement_roi(wapone) :
     Roi_demon_stats[4] = 1
     roi_demon['equipement'][str(wapone)] = 1
     # bruitage retire equipement épée
-    print("Équiper un objet à la place ?")
+    print("Équiper un autre objet à la place ?")
     print("1. Oui")
     print("2. Non")
     while True:
         choix = input("Choix :")
+        menu_sound.play()
         if str(choix) == "":
-            print("Choix indisponnible.")
+            print("Choix indisponible.")
         else:
             if int(choix) >= 1 and int(choix) <= 2:
                 if int(choix) == 1:
@@ -242,7 +247,7 @@ def remove_equipement_roi(wapone) :
                 elif int(choix) == 2:
                     return
             else:
-                print("Choix indisponnible.")
+                print("Choix indisponible.")
 
 
 def print_armor_roi():
@@ -273,13 +278,14 @@ def use_equipement_armor_roi():
 
     elif roi_demon['hands']['armor'] != None:
         os.system("cls")
-        print("Voulez vous le retirer ?")
+        print("Voulez-vous le retirer ?")
         print("1. Oui")
         print("2. Non")
         while True:
             choix = input("Choix :")
+            menu_sound.play()
             if str(choix) == "":
-                print("Choix indisponnible.")
+                print("Choix indisponible.")
             else:
                 if int(choix) >= 1 and int(choix) <= 2:
                     if int(choix) == 1:
@@ -288,7 +294,7 @@ def use_equipement_armor_roi():
                     elif int(choix) == 2:
                         return
                 else:
-                    print("Choix indisponnible.")
+                    print("Choix indisponible.")
 
 
 def remove_armor_roi(armor) :
@@ -297,13 +303,14 @@ def remove_armor_roi(armor) :
     roi_demon['hands']['armor'] = None
     os.system("cls")
     # bruitage retire equipement armure
-    print("Équiper un objet à la place ?")
+    print("Équiper un autre objet à la place ?")
     print("1. Oui")
     print("2. Non")
     while True:
         choix = input("Choix :")
+        menu_sound.play()
         if str(choix) == "":
-            print("Choix indisponnible.")
+            print("Choix indisponible.")
         else:
             if int(choix) >= 1 and int(choix) <= 2:
                 if int(choix) == 1:
@@ -312,23 +319,24 @@ def remove_armor_roi(armor) :
                 elif int(choix) == 2:
                     return
             else:
-                print("Choix indisponnible.")
+                print("Choix indisponible.")
 
 
 
 def menu_roi() :#use in demo (entré de map et sortie de map)
     os.system("cls")
-    print("Voulez vous faire quelque chause ?")
+    print("Voulez-vous faire quelque chause ?")
     print("1. Inventaire")
     print("2. Sauvgarder")
     print("3. Continuer")
     while True :
         choix = input("Choix :")
         if str(choix) == "":
-            print("Choix indisponnible.")
+            print("Choix indisponible.")
         else:
             if int(choix) >= 1 and int(choix) <= 3:
                 if int(choix) == 1 : #inventaire
+                    menu_sound.play()
                     os.system("cls")
                     print(roi_demon['gold']['Argent'], "or.")
                     print("1. Objet")
@@ -336,8 +344,9 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                     print('3. Retour')
                     while True:
                         choix = input("Choix :")
+                        menu_sound.play()
                         if str(choix) == "":
-                            print("Choix indisponnible.")
+                            print("Choix indisponible.")
                         else:
                             if int(choix) >= 1 and int(choix) <= 3:
                                 if int(choix) == 1:
@@ -355,8 +364,9 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                     print("3. Retour")
                                     while True:
                                         choix = input("Choix :")
+                                        menu_sound.play()
                                         if str(choix) == "":
-                                            print("Choix indisponnible.")
+                                            print("Choix indisponible.")
                                         else:
                                             if int(choix) >= 1 and int(choix) <= 2:
                                                 if int(choix) == 1:
@@ -374,34 +384,37 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                                     menu_roi()
                                                     return
                                             else:
-                                                print("Choix indisponnible.")
+                                                print("Choix indisponible.")
                                 elif int(choix) == 3:
                                     os.system("cls")
                                     menu_roi()
                                     return
                             else:
-                                print("Choix indisponnible.")
+                                print("Choix indisponible.")
                 elif int(choix) == 2 : #sauvgarder :
+                    menu_sound.play()
                     os.system("cls")
                     print("Êtes vous sur de vouloir sauvegarder ?")
                     print("1. oui")
                     print("2. non")
                     while True:
                         choix = input("Choix :")
+                        menu_sound.play()
                         if str(choix) == "":
-                            print("Choix indisponnible.")
+                            print("Choix indisponible.")
                         else:
                             if int(choix) >= 1 and int(choix) <= 2:
                                 if int(choix) == 1:
                                     os.system("cls")
                                     save(roi_demon, history)
-                                    print("Voulez vous quiter ?")
+                                    print("Voulez vous quitter ?")
                                     print("1. oui")
                                     print("2. non")
                                     while True:
                                         choix = input("Choix :")
+                                        menu_sound.play()
                                         if str(choix) == "":
-                                            print("Choix indisponnible.")
+                                            print("Choix indisponible.")
                                         if int(choix) >= 1 and int(choix) <= 2:
                                             if int(choix) == 1:
                                                 os.system("cls")
@@ -412,18 +425,19 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                                 menu_roi()
                                                 return
                                         else:
-                                            print("Choix indisponnible.")
+                                            print("Choix indisponible.")
                                 elif int(choix) == 2:
                                     os.system("cls")
                                     menu_roi()
                                     return
                             else:
-                                print("Choix indisponnible.")
+                                print("Choix indisponible.")
                 elif int(choix) == 3:
+                    validation_sound.play()
                     os.system("cls")
                     return
             else:
-                print("Choix indisponnible.")
+                print("Choix indisponible.")
 
 def use_objet_roi_sceptre() :
     print_objet_roi()
@@ -432,7 +446,7 @@ def use_objet_roi_sceptre() :
     while True:
         Ninv = input("Utiliser quel objet ? :")
         if str(Ninv) == "":
-            print("Choix indisponnible.")
+            print("Choix indisponible.")
         else:
             if int(Ninv) >= 1 and int(Ninv) <= len(Kinv_list):
                 objet = Kinv_list[int(Ninv)-1]
@@ -446,7 +460,7 @@ def use_objet_roi_sceptre() :
                     print("Ceci n'est pas un sceptre de pouvoir")
                     use_objet_roi_sceptre()
             else:
-                print("Choix indisponnible.")
+                print("Choix indisponible.")
                 use_objet_roi_sceptre()
 
 

@@ -20,8 +20,8 @@ roi_demon = {
     },
     'inv' : {
         'sceptre de pouvoir' : 2,
-        'Potion de soin n3' : 20,
-        'Potion de mana n3' : 10,
+        'Potion de soin n°3' : 20,
+        'Potion de mana n°3' : 10,
         },
     'equipement' : {
 
@@ -106,7 +106,7 @@ def print_objet_roi():
     Kinv_list = list(Kinv)
     Iinv_list = list(Iinv)
     for n in range(len(Kinv_list)) :
-        print(n+1,Kinv_list[n],"n°:",Iinv_list[n])
+        print(n+1,Kinv_list[n],":",Iinv_list[n])
 
 
 def use_objet_roi() :

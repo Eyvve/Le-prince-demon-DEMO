@@ -130,6 +130,7 @@ def use_objet_roi() :
                 print("Choix indisponible.")
             else:
                 objet = Kinv_list[int(Ninv)-1]
+                roi_demon['inv'][str(objet)] -= 1
                 if len(index_objet[str(objet)]) >= 2 and len(index_objet[str(objet)]) <= 4 :
                     os.system("cls")
                     print("Vous utilisez ",objet,".")
@@ -171,6 +172,7 @@ def use_objet_roi() :
                                     use_objet_roi()
                                     return
                                 elif int(choix) == 2:
+                                    # menu_roi()
                                     return
                             else:
                                 print("Choix indisponible.")

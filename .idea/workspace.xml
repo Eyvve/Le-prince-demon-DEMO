@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cb49a0b-c8cc-482e-ac80-b14b99fedd06" name="Default Changelist" comment="maj ajout de contenu scénario">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/combat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roi_demon_inv.py" beforeDir="false" afterPath="$PROJECT_DIR$/roi_demon_inv.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610473893118</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="update contenu, ajout des attaques spéciales adaptées au Roi-Démon (anciennement coups bas pour le prince)">
+      <created>1610476322614</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1610476322614</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -294,6 +298,7 @@
     <MESSAGE value="maj ajout de contenu" />
     <MESSAGE value="maj ajout de contenu scénario" />
     <MESSAGE value="update contenu" />
-    <option name="LAST_COMMIT_MESSAGE" value="update contenu" />
+    <MESSAGE value="update contenu, ajout des attaques spéciales adaptées au Roi-Démon (anciennement coups bas pour le prince)" />
+    <option name="LAST_COMMIT_MESSAGE" value="update contenu, ajout des attaques spéciales adaptées au Roi-Démon (anciennement coups bas pour le prince)" />
   </component>
 </project>

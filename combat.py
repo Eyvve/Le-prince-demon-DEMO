@@ -1150,7 +1150,7 @@ def demo_Low_Blow(MobStats):
     elif rep == "2":
         rate = randint(1, 10)
         if rate > 3:
-            print("Vous mettez un grand coup de piedpar terre de manière à fendre le sol")
+            print("Vous mettez un grand coup de pied par terre de manière à fendre le sol")
             crack.play()
             print(MobStats[0], "est déséquilibré, son esquive diminue !")
             sleep(1.0)

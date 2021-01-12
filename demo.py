@@ -122,8 +122,10 @@ def demo():
     while rep != "1" or rep != "2":
         if rep == "1":
             qassautportes()
+            return
         elif rep == "2":
             Retraite()
+            return
         if rep != "1" or rep != "2":
             Sentence("Malheureusement, il n'y à pas d'autres options mon seigneur.")
         rep = str(input())

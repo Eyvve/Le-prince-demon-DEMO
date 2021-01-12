@@ -930,7 +930,7 @@ def demo_Magic_action(nivatkmag, MobStats):
                 mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
                 return mob_hp_remaining
         elif rep == "3":
-            if MobStats[10] >= 20:
+            if Roi_demon_stats[10] >= 20:
                 absorbtion_soundeffect.play()
                 Sentence("Votre corps se recouvre d'une étrange matière, elle est dure comme de l'acier.")
                 Sentence("Vous êtes plus beaucoup résistant !")

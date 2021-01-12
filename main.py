@@ -8,6 +8,7 @@ from demo import *
 
 pygame.init()
 
+# qassautportesest()
 demo()
 # PlayGame()
 # About()

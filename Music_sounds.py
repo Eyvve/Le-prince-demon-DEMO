@@ -25,7 +25,7 @@ broken_armor = pygame.mixer.Sound("music/broken_armor.ogg")
 acid_sound = pygame.mixer.Sound("music/acid.ogg")
 combat_music_2 = pygame.mixer.Sound("music/decisive_battle.ogg")
 menu_sound = pygame.mixer.Sound("music/choice_sound.ogg")
-
+quest_sound = pygame.mixer.Sound("music/quest_sound.wav")
 demo_intro_sound = pygame.mixer.Sound("music/demo_intro_sound.ogg")
 demo_deva_combat = pygame.mixer.Sound("music/deva_figght.ogg")
 king_scream = pygame.mixer.Sound("music/roi_demon_cri.ogg")

@@ -5,6 +5,10 @@ from roi_demon_inv import *
 from combat import *
 from intro import *
 
+questdone = False
+qeastdone = False
+qwestdone = False
+
 def demo():
     from intro import Sentence
     from combat import demofight
@@ -169,7 +173,7 @@ def qassautportes():
     print(Roi_demon_stats[0])
     Sentence("Nous ne fuirons pas, il est hors de question d'abandonner, je ne suis pas encore mort...")
     sleep(1.5)
-    Sentence("'Ces portes sont bardés de magie défensives, il va me falloir utiliser une puissante magie pour en venir à bout.")
+    Sentence("Ces portes sont bardées de magie défensives, il va me falloir utiliser une puissante magie pour en venir à bout.")
     sleep(1.5)
     Sentence("Zazranoth, retourne auprès des troupes, nous lançons l'assaut final.")
     Sentence("Ginn ! Libère moi le chemin jusqu'aux charniers les plus proches.")
@@ -180,110 +184,155 @@ def qassautportes():
     print("")
     Sentence("L'aide de camp réagit au quart de tour, avec le zèle qui le caractérise. Jouant de sa masse et de son bouclier, ")
     Sentence("il commence à faire le ménage sur le champ de bataille dans la direction indiquée par son supérieur.")
+    print("")
+    quest_sound.play()
+    print("Quête ajoutée : planter un sceptre sur chaque position est et ouest des portes !")
+    skip_touch()
 
 #      - Choix à faire, aller planter l'un des sceptres sceptre à gauche ou a droite.
 
 def qassautportesest():
-    Sentence("Précédé par son serviteur, le S'rhaal se dirige vers l'est des portes, esquivant les groupes de combattants")
-    Sentence("emprunts de furie, profitant du chaos. Devant un amas de corps sans vie, humains comme démons, assurément")
-    Sentence("fauchés là par l'un des sorts favoris et reconnaissable de Seraphos, le maître sorcier et général en second de")
-    Sentence("son armée. Voilà que ce vieux fou allait pour une fois lui faciliter la tâche. Connectant directement les")
-    Sentence("filaments encore perceptibles de magie destructrice, il les attacha à son sceptre, tissant un catalyseur avant")
-    Sentence("de l'enfoncer profondément dans le sol. Surpris par le fracas du métal juste derrière lui, le Roi-Dieu se retourne,")
-    Sentence("juste à temps pour voir son second repousser un assaut de plusieurs humains d'un vaste mouvment de bouclier.")
-
+    from intro import Sentence
+    if qeastdone == True and qwestdone == False:
+        os.system("cls")
+        Sentence("Vous n'avez plus rien à faire ici, vous devriez aller planter l'autre sceptre.")
+        skip_touch()
+        print("")
+        print("Retour à la porte")
+        sleep(1.5)
+        assautportes()
+        return
+    elif qeastdone == False:
+        os.system("cls")
+        Sentence("Précédé par votre serviteur, vous vous dirigez vers l'est des portes, ")
+        Sentence("esquivant les groupes de combattants emprunts de furie, profitant du chaos.")
+        sleep(1.5)
+        Sentence("Devant un amas de corps sans vie, humains comme démons,")
+        Sentence("assurément fauchés là par l'un des sorts favoris et reconnaissable de Seraphos,")
+        Sentence("le maître sorcier et général en second de votre armée.")
+        os.system("cls")
+        print(Roi_demon_stats[0])
+        Sentence("Voilà que ce vieux fou me facilite la tâche pour une fois. Je ne pense pas pouvoir me faire surprendre par une attaque ici.")
+        if qwestdone == True:
+            Sentence("Plantons le second sceptre.")
+        elif qwestdone == False:
+            Sentence("Plantons le premier sceptre.")
+        menu_roi_sceptre()
+        Sentence("Connectant directement les filaments encore perceptibles de magie destructrice, il les attacha à son sceptre, ")
+        Sentence("tissant un catalyseur avant de l'enfoncer profondément dans le sol.")
+        sleep(1.5)
+        Sentence("Surpris par le fracas du métal juste derrière vous, lvous vous retournez brusquement,")
+        Sentence("juste à temps pour voir votre second repousser un assaut de plusieurs humains d'un vaste mouvment de bouclier.")
+        skip_touch()
+        if qwestdone == True:
+            Sentence("Le second sceptre est en place ! On bouge, et repousse moi ces vermisseaux! On à une por ")
+            Sentence("Assuré par un échange de regard que son second a bien entendu les ordres et se met en marche.")
+        elif qwestdone == False:
+            os.system("cls")
+            print(Roi_demon_stats[0])
+            Sentence("Le premier sceptre est en place ! On bouge, et repousse moi ces vermisseaux! ")
+            Sentence("Assuré par un échange de regard que son second a bien entendu les ordres et se met en marche.")
 # Si assautportesouest() pas déjà fait, passer à assautportesest(). Si déjà fait, passer à assautportes()
     Sentence("'Le premier sceptre est en place ! On bouge, et repousse moi ces vermisseaux!' Assuré par un échange de regard")
     Sentence("que son second a bien entendu les ordres et se met en marche.")
 
 def assautportesouest():
-    Sentence("Naviguant entre les amoncellements de corps, hurlant parmis les cris, glissant sur les flaques de sang et les")
-    Sentence("morceaux de métal, le duo arrive au point ouest des portes, ou la lumière du soleil couchant se reflétant contre")
-    Sentence("les portes métalliques donnait à la scène une lumière saisissante. Sans se laisser émouvoir ou perdre de temps")
-    Sentence("le Roi-Dieu se lança dans une incantation complexe, attirant les énergies macabres de l'endroit, les scellant")
-    Sentence("autour du sceptre avant de le ficher profondément dans le sol, brisant un pavé au passage. Sortant de sa")
-    Sentence("concentration, il prit un instant pour observer Ginn, se battant tout en ordonnant aux soldats proche de se")
-    Sentence("mettre en formation pour le protéger pendant le lancement de son sort. Son père avait de quoi être fier.")
-    Sentence("Quoique issu d'une liaison bâtarde, ce jeune montrait des talents évidents et était promis à une belle carrière")
-    Sentence("C'est pour lui et sa génération qu'il s'était lancé dans cette guerre. Au millieu du fracas des armes, il pris")
-    Sentence("le temps de glisser une pensée pour son fils, vieux de quelques jours à peine. Heureux serait-il s'il pouvait être")
-    Sentence("aussi fier de son enfant que Zaz du sien. Un hurlement morbide tira le vieux démon de sa rêverie, et il en profita")
-    Sentence("pour se secouer. 'Ginn! C'est bon pour toi ? On se bouge là!'")
+    from intro import Sentence
+    if qwestdone == False:
+        os.system("cls")
+        Sentence("Naviguant entre les amoncellements de corps, hurlant parmis les cris, glissant sur les flaques de sang et les")
+        Sentence("morceaux de métal, le duo arrive au point ouest des portes, ou la lumière du soleil couchant se reflétant contre")
+        Sentence("les portes métalliques donnait à la scène une lumière saisissante. Sans se laisser émouvoir ou perdre de temps")
+        Sentence("le Roi-Dieu se lança dans une incantation complexe, attirant les énergies macabres de l'endroit, les scellant")
+        Sentence("autour du sceptre avant de le ficher profondément dans le sol, brisant un pavé au passage. Sortant de sa")
+        Sentence("concentration, il prit un instant pour observer Ginn, se battant tout en ordonnant aux soldats proche de se")
+        Sentence("mettre en formation pour le protéger pendant le lancement de son sort. Son père avait de quoi être fier.")
+        Sentence("Quoique issu d'une liaison bâtarde, ce jeune montrait des talents évidents et était promis à une belle carrière")
+        Sentence("C'est pour lui et sa génération qu'il s'était lancé dans cette guerre. Au millieu du fracas des armes, il pris")
+        Sentence("le temps de glisser une pensée pour son fils, vieux de quelques jours à peine. Heureux serait-il s'il pouvait être")
+        Sentence("aussi fier de son enfant que Zaz du sien. Un hurlement morbide tira le vieux démon de sa rêverie, et il en profita")
+        Sentence("pour se secouer. 'Ginn! C'est bon pour toi ? On se bouge là!'")
 
 
 #Si assautportesest() pas déjà fait, passer à assautportesest(). Si déjà fait, passer à assautportes()
 
 
 def assautportes():
-    Sentence("C'est le moment ou jamais. Il ne sera pas écrit dans les Sombres Grimoires que le S'rhaal aura mené son peuple")
-    Sentence("à la défaite. Plantant sa lourde lame noyée de sang humain et angélique dans le sol de marbre de l'entrée de la")
-    Sentence("forteresse. Faisant fi des projectiles et du chaos, le Dieu-Roi se lança en puisant dans l'énergie des sceptres de")
-    Sentence("pouvoir dans une terrible incantation, dans une langue noire, gutturale, oubliée même des siens.")
-    Sentence("Le sol se fissura jusqu'aux grandes portes d'or, le ciel s'assombrissant, les nuages noirs tournoyant au dessus du")
-    Sentence("dernier rempart des hommes comme les charognards au dessus du champ de bataille, dans l'attente du charnier.")
-    skip_touch()
-    Sentence("Dans un grondement terrible, emplissant d'espoir le coeur de ses infâmes suivants et d'horreur celui des hommes")
-    Sentence("une lumière violacée perça la couche de nuages, et dans un fracas épouvantable, plusieurs énormes rochers noirs,")
-    Sentence("nimbés de flammes noirâtres impies, s'abattirent sur la forteresse, s'écrasant sur la batisse millénaire, l'éperonnant")
-    Sentence("en plusieurs endroits, faisant trembler le sol. Dans les décombres de la porte laissée béante sous l'impact, les")
-    Sentence("sombres et immenses silhouettes des élémentaires ainsi convoqués se redressèrent entamant de déblayer le chemin.")
-    skip_touch()
-    Sentence("Peu importe ce qu'il en coûtera. Levant son arme, le S'rhaal lança une nouvelle série d'ordre et appella à lui")
-    Sentence("sa garde personnelle, menée par Zazranoth. Il était important de profiter de l'impact, qui avait tué ou mis")
-    Sentence("en fuite la plupart des défenseurs, quand les derniers n'étaient pâs déjà aux prises avec les élémentaires ou")
-    Sentence("d'autres combattants. Poussant plus loin, dans le bâtiment en forme de nef, ne s'arrêtant pas pour admirer le")
-    Sentence("somptueux décor en pleine destruction, se laissant guider par sa logique connue de l'architecture humaine pour")
-    Sentence("atteindre le coeur de la forteresse. Sur son chemin se dressèrent des paladins, rescapés de l'impact du sort,")
-    Sentence("qui crurent bon de se jeter en travers de leur chemin, sur leurs jambes mal assurées encore tremblantes.")
-    skip_touch()
+    from intro import Sentence
+    if questdone == False:
+        os.system("cls")
+        Sentence("*Je ne peux rien faire tant que les deux ")
+    elif questdone == True:
+        os.system("cls")
+        Sentence("C'est le moment ou jamais. Il ne sera pas écrit dans les Sombres Grimoires que le S'rhaal aura mené son peuple")
+        Sentence("à la défaite. Plantant sa lourde lame noyée de sang humain et angélique dans le sol de marbre de l'entrée de la")
+        Sentence("forteresse. Faisant fi des projectiles et du chaos, le Dieu-Roi se lança en puisant dans l'énergie des sceptres de")
+        Sentence("pouvoir dans une terrible incantation, dans une langue noire, gutturale, oubliée même des siens.")
+        Sentence("Le sol se fissura jusqu'aux grandes portes d'or, le ciel s'assombrissant, les nuages noirs tournoyant au dessus du")
+        Sentence("dernier rempart des hommes comme les charognards au dessus du champ de bataille, dans l'attente du charnier.")
+        skip_touch()
+        Sentence("Dans un grondement terrible, emplissant d'espoir le coeur de ses infâmes suivants et d'horreur celui des hommes")
+        Sentence("une lumière violacée perça la couche de nuages, et dans un fracas épouvantable, plusieurs énormes rochers noirs,")
+        Sentence("nimbés de flammes noirâtres impies, s'abattirent sur la forteresse, s'écrasant sur la batisse millénaire, l'éperonnant")
+        Sentence("en plusieurs endroits, faisant trembler le sol. Dans les décombres de la porte laissée béante sous l'impact, les")
+        Sentence("sombres et immenses silhouettes des élémentaires ainsi convoqués se redressèrent entamant de déblayer le chemin.")
+        skip_touch()
+        Sentence("Peu importe ce qu'il en coûtera. Levant son arme, le S'rhaal lança une nouvelle série d'ordre et appella à lui")
+        Sentence("sa garde personnelle, menée par Zazranoth. Il était important de profiter de l'impact, qui avait tué ou mis")
+        Sentence("en fuite la plupart des défenseurs, quand les derniers n'étaient pâs déjà aux prises avec les élémentaires ou")
+        Sentence("d'autres combattants. Poussant plus loin, dans le bâtiment en forme de nef, ne s'arrêtant pas pour admirer le")
+        Sentence("somptueux décor en pleine destruction, se laissant guider par sa logique connue de l'architecture humaine pour")
+        Sentence("atteindre le coeur de la forteresse. Sur son chemin se dressèrent des paladins, rescapés de l'impact du sort,")
+        Sentence("qui crurent bon de se jeter en travers de leur chemin, sur leurs jambes mal assurées encore tremblantes.")
+        skip_touch()
 
-        # combat() #Combat contre des chefs de côterie. top 1 ou 2 des ennemis humains mais nomatch pour le Roi-démon
+            # combat() #Combat contre des chefs de côterie. top 1 ou 2 des ennemis humains mais nomatch pour le Roi-démon
 
-    Sentence("Une fois ces géneurs désespérés écartés, le Roi et sa garde continuèrent leur route. En passant devant un hall")
-    Sentence("Zazranoth les arrêta pour leur faire observer d'étrange dispositifs, espèces d'immenses harnais, cages, et ce")
-    Sentence("qui ressemblait à du matériel de geolier. A la différence près que tout ce attirail avait une taille suffisante")
-    Sentence("pour restreindre les mouvements d'une créature au moins grosse comme une hydre, voire plus pour certaines pièces")
-    Sentence("Ginn pris la parole d'un ton consterné pour exprimer ce que toute la petite escouade ressentait devant ce spectacle")
-    Sentence("Ca a l'air vrai quand on à ça sous les yeux... Ils veulent vraiment s'en prendre a des dragons. Soit pour leur")
-    Sentence("pouvoir soit pour autre chose... D'un claquement de doigt, Zazranoth rappelle la petite troupe à l'ordre, et")
-    Sentence("le groupe de démons armés jusqu'aux dents reprit sa route en silence, l'esprit troublé par ce spectacle.")
-    skip_touch()
+        Sentence("Une fois ces géneurs désespérés écartés, le Roi et sa garde continuèrent leur route. En passant devant un hall")
+        Sentence("Zazranoth les arrêta pour leur faire observer d'étrange dispositifs, espèces d'immenses harnais, cages, et ce")
+        Sentence("qui ressemblait à du matériel de geolier. A la différence près que tout ce attirail avait une taille suffisante")
+        Sentence("pour restreindre les mouvements d'une créature au moins grosse comme une hydre, voire plus pour certaines pièces")
+        Sentence("Ginn pris la parole d'un ton consterné pour exprimer ce que toute la petite escouade ressentait devant ce spectacle")
+        Sentence("Ca a l'air vrai quand on à ça sous les yeux... Ils veulent vraiment s'en prendre a des dragons. Soit pour leur")
+        Sentence("pouvoir soit pour autre chose... D'un claquement de doigt, Zazranoth rappelle la petite troupe à l'ordre, et")
+        Sentence("le groupe de démons armés jusqu'aux dents reprit sa route en silence, l'esprit troublé par ce spectacle.")
+        skip_touch()
 
-          #Moment d'inventaire ou le roi récupère un de ces objets pour l'étudier plus tard
+              #Moment d'inventaire ou le roi récupère un de ces objets pour l'étudier plus tard
 
-    Sentence("Ils finirent par arriver au centre de la place forte, au coeur du pouvoir des humains. La grande porte de la")
-    Sentence("salle du trône déjà éventrée, avec parmi les décombres un nombre de cadavres humains trop grand pour avoir")
-    Sentence("été le fait de bataille. Des cadavres disposés en ordre précis si l'on excepte la chutes des la maçonnerie")
-    Sentence("Ginn s'approcha de l'un d'eux et le tâta du bout de la botte. Mort, mais pas trace de blessure. Tous.")
-    Sentence("Y'a comme un truc bizarre.... Sa phrase resta en suspens, pendant qu'il observait une longue lance de lumière")
-    Sentence("fichée dans son torse. La bouche ouverte, l'aide de camp leva les yeux vers son roi, le regard empli de surprise.")
-    skip_touch()
-    Sentence("Au moment ou son corps heurta la sol, une lumière blanche éclatante se fit dans la salle du trône dévastée.")
-    skip_touch()
-    Sentence("Devant le trône se tenait un très jeune homme, à peine sorti de l'enfance. A première vue il semblait humain,")
-    Sentence("mais en y regardant de plus près, sa peau d'albâtre avait des reflets métalliques, et sa chevelure d'or flottait")
-    Sentence("comme au vent, alors qu'il n'y avait pas une brise dans la bâtisse enfoncée. Ses yeux semblables à des miroirs")
-    Sentence("d'argent poli n'exprimaient rien. Levant une main qui tenait l'épée reconnaissable de la famille royale des humains")
-    Sentence("le jeune homme déploya trois paires d'ailes enflammées et dit avec un ton posé, d'une voix venant d'un autre monde.")
-    skip_touch()
-    Sentence("'Vos exactions s'arrêtent ici. Nul ne mettra en péril l'avenir de de l'humanité.' D'un geste de la main, il projetta")
-    Sentence("des vagues de lumière qui réduisirent en poussière la quasi-totalité de la garde du S'rhaal. Ce derier, conscient")
-    Sentence("de faire face à une menace inconnue, échangea un regard avec son général. Quoi qu'il arrive, tout était prévu.")
-    skip_touch()
+        Sentence("Ils finirent par arriver au centre de la place forte, au coeur du pouvoir des humains. La grande porte de la")
+        Sentence("salle du trône déjà éventrée, avec parmi les décombres un nombre de cadavres humains trop grand pour avoir")
+        Sentence("été le fait de bataille. Des cadavres disposés en ordre précis si l'on excepte la chutes des la maçonnerie")
+        Sentence("Ginn s'approcha de l'un d'eux et le tâta du bout de la botte. Mort, mais pas trace de blessure. Tous.")
+        Sentence("Y'a comme un truc bizarre.... Sa phrase resta en suspens, pendant qu'il observait une longue lance de lumière")
+        Sentence("fichée dans son torse. La bouche ouverte, l'aide de camp leva les yeux vers son roi, le regard empli de surprise.")
+        skip_touch()
+        Sentence("Au moment ou son corps heurta la sol, une lumière blanche éclatante se fit dans la salle du trône dévastée.")
+        skip_touch()
+        Sentence("Devant le trône se tenait un très jeune homme, à peine sorti de l'enfance. A première vue il semblait humain,")
+        Sentence("mais en y regardant de plus près, sa peau d'albâtre avait des reflets métalliques, et sa chevelure d'or flottait")
+        Sentence("comme au vent, alors qu'il n'y avait pas une brise dans la bâtisse enfoncée. Ses yeux semblables à des miroirs")
+        Sentence("d'argent poli n'exprimaient rien. Levant une main qui tenait l'épée reconnaissable de la famille royale des humains")
+        Sentence("le jeune homme déploya trois paires d'ailes enflammées et dit avec un ton posé, d'une voix venant d'un autre monde.")
+        skip_touch()
+        Sentence("'Vos exactions s'arrêtent ici. Nul ne mettra en péril l'avenir de de l'humanité.' D'un geste de la main, il projetta")
+        Sentence("des vagues de lumière qui réduisirent en poussière la quasi-totalité de la garde du S'rhaal. Ce derier, conscient")
+        Sentence("de faire face à une menace inconnue, échangea un regard avec son général. Quoi qu'il arrive, tout était prévu.")
+        skip_touch()
 
-          #combat contre le roi des humains (dans lequel est catalysé le pouvoir d'un ange majeur. le Roi-Dieu perd.)
+              #combat contre le roi des humains (dans lequel est catalysé le pouvoir d'un ange majeur. le Roi-Dieu perd.)
 
-    Sentence("Terrassé par la puissance de cet être inconnu, malgré sa force maudite jusque là inégalée et ses incantations")
-    Sentence("les plus secrètes, le Roi-Dieu se rend rapidement à l'évidence, il est vaincu. Après une petite pensée pour son")
-    Sentence("fils nouveau-né, et un regard au corps du fils de son ami, raisons pour laquelle il a voulu changer ce monde,")
-    Sentence("il aggrippe sa lame, et dans un dernier effort,mortellement blessé et couvert de honte d'abandonner ainsi")
-    Sentence(" les siens ainsi que leur rêve de liberté et de grangeur, et lança son sort de téléportation")
-    skip_touch()
+        Sentence("Terrassé par la puissance de cet être inconnu, malgré sa force maudite jusque là inégalée et ses incantations")
+        Sentence("les plus secrètes, le Roi-Dieu se rend rapidement à l'évidence, il est vaincu. Après une petite pensée pour son")
+        Sentence("fils nouveau-né, et un regard au corps du fils de son ami, raisons pour laquelle il a voulu changer ce monde,")
+        Sentence("il aggrippe sa lame, et dans un dernier effort,mortellement blessé et couvert de honte d'abandonner ainsi")
+        Sentence(" les siens ainsi que leur rêve de liberté et de grangeur, et lança son sort de téléportation")
+        skip_touch()
 
-          #petit écran de fin de démo
+              #petit écran de fin de démo
 
-    Sentence("Jusque des siècles plus tard, les hommes se rappellent cet évènement comme la Bataille de la Couronne, ou pour")
-    Sentence("défaire le puissant Roi-dieu des démons, ils ont du procéder à un terrible sacrifice mené par le Roi lui-même")
-    Sentence("afin de bénir son fils héritier de la présence d'un ange véritable. Depuis ces jours, celui que l'on nomme ")
-    Sentence("'Le Prince en Blanc', veille sur le destin des hommes, alors que les démons eux, ne sont plus.")
+        Sentence("Jusque des siècles plus tard, les hommes se rappellent cet évènement comme la Bataille de la Couronne, ou pour")
+        Sentence("défaire le puissant Roi-dieu des démons, ils ont du procéder à un terrible sacrifice mené par le Roi lui-même")
+        Sentence("afin de bénir son fils héritier de la présence d'un ange véritable. Depuis ces jours, celui que l'on nomme ")
+        Sentence("'Le Prince en Blanc', veille sur le destin des hommes, alors que les démons eux, ne sont plus.")
 

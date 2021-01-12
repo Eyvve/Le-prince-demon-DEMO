@@ -11,7 +11,6 @@ demo_deva_combat.play(-1)
 def demo():
     from intro import Sentence
     from combat import demofight
-    demo_deva_combat.play(-1)
     # cotterie_stats = ["Chef de Cotterie", 45, 55, 20, 1.2, 350, 85, 5]
     # demofight(cotterie_stats)
     # signif1ications : nom, attaque mini, attaque max, défense, multiplicateur de dégat (arme), vie, précision, esquive

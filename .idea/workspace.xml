@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9cb49a0b-c8cc-482e-ac80-b14b99fedd06" name="Default Changelist" comment="ajout du choix + dialogues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music_sounds.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music_sounds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roi_demon_inv.py" beforeDir="false" afterPath="$PROJECT_DIR$/roi_demon_inv.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610401912496</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="correction des fautes d'orthographe roi_demon_inv + ajout des bruitages de menu (sauf equipement et objets)">
+      <created>1610441228573</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1610441228573</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,6 +191,7 @@
     <MESSAGE value="mhp" />
     <MESSAGE value="ajout du choix" />
     <MESSAGE value="ajout du choix + dialogues" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout du choix + dialogues" />
+    <MESSAGE value="correction des fautes d'orthographe roi_demon_inv + ajout des bruitages de menu (sauf equipement et objets)" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction des fautes d'orthographe roi_demon_inv + ajout des bruitages de menu (sauf equipement et objets)" />
   </component>
 </project>

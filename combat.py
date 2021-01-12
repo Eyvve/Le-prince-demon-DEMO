@@ -1137,10 +1137,13 @@ def demo_Low_Blow(MobStats):
         rate = randint(1, 10)
         if rate > 3:
             print("Vous déchainez votre pouvoir, faisant s'envoler les débris au sol !")
-            sand_low_blow.play()
+            seism_sound.play()
+            sleep(0.5)
+            king_scream.play()
+            sleep(0.5)
             print("Cela aveugle partiellement votre adversaire. " + MobStats[0] + " est moins précis !")
             sleep(1.0)
-            MobStats[6] = MobStats[6] - 15
+            MobStats[6] = MobStats[6] + 5
             mob_hp_remaining = MobStats[5]
             return mob_hp_remaining
         else:
@@ -1151,10 +1154,13 @@ def demo_Low_Blow(MobStats):
         rate = randint(1, 10)
         if rate > 3:
             print("Vous mettez un grand coup de pied par terre de manière à fendre le sol")
+            seism_sound.play()
+            sleep(0.3)
             crack.play()
+            sleep(0.3)
             print(MobStats[0], "est déséquilibré, son esquive diminue !")
             sleep(1.0)
-            MobStats[7] = MobStats[7] - 7
+            MobStats[7] = MobStats[7] - 2
             if MobStats[7] <= 0:
                 MobStats[7] = 0
                 print(MobStats[0], "ne peut plus esquiver !")
@@ -1195,10 +1201,11 @@ def demo_Low_Blow(MobStats):
             sleep(1.0)
             acid_sound.play()
             print("les dégats de l'adversaire sont réduits !")
-            MobStats[2] = MobStats[2] - 2
-            if MobStats[2] <= 0:
-                MobStats[2] = 0
+            MobStats[4] = MobStats[4] - 0.1
+            if MobStats[4] <= 1.0:
+                MobStats[4] = 1.0
                 print(MobStats[0], "voit son arme tomber en morceaux devant ses yeux !")
+                broken_weapon.play()
                 mob_hp_remaining = MobStats[5]
                 return mob_hp_remaining
             else:

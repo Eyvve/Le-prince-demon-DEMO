@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cb49a0b-c8cc-482e-ac80-b14b99fedd06" name="Default Changelist" comment="maj ajout de contenu scénario">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music_sounds.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music_sounds.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/combat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/deva_figght.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/music/deva_figght.ogg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,7 +260,21 @@
       <option name="project" value="LOCAL" />
       <updated>1610476322614</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="update contenu, ajout des attaques spéciales adaptées au Roi-Démon (anciennement coups bas pour le prince)">
+      <created>1610477560094</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1610477560094</updated>
+    </task>
+    <task id="LOCAL-00027" summary="update contenu, mise à jour des attaques spéciales adaptées au Roi-Démon (anciennement coups bas pour le prince)">
+      <created>1610477934643</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1610477934643</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,6 +316,7 @@
     <MESSAGE value="maj ajout de contenu scénario" />
     <MESSAGE value="update contenu" />
     <MESSAGE value="update contenu, ajout des attaques spéciales adaptées au Roi-Démon (anciennement coups bas pour le prince)" />
-    <option name="LAST_COMMIT_MESSAGE" value="update contenu, ajout des attaques spéciales adaptées au Roi-Démon (anciennement coups bas pour le prince)" />
+    <MESSAGE value="update contenu, mise à jour des attaques spéciales adaptées au Roi-Démon (anciennement coups bas pour le prince)" />
+    <option name="LAST_COMMIT_MESSAGE" value="update contenu, mise à jour des attaques spéciales adaptées au Roi-Démon (anciennement coups bas pour le prince)" />
   </component>
 </project>

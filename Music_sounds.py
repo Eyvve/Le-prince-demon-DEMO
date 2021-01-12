@@ -35,7 +35,7 @@ questdonesound = pygame.mixer.Sound("music/finished_quest_sound.ogg")
 king_scream = pygame.mixer.Sound("music/king_scream.ogg")
 seism_sound = pygame.mixer.Sound("music/seism.ogg")
 war_horn = pygame.mixer.Sound("music/war_horn.ogg")
-# demo_paladin_combat
+ulric_theme = pygame.mixer.Sound("music/ulric_theme.ogg")
 # demo_boss_combat
 battle_sound_effect = pygame.mixer.Sound("music/battle_sound.ogg")
 narration_intro_music = pygame.mixer.Sound("music/demo_intro_narration.ogg")

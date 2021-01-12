@@ -13,7 +13,7 @@ pygame.init()
 
 # statistiques du mob seront intégrées à chaque évènement donc dépendra de la map et de l'ennemi
 # Mob_stats = ["Fermier", 6, 9, 2, 1.0, 400, 85, 5]
-MobStats = ["Deva", 25, 38, 15, 1.2, 250, 85, 5]
+# MobStats = ["Deva", 25, 38, 15, 1.2, 250, 85, 5]
 # signif1ications : nom, attaque mini, attaque max, défense, multiplicateur de dégat (arme), vie, précision, esquive
 # King_Stats = ["Dieu-Roi", 45, 67, 25, 1.0, 400, 90, 5, 4, 0, 50, 5, 3, 400, 50]
 Prince_stats = ["Izzoth", 8, 12, 2, 1.3, 60, 90, 5, 4, 0, 40, 5, 4, 60, 40]
@@ -1064,7 +1064,7 @@ def demofight(MobStats):
     prince_life = Roi_demon_stats[5]
     mob_life = MobStats[5]
     mp = Roi_demon_stats[10]
-hp = Roi_demon_stats[5]
+    hp = Roi_demon_stats[5]
     if first < 5:
         Sentence("Vous frappez en premier !")
         print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")

@@ -936,7 +936,7 @@ def demo_Magic_action(nivatkmag, MobStats):
                 Sentence("Vous êtes plus beaucoup résistant !")
                 sleep(1.0)
                 Roi_demon_stats[10] = Roi_demon_stats[10] - 20
-                Roi_demon_stats[3] += 10
+                Roi_demon_stats[3] = Roi_demon_stats[3] + 10
                 mob_hp_remaining = MobStats[5]
                 return mob_hp_remaining
             else:

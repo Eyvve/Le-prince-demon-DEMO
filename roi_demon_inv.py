@@ -325,7 +325,7 @@ def remove_armor_roi(armor) :
 
 def menu_roi() :#use in demo (entré de map et sortie de map)
     os.system("cls")
-    print("Voulez-vous faire quelque chause ?")
+    print("Voulez-vous faire quelque chose ?")
     print("1. Inventaire")
     print("2. Sauvgarder")
     print("3. Continuer")

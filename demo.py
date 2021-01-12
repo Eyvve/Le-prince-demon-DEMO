@@ -256,11 +256,14 @@ def qassautportesest(qdone, qwest, qeast):
         Sentence("juste à temps pour voir votre second repousser un assaut de plusieurs humains d'un vaste mouvment de bouclier.")
         skip_touch()
         if qwest == True:
-            os.system("cls")
             gates_music.fadeout(1000)
+            os.system("cls")
+            print("Quête terminée: L'assaut")
+            questdonesound.play()
+            sleep(2.0)
+            os.system("cls")
             combat_music_2.play()
             print(Roi_demon_stats[0])
-            print("Quête ")
             Sentence("Le second sceptre est en place ! On bouge, et repousse moi ces vermisseaux !")
             Sentence("On à une porte à détruire et une bataille à remporter !")
             print()
@@ -344,6 +347,11 @@ def assautportesouest(qdone, qwest, qeast):
             qassautportesest(qdone, qwest, qeast)
             return qwest
         if qeast == True:
+            os.system("cls")
+            print("Quête terminée: L'assaut")
+            questdonesound.play()
+            sleep(2.0)
+            os.system("cls")
             combat_music_2.play()
             print("")
             print(Roi_demon_stats[0])
@@ -382,7 +390,6 @@ def assautportes(qdone, qwest, qeast):
                 Sentence("Impossible d'aller autre part.")
             direction = str(input())
     elif qdone == True:
-        # quête réussie
         os.system("cls")
         Sentence("C'est le moment ou jamais. Il ne sera pas écrit dans les Sombres Grimoires que le S'rhaal aura mené son peuple")
         Sentence("à la défaite. Plantant sa lourde lame noyée de sang humain et angélique dans le sol de marbre de l'entrée de la")

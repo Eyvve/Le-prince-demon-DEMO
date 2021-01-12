@@ -25,6 +25,20 @@ def Sentence(x):
             sleep(0.03)
         print('')
 
+def SentenceSlow(x):
+    lines = [x]
+
+    from time import sleep
+    import sys
+
+    for line in lines:
+        sleep(1.0)
+        for c in line:
+            print(c, end='')
+            sys.stdout.flush()
+            text_sound.play()
+            sleep(0.5)
+        print('')
 
 def title():
     import time

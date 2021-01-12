@@ -908,9 +908,9 @@ def demo_Magic_action(nivatkmag, MobStats):
                 mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
                 return mob_hp_remaining
         elif rep == "2":
-            if Roi_demon_stats[10] >= 15:
+            if Roi_demon_stats[10] >= 25:
                 absorbtion_soundeffect.play()
-                Roi_demon_stats[10] = Roi_demon_stats[10] - 15
+                Roi_demon_stats[10] = Roi_demon_stats[10] - 25
                 magic_attack = randint(25, 35)
                 print("vous absorbez", magic_attack, "dégats magiques !")
                 sleep(1.0)
@@ -1064,8 +1064,7 @@ def demofight(MobStats):
     prince_life = Roi_demon_stats[5]
     mob_life = MobStats[5]
     mp = Roi_demon_stats[10]
-    hp = Roi_demon_stats[5]
-    os.system("cls")
+hp = Roi_demon_stats[5]
     if first < 5:
         Sentence("Vous frappez en premier !")
         print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
@@ -1151,8 +1150,8 @@ def demofight(MobStats):
 def demo_Low_Blow(MobStats):
     print("1. Déchainement d'aura (précision - ) | 7 chances sur 10")
     print("2. Seisme (esquive - ) | 7 chances sur 10")
-    print("3. Brise armure (armure - )| 1 chances sur 2")
-    print("4. Oxydation (dégats - )| 1 chances sur 2")
+    print("3. Brise armure (armure - )| 1 chance sur 2")
+    print("4. Oxydation (dégats - )| 1 chance sur 2")
     print("5. retour au menu des actions")
     rep = str(input("=> "))
     if rep == "1":

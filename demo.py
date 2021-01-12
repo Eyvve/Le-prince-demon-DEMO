@@ -116,6 +116,7 @@ def demo():
     Sentence("tenter d'abattre les portes, trouver leur leader et le tuer, pour arracher la victoire,")
     Sentence("ou sonner la retraite et tenter de sauver un maximum des notres.")
     sleep(1.5)
+    print("")
     Sentence("*Fuir se résumerait à faire un aveu de faiblesse, ceci ne nous ressemble pas...*")
     Sentence("*Vaut-il vraiment mieux nous battre et risquer plus de troupes ou bien fuir quitte à perdre notre honneur ?..*")
     print("1. Abattre les portes")
@@ -180,20 +181,48 @@ def qassautportes():
     Sentence("Je vais devoir planter deux sceptres de pouvoir pour en canaliser l'énergie!")
     skip_touch()
     print("Ginn")
-    Sentence("'Bien mon Roi!")
+    Sentence("Bien mon Roi!")
     print("")
     Sentence("L'aide de camp réagit au quart de tour, avec le zèle qui le caractérise. Jouant de sa masse et de son bouclier, ")
     Sentence("il commence à faire le ménage sur le champ de bataille dans la direction indiquée par son supérieur.")
     print("")
     quest_sound.play()
-    print("Quête ajoutée : planter un sceptre sur chaque position est et ouest des portes !")
+    print("Quête ajoutée : L'assaut")
+    sleep(1.0)
+    Sentence("Objectif : planter un sceptre catalyseur sur chaque position est et ouest des portes.")
     skip_touch()
+    os.system("cls")
+    Sentence("A l'est se trouve un champ détruit par les combats, il ne devrait pas contenir beaucoup d'ennemis.")
+    Sentence("A l'ouest se trouve une vieille tour de garde, il vaut mieux s'attendre à une confontation.")
+    print("")
+    print("""Ou souhaitez vous aller en premier ?
+    
+ 1. Champ abandonné (est)
+ 2. Vieille tour de garde (ouest)
+ 3. Grande porte de la citadelle
+ 
+    """)
+    direction = str(input("=> "))
+    while direction != "1" or direction != "2" or direction != "3":
+        if direction == "1":
+            qassautportesest()
+            return
+        elif direction == "2":
+            assautportesouest()
+            return
+        elif direction == "3":
+            assautportes()
+            return
+        if direction != "1" or direction != "2" or direction != "3":
+            Sentence("Impossible d'aller autre part.")
+        direction = str(input())
+
 
 #      - Choix à faire, aller planter l'un des sceptres sceptre à gauche ou a droite.
 
 def qassautportesest():
     from intro import Sentence
-    if qeastdone == True and qwestdone == False:
+    if qeastdone == True:
         os.system("cls")
         Sentence("Vous n'avez plus rien à faire ici, vous devriez aller planter l'autre sceptre.")
         skip_touch()
@@ -210,6 +239,7 @@ def qassautportesest():
         Sentence("Devant un amas de corps sans vie, humains comme démons,")
         Sentence("assurément fauchés là par l'un des sorts favoris et reconnaissable de Seraphos,")
         Sentence("le maître sorcier et général en second de votre armée.")
+        skip_touch()
         os.system("cls")
         print(Roi_demon_stats[0])
         Sentence("Voilà que ce vieux fou me facilite la tâche pour une fois. Je ne pense pas pouvoir me faire surprendre par une attaque ici.")
@@ -225,19 +255,45 @@ def qassautportesest():
         Sentence("juste à temps pour voir votre second repousser un assaut de plusieurs humains d'un vaste mouvment de bouclier.")
         skip_touch()
         if qwestdone == True:
-            Sentence("Le second sceptre est en place ! On bouge, et repousse moi ces vermisseaux! On à une por ")
-            Sentence("Assuré par un échange de regard que son second a bien entendu les ordres et se met en marche.")
+            os.system("cls")
+            print(Roi_demon_stats[0])
+            print("Quête ")
+            Sentence("Le second sceptre est en place ! On bouge, et repousse moi ces vermisseaux !")
+            Sentence("On à une porte à détruire et une bataille à remporter !")
+            print()
+            Sentence("Après vous être assuré par un échange de regard que votre second ait bien entendu les ordres,")
+            Sentence("Vous prenez la direction de la porte principale. ")
+            questdone = True
+            assautportes()
+            return questdone
         elif qwestdone == False:
             os.system("cls")
             print(Roi_demon_stats[0])
-            Sentence("Le premier sceptre est en place ! On bouge, et repousse moi ces vermisseaux! ")
-            Sentence("Assuré par un échange de regard que son second a bien entendu les ordres et se met en marche.")
+            Sentence("Le premier sceptre est en place ! On bouge, et repousse moi ces vermisseaux !")
+            Sentence("On part pour l'emplacement ouest !")
+            print()
+            Sentence("Après vous être assuré par un échange de regard que votre second ait bien entendu les ordres,")
+            Sentence("Vous prenez la direction du second emplacement. ")
+            qeastdone = True
+            assautportesouest()
+            return qeastdone
+
+
 # Si assautportesouest() pas déjà fait, passer à assautportesest(). Si déjà fait, passer à assautportes()
     Sentence("'Le premier sceptre est en place ! On bouge, et repousse moi ces vermisseaux!' Assuré par un échange de regard")
     Sentence("que son second a bien entendu les ordres et se met en marche.")
 
 def assautportesouest():
     from intro import Sentence
+    if qwestdone == True:
+        os.system("cls")
+        Sentence("Vous n'avez plus rien à faire ici, vous devriez aller planter l'autre sceptre.")
+        skip_touch()
+        print("")
+        print("Retour à la porte")
+        sleep(1.5)
+        assautportes()
+        return
     if qwestdone == False:
         os.system("cls")
         Sentence("Naviguant entre les amoncellements de corps, hurlant parmis les cris, glissant sur les flaques de sang et les")
@@ -261,7 +317,26 @@ def assautportes():
     from intro import Sentence
     if questdone == False:
         os.system("cls")
-        Sentence("*Je ne peux rien faire tant que les deux ")
+        Sentence("*Je ne peux rien faire tant que les deux sceptres ne sont pas plantés*")
+        skip_touch()
+        print("")
+        print("""Ou souhaitez vous aller  ?
+
+        1. Champ abandonné (est)
+        2. Vieille tour de garde (ouest)
+
+           """)
+        direction = str(input("=> "))
+        while direction != "1" or direction != "2":
+            if direction == "1":
+                qassautportesest()
+                return
+            elif direction == "2":
+                assautportesouest()
+                return
+            if direction != "1" or direction != "2":
+                Sentence("Impossible d'aller autre part.")
+            direction = str(input())
     elif questdone == True:
         os.system("cls")
         Sentence("C'est le moment ou jamais. Il ne sera pas écrit dans les Sombres Grimoires que le S'rhaal aura mené son peuple")

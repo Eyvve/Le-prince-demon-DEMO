@@ -933,7 +933,7 @@ def demo_Magic_action(nivatkmag, MobStats):
             if Roi_demon_stats[10] >= 20:
                 absorbtion_soundeffect.play()
                 Sentence("Votre corps se recouvre d'une étrange matière, elle est dure comme de l'acier.")
-                Sentence("Vous êtes plus beaucoup résistant !")
+                Sentence("Vous êtes beaucoup plus résistant !")
                 sleep(1.0)
                 Roi_demon_stats[10] = Roi_demon_stats[10] - 20
                 Roi_demon_stats[3] = Roi_demon_stats[3] + 10

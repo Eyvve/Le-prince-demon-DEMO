@@ -990,7 +990,8 @@ def demo_action(MobStats):
     Sentence("A votre tour :")
     print("1. Attaquer")
     print("2. Magie")
-    print("3. Fuite")
+    print("3. Attaque spéciale")
+    print("4. éviter le combat")
     rep = str(input("=> "))
     if rep == "1":
         Sentence("Vous attaquez !")
@@ -1009,12 +1010,14 @@ def demo_action(MobStats):
             print("vous ratez votre attaque !")
             degats = MobStats[5]
             return degats
-
     elif rep == "2":
         Sentence("Vous concentrez votre mana")
         degats = demo_Magic_action(Roi_demon_stats[12], MobStats)
         return degats
     elif rep == "3":
+        degats = demo_Low_Blow(MobStats)
+        return degats
+    elif rep == "4":
         Sentence("Pensez vous que la fuite est digne du roi des démons ?")
         sleep(1.5)
         os.system("cls")
@@ -1121,3 +1124,101 @@ def demofight(MobStats):
                 # fonction défaite avec tp au sancturaire des démons
                 victoire = False
                 return victoire
+
+
+def demo_Low_Blow(MobStats):
+    print("1. Sable dans les yeux (précision - ) | 7 chances sur 10")
+    print("2. Seisme (esquive - ) | 7 chances sur 10")
+    print("3. Brise armure (armure - )| 1 chances sur 2")
+    print("4. Liquide corrosif (dégats - )| 1 chances sur 2")
+    print("5. retour au menu des actions")
+    rep = str(input("=> "))
+    if rep == "1":
+        rate = randint(1, 10)
+        if rate > 3:
+            print("Vous vous placez efficacement devant " + MobStats[0] + " et vous jetez une poignée de sable dans les yeux !")
+            sand_low_blow.play()
+            print("Cela l'aveugle partiellement. " + MobStats[0] + " est moins précis !")
+            sleep(1.0)
+            MobStats[6] = MobStats[6] - 15
+            mob_hp_remaining = MobStats[5]
+            return mob_hp_remaining
+        else:
+            print("Raté")
+            mob_hp_remaining = MobStats[5]
+            return mob_hp_remaining
+    elif rep == "2":
+        rate = randint(1, 10)
+        if rate > 3:
+            print("Vous mettez un grand coup de piedpar terre de manière à fendre le sol")
+            crack.play()
+            print(MobStats[0], "est déséquilibré, son esquive diminue !")
+            sleep(1.0)
+            MobStats[7] = MobStats[7] - 7
+            if MobStats[7] <= 0:
+                MobStats[7] = 0
+                print(MobStats[0], "ne peut plus esquiver !")
+                mob_hp_remaining = MobStats[5]
+                return mob_hp_remaining
+            else:
+                mob_hp_remaining = MobStats[5]
+                return mob_hp_remaining
+        else:
+            print("Raté")
+            mob_hp_remaining = MobStats[5]
+            return mob_hp_remaining
+    elif rep == "3":
+        rate = randint(1, 10)
+        if rate > 5:
+            print("Vous trouvez une faille dans la défense de votre adversaire !")
+            broken_armor.play()
+            print("La protection de votre adversaire se fragilise !")
+            sleep(1.0)
+            MobStats[3] = MobStats[3] - 4
+            if MobStats[3] <= 0:
+                MobStats[3] = 0
+                print(MobStats[0], "voit sa seule protection partir en morceaux !")
+                sleep(1.0)
+                mob_hp_remaining = MobStats[5]
+                return mob_hp_remaining
+            else:
+                mob_hp_remaining = MobStats[5]
+                return mob_hp_remaining
+        else:
+            print("Raté")
+            mob_hp_remaining = MobStats[5]
+            return mob_hp_remaining
+    elif rep == "4":
+        rate = randint(1, 10)
+        if rate > 5:
+            print("vous profitez du moment parfait pour verser un liquide corrosif sur l'arme de l'adversaire !")
+            sleep(1.0)
+            acid_sound.play()
+            print("les dégats de l'adversaire sont réduits !")
+            MobStats[2] = MobStats[2] - 2
+            if MobStats[2] <= 0:
+                MobStats[2] = 0
+                print(MobStats[0], "voit son arme fondre devant ses yeux !")
+                mob_hp_remaining = MobStats[5]
+                return mob_hp_remaining
+            else:
+                mob_hp_remaining = MobStats[5]
+                return mob_hp_remaining
+        else:
+            print("Raté")
+            mob_hp_remaining = MobStats[5]
+            return mob_hp_remaining
+    elif rep == "5":
+        os.system("cls")
+        print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+        print("                                                                 Mana :", Roi_demon_stats[10])
+        mob_hp_remaining = demo_action(MobStats)
+        return mob_hp_remaining
+    else:
+        print("veuillez entrer un chiffre valide")
+        sleep(1.5)
+        os.system("cls")
+        print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+        print("                                                                 Mana :", Roi_demon_stats[10])
+        mob_hp_remaining = demo_Low_Blow(MobStats)
+    return mob_hp_remaining

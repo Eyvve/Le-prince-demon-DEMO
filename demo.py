@@ -5,9 +5,15 @@ from roi_demon_inv import *
 from combat import *
 from intro import *
 
+demo_deva_combat.play(-1)
+
+
 def demo():
     from intro import Sentence
     from combat import demofight
+    demo_deva_combat.play(-1)
+    cotterie_stats = ["Chef de Cotterie", 45, 55, 20, 1.2, 350, 85, 5]
+    demofight(cotterie_stats)
     # signif1ications : nom, attaque mini, attaque max, défense, multiplicateur de dégat (arme), vie, précision, esquive
     deva_stats = ["Deva", 30, 40, 15, 1.2, 250, 85, 5]
     cotterie_stats = ["Chef de Cotterie", 45, 55, 20, 1.2, 350, 85, 5]
@@ -300,6 +306,7 @@ def qassautportesest(qdone, qwest, qeast):
             print()
             Sentence("Après vous être assuré par un échange de regard que votre second ait bien entendu les ordres,")
             Sentence("Vous prenez la direction de la porte principale. ")
+            skip_touch()
             qdone = True
             assautportes(qdone, qwest, qeast)
             return qdone
@@ -349,8 +356,8 @@ def assautportesouest(qdone, qwest, qeast):
         Sentence("où la lumière du soleil couchant se reflétant contre les portes métalliques donnait à la scène une lumière saisissante. ")
         sleep(1.5)
         Sentence("Sans vous laisser émouvoir ou perdre de temps, ")
-        Sentence("vous vous lancez dans une incantation complexe attirant les énergies macabres de l'endroit")
-        Sentence(", les scellant autour du sceptre avant de le ficher profondément dans le sol, brisant le sol au passage. ")
+        Sentence("vous vous lancez dans une incantation complexe attirant les énergies macabres de l'endroit,")
+        Sentence("les scellant autour du sceptre avant de le ficher profondément dans le sol, brisant le sol au passage. ")
         skip_touch()
         gates_music.fadeout(1500)
         os.system("cls")
@@ -361,9 +368,11 @@ def assautportesouest(qdone, qwest, qeast):
         sleep(1.5)
         Sentence("Son père avait de quoi être fier.")
         sleep(1.5)
+        print("")
         Sentence("Quoique issu d'une liaison bâtarde, ce jeune montrait des talents évidents et était promis à une belle carrière.")
         Sentence("C'est pour lui et sa génération qu'il s'était lancé dans cette guerre. ")
         sleep(1.5)
+        print("")
         Sentence("Au millieu du fracas des armes, vous prenez le temps de glisser une pensée pour votre fils, " + Prince_stats[0] + ",")
         Sentence("vieux de quelques jours à peine. ")
         Sentence("Tout ce que vous espérez dans l'instant est de pouvoir être aussi fier de votre enfant que Zaz du sien... ")
@@ -376,6 +385,7 @@ def assautportesouest(qdone, qwest, qeast):
         Sentence("Un hurlement morbide vous tira de votre rêverie, un autre chef de cotterie essaye de vous prendre de flanc.")
         Sentence("Ginn et son escouade ne l'avaient pas vu vous approcher.")
         Sentence("Il à l'air bien plus puissant que son confrère. Mais vous êtes bien plus rapide.")
+        sleep(2.0)
         os.system("cls")
         demofight(cotteriepui_stats)
         demo_deva_combat.fadeout(1500)
@@ -404,6 +414,7 @@ def assautportesouest(qdone, qwest, qeast):
             print(Roi_demon_stats[0])
             Sentence("Ginn! Le sceptre est planté, on y va !")
             Sentence("On à une porte à détruire et une bataille à remporter !")
+            skip_touch()
             qdone = True
             assautportes(qdone, qwest, qeast)
             return qdone

@@ -5,10 +5,6 @@ from roi_demon_inv import *
 from combat import *
 from intro import *
 
-questdone = False
-qeastdone = False
-qwestdone = False
-
 def demo():
     from intro import Sentence
     from combat import demofight
@@ -77,9 +73,9 @@ def demo():
 
     skip_touch()
     narration_intro_music.fadeout(1000)
-    sleep(3.0)
-    Sentence("Ils ne sont rien.")
+    sleep(2)
     demo_deva_combat.play(-1)
+    Sentence("Ils ne sont rien.")
     sleep(10.0)
     demofight(deva_stats)
     os.system("cls")
@@ -167,6 +163,9 @@ def Retraite():
     Sentence("semble avoir remplacé le roi précédent, et règne sur Ljosalfer d'une main juste, ferme, et désinteressée.")
 
 def qassautportes():
+    questdone = False
+    qeastdone = False
+    qwestdone = False
     from intro import Sentence
     from combat import demofight
     os.system("cls")
@@ -205,13 +204,13 @@ def qassautportes():
     direction = str(input("=> "))
     while direction != "1" or direction != "2" or direction != "3":
         if direction == "1":
-            qassautportesest()
+            qassautportesest(questdone, qeastdone, qwestdone)
             return
         elif direction == "2":
-            assautportesouest()
+            assautportesouest(questdone, qeastdone, qwestdone)
             return
         elif direction == "3":
-            assautportes()
+            assautportes(questdone, qeastdone, qwestdone)
             return
         if direction != "1" or direction != "2" or direction != "3":
             Sentence("Impossible d'aller autre part.")
@@ -220,18 +219,18 @@ def qassautportes():
 
 #      - Choix à faire, aller planter l'un des sceptres sceptre à gauche ou a droite.
 
-def qassautportesest():
+def qassautportesest(qdone, qwest, qeast):
     from intro import Sentence
-    if qeastdone == True:
+    if qeast == True:
         os.system("cls")
         Sentence("Vous n'avez plus rien à faire ici, vous devriez aller planter l'autre sceptre.")
         skip_touch()
         print("")
         print("Retour à la porte")
         sleep(1.5)
-        assautportes()
+        assautportes(qdone, qwest, qeast)
         return
-    elif qeastdone == False:
+    elif qeast == False:
         os.system("cls")
         Sentence("Précédé par votre serviteur, vous vous dirigez vers l'est des portes, ")
         Sentence("esquivant les groupes de combattants emprunts de furie, profitant du chaos.")
@@ -243,19 +242,23 @@ def qassautportesest():
         os.system("cls")
         print(Roi_demon_stats[0])
         Sentence("Voilà que ce vieux fou me facilite la tâche pour une fois. Je ne pense pas pouvoir me faire surprendre par une attaque ici.")
-        if qwestdone == True:
+        if qwest == True:
             Sentence("Plantons le second sceptre.")
-        elif qwestdone == False:
+        elif qwest == False:
             Sentence("Plantons le premier sceptre.")
         menu_roi_sceptre()
+        os.system("cls")
         Sentence("Connectant directement les filaments encore perceptibles de magie destructrice, il les attacha à son sceptre, ")
         Sentence("tissant un catalyseur avant de l'enfoncer profondément dans le sol.")
         sleep(1.5)
+        print("")
         Sentence("Surpris par le fracas du métal juste derrière vous, lvous vous retournez brusquement,")
         Sentence("juste à temps pour voir votre second repousser un assaut de plusieurs humains d'un vaste mouvment de bouclier.")
         skip_touch()
-        if qwestdone == True:
+        if qwest == True:
             os.system("cls")
+            gates_music.fadeout(1000)
+            combat_music_2.play()
             print(Roi_demon_stats[0])
             print("Quête ")
             Sentence("Le second sceptre est en place ! On bouge, et repousse moi ces vermisseaux !")
@@ -263,10 +266,11 @@ def qassautportesest():
             print()
             Sentence("Après vous être assuré par un échange de regard que votre second ait bien entendu les ordres,")
             Sentence("Vous prenez la direction de la porte principale. ")
-            questdone = True
-            assautportes()
-            return questdone
-        elif qwestdone == False:
+            qdone = True
+            assautportes(qdone, qwest, qeast)
+            return qdone
+        elif qwest == False:
+            sleep(1.5)
             os.system("cls")
             print(Roi_demon_stats[0])
             Sentence("Le premier sceptre est en place ! On bouge, et repousse moi ces vermisseaux !")
@@ -274,73 +278,111 @@ def qassautportesest():
             print()
             Sentence("Après vous être assuré par un échange de regard que votre second ait bien entendu les ordres,")
             Sentence("Vous prenez la direction du second emplacement. ")
-            qeastdone = True
-            assautportesouest()
-            return qeastdone
+            qeast = True
+            assautportesouest(qdone, qwest, qeast)
+            return qeast
 
 
 # Si assautportesouest() pas déjà fait, passer à assautportesest(). Si déjà fait, passer à assautportes()
     Sentence("'Le premier sceptre est en place ! On bouge, et repousse moi ces vermisseaux!' Assuré par un échange de regard")
     Sentence("que son second a bien entendu les ordres et se met en marche.")
 
-def assautportesouest():
+def assautportesouest(qdone, qwest, qeast):
     from intro import Sentence
-    if qwestdone == True:
+    from combat import Prince_stats
+    cotteriepui_stats = ["Chef de Cotterie", 55, 65, 20, 1.2, 400, 75, 5]
+    if qwest == True:
         os.system("cls")
         Sentence("Vous n'avez plus rien à faire ici, vous devriez aller planter l'autre sceptre.")
         skip_touch()
         print("")
         print("Retour à la porte")
         sleep(1.5)
-        assautportes()
+        assautportes(qdone, qwest, qeast)
         return
-    if qwestdone == False:
+    if qwest == False:
         os.system("cls")
-        Sentence("Naviguant entre les amoncellements de corps, hurlant parmis les cris, glissant sur les flaques de sang et les morceaux de métal,")
-        Sentence("le duo arrive au point ouest des portes, où la lumière du soleil couchant se reflétant contre")
-        Sentence("les portes métalliques donnait à la scène une lumière saisissante. ")
+        Sentence("Naviguant entre les amoncellements de corps, hurlant parmis les cris, ")
+        Sentence("glissant sur les flaques de sang et les morceaux de métal,")
+        Sentence("le duo arrive au point ouest des portes, ")
+        Sentence("où la lumière du soleil couchant se reflétant contre les portes métalliques donnait à la scène une lumière saisissante. ")
         sleep(1.5)
-        Sentence("Sans se laisser émouvoir ou perdre de temps, le Roi-Dieu se lança dans une incantation complexe,")
-        Sentence("attirant les énergies macabres de l'endroit, les scellant autour du sceptre avant de le ficher profondément dans le sol, brisant un pavé au passage. ")
+        Sentence("Sans vous laisser émouvoir ou perdre de temps, ")
+        Sentence("vous vous lancez dans une incantation complexe attirant les énergies macabres de l'endroit")
+        Sentence(", les scellant autour du sceptre avant de le ficher profondément dans le sol, brisant le sol au passage. ")
         skip_touch()
-        Sentence("Sortant de sa concentration, il prit un instant pour observer Ginn, ")
-        Sentence("se battant tout en ordonnant aux soldats proche de se mettre en formation pour le protéger pendant le lancement de son sort. ")
+        gates_music.fadeout(1500)
+        Sentence("Sortant de votre concentration, vous prenez un instant pour observer Ginn ")
+        Sentence("se battre tout en ordonnant aux soldats proche de se mettre en formation pour couvrir vos arrières. ")
+        sleep(1.5)
         Sentence("Son père avait de quoi être fier.")
+        sleep(1.5)
         Sentence("Quoique issu d'une liaison bâtarde, ce jeune montrait des talents évidents et était promis à une belle carrière.")
         Sentence("C'est pour lui et sa génération qu'il s'était lancé dans cette guerre. ")
-        Sentence("Au millieu du fracas des armes, il pris le temps de glisser une pensée pour son fils, vieux de quelques jours à peine. ")
-        Sentence("Heureux serait-il s'il pouvait être aussi fier de son enfant que Zaz du sien. ")
-        Sentence("Un hurlement morbide tira le vieux démon de sa rêverie, et il en profita pour se secouer. 'Ginn! C'est bon pour toi ? On se bouge là!'")
+        sleep(1.5)
+        Sentence("Au millieu du fracas des armes, vous prenez le temps de glisser une pensée pour votre fils, " + Prince_stats[0] + ",")
+        Sentence("vieux de quelques jours à peine. ")
+        Sentence("Tout ce que vous espérez dans l'instant est de pouvoir être aussi fier de votre enfant que Zaz du sien... ")
+        sleep(1.5)
+        Sentence("C'est en gagnant cette guerre que vous serez en mesure de lui offrir un avenir glorieux.")
+        skip_touch()
+        demo_deva_combat.play(-1)
+        Sentence("Un hurlement morbide vous tira de votre rêverie, un autre chef de cotterie essaye de vous prendre de flanc.")
+        sleep(1.5)
+        Sentence("Ginn et son escouade ne l'avaient pas vu vous approcher.")
+        sleep(1.5)
+        Sentence("Il à l'air bien plus puissant que son confrère. Mais vous êtes bien plus rapide.")
+        demofight(cotteriepui_stats)
+        demo_deva_combat.fadeout(1500)
+        sleep(1.5)
+        if qeast == False:
+            gates_music.play(-1)
+            print("")
+            print(Roi_demon_stats[0])
+            Sentence("Ginn! Le sceptre est planté, on part nous occuper le second")
+            qwest = True
+            qassautportesest(qdone, qwest, qeast)
+            return qwest
+        if qeast == True:
+            combat_music_2.play()
+            print("")
+            print(Roi_demon_stats[0])
+            Sentence("Ginn! Le sceptre est planté, on y va !")
+            Sentence("On à une porte à détruire et une bataille à remporter !")
+            qdone = True
+            assautportes(qdone, qwest, qeast)
+            return qdone
 
 
 #Si assautportesest() pas déjà fait, passer à assautportesest(). Si déjà fait, passer à assautportes()
 
 
-def assautportes():
+def assautportes(qdone, qwest, qeast):
     from intro import Sentence
-    if questdone == False:
+    if qdone == False:
         os.system("cls")
         Sentence("*Je ne peux rien faire tant que les deux sceptres ne sont pas plantés*")
         skip_touch()
         print("")
         print("""Ou souhaitez vous aller  ?
 
-        1. Champ abandonné (est)
-        2. Vieille tour de garde (ouest)
+1. Champ abandonné (est)
+2. Vieille tour de garde (ouest)
 
            """)
         direction = str(input("=> "))
         while direction != "1" or direction != "2":
             if direction == "1":
-                qassautportesest()
+                qassautportesest(qdone, qwest, qeast)
                 return
             elif direction == "2":
-                assautportesouest()
+                assautportesouest(qdone, qwest, qeast)
                 return
             if direction != "1" or direction != "2":
                 Sentence("Impossible d'aller autre part.")
             direction = str(input())
-    elif questdone == True:
+    elif qdone == True:
+        # quête réussie
         os.system("cls")
         Sentence("C'est le moment ou jamais. Il ne sera pas écrit dans les Sombres Grimoires que le S'rhaal aura mené son peuple")
         Sentence("à la défaite. Plantant sa lourde lame noyée de sang humain et angélique dans le sol de marbre de l'entrée de la")

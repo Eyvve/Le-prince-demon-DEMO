@@ -1127,18 +1127,18 @@ def demofight(MobStats):
 
 
 def demo_Low_Blow(MobStats):
-    print("1. Sable dans les yeux (précision - ) | 7 chances sur 10")
+    print("1. Déchainement d'aura (précision - ) | 7 chances sur 10")
     print("2. Seisme (esquive - ) | 7 chances sur 10")
     print("3. Brise armure (armure - )| 1 chances sur 2")
-    print("4. Liquide corrosif (dégats - )| 1 chances sur 2")
+    print("4. Oxydation (dégats - )| 1 chances sur 2")
     print("5. retour au menu des actions")
     rep = str(input("=> "))
     if rep == "1":
         rate = randint(1, 10)
         if rate > 3:
-            print("Vous vous placez efficacement devant " + MobStats[0] + " et vous jetez une poignée de sable dans les yeux !")
+            print("Vous déchainez votre pouvoir, faisant s'envoler les débris au sol !")
             sand_low_blow.play()
-            print("Cela l'aveugle partiellement. " + MobStats[0] + " est moins précis !")
+            print("Cela aveugle partiellement votre adversaire. " + MobStats[0] + " est moins précis !")
             sleep(1.0)
             MobStats[6] = MobStats[6] - 15
             mob_hp_remaining = MobStats[5]
@@ -1170,14 +1170,14 @@ def demo_Low_Blow(MobStats):
     elif rep == "3":
         rate = randint(1, 10)
         if rate > 5:
-            print("Vous trouvez une faille dans la défense de votre adversaire !")
+            print("Vous trouvez une faille dans l'armure de votre adversaire !")
             broken_armor.play()
             print("La protection de votre adversaire se fragilise !")
             sleep(1.0)
             MobStats[3] = MobStats[3] - 4
             if MobStats[3] <= 0:
                 MobStats[3] = 0
-                print(MobStats[0], "voit sa seule protection partir en morceaux !")
+                print(MobStats[0], "voit son armure partir en morceaux !")
                 sleep(1.0)
                 mob_hp_remaining = MobStats[5]
                 return mob_hp_remaining
@@ -1191,14 +1191,14 @@ def demo_Low_Blow(MobStats):
     elif rep == "4":
         rate = randint(1, 10)
         if rate > 5:
-            print("vous profitez du moment parfait pour verser un liquide corrosif sur l'arme de l'adversaire !")
+            print("vous saisissez l'arme de votre adversaire et la faîtes rouiller en un instant !")
             sleep(1.0)
             acid_sound.play()
             print("les dégats de l'adversaire sont réduits !")
             MobStats[2] = MobStats[2] - 2
             if MobStats[2] <= 0:
                 MobStats[2] = 0
-                print(MobStats[0], "voit son arme fondre devant ses yeux !")
+                print(MobStats[0], "voit son arme tomber en morceaux devant ses yeux !")
                 mob_hp_remaining = MobStats[5]
                 return mob_hp_remaining
             else:

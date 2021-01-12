@@ -130,7 +130,6 @@ def use_objet_roi() :
                 print("Choix indisponible.")
             else:
                 objet = Kinv_list[int(Ninv)-1]
-                roi_demon['inv'][str(objet)] -= 1
                 if len(index_objet[str(objet)]) >= 2 and len(index_objet[str(objet)]) <= 4 :
                     os.system("cls")
                     print("Vous utilisez ",objet,".")
@@ -141,6 +140,7 @@ def use_objet_roi() :
                         if Roi_demon_stats[5] > Roi_demon_stats[13] :
                             Roi_demon_stats[5] = Roi_demon_stats[13]
                         print("")
+                        roi_demon['inv'][str(objet)] -= 1
                         print("Vie :", Roi_demon_stats[5],"/",Roi_demon_stats[13], "Mana :", Roi_demon_stats[10], "/", Roi_demon_stats[14])
 
                     elif index_objet[str(objet)][2] == 2:
@@ -150,6 +150,7 @@ def use_objet_roi() :
                         if Roi_demon_stats[10] > Roi_demon_stats[14] :
                             Roi_demon_stats[10] = Roi_demon_stats[14]
                         print("")
+                        roi_demon['inv'][str(objet)] -= 1
                         print("Vie :", Roi_demon_stats[5],"/",Roi_demon_stats[13], "Mana :", Roi_demon_stats[10], "/", Roi_demon_stats[14])
                     elif index_objet[str(objet)][2] == None:
                         print("Vous ne pouvez pas utiliser cet objet tout de suite.")

@@ -5,7 +5,6 @@ from roi_demon_inv import *
 from combat import *
 from intro import *
 
-menu_roi()
 
 def demo():
     from intro import Sentence

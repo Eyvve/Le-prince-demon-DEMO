@@ -459,12 +459,15 @@ def use_objet_roi_sceptre() :
                     print("Vous tentez d'utiliser ", objet, ".")
                     print("Ceci n'est pas un sceptre de pouvoir")
                     use_objet_roi_sceptre()
+                    return
             else:
                 print("Choix indisponible.")
                 use_objet_roi_sceptre()
+                return
 
 
 def menu_roi_sceptre() :#use in demo (utilisation quand tu dois planter un sceptre de pouvoir)
     print(roi_demon['gold']['Argent'], "or.")
     print("Utiliser un sceptre de pouvoir.")
     use_objet_roi_sceptre()
+    return

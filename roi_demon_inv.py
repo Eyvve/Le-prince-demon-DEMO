@@ -37,6 +37,7 @@ Deva_stats = ["Deva", 25, 38, 15, 1.2, 250, 85, 5]
 
 
 def win_roi(enemie): #use in demo (en cas de victoire)
+    sleep(0.5)
     os.system("cls")
     print("Victoire !")
     print("Vous gagnez contre", enemie["nom"],".")
@@ -109,6 +110,7 @@ def print_objet_roi():
 
 
 def use_objet_roi() :
+    sleep(0.5)
     os.system("cls")
     print("objet")
     print("Vie :", Roi_demon_stats[5],"/",Roi_demon_stats[13], "Mana :", Roi_demon_stats[10], "/", Roi_demon_stats[14])
@@ -131,6 +133,7 @@ def use_objet_roi() :
             else:
                 objet = Kinv_list[int(Ninv)-1]
                 if len(index_objet[str(objet)]) >= 2 and len(index_objet[str(objet)]) <= 4 :
+                    sleep(0.5)
                     os.system("cls")
                     print("Vous utilisez ",objet,".")
                     if index_objet[str(objet)][2] == 1:
@@ -157,6 +160,7 @@ def use_objet_roi() :
                         use_objet_roi()
                         return
 
+                    sleep(2)
                     os.system("cls")
                     print("Utiliser un autre objet ? :")
                     print("1. oui")
@@ -169,6 +173,7 @@ def use_objet_roi() :
                         else:
                             if int(choix) >= 1 and int(choix) <= 2:
                                 if int(choix) == 1:
+                                    sleep(0.5)
                                     os.system("cls")
                                     use_objet_roi()
                                     return
@@ -193,6 +198,7 @@ def print_equipement_roi():
 def use_equipement_wapon_roi():
     from index import index_wapone
     if roi_demon['hands']['hand1'] == None:
+        sleep(0.5)
         os.system("cls")
         print_equipement_roi()
         wapone = str(input("Quel equipement :"))
@@ -208,6 +214,7 @@ def use_equipement_wapon_roi():
         return
 
     elif roi_demon['hands']['hand1'] != None:
+        sleep(0.5)
         os.system("cls")
         print("Voulez-vous le retirer ?")
         print("1. Oui")
@@ -229,6 +236,7 @@ def use_equipement_wapon_roi():
 
 
 def remove_equipement_roi(wapone) :
+    sleep(0.5)
     os.system("cls")
     roi_demon['hands']['hand1'] = None
     Roi_demon_stats[4] = 1
@@ -265,6 +273,7 @@ def print_armor_roi():
 def use_equipement_armor_roi():
     from index import index_wapone
     if roi_demon['hands']['armor'] == None:
+        sleep(0.5)
         os.system("cls")
         print_armor_roi()
         armor = str(input("Quelle armure :"))
@@ -280,6 +289,7 @@ def use_equipement_armor_roi():
         return
 
     elif roi_demon['hands']['armor'] != None:
+        sleep(0.5)
         os.system("cls")
         print("Voulez-vous le retirer ?")
         print("1. Oui")
@@ -304,6 +314,7 @@ def remove_armor_roi(armor) :
     Roi_demon_stats[3] = Roi_demon_stats[15]
     roi_demon['armor'][str(armor)] += 1
     roi_demon['hands']['armor'] = None
+    sleep(0.5)
     os.system("cls")
     # bruitage retire equipement armure
     print("Équiper un autre objet à la place ?")
@@ -327,6 +338,7 @@ def remove_armor_roi(armor) :
 
 
 def menu_roi() :#use in demo (entré de map et sortie de map)
+    sleep(0.5)
     os.system("cls")
     print("Voulez-vous faire quelque chose ?")
     print("1. Inventaire")
@@ -340,6 +352,7 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
             if int(choix) >= 1 and int(choix) <= 3:
                 if int(choix) == 1 : #inventaire
                     menu_sound.play()
+                    sleep(0.5)
                     os.system("cls")
                     print(roi_demon['gold']['Argent'], "or.")
                     print("1. Objet")
@@ -353,10 +366,12 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                         else:
                             if int(choix) >= 1 and int(choix) <= 3:
                                 if int(choix) == 1:
+                                    sleep(0.5)
                                     os.system("cls")
                                     use_objet_roi()
                                     return
                                 elif int(choix) == 2:
+                                    sleep(0.5)
                                     os.system("cls")
                                     if roi_demon['hands']['hand1'] != None:
                                         print("Vous avez", roi_demon['hands']['hand1'], "d'équipé.")
@@ -373,22 +388,26 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                         else:
                                             if int(choix) >= 1 and int(choix) <= 2:
                                                 if int(choix) == 1:
+                                                    sleep(0.5)
                                                     os.system("cls")
                                                     use_equipement_wapon_roi()
                                                     menu_roi()
                                                     return
                                                 elif int(choix) == 2:
+                                                    sleep(0.5)
                                                     os.system("cls")
                                                     use_equipement_armor_roi()
                                                     menu_roi()
                                                     return
                                                 elif int(choix) == 3:
+                                                    sleep(0.5)
                                                     os.system("cls")
                                                     menu_roi()
                                                     return
                                             else:
                                                 print("Choix indisponible.")
                                 elif int(choix) == 3:
+                                    sleep(0.5)
                                     os.system("cls")
                                     menu_roi()
                                     return
@@ -396,6 +415,7 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                 print("Choix indisponible.")
                 elif int(choix) == 2 : #sauvgarder :
                     menu_sound.play()
+                    sleep(0.5)
                     os.system("cls")
                     print("Êtes vous sur de vouloir sauvegarder ?")
                     print("1. oui")
@@ -408,6 +428,7 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                         else:
                             if int(choix) >= 1 and int(choix) <= 2:
                                 if int(choix) == 1:
+                                    sleep(0.5)
                                     os.system("cls")
                                     save(roi_demon, history)
                                     print("Voulez vous quitter ?")
@@ -420,16 +441,19 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                             print("Choix indisponible.")
                                         if int(choix) >= 1 and int(choix) <= 2:
                                             if int(choix) == 1:
+                                                sleep(0.5)
                                                 os.system("cls")
                                                 titlebis()
                                                 return
                                             elif int(choix) == 2:
+                                                sleep(0.5)
                                                 os.system("cls")
                                                 menu_roi()
                                                 return
                                         else:
                                             print("Choix indisponible.")
                                 elif int(choix) == 2:
+                                    sleep(0.5)
                                     os.system("cls")
                                     menu_roi()
                                     return
@@ -437,6 +461,7 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                 print("Choix indisponible.")
                 elif int(choix) == 3:
                     validation_sound.play()
+                    sleep(0.5)
                     os.system("cls")
                     return
             else:

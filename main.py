@@ -5,11 +5,13 @@ from combat import *
 from intro import *
 from about import *
 from demo import *
+from outro import outro
 
 pygame.init()
 
+outro()
 # qassautportesest()
-demo()
+# demo()
 # PlayGame()
 # About()
 # beginning()

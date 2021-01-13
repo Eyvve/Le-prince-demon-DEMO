@@ -4,7 +4,7 @@ from intro import *
 from Music_sounds import *
 from data import *
 from maps import *
-from roi_demon_inv import *
+from roi_demon_inv import Roi_demon_stats
 import pygame
 import os
 
@@ -1360,14 +1360,9 @@ def demo_Low_Blow(MobStats):
 
 # //////////////////////////////////////////////////////////// FONCTIONS DE COMBAT DE BOSS //////////////////////////////////////////////////////////////////////////////////////////////////
 
-def demo_sort_boss(name, atkmini, atkmax, mult, hp):
-    total_atk = randint(atkmini, atkmax)
-    Prince_hp_remaining = hp - total_atk
-    round(Prince_hp_remaining, 0)
-    print(name, "vous inflige", int(total_atk), "dégats.")
-    return Prince_hp_remaining
+# //////////////////////////////////////////////////////////// FONCTIONS ULRIC //////////////////////////////////////////////////////////////////////////////////////////////////
 
-def demo_boss_action(MobStats):
+def demo_ulric_action(MobStats):
     print(MobStats[0], "attaque !")
     sleep(1.0)
     randattack = randint(1, 10)
@@ -1439,7 +1434,7 @@ def bossfightulric(MobStats):
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
-            prince_life = demo_boss_action(MobStats)
+            prince_life = demo_ulric_action(MobStats)
             Roi_demon_stats[5] = prince_life
             sleep(1.5)
             os.system("cls")
@@ -1500,7 +1495,7 @@ def bossfightulric(MobStats):
         Sentence(str(MobStats[0]) + " frappe en premier !")
         print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
         print("                                                                 Mana :", Roi_demon_stats[10])
-        prince_life = demo_boss_action(MobStats)
+        prince_life = demo_ulric_action(MobStats)
         Roi_demon_stats[5] = prince_life
         sleep(1.5)
         os.system("cls")
@@ -1552,7 +1547,7 @@ def bossfightulric(MobStats):
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
-            prince_life = demo_boss_action(MobStats)
+            prince_life = demo_ulric_action(MobStats)
             Roi_demon_stats[5] = prince_life
             sleep(1.5)
             os.system("cls")
@@ -1564,3 +1559,206 @@ def bossfightulric(MobStats):
                 # fonction défaite avec tp au sancturaire des démons
                 victoire = False
                 return victoire
+
+
+# //////////////////////////////////////////////////////////// FONCTIONS BOSS //////////////////////////////////////////////////////////////////////////////////////////////////
+
+def demo_sort_boss(name, atkmini, atkmax, mult, hp):
+    total_atk = randint(atkmini, atkmax)
+    Prince_hp_remaining = hp - total_atk
+    round(Prince_hp_remaining, 0)
+    print(name, "vous inflige", int(total_atk), "dégats.")
+    return Prince_hp_remaining
+
+def demo_boss_action(MobStats):
+    print(MobStats[0], "attaque !")
+    sleep(1.0)
+    randattack = randint(1, 10)
+    if randattack < 5:
+        rateaccuracy = randint(1, 100)
+        if rateaccuracy < MobStats[6]:
+            rateesq = randint(1, 100)
+            if rateesq <= Roi_demon_stats[11]:
+                print("Vous esquivez l'attaque !")
+                degats = Roi_demon_stats[5]
+                return degats
+            else:
+                Sentence("Le prince en blanc vous porte un coup d'épée")
+                degats = demo_attaque_mob(MobStats[0], MobStats[1], MobStats[2], Roi_demon_stats[3], MobStats[4], Roi_demon_stats[5])
+                sword_sound.play()
+                fork_sound.play()
+                return degats
+        else:
+            print(MobStats[0], "rate son attaque !")
+            degats = Roi_demon_stats[5]
+            return degats
+    elif randattack < 5 and randattack > 7:
+        Sentence("Le Prince en Blanc vous lance un sort de lumière ")
+        degats = demo_sort_boss(MobStats[0], MobStats[1], MobStats[2], MobStats[4], Roi_demon_stats[5])
+        light_attack.play()
+        return degats
+    else:
+        Sentence("Le Prince en Blanc vous attaque à l'aide de sa lance de lumière ")
+        degats = demo_sort_boss(MobStats[0], MobStats[1], MobStats[2], MobStats[4], Roi_demon_stats[5]) + 20
+        light_beam.play()
+        return degats
+
+def bossfightking(MobStats):
+    from intro import Sentence
+    messb1done = False
+    messb2done = False
+    messb3done = False
+    os.system("cls")
+    sleep(0.3)
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("""
+                                        ██████╗  ██████╗ ███████╗███████╗    ██╗
+                                        ██╔══██╗██╔═══██╗██╔════╝██╔════╝    ██║
+                                        ██████╔╝██║   ██║███████╗███████╗    ██║
+                                        ██╔══██╗██║   ██║╚════██║╚════██║    ╚═╝
+                                        ██████╔╝╚██████╔╝███████║███████║    ██╗
+                                        ╚═════╝  ╚═════╝ ╚══════╝╚══════╝    ╚═╝
+                                                  Le Prince en Blanc
+                """)
+    sleep(2.0)
+    os.system("cls")
+    first = randint(1, 10)
+    prince_life = Roi_demon_stats[5]
+    mob_life = MobStats[5]
+    mp = Roi_demon_stats[10]
+    hp = Roi_demon_stats[5]
+    if first < 5:
+        Sentence("Vous frappez en premier !")
+        print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+        print("                                                                 Mana :", Roi_demon_stats[10])
+        mob_life = demo_action(MobStats)
+        sleep(1.5)
+        MobStats[5] = mob_life
+        while prince_life > 0 or mob_life > 0:
+            os.system("cls")
+            print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+            print("                                                                 Mana :", Roi_demon_stats[10])
+            prince_life = demo_boss_action(MobStats)
+            Roi_demon_stats[5] = prince_life
+            sleep(1.5)
+            os.system("cls")
+            if prince_life < 0:
+                Roi_demon_stats[5] = hp
+                Roi_demon_stats[10] = mp
+                victoire = False,
+                return victoire
+            elif prince_life < 100 and messb3done == False:
+                print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
+                      Roi_demon_stats[5], "pv")
+                print("                                                                 Mana :", Roi_demon_stats[10])
+                print("")
+                print("Le Prince en Blanc")
+                Sentence("Soit purifié démon.")
+                sleep(1.5)
+                messb3done = True
+            elif prince_life < 200 and messb2done == False:
+                print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
+                      Roi_demon_stats[5], "pv")
+                print("                                                                 Mana :", Roi_demon_stats[10])
+                print("")
+                print("Le Prince en Blanc")
+                Sentence("Vous n'êtes rien face à la lumière.")
+                sleep(1.5)
+                messb2done = True
+            elif prince_life < 400 and messb1done == False:
+                print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
+                      Roi_demon_stats[5], "pv")
+                print("                                                                 Mana :", Roi_demon_stats[10])
+                print("")
+                print("Le Prince en Blanc")
+                Sentence("Toute action contre moi est futile.")
+                sleep(1.5)
+                messb1done = True
+
+            os.system("cls")
+            print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+            print("                                                                 Mana :", Roi_demon_stats[10])
+            mob_life = demo_action(MobStats)
+            MobStats[5] = mob_life
+            sleep(1.5)
+            os.system("cls")
+            if mob_life < 0:
+                print(MobStats[0], "est vaincu")
+                Roi_demon_stats[10] = mp
+                enemy_death.play()
+                sleep(4.0)
+
+                victoire = True
+                return victoire
+
+    else:
+        Sentence(str(MobStats[0]) + " frappe en premier !")
+        print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+        print("                                                                 Mana :", Roi_demon_stats[10])
+        prince_life = demo_boss_action(MobStats)
+        Roi_demon_stats[5] = prince_life
+        sleep(1.5)
+        os.system("cls")
+        while prince_life > 0 or mob_life > 0:
+            os.system("cls")
+            print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+            print("                                                                 Mana :", Roi_demon_stats[10])
+            mob_life = demo_action(MobStats)
+            MobStats[5] = mob_life
+            sleep(1.5)
+            os.system("cls")
+            if mob_life < 0:
+                print(MobStats[0], "est vaincu")
+                Roi_demon_stats[10] = mp
+                enemy_death.play()
+                sleep(4.0)
+                victoire = True
+                return victoire
+            os.system("cls")
+            print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+            print("                                                                 Mana :", Roi_demon_stats[10])
+            prince_life = demo_boss_action(MobStats)
+            Roi_demon_stats[5] = prince_life
+            sleep(1.5)
+            os.system("cls")
+            if prince_life < 0:
+                Roi_demon_stats[10] = mp
+                Roi_demon_stats[5] = hp
+                victoire = False
+                return victoire
+            elif prince_life < 100 and messb3done == False:
+                print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
+                      Roi_demon_stats[5], "pv")
+                print("                                                                 Mana :", Roi_demon_stats[10])
+                print("")
+                print("Le Prince en Blanc")
+                Sentence("Soit purifié démon.")
+                sleep(1.5)
+                messb3done = True
+            elif prince_life < 200 and messb2done == False:
+                print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
+                      Roi_demon_stats[5], "pv")
+                print("                                                                 Mana :", Roi_demon_stats[10])
+                print("")
+                print("Le Prince en Blanc")
+                Sentence("Vous n'êtes rien face à la lumière.")
+                sleep(1.5)
+                messb2done = True
+            elif prince_life < 400 and messb1done == False:
+                print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
+                      Roi_demon_stats[5], "pv")
+                print("                                                                 Mana :", Roi_demon_stats[10])
+                print("")
+                print("Le Prince en Blanc")
+                Sentence("Toute action contre moi est futile.")
+                sleep(1.5)
+                messb1done = True

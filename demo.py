@@ -5,17 +5,20 @@ from roi_demon_inv import *
 # from combat import *
 from intro import *
 
+questdone = True
+qeastdone = True
+qwestdone = True
 
 
-def demo():
+def demo(qdone, qwest, qeast):
     from intro import Sentence
     from combat import demofight
     from combat import bossfightulric
     # //////////test gameplau///////////
-    questdone = True
-    qeastdone = True
-    qwestdone = True
-    assautportes(questdone, qeastdone, qwestdone)
+    # questdone = True
+    # qeastdone = True
+    # qwestdone = True
+    # assautportes(questdone, qeastdone, qwestdone)
     # //////////////////////////////////
     # Ulric = ["Ulric Luminis", 50, 60, 17, 1.2, 550, 75, 5]
     # bossfightulric(Ulric)
@@ -113,9 +116,7 @@ def demo():
     Sentence("Par chance vous avez suffisamment de potions sur vous pour reprendre des forces.")
     sleep(2.0)
     os.system("cls")
-
     menu_roi()
-
     os.system("cls")
     print("Champ de bataille de la citadelle - coeur de la bataille")
     print("")
@@ -148,7 +149,7 @@ def demo():
     rep = str(input())
     while rep != "1" or rep != "2":
         if rep == "1":
-            qassautportes()
+            qassautportes(qdone, qwest, qeast)
             return
         elif rep == "2":
             Retraite()
@@ -188,7 +189,7 @@ def Retraite():
     Sentence("humains ont obtenu l'aide des anges, mais depuis, un certain 'Prince en Blanc', que personne ne voit jamais,")
     Sentence("semble avoir remplacé le roi précédent, et règne sur Ljosalfer d'une main juste, ferme, et désinteressée.")
 
-def qassautportes():
+def qassautportes(qdone, qwest, qeast):
     questdone = False
     qeastdone = False
     qwestdone = False
@@ -238,13 +239,13 @@ def qassautportes():
     direction = str(input("=> "))
     while direction != "1" or direction != "2" or direction != "3":
         if direction == "1":
-            qassautportesest(questdone, qeastdone, qwestdone)
+            qassautportesest(qdone, qwest, qeast)
             return
         elif direction == "2":
-            assautportesouest(questdone, qeastdone, qwestdone)
+            assautportesouest(qdone, qwest, qeast)
             return
         elif direction == "3":
-            assautportes(questdone, qeastdone, qwestdone)
+            assautportes(qdone, qwest, qeast)
             return
         if direction != "1" or direction != "2" or direction != "3":
             Sentence("Impossible d'aller autre part.")

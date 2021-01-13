@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9cb49a0b-c8cc-482e-ac80-b14b99fedd06" name="Default Changelist" comment="maj ajout de contenu scénario">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outro.py" beforeDir="false" afterPath="$PROJECT_DIR$/outro.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,20 +89,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610115872015</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Ajout de chaque fonction de combat version demo&#10;Ajout de certaines musiques">
-      <created>1610380002665</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1610380002665</updated>
-    </task>
-    <task id="LOCAL-00002" summary="correction du dernier push">
-      <created>1610380125629</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1610380125629</updated>
     </task>
     <task id="LOCAL-00003" summary="correction du dernier push">
       <created>1610380735187</created>
@@ -433,7 +419,21 @@
       <option name="project" value="LOCAL" />
       <updated>1610560188946</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="améliorations rythme outro">
+      <created>1610561721900</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1610561721901</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Tri des fichiers du jeu et suppression des fichiers inutiles">
+      <created>1610562214021</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1610562214021</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -483,6 +483,8 @@
     <MESSAGE value="Ajout de contenu pour la demo" />
     <MESSAGE value="Ajout contenu" />
     <MESSAGE value="Pull final de contenu à réviser - DEMO ver. RAW" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pull final de contenu à réviser - DEMO ver. RAW" />
+    <MESSAGE value="améliorations rythme outro" />
+    <MESSAGE value="Tri des fichiers du jeu et suppression des fichiers inutiles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tri des fichiers du jeu et suppression des fichiers inutiles" />
   </component>
 </project>

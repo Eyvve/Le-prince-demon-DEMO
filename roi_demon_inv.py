@@ -542,6 +542,8 @@ def use_objet_roi_sceptre() :
 
 def menu_roi_sceptre() :#use in demo (utilisation quand tu dois planter un sceptre de pouvoir)
     from intro import Sentence
+    sleep(1.5)
+    os.system("cls")
     Sentence("Utiliser un sceptre de pouvoir.")
     use_objet_roi_sceptre()
     return

@@ -6,7 +6,7 @@ index_wapone = {
     'Épée rouillé' : [1.2],#multiplicateur d'atk
     "Épée en fer" : [1.4],
     "Rapière noir" : [1.8],
-    "Épéee obscur" : [2],
+    "Épéee obscur" : [1.2],
 }
 index_armor = {
     #'armure'  :  [multiplicateur de def, emplacement] 1 = head / 2 = torso / 3 = leg / 4 = foot

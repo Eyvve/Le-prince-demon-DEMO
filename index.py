@@ -24,7 +24,7 @@ index_objet = {
     #Potion
     'Potion de soin n1' : [50, 18,1],#[Prix, PV,gagne des pv]
     'Potion de soin n2' : [150, 50,1],
-    'Potion de soin n3' : [300, 90,1],
+    'Potion de soin n3' : [300, 125,1],
     'Potion de mana n1' : [150, 10,2],#[Prix, PM,gagne des pm]
     'Potion de mana n2' : [300, 25,2],
     'Potion de mana n3' : [600, 50,2],

@@ -116,7 +116,7 @@ def print_objet_roi():
 
 def use_objet_roi() :
     from intro import Sentence
-    sleep(0.5)
+    sleep(0.2)
     os.system("cls")
     Sentence("objet")
     print("Vie :", str(Roi_demon_stats[5]) , "/",  str(Roi_demon_stats[13]), " Mana :", str(Roi_demon_stats[10]) , "/" , str(Roi_demon_stats[14]))
@@ -142,7 +142,8 @@ def use_objet_roi() :
                 if len(index_objet[str(objet)]) >= 2 and len(index_objet[str(objet)]) <= 4 :
                     sleep(0.5)
                     os.system("cls")
-                    Sentence("Vous utilisez " + str(objet) + ".")
+                    print("Vous utilisez " + str(objet) + ".")
+                    sleep(0.5)
                     if index_objet[str(objet)][2] == 1:
                         # bruitage de heal popo
                         print("Vous gagnez ", str(index_objet[str(objet)][1]), "Pv.")
@@ -163,7 +164,8 @@ def use_objet_roi() :
                         roi_demon['inv'][str(objet)] -= 1
                         print("Vie :", str(Roi_demon_stats[5]) , "/",  str(Roi_demon_stats[13]), " Mana :", str(Roi_demon_stats[10]) , "/" , str(Roi_demon_stats[14]))
                     elif index_objet[str(objet)][2] == None:
-                        Sentence("Vous ne pouvez pas utiliser cet objet tout de suite.")
+                        print("Vous ne pouvez pas utiliser cet objet tout de suite.")
+                        sleep(2)
                         use_objet_roi()
                         return
 

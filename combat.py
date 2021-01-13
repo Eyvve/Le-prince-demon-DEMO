@@ -899,7 +899,7 @@ def demo_Magic_action(nivatkmag, MobStats):
             if Roi_demon_stats[10] >= 16:
                 evil_beam_spell.play()
                 Roi_demon_stats[10] = Roi_demon_stats[10] - 16
-                magic_attack = 35
+                magic_attack = 70
                 print("vous infligez", magic_attack, "dégats magiques !")
                 mob_hp_remaining = MobStats[5] - magic_attack
                 return mob_hp_remaining

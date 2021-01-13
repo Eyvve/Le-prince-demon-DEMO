@@ -2,7 +2,6 @@ from intro import *
 from combat import *
 from about import *
 from Music_sounds import *
-from Statistics_Mobs import *
 #from data import *
 
 

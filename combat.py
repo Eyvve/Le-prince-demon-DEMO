@@ -2,7 +2,6 @@ from random import *
 from time import sleep
 from intro import *
 from Music_sounds import *
-from data import *
 from maps import *
 from roi_demon_inv import Roi_demon_stats
 import pygame

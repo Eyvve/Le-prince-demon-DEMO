@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9cb49a0b-c8cc-482e-ac80-b14b99fedd06" name="Default Changelist" comment="maj ajout de contenu scénario">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/combat.py" afterDir="false" />
-    </list>
+    <list default="true" id="9cb49a0b-c8cc-482e-ac80-b14b99fedd06" name="Default Changelist" comment="maj ajout de contenu scénario" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -356,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610528638288</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Ajout de contenu pour la demo">
+      <created>1610529485327</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1610529485327</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

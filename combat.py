@@ -1452,6 +1452,7 @@ def bossfightulric(MobStats):
                 victoire = False,
                 return victoire
 
+            os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_life = demo_action(MobStats)
@@ -1504,6 +1505,7 @@ def bossfightulric(MobStats):
         sleep(1.5)
         os.system("cls")
         while prince_life > 0 or mob_life > 0:
+            os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_life = demo_action(MobStats)
@@ -1547,6 +1549,7 @@ def bossfightulric(MobStats):
                 Sentence("Je vengerai mon peuple !")
                 sleep(1.5)
                 mess1done = True
+            os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             prince_life = demo_boss_action(MobStats)

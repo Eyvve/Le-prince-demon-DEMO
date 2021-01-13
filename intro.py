@@ -37,7 +37,7 @@ def SentenceSlow(x):
             print(c, end='')
             sys.stdout.flush()
             text_sound.play()
-            sleep(0.5)
+            sleep(0.6)
         print('')
 
 def title():

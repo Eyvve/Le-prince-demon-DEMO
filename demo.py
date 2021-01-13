@@ -2,13 +2,16 @@ from time import sleep
 from maps import skip_touch
 from Music_sounds import *
 from roi_demon_inv import *
-from combat import *
+# from combat import *
 from intro import *
 
 
 def demo():
     from intro import Sentence
     from combat import demofight
+    from combat import bossfightulric
+    Ulric = ["Ulric Luminis", 50, 60, 17, 1.2, 550, 75, 5]
+    bossfightulric(Ulric)
     # cotterie_stats = ["Chef de Cotterie", 45, 55, 20, 1.2, 350, 85, 5]
     # demofight(cotterie_stats)
     # signif1ications : nom, attaque mini, attaque max, défense, multiplicateur de dégat (arme), vie, précision, esquive
@@ -431,9 +434,11 @@ def assautportesouest(qdone, qwest, qeast):
 def assautportes(qdone, qwest, qeast):
     Paladin_démotivé = ["Paladin démotivé", 20, 25, 15, 1.2, 150, 85, 5]
     Paladin_bléssé = ["Paladin démotivé", 25, 35, 15, 1.2, 100, 85, 5]
-    Ulric = ["Ulric Luminis", 55, 65, 20, 1.2, 550, 75, 5]
+    Ulric = ["Ulric Luminis", 50, 60, 17, 1.2, 550, 75, 5]
     from intro import Sentence
     from intro import SentenceSlow
+    from combat import demofight
+    from combat import bossfightulric
     if qdone == False:
         os.system("cls")
         print("Champ de bataille de la citadelle - portes de la citadelle")
@@ -555,7 +560,7 @@ def assautportes(qdone, qwest, qeast):
         Sentence("Il tendit sa gigantesque claymore enchantée vers vous,")
         Sentence("Les yeux baignés de lumière.")
         os.system("cls")
-        # bossfightulric(Ulric)
+        bossfightulric(Ulric)
 
 
 

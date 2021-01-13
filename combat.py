@@ -709,7 +709,7 @@ def fight(princes_stats, MobStats):
 # //////////////////////////////////////////////////////////// CONTENU DE LA DEMO CI DESSOUS //////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
+# //////////////////////////////////////////////////////////// FONCTIONS DE COMBAT CLASSIQUE //////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 def demo_attaque_mob(name, atkmini, atkmax, df, mult, hp):
@@ -1250,3 +1250,293 @@ def demo_Low_Blow(MobStats):
         print("                                                                 Mana :", Roi_demon_stats[10])
         mob_hp_remaining = demo_Low_Blow(MobStats)
     return mob_hp_remaining
+
+
+
+def demo_Low_Blow(MobStats):
+    print("1. Déchainement d'aura (précision - ) | 7 chances sur 10")
+    print("2. Seisme (esquive - ) | 7 chances sur 10")
+    print("3. Brise armure (armure - )| 1 chance sur 2")
+    print("4. Oxydation (dégats - )| 1 chance sur 2")
+    print("5. retour au menu des actions")
+    rep = str(input("=> "))
+    if rep == "1":
+        rate = randint(1, 10)
+        if rate > 3:
+            print("Vous déchainez votre pouvoir, faisant s'envoler les débris au sol !")
+            seism_sound.play()
+            sleep(0.5)
+            king_scream.play()
+            sleep(0.5)
+            print("Cela aveugle partiellement votre adversaire. " + MobStats[0] + " est moins précis !")
+            sleep(1.0)
+            MobStats[6] = MobStats[6] + 5
+            mob_hp_remaining = MobStats[5]
+            return mob_hp_remaining
+        else:
+            print("Raté")
+            mob_hp_remaining = MobStats[5]
+            return mob_hp_remaining
+    elif rep == "2":
+        rate = randint(1, 10)
+        if rate > 3:
+            print("Vous mettez un grand coup de pied par terre de manière à fendre le sol")
+            seism_sound.play()
+            sleep(0.3)
+            crack.play()
+            sleep(0.3)
+            print(MobStats[0], "est déséquilibré, son esquive diminue !")
+            sleep(1.0)
+            MobStats[7] = MobStats[7] - 2
+            if MobStats[7] <= 0:
+                MobStats[7] = 0
+                print(MobStats[0], "ne peut plus esquiver !")
+                mob_hp_remaining = MobStats[5]
+                return mob_hp_remaining
+            else:
+                mob_hp_remaining = MobStats[5]
+                return mob_hp_remaining
+        else:
+            print("Raté")
+            mob_hp_remaining = MobStats[5]
+            return mob_hp_remaining
+    elif rep == "3":
+        rate = randint(1, 10)
+        if rate >= 5:
+            print("Vous trouvez une faille dans l'armure de votre adversaire !")
+            broken_armor.play()
+            print("La protection de votre adversaire se fragilise !")
+            sleep(1.0)
+            MobStats[3] = MobStats[3] - 4
+            if MobStats[3] <= 0:
+                MobStats[3] = 0
+                print(MobStats[0], "voit son armure partir en morceaux !")
+                sleep(1.0)
+                mob_hp_remaining = MobStats[5]
+                return mob_hp_remaining
+            else:
+                mob_hp_remaining = MobStats[5]
+                return mob_hp_remaining
+        else:
+            print("Raté")
+            mob_hp_remaining = MobStats[5]
+            return mob_hp_remaining
+    elif rep == "4":
+        rate = randint(1, 10)
+        if rate > 5:
+            print("vous saisissez l'arme de votre adversaire et la faîtes rouiller en un instant !")
+            sleep(1.0)
+            acid_sound.play()
+            print("les dégats de l'adversaire sont réduits !")
+            MobStats[4] = MobStats[4] - 0.1
+            if MobStats[4] <= 1.0:
+                MobStats[4] = 1.0
+                print(MobStats[0], "voit son arme tomber en morceaux devant ses yeux !")
+                broken_weapon.play()
+                mob_hp_remaining = MobStats[5]
+                return mob_hp_remaining
+            else:
+                mob_hp_remaining = MobStats[5]
+                return mob_hp_remaining
+        else:
+            print("Raté")
+            mob_hp_remaining = MobStats[5]
+            return mob_hp_remaining
+    elif rep == "5":
+        os.system("cls")
+        print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+        print("                                                                 Mana :", Roi_demon_stats[10])
+        mob_hp_remaining = demo_action(MobStats)
+        return mob_hp_remaining
+    else:
+        print("veuillez entrer un chiffre valide")
+        sleep(1.5)
+        os.system("cls")
+        print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+        print("                                                                 Mana :", Roi_demon_stats[10])
+        mob_hp_remaining = demo_Low_Blow(MobStats)
+    return mob_hp_remaining
+
+
+# //////////////////////////////////////////////////////////// FONCTIONS DE COMBAT DE BOSS //////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+def demo_boss_action(MobStats):
+    print(MobStats[0], "attaque !")
+    sleep(1.0)
+    rateaccuracy = randint(1, 100)
+    if rateaccuracy < MobStats[6]:
+        rateesq = randint(1, 100)
+        if rateesq <= Roi_demon_stats[11]:
+            print("Vous esquivez l'attaque !")
+            degats = Roi_demon_stats[5]
+            return degats
+        else:
+            degats = attaque_mob(MobStats[0], MobStats[1], MobStats[2], Roi_demon_stats[3], MobStats[4], Roi_demon_stats[5])
+            sword_sound.play()
+            fork_sound.play()
+            return degats
+    else:
+        print(MobStats[0], "rate son attaque !")
+        degats = Roi_demon_stats[5]
+        return degats
+
+
+
+def bossfightulric(MobStats):
+    from intro import Sentence
+    os.system("cls")
+    sleep(0.3)
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("""
+                    ███████╗ ██████╗ ██╗   ██╗███████╗      ██████╗  ██████╗ ███████╗███████╗    ██╗
+                    ██╔════╝██╔═══██╗██║   ██║██╔════╝      ██╔══██╗██╔═══██╗██╔════╝██╔════╝    ██║
+                    ███████╗██║   ██║██║   ██║███████╗█████╗██████╔╝██║   ██║███████╗███████╗    ██║
+                    ╚════██║██║   ██║██║   ██║╚════██║╚════╝██╔══██╗██║   ██║╚════██║╚════██║    ╚═╝
+                    ███████║╚██████╔╝╚██████╔╝███████║      ██████╔╝╚██████╔╝███████║███████║    ██╗
+                    ╚══════╝ ╚═════╝  ╚═════╝ ╚══════╝      ╚═════╝  ╚═════╝ ╚══════╝╚══════╝    ╚═╝
+                                                Chef de cotterie Ulric
+                """)
+    sleep(2.0)
+    os.system("cls")
+    first = randint(1, 10)
+    prince_life = Roi_demon_stats[5]
+    mob_life = MobStats[5]
+    mp = Roi_demon_stats[10]
+    hp = Roi_demon_stats[5]
+    if first < 5:
+        Sentence("Vous frappez en premier !")
+        print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+        print("                                                                 Mana :", Roi_demon_stats[10])
+        mob_life = demo_action(MobStats)
+        sleep(1.5)
+        MobStats[5] = mob_life
+        while prince_life > 0 or mob_life > 0:
+            os.system("cls")
+            print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+            print("                                                                 Mana :", Roi_demon_stats[10])
+            prince_life = demo_boss_action(MobStats)
+            Roi_demon_stats[5] = prince_life
+            sleep(1.5)
+            os.system("cls")
+            if prince_life < 0:
+                print("Défaite")
+                Roi_demon_stats[5] = hp
+                Roi_demon_stats[10] = mp
+                #la musique s'arrête
+                #fonction défaite avec tp au sancturaire des démons
+                victoire = False,
+                return victoire
+
+            print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+            print("                                                                 Mana :", Roi_demon_stats[10])
+            mob_life = demo_action(MobStats)
+            MobStats[5] = mob_life
+            sleep(1.5)
+            os.system("cls")
+            if mob_life < 0:
+                print(MobStats[0], "est vaincu")
+                Roi_demon_stats[10] = mp
+                enemy_death.play()
+                sleep(4.0)
+                # la musique s'arrête
+                # fonction victoire avec musique de victoire + affichage du loot + xp
+                # faire en sorte de return la vie restante et de la réattribuer à la liste Prince_Stats
+                victoire = True
+                return victoire
+            elif mob_life < 100:
+                print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
+                      Roi_demon_stats[5], "pv")
+                print("                                                                 Mana :", Roi_demon_stats[10])
+                print("")
+                print("Ulric")
+                Sentence("Tu... ne... m'a... pas... encore...vaincu !")
+                sleep(1.5)
+            elif mob_life < 200:
+                print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
+                      Roi_demon_stats[5], "pv")
+                print("                                                                 Mana :", Roi_demon_stats[10])
+                print("")
+                print("Ulric")
+                Sentence("Tu es coriace Roi démon, ma lumière aura raison de toi.")
+                sleep(1.5)
+            elif mob_life < 400:
+                print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
+                      Roi_demon_stats[5], "pv")
+                print("                                                                 Mana :", Roi_demon_stats[10])
+                print("")
+                print("Ulric")
+                Sentence("Message 1")
+                sleep(1.5)
+    else:
+        Sentence(str(MobStats[0]) + " frappe en premier !")
+        print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+        print("                                                                 Mana :", Roi_demon_stats[10])
+        prince_life = demo_boss_action(MobStats)
+        Roi_demon_stats[5] = prince_life
+        sleep(1.5)
+        os.system("cls")
+        while prince_life > 0 or mob_life > 0:
+            print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+            print("                                                                 Mana :", Roi_demon_stats[10])
+            mob_life = demo_action(MobStats)
+            MobStats[5] = mob_life
+            sleep(1.5)
+            os.system("cls")
+            if mob_life < 0:
+                print(MobStats[0], "est vaincu")
+                Roi_demon_stats[10] = mp
+                enemy_death.play()
+                sleep(4.0)
+                #la musique s'arrête
+                #fonction victoire avec musique de victoire + affichage du loot + xp
+                # faire en sorte de return la vie restante et de la réattribuer à la liste Prince_Stats
+                victoire = True
+                return victoire
+            elif mob_life < 100:
+                print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
+                      Roi_demon_stats[5], "pv")
+                print("                                                                 Mana :", Roi_demon_stats[10])
+                print("")
+                print("Ulric")
+                Sentence("Tu... ne... m'a... pas... encore...vaincu !")
+                sleep(1.5)
+            elif mob_life < 200:
+                print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
+                      Roi_demon_stats[5], "pv")
+                print("                                                                 Mana :", Roi_demon_stats[10])
+                print("")
+                print("Ulric")
+                Sentence("Tu es coriace Roi démon, ma lumière aura raison de toi.")
+                sleep(1.5)
+            elif mob_life < 400:
+                print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
+                      Roi_demon_stats[5], "pv")
+                print("                                                                 Mana :", Roi_demon_stats[10])
+                print("")
+                print("Ulric")
+                Sentence("Message 1")
+                sleep(1.5)
+            print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
+            print("                                                                 Mana :", Roi_demon_stats[10])
+            prince_life = demo_boss_action(MobStats)
+            Roi_demon_stats[5] = prince_life
+            sleep(1.5)
+            os.system("cls")
+            if prince_life < 0:
+                print("Défaite")
+                Roi_demon_stats[10] = mp
+                Roi_demon_stats[5] = hp
+                # la musique s'arrête
+                # fonction défaite avec tp au sancturaire des démons
+                victoire = False
+                return victoire

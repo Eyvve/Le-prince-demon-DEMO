@@ -5,7 +5,7 @@ from mob import *
 index_wapone = {
     'Épée rouillé' : [1.2],#multiplicateur d'atk
     "Épée en fer" : [1.4],
-    "rapière noir" : [1.8],
+    "Rapière noir" : [1.8],
     "Épéee obscur" : [2],
 }
 index_armor = {

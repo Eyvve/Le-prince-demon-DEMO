@@ -3,21 +3,22 @@ from mob import *
 
 
 index_wapone = {
-    'épée rouillé' : [1.2],#multiplicateur d'atk
-    "épée en fer" : [1.4],
+    'Épée rouillé' : [1.2],#multiplicateur d'atk
+    "Épée en fer" : [1.4],
     "rapière noir" : [1.8],
-    "épéee obscur" : [2],
+    "Épéee obscur" : [2],
 }
 index_armor = {
     #'armure'  :  [multiplicateur de def, emplacement] 1 = head / 2 = torso / 3 = leg / 4 = foot
     #cape de départ
-    'cape noir' : [1],
-    'armure en cuir' : [4],
-    'armure en fer' : [8],
+    'Cape Noir' : [1],
+    'Armure en Cuir' : [4],
+    'Armure en Fer' : [8],
+    'Armure des Abysse' : [15],
 }
 
 index_objet = {
-    'sceptre de pouvoir' : ["Pas vendable", None, None, 1],
+    'Sceptre de pouvoir' : ["Pas vendable", None, None, 1],
     #'nom de l'objet'   : [Prix, effet donné]
     #objet de soin
     #Potion

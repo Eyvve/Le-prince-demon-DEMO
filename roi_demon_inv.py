@@ -19,12 +19,12 @@ roi_demon = {
         'Argent' : 666,
     },
     'inv' : {
-        'sceptre de pouvoir' : 2,
+        'Sceptre de pouvoir' : 2,
         'Potion de soin n3' : 20,
         'Potion de mana n3' : 10,
         },
     'equipement' : {
-
+        "Épéee obscur" : 1,
     },
     'armor' :{
         'Armure des Abysse' : 0,
@@ -208,25 +208,34 @@ def use_equipement_wapon_roi():
     if roi_demon['hands']['hand1'] == None:
         sleep(0.5)
         os.system("cls")
+        Sentence("Arme")
         Kequipement = roi_demon['equipement'].keys()
         Kequipement_list = list(Kequipement)
         print_equipement_roi()
         print(len(Kequipement_list) + 1, "Retour")
-        wapone = str(input("Quel equipement :"))
-        if int(wapone) == len(Kequipement_list) + 1:
-            menu_roi()
-            return
-        else:
-            Kequipement = roi_demon['equipement'].keys()
-            Kequipement_list = list(Kequipement)
-            wapone_equipement = Kequipement_list[int(wapone)-1]
-            roi_demon['hands']['hand1'] = str(wapone_equipement)
-            bonus = index_wapone[str(wapone_equipement)][0]
-            Roi_demon_stats[4] += bonus
-            # bruitage equipement épée
-            Sentence("Vous équipez " + str(wapone_equipement))
-            roi_demon['equipement'][str(wapone_equipement)] -= 1
-            return
+        while True:
+            wapone = str(input("Quel equipement :"))
+            menu_sound.play()
+            if str(wapone) == "":
+                Sentence("veuillez entrer un chiffre valide")
+
+            elif int(wapone) == len(Kequipement_list) + 1:
+                menu_roi()
+                return
+            else:
+                if int(wapone) >= 1 and int(wapone) <= len(Kequipement_list):
+                    Kequipement = roi_demon['equipement'].keys()
+                    Kequipement_list = list(Kequipement)
+                    wapone_equipement = Kequipement_list[int(wapone) - 1]
+                    roi_demon['hands']['hand1'] = str(wapone_equipement)
+                    bonus = index_wapone[str(wapone_equipement)][0]
+                    Roi_demon_stats[4] += bonus
+                    # bruitage equipement épée
+                    Sentence("Vous équipez " + str(wapone_equipement))
+                    roi_demon['equipement'][str(wapone_equipement)] -= 1
+                    return
+                else:
+                    Sentence("veuillez entrer un chiffre valide")
 
     elif roi_demon['hands']['hand1'] != None:
         sleep(0.5)
@@ -291,25 +300,34 @@ def use_equipement_armor_roi():
     if roi_demon['hands']['armor'] == None:
         sleep(0.5)
         os.system("cls")
+        Sentence("Armure")
         Karmor = roi_demon['armor'].keys()
         Karmor_list = list(Karmor)
         print_armor_roi()
         print(len(Karmor_list) + 1, "Retour")
-        armor = str(input("Quelle armure :"))
-        if int(armor) == len(Karmor_list) + 1:
-            menu_roi()
-            return
-        else:
-            Karmor = roi_demon['armor'].keys()
-            Karmor_list = list(Karmor)
-            armor_equipement = Karmor_list[int(armor)-1]
-            roi_demon['hands']['armor'] = str(armor_equipement)
-            bonus = index_armor[str(armor_equipement)][0]
-            Roi_demon_stats[3] += bonus
-            # bruitage equipement armure
-            Sentence("Vous équipez " + str(armor_equipement))
-            roi_demon['armor'][str(armor_equipement)] += 1
-            return
+        while True:
+            armor = str(input("Quel equipement :"))
+            menu_sound.play()
+            if str(armor) == "":
+                Sentence("veuillez entrer un chiffre valide")
+
+            elif int(armor) == len(Karmor_list) + 1:
+                menu_roi()
+                return
+            else:
+                if int(armor) >= 1 and int(armor) <= len(Karmor_list):
+                    Karmor = roi_demon['armor'].keys()
+                    Karmor_list = list(Karmor)
+                    armor_equipement = Karmor_list[int(armor) - 1]
+                    roi_demon['hands']['armor'] = str(armor_equipement)
+                    bonus = index_armor[str(armor_equipement)][0]
+                    Roi_demon_stats[3] += bonus
+                    # bruitage equipement armure
+                    Sentence("Vous équipez " + str(armor_equipement))
+                    roi_demon['armor'][str(armor_equipement)] += 1
+                    return
+                else:
+                    Sentence("veuillez entrer un chiffre valide")
 
     elif roi_demon['hands']['armor'] != None:
         sleep(0.5)

@@ -119,7 +119,7 @@ def use_objet_roi() :
     sleep(0.5)
     os.system("cls")
     Sentence("objet")
-    Sentence("Vie :" + str(Roi_demon_stats[5]) + "/" + str(Roi_demon_stats[13]) + " Mana :" + str(Roi_demon_stats[10]) + "/" + str(Roi_demon_stats[14]))
+    print("Vie :", str(Roi_demon_stats[5]) , "/",  str(Roi_demon_stats[13]), " Mana :", str(Roi_demon_stats[10]) , "/" , str(Roi_demon_stats[14]))
     print_objet_roi()
     Kinv = roi_demon['inv'].keys()
     Kinv_list = list(Kinv)
@@ -145,23 +145,23 @@ def use_objet_roi() :
                     Sentence("Vous utilisez " + str(objet) + ".")
                     if index_objet[str(objet)][2] == 1:
                         # bruitage de heal popo
-                        Sentence("Vous gagnez " + str(index_objet[str(objet)][1]) + "Pv.")
+                        print("Vous gagnez ", str(index_objet[str(objet)][1]), "Pv.")
                         Roi_demon_stats[5] += index_objet[str(objet)][1]
                         if Roi_demon_stats[5] > Roi_demon_stats[13] :
                             Roi_demon_stats[5] = Roi_demon_stats[13]
                         print("")
                         roi_demon['inv'][str(objet)] -= 1
-                        Sentence("Vie :" + str(Roi_demon_stats[5]) + "/" + str(Roi_demon_stats[13]) + " Mana :" + str(Roi_demon_stats[10]) + "/" + str(Roi_demon_stats[14]))
+                        print("Vie :", str(Roi_demon_stats[5]) , "/",  str(Roi_demon_stats[13]), " Mana :", str(Roi_demon_stats[10]) , "/" , str(Roi_demon_stats[14]))
 
                     elif index_objet[str(objet)][2] == 2:
                         #bruitage de heal popo
-                        Sentence("Vous gagnez " + str(index_objet[str(objet)][1]) + "Pm.")
+                        print("Vous gagnez ", str(index_objet[str(objet)][1]), "Pm.")
                         Roi_demon_stats[10] += index_objet[str(objet)][1]
                         if Roi_demon_stats[10] > Roi_demon_stats[14] :
                             Roi_demon_stats[10] = Roi_demon_stats[14]
                         Sentence("")
                         roi_demon['inv'][str(objet)] -= 1
-                        Sentence("Vie :" + str(Roi_demon_stats[5]) + "/" + str(Roi_demon_stats[13]) + " Mana :" + str(Roi_demon_stats[10]) + "/" + str(Roi_demon_stats[14]))
+                        print("Vie :", str(Roi_demon_stats[5]) , "/",  str(Roi_demon_stats[13]), " Mana :", str(Roi_demon_stats[10]) , "/" , str(Roi_demon_stats[14]))
                     elif index_objet[str(objet)][2] == None:
                         Sentence("Vous ne pouvez pas utiliser cet objet tout de suite.")
                         use_objet_roi()
@@ -185,7 +185,7 @@ def use_objet_roi() :
                                     use_objet_roi()
                                     return
                                 elif int(choix) == 2:
-                                    # menu_roi()
+                                    menu_roi()
                                     return
                             else:
                                 Sentence("veuillez entrer un chiffre valide")
@@ -524,7 +524,7 @@ def use_objet_roi_sceptre() :
                 objet = Kinv_list[int(Ninv)-1]
                 if len(index_objet[str(objet)]) == 4:
                     Sentence("Vous utilisez " + str(objet) + ".")
-                    roi_demon['inv']['sceptre de pouvoir'] -= 1
+                    roi_demon['inv'][str(objet)] -= 1
                     return
 
                 else:

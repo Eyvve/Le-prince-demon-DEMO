@@ -13,7 +13,7 @@ roi_demon = {
     },
     'hands' :{
         'hand1' : None,
-        'armor' : 'Armure des Abysse'
+        'armor' : 'Armure des Abysses'
     },
     'gold' : {
         'Argent' : 666,

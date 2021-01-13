@@ -10,6 +10,12 @@ def demo():
     from intro import Sentence
     from combat import demofight
     from combat import bossfightulric
+    # //////////test gameplau///////////
+    questdone = True
+    qeastdone = True
+    qwestdone = True
+    assautportes(questdone, qeastdone, qwestdone)
+    # //////////////////////////////////
     # Ulric = ["Ulric Luminis", 50, 60, 17, 1.2, 550, 75, 5]
     # bossfightulric(Ulric)
     # cotterie_stats = ["Chef de Cotterie", 45, 55, 20, 1.2, 350, 85, 5]

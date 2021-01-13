@@ -6,7 +6,7 @@ index_wapone = {
     'Épée rouillé' : [1.2],#multiplicateur d'atk
     "Épée en fer" : [1.4],
     "Rapière noir" : [1.8],
-    "Épée légendaire Sxyrsbaane" : [1.3],
+    "Épée légendaire Sxyrsbaane" : [0.1],
 }
 index_armor = {
     #'armure'  :  [multiplicateur de def, emplacement] 1 = head / 2 = torso / 3 = leg / 4 = foot
@@ -14,7 +14,7 @@ index_armor = {
     'Cape Noir' : [1],
     'Armure en Cuir' : [4],
     'Armure en Fer' : [8],
-    'Armure des Abysse' : [15],
+    'Armure des Abysses' : [15],
 }
 
 index_objet = {

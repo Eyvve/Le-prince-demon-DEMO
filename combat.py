@@ -1459,7 +1459,7 @@ def bossfightulric(MobStats):
                 print("                                                                 Mana :", Roi_demon_stats[10])
                 print("")
                 print("Ulric")
-                Sentence("Tu... ne... m'a... pas... encore...vaincu !")
+                Sentence("Tu... ne... m'a pas... encore...vaincu !")
                 sleep(1.5)
             elif mob_life < 200:
                 print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
@@ -1508,7 +1508,7 @@ def bossfightulric(MobStats):
                 print("                                                                 Mana :", Roi_demon_stats[10])
                 print("")
                 print("Ulric")
-                Sentence("Tu... ne... m'a... pas... encore...vaincu !")
+                Sentence("Tu... ne... m'a pas... encore...vaincu !")
                 sleep(1.5)
             elif mob_life < 200:
                 print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",

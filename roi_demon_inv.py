@@ -512,7 +512,14 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
             else:
                 Sentence("veuillez entrer un chiffre valide")
 
-def use_objet_roi_sceptre() :
+
+
+
+def menu_roi_sceptre() :#use in demo (utilisation quand tu dois planter un sceptre de pouvoir)
+    from intro import Sentence
+    sleep(1.5)
+    os.system("cls")
+    Sentence("Utiliser un sceptre de pouvoir.")
     from intro import Sentence
     print_objet_roi()
     Kinv = roi_demon['inv'].keys()
@@ -523,7 +530,7 @@ def use_objet_roi_sceptre() :
             Sentence("veuillez entrer un chiffre valide")
         else:
             if int(Ninv) >= 1 and int(Ninv) <= len(Kinv_list):
-                objet = Kinv_list[int(Ninv)-1]
+                objet = Kinv_list[int(Ninv) - 1]
                 if len(index_objet[str(objet)]) == 4:
                     Sentence("Vous utilisez " + str(objet) + ".")
                     roi_demon['inv'][str(objet)] -= 1
@@ -532,16 +539,10 @@ def use_objet_roi_sceptre() :
                 else:
                     Sentence("Vous tentez d'utiliser " + str(objet) + ".")
                     Sentence("Ceci n'est pas un sceptre de pouvoir")
-                    use_objet_roi_sceptre()
+                    menu_roi_sceptre()
                     return
             else:
                 Sentence("veuillez entrer un chiffre valide")
-                use_objet_roi_sceptre()
+                menu_roi_sceptre()
                 return
-
-
-def menu_roi_sceptre() :#use in demo (utilisation quand tu dois planter un sceptre de pouvoir)
-    from intro import Sentence
-    Sentence("Utiliser un sceptre de pouvoir.")
-    use_objet_roi_sceptre()
     return

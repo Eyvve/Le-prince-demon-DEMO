@@ -684,8 +684,8 @@ def assautportes(qdone, qwest, qeast):
         Sentence("Terrassé par la puissance de cet être inconnu, malgré sa force maudite jusque là inégalée et ses incantations")
         Sentence("les plus secrètes, le Roi-Dieu se rend rapidement à l'évidence, il est vaincu. Après une petite pensée pour son")
         Sentence("fils nouveau-né, et un regard au corps du fils de son ami, raisons pour laquelle il a voulu changer ce monde,")
-        Sentence("il aggrippe sa lame, et dans un dernier effort,mortellement blessé et couvert de honte d'abandonner ainsi")
-        Sentence(" les siens ainsi que leur rêve de liberté et de grangeur, et lança son sort de téléportation")
+        Sentence("il aggrippe sa lame, et dans un dernier effort,mortellement blessé et couvert de honte d'abandonner")
+        Sentence("les siens ainsi que leur rêve de gloire et de grandeur, et lança son sort de téléportation")
         skip_touch()
 
               #petit écran de fin de démo

@@ -24,7 +24,7 @@ roi_demon = {
         'Potion de mana n3' : 10,
         },
     'equipement' : {
-        "Épéee obscur" : 1,
+        "Épée légendaire Sxyrsbaane" : 1,
     },
     'armor' :{
         'Armure des Abysse' : 0,
@@ -201,7 +201,7 @@ def print_equipement_roi():
     Kequipement_list = list(Kequipement)
     Iequipement_list = list(Iequipement)
     for n in range(len(Kequipement_list)):
-        print(n+1,Kequipement_list[n],"n°:",Iequipement_list[n])
+        print(n+1,Kequipement_list[n],":",Iequipement_list[n])
 
 
 def use_equipement_wapon_roi():

@@ -15,8 +15,8 @@ def demo():
     # cotterie_stats = ["Chef de Cotterie", 45, 55, 20, 1.2, 350, 85, 5]
     # demofight(cotterie_stats)
     # signif1ications : nom, attaque mini, attaque max, défense, multiplicateur de dégat (arme), vie, précision, esquive
-    deva_stats = ["Deva", 30, 40, 15, 1.2, 250, 85, 5]
-    cotterie_stats = ["Chef de Cotterie", 45, 55, 20, 1.2, 350, 85, 5]
+    deva_stats = ["Deva", 30, 40, 15, 1.2, 200, 85, 5]
+    cotterie_stats = ["Chef de Cotterie", 45, 55, 20, 1.2, 300, 85, 5]
     Sentence("Conformement au lore établi, le Roi démon ou Dieu-Roi porte le nom d'Ibliss Nizidramanii'yt.")
     print("")
     Sentence("Quel est votre nom ? Si vous souhaitez le nom lore friendly, appuyez simplement sur Entrée.")
@@ -91,7 +91,7 @@ def demo():
     sleep(6.0)
     demofight(deva_stats)
     os.system("cls")
-    Sentence("Alors que vous veniez à peine de tuer le deva, le chef de cotterie tente de vous porter un coup épee.")
+    Sentence("Alors que vous veniez à peine de tuer le deva, le chef de cotterie tente de vous porter un coup d'épee.")
     sleep(1.5)
     demofight(cotterie_stats)
     demo_deva_combat.fadeout(1000)
@@ -193,6 +193,7 @@ def qassautportes():
     sleep(2.0)
     print(Roi_demon_stats[0])
     Sentence("Nous ne fuirons pas, il est hors de question d'abandonner, je ne suis pas encore mort...")
+    print("")
     sleep(1.5)
     Sentence("Ces portes sont bardées de magie défensives, il va me falloir utiliser une puissante magie pour en venir à bout.")
     sleep(1.5)
@@ -280,6 +281,7 @@ def qassautportesest(qdone, qwest, qeast):
         elif qwest == False:
             Sentence("Plantons le premier sceptre.")
         menu_roi_sceptre()
+        sleep(1.5)
         os.system("cls")
         print("Champ de bataille de la citadelle - champs est")
         print("")
@@ -324,11 +326,6 @@ def qassautportesest(qdone, qwest, qeast):
             qeast = True
             assautportesouest(qdone, qwest, qeast)
             return qeast
-
-
-# Si assautportesouest() pas déjà fait, passer à assautportesest(). Si déjà fait, passer à assautportes()
-    Sentence("'Le premier sceptre est en place ! On bouge, et repousse moi ces vermisseaux!' Assuré par un échange de regard")
-    Sentence("que son second a bien entendu les ordres et se met en marche.")
 
 def assautportesouest(qdone, qwest, qeast):
     from intro import Sentence
@@ -494,8 +491,8 @@ def assautportes(qdone, qwest, qeast):
         print("")
         Sentence("Dans un grondement terrible, emplissant d'espoir le coeur de ses infâmes suivants et d'horreur celui des hommes,")
         Sentence("une lumière violacée perça la couche de nuages, et dans un fracas épouvantable, plusieurs énormes rochers noirs,")
-        Sentence("nimbés de flammes noirâtres impies, s'abattirent sur la forteresse, s'écrasant sur la batisse millénaire, l'éperonnant")
-        Sentence("en plusieurs endroits, faisant trembler le sol.")
+        Sentence("nimbés de flammes noirâtres impies, s'abattirent sur la forteresse, s'écrasant sur la batisse millénaire,")
+        Sentence("l'éperonnant en plusieurs endroits, faisant trembler le sol.")
         print("")
         Sentence("Dans les décombres de la porte laissée béante sous l'impact,")
         Sentence("les sombres et immenses silhouettes des élémentaires ainsi convoqués se redressèrent entamant de déblayer le chemin.")
@@ -511,7 +508,7 @@ def assautportes(qdone, qwest, qeast):
         SentenceSlow("CHARGEZ !")
         print("")
         sleep(1.0)
-        Sentence("Le reste de votre armée en position chargea vers la citadelle, motivée par ce retournement de situation.")
+        Sentence("Le reste de votre armée en position chargea vers la citadelle, motivé par ce retournement de situation.")
         Sentence("Il était important de profiter de l'impact, qui avait tué ou mis en fuite la plupart des défenseurs,")
         Sentence("quand les derniers n'étaient pâs déjà aux prises avec les élémentaires ou d'autres combattants.")
         skip_touch()
@@ -548,7 +545,10 @@ def assautportes(qdone, qwest, qeast):
         print("")
         Sentence("Le second paladin, dans un geste déséspéré,")
         Sentence("fit comme son ami et courra vers vous en boîtant et hurlant à la lumière, sous le regard tétanisé du chef de cotterie.")
+        sleep(1.5)
         demofight(Paladin_bléssé)
+        demo_deva_combat.fadeout(1000)
+        ulric_theme.play(-1)
         os.system("cls")
         print("Champ de bataille de la citadelle - rues de la citadelle")
         print("")
@@ -556,7 +556,6 @@ def assautportes(qdone, qwest, qeast):
         Sentence("vous voyez Ulric enfiler son casque en récitant des psaumes.")
         Sentence("...")
         sleep(1.5)
-        ulric_theme.play(-1)
         Sentence("Il tendit sa gigantesque claymore enchantée vers vous,")
         Sentence("Les yeux baignés de lumière.")
         os.system("cls")

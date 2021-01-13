@@ -1360,28 +1360,40 @@ def demo_Low_Blow(MobStats):
 
 # //////////////////////////////////////////////////////////// FONCTIONS DE COMBAT DE BOSS //////////////////////////////////////////////////////////////////////////////////////////////////
 
+def demo_sort_boss(name, atkmini, atkmax, mult, hp):
+    total_atk = randint(atkmini, atkmax)
+    Prince_hp_remaining = hp - total_atk
+    round(Prince_hp_remaining, 0)
+    print(name, "vous inflige", int(total_atk), "dégats.")
+    return Prince_hp_remaining
 
 def demo_boss_action(MobStats):
     print(MobStats[0], "attaque !")
     sleep(1.0)
-    rateaccuracy = randint(1, 100)
-    if rateaccuracy < MobStats[6]:
-        rateesq = randint(1, 100)
-        if rateesq <= Roi_demon_stats[11]:
-            print("Vous esquivez l'attaque !")
+    randattack = randint(1, 10)
+    if randattack < 8:
+        rateaccuracy = randint(1, 100)
+        if rateaccuracy < MobStats[6]:
+            rateesq = randint(1, 100)
+            if rateesq <= Roi_demon_stats[11]:
+                print("Vous esquivez l'attaque !")
+                degats = Roi_demon_stats[5]
+                return degats
+            else:
+                degats = demo_attaque_mob(MobStats[0], MobStats[1], MobStats[2], Roi_demon_stats[3], MobStats[4], Roi_demon_stats[5])
+                sword_sound.play()
+                fork_sound.play()
+                return degats
+        else:
+            print(MobStats[0], "rate son attaque !")
             degats = Roi_demon_stats[5]
             return degats
-        else:
-            degats = attaque_mob(MobStats[0], MobStats[1], MobStats[2], Roi_demon_stats[3], MobStats[4], Roi_demon_stats[5])
-            sword_sound.play()
-            fork_sound.play()
-            return degats
     else:
-        print(MobStats[0], "rate son attaque !")
-        degats = Roi_demon_stats[5]
+        Sentence("Ulric vous lance un sort de lumière")
+        degats = demo_sort_boss(MobStats[0], MobStats[1], MobStats[2], MobStats[4], Roi_demon_stats[5])
+        sword_sound.play()
+        fork_sound.play()
         return degats
-
-
 
 def bossfightulric(MobStats):
     from intro import Sentence
@@ -1475,7 +1487,7 @@ def bossfightulric(MobStats):
                 print("                                                                 Mana :", Roi_demon_stats[10])
                 print("")
                 print("Ulric")
-                Sentence("Message 1")
+                Sentence("Je vengerai mon peuple !")
                 sleep(1.5)
     else:
         Sentence(str(MobStats[0]) + " frappe en premier !")
@@ -1524,7 +1536,7 @@ def bossfightulric(MobStats):
                 print("                                                                 Mana :", Roi_demon_stats[10])
                 print("")
                 print("Ulric")
-                Sentence("Message 1")
+                Sentence("Je vengerai mon peuple !")
                 sleep(1.5)
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])

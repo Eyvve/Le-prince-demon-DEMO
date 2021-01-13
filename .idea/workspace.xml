@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cb49a0b-c8cc-482e-ac80-b14b99fedd06" name="Default Changelist" comment="maj ajout de contenu scénario">
-      <change afterPath="$PROJECT_DIR$/outro.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music_sounds.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music_sounds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.py" beforeDir="false" afterPath="$PROJECT_DIR$/about.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/combat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intro.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music/throne_theme.wav" beforeDir="false" afterPath="$PROJECT_DIR$/music/throne_theme.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outro.py" beforeDir="false" afterPath="$PROJECT_DIR$/outro.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -433,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610546586928</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Pull final de contenu à réviser - DEMO ver. RAW">
+      <created>1610560188946</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1610560188946</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -482,6 +482,7 @@
     <MESSAGE value="Passage de balais + ajout de la fonction sceptre sur la map west" />
     <MESSAGE value="Ajout de contenu pour la demo" />
     <MESSAGE value="Ajout contenu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout contenu" />
+    <MESSAGE value="Pull final de contenu à réviser - DEMO ver. RAW" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pull final de contenu à réviser - DEMO ver. RAW" />
   </component>
 </project>

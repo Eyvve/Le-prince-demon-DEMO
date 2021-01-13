@@ -1397,6 +1397,9 @@ def demo_boss_action(MobStats):
 
 def bossfightulric(MobStats):
     from intro import Sentence
+    mess1done = False
+    mess2done = False
+    mess3done = False
     os.system("cls")
     sleep(0.3)
     print("")
@@ -1465,7 +1468,7 @@ def bossfightulric(MobStats):
                 # faire en sorte de return la vie restante et de la réattribuer à la liste Prince_Stats
                 victoire = True
                 return victoire
-            elif mob_life < 100:
+            elif mob_life < 100 and mess3done == False:
                 print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
                       Roi_demon_stats[5], "pv")
                 print("                                                                 Mana :", Roi_demon_stats[10])
@@ -1473,7 +1476,8 @@ def bossfightulric(MobStats):
                 print("Ulric")
                 Sentence("Tu... ne... m'a pas... encore...vaincu !")
                 sleep(1.5)
-            elif mob_life < 200:
+                mess3done = True
+            elif mob_life < 200 and mess2done == False:
                 print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
                       Roi_demon_stats[5], "pv")
                 print("                                                                 Mana :", Roi_demon_stats[10])
@@ -1481,7 +1485,8 @@ def bossfightulric(MobStats):
                 print("Ulric")
                 Sentence("Tu es coriace Roi démon, ma lumière aura raison de toi.")
                 sleep(1.5)
-            elif mob_life < 400:
+                mess2done = True
+            elif mob_life < 400 and mess1done == False:
                 print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
                       Roi_demon_stats[5], "pv")
                 print("                                                                 Mana :", Roi_demon_stats[10])
@@ -1489,6 +1494,7 @@ def bossfightulric(MobStats):
                 print("Ulric")
                 Sentence("Je vengerai mon peuple !")
                 sleep(1.5)
+                mess1done = True
     else:
         Sentence(str(MobStats[0]) + " frappe en premier !")
         print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
@@ -1514,7 +1520,7 @@ def bossfightulric(MobStats):
                 # faire en sorte de return la vie restante et de la réattribuer à la liste Prince_Stats
                 victoire = True
                 return victoire
-            elif mob_life < 100:
+            elif mob_life < 100 and mess3done == False:
                 print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
                       Roi_demon_stats[5], "pv")
                 print("                                                                 Mana :", Roi_demon_stats[10])
@@ -1522,7 +1528,8 @@ def bossfightulric(MobStats):
                 print("Ulric")
                 Sentence("Tu... ne... m'a pas... encore...vaincu !")
                 sleep(1.5)
-            elif mob_life < 200:
+                mess3done = True
+            elif mob_life < 200 and mess2done == False:
                 print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
                       Roi_demon_stats[5], "pv")
                 print("                                                                 Mana :", Roi_demon_stats[10])
@@ -1530,7 +1537,8 @@ def bossfightulric(MobStats):
                 print("Ulric")
                 Sentence("Tu es coriace Roi démon, ma lumière aura raison de toi.")
                 sleep(1.5)
-            elif mob_life < 400:
+                mess2done = True
+            elif mob_life < 400 and mess1done == False:
                 print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
                       Roi_demon_stats[5], "pv")
                 print("                                                                 Mana :", Roi_demon_stats[10])
@@ -1538,6 +1546,7 @@ def bossfightulric(MobStats):
                 print("Ulric")
                 Sentence("Je vengerai mon peuple !")
                 sleep(1.5)
+                mess1done = True
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             prince_life = demo_boss_action(MobStats)

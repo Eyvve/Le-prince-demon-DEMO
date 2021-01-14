@@ -394,7 +394,7 @@ def pickle_save(roi_demon,Roi_demon_stats):
 
 
 def pickle_load(objet):
-    f = open("save","rb")
+    f = open("save", "rb")
     objet = pickle.load(f)
     f.close()
     return(objet)

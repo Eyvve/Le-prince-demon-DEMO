@@ -234,8 +234,18 @@ def load():
     from roi_demon_inv import Roi_demon_stats
     Sentence("Veuillez entrer un mot de passe")
     mdp = str(input("=> "))
-    roi_demon = pickle_load(roi_demon)
-    Roi_demon_stats = pickle_load(Roi_demon_stats)
+    roi_demon['hands']['hand1'] = pickle_load(roi_demon['hands']['hand1'])
+    roi_demon['hands']['armor']= pickle_load(roi_demon['hands']['armor'])
+    roi_demon['inv']['Sceptre de pouvoir']= pickle_load(roi_demon['inv']['Sceptre de pouvoir'])
+    roi_demon['inv']['Potion de soin n3']= pickle_load(roi_demon['inv']['Potion de soin n3'])
+    roi_demon['inv']['Potion de mana n3']= pickle_load(roi_demon['inv']['Potion de mana n3'])
+    roi_demon['equipement']["Épée légendaire Sxyrsbaane"]= pickle_load(roi_demon['equipement']["Épée légendaire Sxyrsbaane"])
+    roi_demon['armor']['Armure des Abysse']= pickle_load(roi_demon['armor']['Armure des Abysse'])
+    Roi_demon_stats[0]= pickle_load(Roi_demon_stats[0])
+    Roi_demon_stats[3]= pickle_load(Roi_demon_stats[3])
+    Roi_demon_stats[4]= pickle_load(Roi_demon_stats[4])
+    Roi_demon_stats[5]= pickle_load(Roi_demon_stats[5])
+
     while mdp != "Zaznaroth" or mdp != "Ginn" or mdp != "Ulric":
         if mdp == "Zaznaroth":
             questdone = False

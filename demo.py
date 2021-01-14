@@ -4,6 +4,7 @@ from Music_sounds import *
 from roi_demon_inv import *
 # from combat import *
 from intro import *
+from os import *
 
 questdone = False
 qeastdone = False
@@ -170,30 +171,63 @@ def SaveAnchor1(qdone, qwest, qeast, anchor):
 
 
 def Retraite():
+    from roi_demon_inv import Roi_demon_stats
     from intro import Sentence
-    Sentence("Laissant son regard planer sur le  désastre de ce champ de bataille, la résolution du Roi-dieu flanche.")
-    Sentence("A quoi bon changer l'ordre des choses et instaurer un ordre nouveau pour les nouvelles générations si presque")
-    Sentence("tout son peuple doit périr dans la tentative ? Les mots de l'arcaniste Seraphos lui revinrent en tête.")
-    Sentence("'Quand tu lèveras ton épée contre le bastion des mortels, tu feras trembler une civilisation'.")
-    Sentence("Ce maudit corbeau de mauvais augure pouvait bien là prédire la chute de son peuple! Et il ne sera pas relaté")
-    Sentence("dans les Sombres Grimoires que lui, Nizidramanii'yt le Roi-Dieu, aurait causé la ruine des siens !")
+    print("Champ de bataille de la citadelle - coeur de la bataille")
+    print("")
+    gates_music.fadout(1000)
+    Sentence("Laissant votre regard planer sur le désastre de ce champ de bataille, votre résolution flanche.")
+    print("")
+    Sentence("*A quoi bon changer l'ordre des choses, ")
+    Sentence("et instaurer un ordre nouveau pour les nouvelles générations si presque tout son peuple doit périr dans la tentative ?*")
+    sleep(1.5)
+    Sentence(" Les mots de l'arcaniste Seraphos lui revinrent en tête...")
+    print("")
+    Sentence(' "Quand tu lèveras ton épée contre le bastion des mortels, tu feras trembler une civilisation." ')
+    skip_touch()
+    print("Champ de bataille de la citadelle - coeur de la bataille")
+    print("")
+    Sentence("Ce maudit corbeau de mauvais augure pouvait bien là prédire la chute de son peuple! ")
+    Sentence("Et il ne sera pas relaté dans les Sombres Grimoires que vous,")
+    Sentence("Nizidramanii'yt le Roi-Dieu, aurez causé la ruine des siens !")
     Sentence("Quoi qu'il en coûte et peu importe la honte, survivre est l'essentiel. L'ennemi est beaucoup trop nombreux,")
-    Sentence("soutenu par des  créatures inconnues, béni d'une magie imprévue. Les humains, créatures certes éphémères,")
-    Sentence("se relèveraient bien mieux que son peuple d'une guerre de cette ampleur, étant bien plus nombreux et bien")
-    Sentence("plus fertiles... Devant la réalité imposée par l'étude des faits, et la mort dans la l'âme, ne pouvant se")
-    Sentence("à donner l'ordre lui-même, le Roi-dieu répondit à voix basse, comme brisée :'Zaz... Sonne la retraite.")
-    Sentence("Je ne serais pas l'instigateur de la destruction des nôtres... Ils sont plus redoutables que ce qu'il semblait.'")
-    Sentence("L'ordre fut donné, relayé, sonné. La retraite, à deux doigts de se transformer en fuite ou en débandade, se fit.")
+    Sentence("soutenu par des  créatures inconnues, béni d'une magie imprévue. ")
+    Sentence("Les humains, créatures certes éphémères, se relèveraient bien mieux que son peuple d'une guerre de cette ampleur, ")
+    Sentence("étant bien plus nombreux et bien plus fertiles... ")
+    Sentence("Devant la réalité imposée par l'étude des faits, et la mort dans la l'âme, ne pouvant vous")
+    Sentence("donner l'ordre à vous-même, vous annoncez à voix basse, comme brisée :")
+    sleep(1.5)
+    os.system("cls")
+    print("")
+    print(Roi_demon_stats[0])
+    Sentence('"Zaz... Sonne la retraite."')
+    Sentence(""" "Je ne serais pas l'instigateur de la destruction des nôtres... Ils sont plus redoutables que ce qu'il semblait." """)
+    os.system("cls")
+    sleep(2.0)
+    Sentence("L'ordre fut donné, relayé, sonné. ")
+    Sentence("La retraite, à deux doigts de se transformer en fuite ou en débandade, se fit.")
+    sleep(1.5)
     Sentence("Aucun contact ne fut jamais pris avec les humains qui se contentèrent des de bouter les démons dans les montagnes")
-    Sentence("d'Aurgelmirtann, au nord de Ljosalfer.")
+    Sentence("d'Aurgelmirtann, au nord de Ljosalfer...")
+    skip_touch()
+    os.system("cls")
+    battle_sound_effect.fadeout(1000)
+    print("")
+    Sentence("Jusque des siècles plus tard, les hommes se rappellent cet évènement comme la Bataille de la Couronne,")
+    Sentence("ou grâce à une alliance avec des créatures célestes, les humains ont repoussé les démons.")
+    sleep(1.5)
+    Sentence("Ces derniers finirent sous le joug des premiers,")
+    Sentence("le peu d'entre eux encore libres se terrant dans les montagnes. ")
+    sleep(1.5)
+    print("")
+    Sentence("A ce jour, nul ne sait comment les humains ont obtenu l'aide des anges,")
+    Sentence("mais depuis, un certain 'Prince en Blanc', que personne ne voit jamais,")
+    Sentence("semble avoir remplacé le roi précédent, et règne sur Ljosalfer d'une main juste,  ")
+    Sentence("ferme,")
+    Sentence("et désinteressée...")
+    from outro import outro
+    outro()
 
-    # petit écran de fin de démo
-
-    Sentence("Jusque des siècles plus tard, les hommes se rappellent cet évènement comme la Bataille de la Couronne, ou grâce")
-    Sentence("à une alliance avec des créatures célestes, les humains ont repoussé les démons. Ces derniers finirent sous le joug")
-    Sentence("des premiers, le peu d'entre eux encore libres se terrant dans les montagnes. A ce jour, nul ne sait comment les")
-    Sentence("humains ont obtenu l'aide des anges, mais depuis, un certain 'Prince en Blanc', que personne ne voit jamais,")
-    Sentence("semble avoir remplacé le roi précédent, et règne sur Ljosalfer d'une main juste, ferme, et désinteressée.")
 
 def qassautportes(qdone, qwest, qeast, anchor):
     from intro import Sentence

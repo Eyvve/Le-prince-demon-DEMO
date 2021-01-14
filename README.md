@@ -29,6 +29,23 @@ L'installation de l'interpréteur Python (3.9 de préférence) est obligatoire e
 
 Vous devez ensuite installer la librairie PyGame dont le processus d'installation est résumé ici https://www.pygame.org/wiki/GettingStarted
 
+Une fois tous ces outils installés vous devez ouvrir votre powershell et le configurer de la manière suivante (recommandé) :
+Police > Taille : 22
+Configuration > Taille de la fenêtre : Largeur : 123
+Configuration > Taille de la fenêtre : Hauteur : 42
+Couleurs > Arrière-plan : noir
+
+Pour lancer le jeu, vous devez entrer dans votre powershell le chemin de votre dossier de jeu : 
+pour vous y rendre faites cd .\"votre chemin "\ par exemple, sur mon pc j'entre :
+
+          cd .\PycharmProjects\Le-prince-demon-DEMO\
+
+Une fois dans mon dossier de jeu, lancez le script main.py, pour cela entrez:
+
+          py .\main.py
+          
+Bon jeu à vous.
+
 ## À PROPOS
 
 CECI EST UN TEXT GAME NARRATIF et non un RPG classique, ce qui nous à fait faire le choix de mettre en avant la narration et le confort de jeu, impliquant donc moins de libertés.

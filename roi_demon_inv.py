@@ -418,7 +418,7 @@ def save(anchor):
     Sentence("Le mot de passe associé à votre progression est :")
     print("")
     if anchor == 1:
-        print("Zaznaroth")
+        print("Zazranoth")
         skip_touch()
     elif anchor == 2:
         print("Ginn")

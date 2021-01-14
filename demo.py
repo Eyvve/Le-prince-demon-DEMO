@@ -9,7 +9,7 @@ from os import *
 questdone = False
 qeastdone = False
 qwestdone = False
-Anchor = 1
+Anchor = 0
 
 def demo(qdone, qwest, qeast, anchor):
     from intro import Sentence
@@ -370,8 +370,9 @@ def qassautportesest(qdone, qwest, qeast, anchor):
             direction = str(input("=> "))
             while direction != "1" or direction != "2":
                 if direction == "1":
+                    qeast = True
                     assautportes(qdone, qwest, qeast, anchor)
-                    return
+                    return qeast
                 elif direction == "2":
                     Sentence("On part pour l'emplacement ouest !")
                     print()
@@ -469,8 +470,9 @@ def assautportesouest(qdone, qwest, qeast, anchor):
             direction = str(input("=> "))
             while direction != "1" or direction != "2":
                 if direction == "1":
+                    qwest = True
                     assautportes(qdone, qwest, qeast, anchor)
-                    return
+                    return qwest
                 elif direction == "2":
                     Sentence("On part pour l'emplacement est !")
                     print()
@@ -626,7 +628,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     combat_music_2.fadeout(1000)
     print("")
     demo_deva_combat.play(-1)
-    Sentence("A peine eu il le temps de finir sa phrase que l'un des paladins se jeta sur vous de toutes ses forces,")
+    Sentence("A peine eut-il le temps de finir sa phrase que l'un des paladins se jeta sur vous de toutes ses forces,")
     Sentence("Appelant en lui le peu de lumière qu'il restait.")
     skip_touch()
     demofight(Paladin_démotivé)
@@ -648,10 +650,11 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     print("")
     Sentence("Alors que vous retirez le corps du paladin de votre épée,")
     Sentence("vous voyez Ulric enfiler son casque en récitant des psaumes.")
-    Sentence("...")
+    SentenceSlow("...")
     sleep(1.5)
     Sentence("Il tend son gigantesque marteau enchanté vers vous,")
     Sentence("Les yeux baignés de lumière.")
+    sleep(1.5)
     os.system("cls")
     bossfightulric(Ulric)
     print("Bastion Doré - rues de la citadelle")
@@ -661,7 +664,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     citadel_walk.play(-1)
     Sentence("Le chef de cotterie gisait au sol, mourant.")
     sleep(1.5)
-    Sentence("Vous apercevez des larmes de déception et de frustration couler derrière son casque brisé.")
+    Sentence("Vous apercevez des larmes de déception et de frustration couler sous son casque boursouflé.")
     sleep(1.5)
     Sentence("Il était un fier combattant, puissant pour son jeune age...")
     sleep(1.5)
@@ -676,6 +679,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     choix = str(input("=>"))
     while choix != "1" or choix != "2":
         if choix == "1":
+            os.system("cls")
             print("Bastion Doré - rues de la citadelle")
             print("")
             Sentence("Vous soulevez votre épée et la plantez dans le corps du dévot.")
@@ -687,6 +691,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
             skip_touch()
             break
         elif choix == "2":
+            os.system("cls")
             print("Bastion Doré - rues de la citadelle")
             print("")
             Sentence("Une pensée traverse votre esprit...")
@@ -721,7 +726,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     sleep(1.5)
     print("")
     print("Ginn")
-    Sentence("Ca a l'air vrai quand on à ça sous les yeux... Ils veulent vraiment s'en prendre a des dragons... ")
+    Sentence("Ca a l'air vrai quand on à ça sous les yeux... Ils veulent vraiment s'en prendre à des dragons... ")
     Sentence("Soit pour leur pouvoir soit pour autre chose... ")
     sleep(1.0)
     print("")
@@ -737,7 +742,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     SaveAnchor3(qdone, qwest, qeast, anchor)
 
 def SaveAnchor3(qdone, qwest, qeast, anchor):
-    prince = ["Le Prince en Blanc", 55, 65, 17, 1.2, 999, 85, 15]
+    prince = ["Le Prince en Blanc", 65, 75, 17, 1.2, 999, 90, 10]
     from combat import bossfightking
     from intro import Sentence
     from intro import SentenceSlow
@@ -755,7 +760,7 @@ def SaveAnchor3(qdone, qwest, qeast, anchor):
     Sentence("Vous finissez enfin par arriver au centre de la place forte, au coeur du pouvoir des humains. ")
     sleep(1.5)
     Sentence("La grande porte de la salle du trône déjà éventrée,")
-    Sentence("avec parmi les décombres un nombre de cadavres humains trop grand pour avoir été le fait de bataille...")
+    Sentence("avec parmi les décombres un nombre de cadavres humains trop grand pour avoir été le fait de la bataille...")
     skip_touch()
     print("Bastion Doré - Batisse Royale (salle du trône)")
     print("")
@@ -768,7 +773,9 @@ def SaveAnchor3(qdone, qwest, qeast, anchor):
     print("Ginn")
     Sentence("Mort,")
     Sentence("mais aucune trace de blessure. Y'a comme un truc biza...")
+    sleep(0.5)
     light_beam.play()
+    sleep(2.0)
     print("")
     Sentence("Sa phrase resta en suspens, pendant qu'il observait la longue lance de lumière lui ayant traversé le torse.")
     sleep(1.5)
@@ -792,12 +799,14 @@ def SaveAnchor3(qdone, qwest, qeast, anchor):
     skip_touch()
     throne_theme.fadeout(1000)
     sleep(1.0)
-    final_boss_theme.play()
+    final_boss_theme.play(-1)
     print("Bastion Doré - Batisse Royale (salle du trône)")
     print("")
+    print("Le Prince en Blanc (Prince héritier Zoltàn")
+    Sentence("'Vos exactions s'arrêtent ici.'")
+    Sentence("'Nul ne mettra en péril l'avenir de l'humanité.'")
+    sleep(1.0)
     print("")
-    Sentence("Vos exactions s'arrêtent ici.")
-    Sentence("Nul ne mettra en péril l'avenir de l'humanité.")
     Sentence("D'un geste de la main, il projetta des vagues de lumière qui réduisirent en poussière la quasi-totalité de votre escouade.")
     Sentence("Conscient de faire face à une menace inconnue, vous échangez un regard avec votre général.")
     SentenceSlow("...")
@@ -808,6 +817,7 @@ def SaveAnchor3(qdone, qwest, qeast, anchor):
 
     final_boss_theme.fadeout(1000)
     sleep(1.0)
+    throne_theme(-1)
     print("Bastion Doré - Batisse Royale (salle du trône)")
     print("")
     Sentence("Terrassé par la puissance de cet être inconnu,")
@@ -821,6 +831,8 @@ def SaveAnchor3(qdone, qwest, qeast, anchor):
     Sentence("mortellement blessé et couvert de honte d'abandonner les siens ainsi que leur rêve de gloire et de grandeur,")
     Sentence("vous lancez votre sort de téléportation...")
     skip_touch()
+    throne_theme.fadeout(1000)
+    sleep(1.0)
     print("")
     Sentence("Jusque des siècles plus tard, les hommes se rappellent cet évènement comme la Bataille de la Couronne, ")
     Sentence("ou pour défaire le puissant Roi-dieu des démons,")

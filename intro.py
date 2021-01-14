@@ -6,9 +6,14 @@ from Music_sounds import *
 from about import *
 from combat import *
 from demo import *
+from roi_demon_inv import *
 
 pygame.init()
 
+questdone = False
+qeastdone = False
+qwestdone = False
+Anchor = 0
 
 def Sentence(x):
     lines = [x]
@@ -194,7 +199,7 @@ def choice_mode():
     
     """)
     print("")
-    print("                    1 - MODE HISTOIRE                                           2 - MODE GAMEPLAY")
+    print("                    1 - MODE HISTOIRE                                                2 - DEMO")
     print("")
     print("           Le mode histoire est à choisir si vous                      Vivez les dernières heures de la Grande ")
     print("           Souhaitez connaître l'histoire du prince                    Guerre en incarnant le Roi Démon.")
@@ -221,7 +226,7 @@ def choice_mode():
             validation_sound.play()
             os.system("cls")
             print("")
-            Sentence("Mode gameplay")
+            Sentence("DEMO")
             sleep(2.0)
             demo(questdone, qeastdone, qwestdone, Anchor)
         elif choix != "1" and choix != "2":
@@ -238,8 +243,8 @@ def load():
     roi_demon = pickle_load()
     Roi_demon_stats = pickle_load_stats()
 
-    while mdp != "Zaznaroth" or mdp != "Ginn" or mdp != "Ulric":
-        if mdp == "Zaznaroth":
+    while mdp != "Zazranoth" or mdp != "Ginn" or mdp != "Ulric":
+        if mdp == "Zazranoth":
             questdone = False
             qeastdone = False
             qwestdone = False

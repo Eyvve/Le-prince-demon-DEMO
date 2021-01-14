@@ -1531,7 +1531,7 @@ def bossfightulric(MobStats):
                 print("                                                                 Mana :", Roi_demon_stats[10])
                 print("")
                 print("Ulric")
-                Sentence("Tu es coriace Roi démon, ma lumière aura raison de toi.")
+                Sentence("Tu es coriace Roi démon, mais ma lumière aura raison de toi.")
                 sleep(1.5)
                 mess2done = True
             elif mob_life < 400 and mess1done == False:

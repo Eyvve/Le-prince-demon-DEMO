@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9cb49a0b-c8cc-482e-ac80-b14b99fedd06" name="Default Changelist" comment="maj ajout de contenu scénario">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/combat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intro.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/roi_demon_inv.py" beforeDir="false" afterPath="$PROJECT_DIR$/roi_demon_inv.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,13 +92,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610115872015</updated>
-    </task>
-    <task id="LOCAL-00008" summary="maj mineure">
-      <created>1610388052393</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1610388052393</updated>
     </task>
     <task id="LOCAL-00009" summary="mhp">
       <created>1610389529049</created>
@@ -433,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610636545942</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="ajout déplacement quête">
+      <created>1610642237894</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1610642237894</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -461,7 +464,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="correction du bug d'attaque magique" />
     <MESSAGE value="amélioration du code et correction de bugs mineurs" />
     <MESSAGE value="ajout fin premier combat demo" />
     <MESSAGE value="mhp" />
@@ -486,6 +488,7 @@
     <MESSAGE value="maj" />
     <MESSAGE value="Ajout du système de sauvegarde" />
     <MESSAGE value="ajout de Retraite" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout de Retraite" />
+    <MESSAGE value="ajout déplacement quête" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout déplacement quête" />
   </component>
 </project>

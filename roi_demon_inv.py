@@ -115,7 +115,7 @@ def print_objet_roi():
         print(n+1,Kinv_list[n],"n°:",Iinv_list[n])
 
 
-def use_objet_roi() :
+def use_objet_roi(anchor) :
     from intro import Sentence
     sleep(0.2)
     os.system("cls")
@@ -133,7 +133,7 @@ def use_objet_roi() :
         if str(Ninv) == "":
             Sentence("veuillez entrer un chiffre valide")
         elif int(Ninv) == plop:
-            menu_roi()
+            menu_roi(anchor)
             return
         else:
             if int(Ninv) < 1 or int(Ninv) > len(Kinv_list)+1:
@@ -143,7 +143,7 @@ def use_objet_roi() :
                 if roi_demon['inv'][objet] == 0:
                     Sentence("Vous n'avez plus de cet objet en stock")
                     sleep(1)
-                    use_objet_roi()
+                    use_objet_roi(anchor)
                     return
                 if len(index_objet[str(objet)]) >= 2 and len(index_objet[str(objet)]) <= 4 :
                     sleep(0.5)
@@ -172,7 +172,7 @@ def use_objet_roi() :
                     elif index_objet[str(objet)][2] == None:
                         print("Vous ne pouvez pas utiliser cet objet tout de suite.")
                         sleep(2)
-                        use_objet_roi()
+                        use_objet_roi(anchor)
                         return
 
                     sleep(2)
@@ -190,16 +190,16 @@ def use_objet_roi() :
                                 if int(choix) == 1:
                                     sleep(0.5)
                                     os.system("cls")
-                                    use_objet_roi()
+                                    use_objet_roi(anchor)
                                     return
                                 elif int(choix) == 2:
-                                    menu_roi()
+                                    menu_roi(anchor)
                                     return
                             else:
                                 Sentence("veuillez entrer un chiffre valide")
                 else:
                     Sentence("Ceci n'est pas un objet utilisable")
-                    use_objet_roi()
+                    use_objet_roi(anchor)
 
 def print_equipement_roi():
     Kequipement = roi_demon['equipement'].keys()
@@ -228,7 +228,7 @@ def use_equipement_wapon_roi():
                 Sentence("veuillez entrer un chiffre valide")
 
             elif int(wapone) == len(Kequipement_list) + 1:
-                menu_roi()
+                menu_roi(anchor)
                 return
             else:
                 if int(wapone) >= 1 and int(wapone) <= len(Kequipement_list):
@@ -320,7 +320,7 @@ def use_equipement_armor_roi():
                 Sentence("veuillez entrer un chiffre valide")
 
             elif int(armor) == len(Karmor_list) + 1:
-                menu_roi()
+                menu_roi(anchor)
                 return
             else:
                 if int(armor) >= 1 and int(armor) <= len(Karmor_list):
@@ -399,26 +399,26 @@ def pickle_load(objet):
     f.close()
     return(objet)
 
-def save():
+def save(anchor):
     from intro import Sentence
     from intro import skip_touch
     Sentence("Le mot de passe associé à votre progression est :")
     print("")
-    if Anchor == 1:
+    if anchor == 1:
         print("Zaznaroth")
         skip_touch()
-    elif Anchor == 2:
+    elif anchor == 2:
         print("Ginn")
         skip_touch()
-    elif Anchor == 3:
+    elif anchor == 3:
         print("Ulric")
         skip_touch()
 
 
 
 
-def menu_roi() :#use in demo (entré de map et sortie de map)
-    from demo import  Anchor
+def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
+    from intro import titlebis
     from intro import Sentence
     sleep(0.5)
     os.system("cls")
@@ -450,7 +450,7 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                 if int(choix) == 1:
                                     sleep(0.5)
                                     os.system("cls")
-                                    use_objet_roi()
+                                    use_objet_roi(anchor)
                                     return
                                 elif int(choix) == 2:
                                     sleep(0.5)
@@ -473,25 +473,25 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                                     sleep(0.5)
                                                     os.system("cls")
                                                     use_equipement_wapon_roi()
-                                                    menu_roi()
+                                                    menu_roi(anchor)
                                                     return
                                                 elif int(choix) == 2:
                                                     sleep(0.5)
                                                     os.system("cls")
                                                     use_equipement_armor_roi()
-                                                    menu_roi()
+                                                    menu_roi(anchor)
                                                     return
                                                 elif int(choix) == 3:
                                                     sleep(0.5)
                                                     os.system("cls")
-                                                    menu_roi()
+                                                    menu_roi(anchor)
                                                     return
                                             else:
                                                 Sentence("veuillez entrer un chiffre valide")
                                 elif int(choix) == 3:
                                     sleep(0.5)
                                     os.system("cls")
-                                    menu_roi()
+                                    menu_roi(anchor)
                                     return
                             else:
                                 Sentence("veuillez entrer un chiffre valide")
@@ -513,7 +513,7 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                     sleep(0.5)
                                     # action de sauvegarde
                                     os.system("cls")
-                                    save()
+                                    save(anchor)
                                     Sentence("Voulez vous quitter ?")
                                     print("1. oui")
                                     print("2. non")
@@ -531,14 +531,14 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                                             elif int(choix) == 2:
                                                 sleep(0.5)
                                                 os.system("cls")
-                                                menu_roi()
+                                                menu_roi(anchor)
                                                 return
                                         else:
                                             Sentence("veuillez entrer un chiffre valide")
                                 elif int(choix) == 2:
                                     sleep(0.5)
                                     os.system("cls")
-                                    menu_roi()
+                                    menu_roi(anchor)
                                     return
                             else:
                                 Sentence("veuillez entrer un chiffre valide")

@@ -8,7 +8,7 @@ from intro import *
 questdone = False
 qeastdone = False
 qwestdone = False
-Anchor = 0
+Anchor = 1
 
 def demo(qdone, qwest, qeast, anchor):
     from intro import Sentence
@@ -119,7 +119,7 @@ def demo(qdone, qwest, qeast, anchor):
 
 def SaveAnchor1(qdone, qwest, qeast, anchor):
     from intro import Sentence
-    menu_roi()
+    menu_roi(anchor)
     battle_sound_effect.fadeout(1000)
     battle_sound_effect.play(-1)
     os.system("cls")
@@ -494,7 +494,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     from intro import SentenceSlow
     from combat import demofight
     from combat import bossfightulric
-    menu_roi()
+    menu_roi(anchor)
     combat_music_2.play(-1)
     battle_sound_effect.play(-1)
     os.system("cls")
@@ -673,7 +673,7 @@ def SaveAnchor3(qdone, qwest, qeast, anchor):
     from combat import bossfightking
     from intro import Sentence
     from intro import SentenceSlow
-    menu_roi()
+    menu_roi(anchor)
     Sentence("")
     Sentence("Vous vous assurez que tout le monde soit prêt et vous annoncez le départ.")
     sleep(1.5)

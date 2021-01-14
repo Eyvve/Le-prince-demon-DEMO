@@ -156,9 +156,8 @@ def main_menu():
     if choice == "2":
         intro_music.stop()
         intro_music_bis.stop()
-        Sentence("Fonction en cours de developpement ! Revenez plus tard")
         sleep(2.0)
-        beginning()
+        load()
     elif choice == "3":
         intro_music.stop()
         intro_music_bis.stop()
@@ -224,11 +223,35 @@ def choice_mode():
             print("")
             Sentence("Mode gameplay")
             sleep(2.0)
-            demo(questdone, qeastdone, qwestdone)
+            demo(questdone, qeastdone, qwestdone, Anchor)
         elif choix != "1" and choix != "2":
             print("veuillez choisir un mode qui existe")
             choix = str(input("Choisissez un mode de jeu :"))
 
             
-#Welcome()
+def load():
+    Sentence("Veuillez entrer un mot de passe")
+    mdp = str(input("=> "))
+    while mdp != "Zaznaroth" or mdp != "Ginn" or mdp != "Ulric":
+        if mdp == "Zaznaroth":
+            questdone = False
+            qeastdone = False
+            qwestdone = False
+            SaveAnchor1(questdone, qeastdone, qwestdone, Anchor)
+            return
+        elif mdp == "Ginn":
+            questdone = False
+            qeastdone = False
+            qwestdone = False
+            SaveAnchor2(questdone, qeastdone, qwestdone, Anchor)
+            return
+        elif mdp == "Ulric":
+            questdone = False
+            qeastdone = False
+            qwestdone = False
+            SaveAnchor3(questdone, qeastdone, qwestdone, Anchor)
+            return
+        if mdp != "1" or mdp != "2" or mdp != "3":
+            Sentence("Ce mot de passe n'existe pas.")
+        mdp = str(input("=> "))
 

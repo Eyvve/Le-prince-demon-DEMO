@@ -3,7 +3,6 @@ from random import *
 from collections import *
 from index import *
 from mob import *
-from sauvgarde import *
 from combat import *
 from time import sleep
 

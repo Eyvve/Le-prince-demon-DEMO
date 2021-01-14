@@ -380,6 +380,23 @@ def remove_armor_roi(armor) :
                 Sentence("veuillez entrer un chiffre valide")
 
 
+def save():
+    from intro import Sentence
+    from intro import skip_touch
+    Sentence("Le mot de passe associé à votre progression est :")
+    print("")
+    if Anchor == 1:
+        print("Zaznaroth")
+        skip_touch()
+    elif Anchor == 2:
+        print("Ginn")
+        skip_touch()
+    elif Anchor == 3:
+        print("Ulric")
+        skip_touch()
+
+
+
 
 def menu_roi() :#use in demo (entré de map et sortie de map)
     from intro import Sentence
@@ -474,8 +491,9 @@ def menu_roi() :#use in demo (entré de map et sortie de map)
                             if int(choix) >= 1 and int(choix) <= 2:
                                 if int(choix) == 1:
                                     sleep(0.5)
+                                    # action de sauvegarde
                                     os.system("cls")
-                                    save(roi_demon, history)
+                                    save()
                                     Sentence("Voulez vous quitter ?")
                                     print("1. oui")
                                     print("2. non")
@@ -546,3 +564,5 @@ def menu_roi_sceptre() :#use in demo (utilisation quand tu dois planter un scept
                 menu_roi_sceptre()
                 return
     return
+
+

@@ -240,10 +240,6 @@ def load():
     from roi_demon_inv import Roi_demon_stats
     Sentence("Veuillez entrer un mot de passe")
     mdp = str(input("=> "))
-
-    roi_demon = pickle_load()
-    Roi_demon_stats = pickle_load_stats()
-
     while mdp != "Zazranoth" or mdp != "Ginn" or mdp != "Ulric":
         if mdp == "Zazranoth":
             questdone = False

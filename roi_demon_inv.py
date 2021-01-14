@@ -4,6 +4,7 @@ from combat import *
 from index import *
 from time import sleep
 import Music_sounds
+from demo import *
 import pickle
 
 roi_demon = {
@@ -34,6 +35,13 @@ roi_demon = {
 
 Roi_demon_stats = ["Dieu-Roi", 55, 75, 25, 1.1, 600, 90, 5, 4, 0, 50, 5, 4, 600, 50,10]
 Deva_stats = ["Deva", 25, 38, 15, 1.2, 250, 85, 5]
+
+
+
+
+
+
+
 # significations : (0)nom, (1)attaque mini, (2)attaque max, (3)défense, (4)multiplicateur de dégat (arme), (5)vie, (6)précision, (7)chance de coup bas, (8)niveau de coup bas, (9)xp coup bas, (10)mana, (11)esquive, (12)attques magiques, (13) PV max, (14) MP max, (15) defense mini
 
 
@@ -228,7 +236,7 @@ def use_equipement_wapon_roi():
                 Sentence("veuillez entrer un chiffre valide")
 
             elif int(wapone) == len(Kequipement_list) + 1:
-                menu_roi(anchor)
+                menu_roi(Anchor)
                 return
             else:
                 if int(wapone) >= 1 and int(wapone) <= len(Kequipement_list):
@@ -320,7 +328,7 @@ def use_equipement_armor_roi():
                 Sentence("veuillez entrer un chiffre valide")
 
             elif int(armor) == len(Karmor_list) + 1:
-                menu_roi(anchor)
+                menu_roi(Anchor)
                 return
             else:
                 if int(armor) >= 1 and int(armor) <= len(Karmor_list):
@@ -397,6 +405,16 @@ def pickle_save(roi_demon,Roi_demon_stats):
     pickle.dump(d,f)
     f.close()
 
+def pikle_print_save():
+    pickle_file = open("save", "rb")
+    objects = []
+    while True:
+        try:
+            objects.append(pickle.load(pickle_file))
+        except EOFError:
+            break
+    pickle_file.close()
+    print(objects)
 
 def pickle_load():
     f = open("save","rb")
@@ -427,7 +445,9 @@ def save(anchor):
         print("Ulric")
         skip_touch()
 
-
+if Anchor != 0 :
+    roi_demon = pickle_load()
+    Roi_demon_stats = pickle_load_stats()
 
 
 def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
@@ -527,6 +547,7 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                                     # action de sauvegarde
                                     os.system("cls")
                                     save(anchor)
+                                    pickle_save(roi_demon,Roi_demon_stats)
                                     Sentence("Voulez vous quitter ?")
                                     print("1. oui")
                                     print("2. non")

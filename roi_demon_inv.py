@@ -151,7 +151,7 @@ def use_objet_roi(anchor) :
                     print("Vous utilisez " + str(objet) + ".")
                     sleep(0.5)
                     if index_objet[str(objet)][2] == 1:
-                        # bruitage de heal popo
+                        absorbtion_soundeffect.play()
                         print("Vous gagnez ", str(index_objet[str(objet)][1]), "Pv.")
                         Roi_demon_stats[5] += index_objet[str(objet)][1]
                         if Roi_demon_stats[5] > Roi_demon_stats[13] :
@@ -584,6 +584,7 @@ def menu_roi_sceptre() :#use in demo (utilisation quand tu dois planter un scept
                 objet = Kinv_list[int(Ninv) - 1]
                 if len(index_objet[str(objet)]) == 4:
                     Sentence("Vous utilisez " + str(objet) + ".")
+                    scepter_sound.play()
                     roi_demon['inv'][str(objet)] -= 1
                     return
 

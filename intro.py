@@ -179,6 +179,7 @@ def main_menu():
 def PlayGame():
     import os
     os.system("cls")
+    Sentence("Disclamer : pour éviter des choix involontaires, n'appuyez sur votre clavier que quand on vous le demande.")
     Sentence("Pour plus de confort, veuillez régler votre console en police 24 et votre fenêtre en Largeur : 123, Hauteur : 42.")
     Sentence("Il est recommandé de jouer avec un casque.")
     Sentence("Ecrivez 'jouer' lorsque vous êtes prêt.")

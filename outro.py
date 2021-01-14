@@ -121,7 +121,7 @@ def outro():
     sleep(0.36)
     print("")
     sleep(0.36)
-    print("             LOREMESTRE, WORLDMAP DESIGNER, WORLD BUILDER(?)")
+    print("             LOREMESTRE, WORLDMAP DESIGNER, WORLD BUILDER")
     sleep(0.36)
     print("                                             et plein d'autres choses")
     sleep(0.36)

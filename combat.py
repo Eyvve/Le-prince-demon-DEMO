@@ -1385,8 +1385,7 @@ def demo_ulric_action(MobStats):
     else:
         Sentence("Ulric vous lance un sort de lumière")
         degats = demo_sort_boss(MobStats[0], MobStats[1], MobStats[2], MobStats[4], Roi_demon_stats[5])
-        sword_sound.play()
-        fork_sound.play()
+        light_attack_2.play()
         return degats
 
 def bossfightulric(MobStats):

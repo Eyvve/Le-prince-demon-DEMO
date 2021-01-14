@@ -5,7 +5,7 @@ from maps import *
 from Music_sounds import *
 from about import *
 from combat import *
-from demo import demo
+from demo import *
 
 pygame.init()
 
@@ -224,7 +224,7 @@ def choice_mode():
             print("")
             Sentence("Mode gameplay")
             sleep(2.0)
-            demo()
+            demo(questdone, qeastdone, qwestdone)
         elif choix != "1" and choix != "2":
             print("veuillez choisir un mode qui existe")
             choix = str(input("Choisissez un mode de jeu :"))

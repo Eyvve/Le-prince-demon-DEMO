@@ -199,7 +199,7 @@ def Magic_action(nivatkmag):
             return mob_hp_remaining
     elif nivatkmag == 4:
         print("1. Rayon Infernal | coût : 16 mana")
-        print("2. Grande moisson | coût : 25 mana")
+        print("2. Grande moisson | coût : 10 mana")
         print("3. Peau du Seigneur démon | coût : 20 mana")
         print("4. Résurgence Royale | coût : Crâne du roi démon")
         print("5. retour au menu des actions")
@@ -217,9 +217,9 @@ def Magic_action(nivatkmag):
                 mob_hp_remaining = Magic_action(Prince_stats[12])
                 return mob_hp_remaining
         elif rep == "2":
-            if Prince_stats[10] >= 15:
+            if Prince_stats[10] >= 10:
                 absorbtion_soundeffect.play()
-                Prince_stats[10] = Prince_stats[10] - 15
+                Prince_stats[10] = Prince_stats[10] - 10
                 magic_attack = randint(15, 20)
                 print("vous absorbez", magic_attack, "dégats magiques !")
                 sleep(1.0)
@@ -890,7 +890,7 @@ def demo_Magic_action(nivatkmag, MobStats):
             return mob_hp_remaining
     elif nivatkmag == 4:
         print("1. Rayon Infernal | coût : 16 mana")
-        print("2. Grande moisson | coût : 25 mana")
+        print("2. Grande moisson | coût : 10 mana")
         print("3. Peau du Seigneur démon | coût : 20 mana")
         print("4. retour au menu des actions")
         rep = str(input("=> "))
@@ -907,9 +907,9 @@ def demo_Magic_action(nivatkmag, MobStats):
                 mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
                 return mob_hp_remaining
         elif rep == "2":
-            if Roi_demon_stats[10] >= 25:
+            if Roi_demon_stats[10] >= 10:
                 absorbtion_soundeffect.play()
-                Roi_demon_stats[10] = Roi_demon_stats[10] - 25
+                Roi_demon_stats[10] = Roi_demon_stats[10] - 10
                 magic_attack = randint(25, 35)
                 print("vous absorbez", magic_attack, "dégats magiques !")
                 sleep(1.0)

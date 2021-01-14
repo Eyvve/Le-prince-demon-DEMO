@@ -9,10 +9,10 @@ from outro import outro
 
 pygame.init()
 
-outro()
+# outro()
 # qassautportesest()
-# demo()
-# PlayGame()
+# demo(questdone, qeastdone, qwestdone)
+PlayGame()
 # About()
 # beginning()
 # choice_mode()

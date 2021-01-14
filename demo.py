@@ -5,9 +5,9 @@ from roi_demon_inv import *
 # from combat import *
 from intro import *
 
-questdone = True
-qeastdone = True
-qwestdone = True
+questdone = False
+qeastdone = False
+qwestdone = False
 
 
 def demo(qdone, qwest, qeast):
@@ -190,9 +190,6 @@ def Retraite():
     Sentence("semble avoir remplacé le roi précédent, et règne sur Ljosalfer d'une main juste, ferme, et désinteressée.")
 
 def qassautportes(qdone, qwest, qeast):
-    questdone = False
-    qeastdone = False
-    qwestdone = False
     from intro import Sentence
     from combat import demofight
     os.system("cls")
@@ -438,13 +435,14 @@ def assautportesouest(qdone, qwest, qeast):
 
 def assautportes(qdone, qwest, qeast):
     Paladin_démotivé = ["Paladin démotivé", 20, 25, 15, 1.2, 150, 85, 5]
-    Paladin_bléssé = ["Paladin démotivé", 25, 35, 15, 1.2, 100, 85, 5]
+    Paladin_bléssé = ["Paladin blessé", 25, 35, 15, 1.2, 100, 85, 5]
     Ulric = ["Ulric Luminis", 50, 60, 17, 1.2, 550, 75, 5]
     prince = ["Le Prince en Blanc", 55, 65, 17, 1.2, 900, 85, 15]
     from intro import Sentence
     from intro import SentenceSlow
     from combat import demofight
     from combat import bossfightulric
+    from combat import bossfightking
     if qdone == False:
         os.system("cls")
         print("Champ de bataille de la citadelle - portes de la citadelle")
@@ -684,7 +682,7 @@ def assautportes(qdone, qwest, qeast):
         light_beam.play()
         print("")
         Sentence("Sa phrase resta en suspens, pendant qu'il observait la longue lance de lumière lui ayant traversé le torse.")
-        print(1.5)
+        sleep(1.5)
         Sentence("La bouche ouverte, l'aide de camp leva les yeux vers vous, le regard empli de surprise.")
         sleep(1.5)
         Sentence("Et au moment ou son corps heurta la sol, une lumière blanche éclatante se fit dans la salle du trône dévastée.")
@@ -703,6 +701,8 @@ def assautportes(qdone, qwest, qeast):
         Sentence("Levant une main qui tenait l'épée reconnaissable de la famille royale des humains, ")
         Sentence("le jeune homme déploya trois paires d'ailes enflammées et dit avec un ton posé, d'une voix venant d'un autre monde.")
         skip_touch()
+        throne_theme.fadeout(1000)
+        sleep(1.0)
         final_boss_theme.play()
         print("Bastion Doré - Batisse Royale (salle du trône)")
         print("")

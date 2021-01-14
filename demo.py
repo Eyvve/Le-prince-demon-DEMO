@@ -363,13 +363,28 @@ def qassautportesest(qdone, qwest, qeast, anchor):
             print("")
             print(Roi_demon_stats[0])
             Sentence("Le premier sceptre est en place ! On bouge, et repousse moi ces vermisseaux !")
-            Sentence("On part pour l'emplacement ouest !")
-            print()
-            Sentence("Après vous être assuré par un échange de regard que votre second ait bien entendu les ordres,")
-            Sentence("Vous prenez la direction du second emplacement. ")
-            qeast = True
-            assautportesouest(qdone, qwest, qeast, anchor)
-            return qeast
+            print("")
+            print("Ou souhaitez-vous aller ?")
+            print("1. Portes de la citadelle")
+            print("2. Vieille tour de garde (ouest)")
+            direction = str(input("=> "))
+            while direction != "1" or direction != "2":
+                if direction == "1":
+                    assautportes(qdone, qwest, qeast, anchor)
+                    return
+                elif direction == "2":
+                    Sentence("On part pour l'emplacement ouest !")
+                    print()
+                    Sentence("Après vous être assuré par un échange de regard que votre second ait bien entendu les ordres,")
+                    Sentence("Vous prenez la direction du second emplacement. ")
+                    qeast = True
+                    skip_touch()
+                    assautportesouest(qdone, qwest, qeast, anchor)
+                    return qeast
+                if direction != "1" or direction != "2":
+                    Sentence("Impossible d'aller autre part.")
+                direction = str(input())
+
 
 def assautportesouest(qdone, qwest, qeast, anchor):
     from intro import Sentence
@@ -446,10 +461,29 @@ def assautportesouest(qdone, qwest, qeast, anchor):
             print("")
             print(Roi_demon_stats[0])
             Sentence("Ginn! Le sceptre est planté, partons nous occuper du second")
-            skip_touch()
-            qwest = True
-            qassautportesest(qdone, qwest, qeast, anchor)
-            return qwest
+            sleep(1.5)
+            print("")
+            print("Ou souhaitez-vous aller ?")
+            print("1. Portes de la citadelle")
+            print("2. Champ abandonné (est)")
+            direction = str(input("=> "))
+            while direction != "1" or direction != "2":
+                if direction == "1":
+                    assautportes(qdone, qwest, qeast, anchor)
+                    return
+                elif direction == "2":
+                    Sentence("On part pour l'emplacement est !")
+                    print()
+                    Sentence("Après vous être assuré par un échange de regard que votre second ait bien entendu les ordres,")
+                    Sentence("Vous prenez la direction du second emplacement. ")
+                    qwest = True
+                    skip_touch()
+                    qassautportesest(qdone, qwest, qeast, anchor)
+                    return qwest
+                if direction != "1" or direction != "2":
+                    Sentence("Impossible d'aller autre part.")
+                direction = str(input())
+
         if qeast == True:
             os.system("cls")
             print("Quête terminée: L'assaut")

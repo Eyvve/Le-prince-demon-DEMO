@@ -388,16 +388,29 @@ def remove_armor_roi(armor) :
 
 def pickle_save(roi_demon,Roi_demon_stats):
     f = open("save", "wb")
-    pickle.dump(roi_demon, f)
-    pickle.dump(Roi_demon_stats, f)
+    roi_demon_save = roi_demon
+    Roi_demon_stats_save = Roi_demon_stats
+    d = {
+        "roi_demon" : roi_demon_save,
+        "Roi_demon_stats" : Roi_demon_stats_save
+    }
+    pickle.dump(d,f)
     f.close()
 
 
-def pickle_load(objet):
-    f = open("save", "rb")
-    objet = pickle.load(f)
+def pickle_load():
+    f = open("save","rb")
+    d = pickle.load(f)
+    roi_demon = d["roi_demon"]
     f.close()
-    return(objet)
+    return(roi_demon)
+
+def pickle_load_stats():
+    f = open("save","rb")
+    d = pickle.load(f)
+    Roi_demon_stats = d["Roi_demon_stats"]
+    f.close()
+    return(Roi_demon_stats)
 
 def save(anchor):
     from intro import Sentence
@@ -468,7 +481,7 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                                         if str(choix) == "":
                                             Sentence("veuillez entrer un chiffre valide")
                                         else:
-                                            if int(choix) >= 1 and int(choix) <= 2:
+                                            if int(choix) >= 1 and int(choix) <= 3:
                                                 if int(choix) == 1:
                                                     sleep(0.5)
                                                     os.system("cls")

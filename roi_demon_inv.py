@@ -139,6 +139,11 @@ def use_objet_roi() :
                 Sentence("veuillez entrer un chiffre valide")
             else:
                 objet = Kinv_list[int(Ninv)-1]
+                if roi_demon['inv'][objet] == 0:
+                    Sentence("Vous n'avez plus de cet objet en stock")
+                    sleep(1)
+                    use_objet_roi()
+                    return
                 if len(index_objet[str(objet)]) >= 2 and len(index_objet[str(objet)]) <= 4 :
                     sleep(0.5)
                     os.system("cls")

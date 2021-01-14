@@ -4,6 +4,7 @@ from combat import *
 from index import *
 from time import sleep
 import Music_sounds
+import pickle
 
 roi_demon = {
     'xp' : {
@@ -385,6 +386,19 @@ def remove_armor_roi(armor) :
                 Sentence("veuillez entrer un chiffre valide")
 
 
+def pickle_save(roi_demon,Roi_demon_stats):
+    f = open("save", "wb")
+    pickle.dump(roi_demon, f)
+    pickle.dump(Roi_demon_stats, f)
+    f.close()
+
+
+def pickle_load(objet):
+    f = open("save","rb")
+    objet = pickle.load(f)
+    f.close()
+    return(objet)
+
 def save():
     from intro import Sentence
     from intro import skip_touch
@@ -404,6 +418,7 @@ def save():
 
 
 def menu_roi() :#use in demo (entré de map et sortie de map)
+    from demo import  Anchor
     from intro import Sentence
     sleep(0.5)
     os.system("cls")

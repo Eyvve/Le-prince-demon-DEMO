@@ -230,8 +230,12 @@ def choice_mode():
 
             
 def load():
+    from roi_demon_inv import roi_demon
+    from roi_demon_inv import Roi_demon_stats
     Sentence("Veuillez entrer un mot de passe")
     mdp = str(input("=> "))
+    roi_demon = pickle_load(roi_demon)
+    Roi_demon_stats = pickle_load(Roi_demon_stats)
     while mdp != "Zaznaroth" or mdp != "Ginn" or mdp != "Ulric":
         if mdp == "Zaznaroth":
             questdone = False

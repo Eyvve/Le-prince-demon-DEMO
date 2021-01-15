@@ -452,10 +452,8 @@ def beginning():
     Sentence("Le vieux Zazranoth posa alors sa main sur l'épaule du jeune prince puis s'en alla...")
     Sentence("laissant le jeune " + Prince_stats[0] + " face à son destin.")
     sleep(3.0)
-    #Exit_Mountain()
-
-
-#def Exit_Mountain():
+    titlebis()
+    return
 
 
 

@@ -698,12 +698,12 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
             os.system("cls")
             print("Bastion Doré - rues de la citadelle")
             print("")
-            Sentence("Vous soulevez votre épée et la plantez dans le corps du dévot.")
+            Sentence("Vous soulevez votre épée et vous la plantez dans le corps du dévot.")
             sleep(1.5)
-            Sentence("Vous voyez la lumière s'échapper de son corps pour se disperser lentement sans les cieux,")
+            Sentence("Vous voyez la lumière s'échapper de son corps pour se disperser lentement dans les cieux,")
             Sentence("rendant l'atmosphère plus respirable et impie.")
             sleep(1.5)
-            Sentence("Une fois ces géneurs désespérés écartés, vous et votre garde reprenèrent votre route.")
+            Sentence("Une fois ces géneurs désespérés écartés, vous et votre garde reprirent votre route.")
             skip_touch()
             break
         elif choix == "2":
@@ -716,7 +716,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
             Sentence("Détruisons son monde et voyons dans quelle direction il évoluera.")
             Sentence("Peut être fera t-il un bon adversaire pour mon fils...*")
             sleep(1.5)
-            Sentence("Une fois ces géneurs désespérés écartés, vous et votre garde reprenèrent votre route.")
+            Sentence("Une fois ces géneurs désespérés écartés, vous et votre garde reprirent votre route.")
             skip_touch()
             break
         if choix != "1" or choix != "2":
@@ -731,7 +731,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     print("Zazranoth")
     Sentence("Regardez ça là bas.")
     print("")
-    Sentence("espèces d'immenses harnais, cages, et ce qui ressemblait à du matériel de geolier.")
+    Sentence("Des espèces d'immenses harnais, cages, et ce qui ressemblait à du matériel de geolier.")
     Sentence("A la différence près que tout ce attirail, imposant, ")
     Sentence("avait une taille suffisante pour restreindre les mouvements d'une créature massive,")
     Sentence("au moins grosse comme une hydre, voire plus pour certaines pièces.")

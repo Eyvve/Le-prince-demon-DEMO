@@ -396,12 +396,26 @@ def remove_armor_roi(armor) :
 
 def pickle_save():
     f = open("save", "wb")
-    roi_demon_save = roi_demon
-    Roi_demon_stats_save = Roi_demon_stats
+    roi_demon_save_hands = roi_demon["hands"]
+    roi_demon_save_inv = roi_demon["inv"]
+    roi_demon_save_equipement = roi_demon["equipement"]
+    roi_demon_save_armor = roi_demon["armor"]
+    Roi_demon_stats_save_0 = Roi_demon_stats[0]
+    Roi_demon_stats_save_3 = Roi_demon_stats[3]
+    Roi_demon_stats_save_4 = Roi_demon_stats[4]
+    Roi_demon_stats_save_5 = Roi_demon_stats[5]
+
     d = {
-        "roi_demon" : roi_demon_save,
-        "Roi_demon_stats" : Roi_demon_stats_save
+        "roi_demon_hands" : roi_demon_save_hands,
+        "roi_demon_inv" : roi_demon_save_inv,
+        "roi_demon_equipement" : roi_demon_save_equipement,
+        "roi_demon_armor" : roi_demon_save_armor,
+        "Roi_demon_stats_0" : Roi_demon_stats_save_0,
+        "Roi_demon_stats_3" : Roi_demon_stats_save_3,
+        "Roi_demon_stats_4" : Roi_demon_stats_save_4,
+        "Roi_demon_stats_5" : Roi_demon_stats_save_5,
     }
+
     pickle.dump(d,f)
     f.close()
 
@@ -419,16 +433,17 @@ def pickle_print_save():
 def pickle_load():
     f = open("save","rb")
     d = pickle.load(f)
-    roi_demon = d["roi_demon"]
-    f.close()
-    return(roi_demon)
 
-def pickle_load_stats():
-    f = open("save","rb")
-    d = pickle.load(f)
-    Roi_demon_stats = d["Roi_demon_stats"]
+    roi_demon["hands"] = d["roi_demon_hands"]
+    roi_demon["inv"] = d["roi_demon_inv"]
+    roi_demon["equipement"] = d["roi_demon_equipement"]
+    roi_demon["armor"] = d["roi_demon_armor"]
+    Roi_demon_stats[0] = d["Roi_demon_stats_0"]
+    Roi_demon_stats[3] = d["Roi_demon_stats_3"]
+    Roi_demon_stats[4] = d["Roi_demon_stats_4"]
+    Roi_demon_stats[5] = d["Roi_demon_stats_5"]
+
     f.close()
-    return(Roi_demon_stats)
 
 def save(anchor):
     from intro import Sentence
@@ -445,24 +460,6 @@ def save(anchor):
         print("Ulric")
         skip_touch()
 
-
-def pickle_return_save():
-    f = open("save_0", "rb")
-    d = pickle.load(f)
-    roi_demon = d["roi_demon"]
-    f.close()
-    return(roi_demon)
-
-def pickle_return_save_stats():
-    f = open("save_0","rb")
-    d = pickle.load(f)
-    Roi_demon_stats = d["Roi_demon_stats"]
-    f.close()
-    return(Roi_demon_stats)
-
-
-roi_demon = pickle_load()
-Roi_demon_stats = pickle_load_stats()
 
 
 def menu_roi(anchor) :#use in demo (entré de map et sortie de map)

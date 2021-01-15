@@ -258,18 +258,21 @@ def load():
             titlebis()
             return
         if mdp == "Zazranoth":
+            pickle_load()
             questdone = False
             qeastdone = False
             qwestdone = False
             SaveAnchor1(questdone, qeastdone, qwestdone, Anchor)
             return
         elif mdp == "Ginn":
+            pickle_load()
             questdone = False
             qeastdone = False
             qwestdone = False
             SaveAnchor2(questdone, qeastdone, qwestdone, Anchor)
             return
         elif mdp == "Ulric":
+            pickle_load()
             questdone = False
             qeastdone = False
             qwestdone = False

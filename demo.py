@@ -21,8 +21,6 @@ def demo(qdone, qwest, qeast, anchor):
     cotterie_stats = ["Chef de Cotterie", 45, 55, 20, 1.2, 300, 85, 5]
     Sentence("Conformement au lore établi, le Roi démon ou Dieu-Roi porte le nom d'Ibliss Nizidramanii'yt.")
     print("")
-    roi_demon = pickle_return_save()
-    Roi_demon_stats = pickle_return_save_stats()
     Sentence("Quel est votre nom ? Si vous souhaitez le nom lore friendly, appuyez simplement sur Entrée.")
     kingsName = str(input("=> "))
     if kingsName == "":
@@ -31,7 +29,6 @@ def demo(qdone, qwest, qeast, anchor):
         Roi_demon_stats[0] = kingsName
     validation_sound.play()
     pickle_save()
-    pickle_print_save()
     sleep(5)
     sleep(2.0)
     os.system("cls")

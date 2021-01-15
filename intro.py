@@ -191,20 +191,17 @@ def PlayGame():
     os.system("cls")
     Sentence("Disclamer : pour éviter des choix involontaires, n'appuyez sur votre clavier que quand on vous le demande.")
     Sentence("Il est recommandé de jouer avec un casque.")
-    Sentence("Ecrivez 'jouer' lorsque vous êtes prêt.")
-    rep = str(input("=> "))
-    while rep != "jouer":
-        if rep == "jouer":
-            validation_sound.play()
-            import time
-            Sentence("Bon jeu !")
-            time.sleep(2.0)
-            import os
-            os.system("cls")
-            titleintro()
-        if rep != "jouer":
-            Sentence("Ecrivez 'jouer' lorsque vous êtes prêt.")
-        rep = str(input("=> "))
+    Sentence("Appuyez sur 'Entrée' lorsque vous êtes prêt.")
+    skip_touch()
+    validation_sound.play()
+    import time
+    Sentence("Bon jeu !")
+    time.sleep(2.0)
+    import os
+    os.system("cls")
+    titleintro()
+    return
+
 
 
 def choice_mode():

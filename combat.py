@@ -26,12 +26,12 @@ def attaque_mob(name, atkmini, atkmax, df, mult, hp):
     if final_atk < 0:
         final_atk = 0
         Prince_hp_remaining = hp - final_atk
-        round(Prince_hp_remaining, 0)
+        round(Prince_hp_remaining)
         print(name, "vous inflige", int(final_atk), "dégats.")
         return Prince_hp_remaining
     else:
         Prince_hp_remaining = hp - final_atk
-        round(Prince_hp_remaining, 0)
+        round(Prince_hp_remaining)
         print(name, "vous inflige", int(final_atk), "dégats.")
         return Prince_hp_remaining
 
@@ -40,7 +40,7 @@ def attaque(name, atkmini, atkmax, df, mult, hp):
     total_atk = randint(atkmini, atkmax) * mult
     final_atk = total_atk - df
     mob_hp_remaining = hp - final_atk
-    round(mob_hp_remaining, 0)
+    round(mob_hp_remaining)
     print("vous infligez", int(final_atk), "dégats", "à", name)
     return mob_hp_remaining
 
@@ -772,12 +772,12 @@ def demo_attaque_mob(name, atkmini, atkmax, df, mult, hp):
     if final_atk < 0:
         final_atk = 0
         Prince_hp_remaining = hp - final_atk
-        round(Prince_hp_remaining, 0)
+        round(Prince_hp_remaining)
         print(name, "vous inflige", int(final_atk), "dégats.")
         return Prince_hp_remaining
     else:
         Prince_hp_remaining = hp - final_atk
-        round(Prince_hp_remaining, 0)
+        round(Prince_hp_remaining)
         print(name, "vous inflige", int(final_atk), "dégats.")
         return Prince_hp_remaining
 
@@ -786,7 +786,6 @@ def demo_attaque(name, atkmini, atkmax, df, mult, hp):
     total_atk = randint(atkmini, atkmax) * mult
     final_atk = total_atk - df
     mob_hp_remaining = hp - final_atk
-    round(mob_hp_remaining, 0)
     print("vous infligez", int(final_atk), "dégats", "à", name)
     return round(mob_hp_remaining)
 
@@ -1127,14 +1126,14 @@ def demofight(MobStats):
         sleep(1.5)
         MobStats[5] = mob_life
         os.system("cls")
-        while prince_life > 0 or mob_life > 0:
+        while prince_life >= 0 or mob_life >= 0:
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             prince_life = demo_mob_action(MobStats)
             Roi_demon_stats[5] = prince_life
             sleep(1.5)
             os.system("cls")
-            if prince_life < 0:
+            if prince_life <= 0:
                 print("Défaite")
                 Roi_demon_stats[5] = hp
                 Roi_demon_stats[10] = mp
@@ -1150,7 +1149,7 @@ def demofight(MobStats):
             MobStats[5] = mob_life
             sleep(1.5)
             os.system("cls")
-            if mob_life < 0:
+            if mob_life <= 0:
                 print(MobStats[0], "est vaincu")
                 Roi_demon_stats[10] = mp
                 enemy_death.play()
@@ -1168,14 +1167,14 @@ def demofight(MobStats):
         Roi_demon_stats[5] = prince_life
         sleep(1.5)
         os.system("cls")
-        while prince_life > 0 or mob_life > 0:
+        while prince_life >= 0 or mob_life >= 0:
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_life = demo_action(MobStats)
             MobStats[5] = mob_life
             sleep(1.5)
             os.system("cls")
-            if mob_life < 0:
+            if mob_life <= 0:
                 print(MobStats[0], "est vaincu")
                 Roi_demon_stats[10] = mp
                 enemy_death.play()
@@ -1189,7 +1188,7 @@ def demofight(MobStats):
             Roi_demon_stats[5] = prince_life
             sleep(1.5)
             os.system("cls")
-            if prince_life < 0:
+            if prince_life <= 0:
                 print("Défaite")
                 Roi_demon_stats[10] = mp
                 Roi_demon_stats[5] = hp
@@ -1482,7 +1481,7 @@ def bossfightulric(MobStats):
         mob_life = demo_action(MobStats)
         sleep(1.5)
         MobStats[5] = mob_life
-        while prince_life > 0 or mob_life > 0:
+        while prince_life >= 0 or mob_life >= 0:
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
@@ -1490,7 +1489,7 @@ def bossfightulric(MobStats):
             Roi_demon_stats[5] = prince_life
             sleep(1.5)
             os.system("cls")
-            if prince_life < 0:
+            if prince_life <= 0:
                 print("Défaite")
                 Roi_demon_stats[5] = hp
                 Roi_demon_stats[10] = mp
@@ -1507,7 +1506,7 @@ def bossfightulric(MobStats):
             MobStats[5] = mob_life
             sleep(1.5)
             os.system("cls")
-            if mob_life < 0:
+            if mob_life <= 0:
                 print(MobStats[0], "est vaincu")
                 Roi_demon_stats[10] = mp
                 enemy_death.play()
@@ -1549,7 +1548,7 @@ def bossfightulric(MobStats):
         Roi_demon_stats[5] = prince_life
         sleep(1.5)
         os.system("cls")
-        while prince_life > 0 or mob_life > 0:
+        while prince_life >= 0 or mob_life >= 0:
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
@@ -1557,7 +1556,7 @@ def bossfightulric(MobStats):
             MobStats[5] = mob_life
             sleep(1.5)
             os.system("cls")
-            if mob_life < 0:
+            if mob_life <= 0:
                 print(MobStats[0], "est vaincu")
                 Roi_demon_stats[10] = mp
                 enemy_death.play()
@@ -1598,7 +1597,7 @@ def bossfightulric(MobStats):
             Roi_demon_stats[5] = prince_life
             sleep(1.5)
             os.system("cls")
-            if prince_life < 0:
+            if prince_life <= 0:
                 print("Défaite")
                 Roi_demon_stats[10] = mp
                 Roi_demon_stats[5] = hp
@@ -1614,7 +1613,7 @@ def bossfightulric(MobStats):
 def demo_sort_boss(name, atkmini, atkmax, mult, hp):
     total_atk = randint(atkmini, atkmax)
     Prince_hp_remaining = hp - total_atk
-    round(Prince_hp_remaining, 0)
+    round(Prince_hp_remaining)
     print(name, "vous inflige", int(total_atk), "dégats.")
     return Prince_hp_remaining
 
@@ -1691,7 +1690,7 @@ def bossfightking(MobStats):
         mob_life = demo_action(MobStats)
         sleep(1.5)
         MobStats[5] = mob_life
-        while prince_life > 0 or mob_life > 0:
+        while prince_life >= 0 or mob_life >= 0:
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
@@ -1699,7 +1698,7 @@ def bossfightking(MobStats):
             Roi_demon_stats[5] = prince_life
             sleep(1.5)
             os.system("cls")
-            if prince_life < 0:
+            if prince_life <= 0:
                 Roi_demon_stats[5] = hp
                 Roi_demon_stats[10] = mp
                 victoire = False,
@@ -1739,7 +1738,7 @@ def bossfightking(MobStats):
             MobStats[5] = mob_life
             sleep(1.5)
             os.system("cls")
-            if mob_life < 0:
+            if mob_life <= 0:
                 print(MobStats[0], "est vaincu")
                 Roi_demon_stats[10] = mp
                 enemy_death.play()
@@ -1756,7 +1755,7 @@ def bossfightking(MobStats):
         Roi_demon_stats[5] = prince_life
         sleep(1.5)
         os.system("cls")
-        while prince_life > 0 or mob_life > 0:
+        while prince_life >= 0 or mob_life >= 0:
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
@@ -1778,7 +1777,7 @@ def bossfightking(MobStats):
             Roi_demon_stats[5] = prince_life
             sleep(1.5)
             os.system("cls")
-            if prince_life < 0:
+            if prince_life <= 0:
                 Roi_demon_stats[10] = mp
                 Roi_demon_stats[5] = hp
                 victoire = False

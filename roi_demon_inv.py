@@ -394,7 +394,7 @@ def remove_armor_roi(armor) :
                 Sentence("veuillez entrer un chiffre valide")
 
 
-def pickle_save(roi_demon,Roi_demon_stats):
+def pickle_save():
     f = open("save", "wb")
     roi_demon_save = roi_demon
     Roi_demon_stats_save = Roi_demon_stats
@@ -405,7 +405,7 @@ def pickle_save(roi_demon,Roi_demon_stats):
     pickle.dump(d,f)
     f.close()
 
-def pikle_print_save():
+def pickle_print_save():
     pickle_file = open("save", "rb")
     objects = []
     while True:
@@ -445,9 +445,29 @@ def save(anchor):
         print("Ulric")
         skip_touch()
 
-if Anchor != 0 :
-    roi_demon = pickle_load()
-    Roi_demon_stats = pickle_load_stats()
+def pickle_return_save():
+    f = open("save", "wb")
+    g = open("save_0", "rb")
+    x = pickle.load(g)
+    roi_demon = x["roi_demon"]
+    Roi_demon_stats = x["Roi_demon_stats"]
+
+    roi_demon_save = roi_demon
+    Roi_demon_stats_save = Roi_demon_stats
+
+    d = {
+        "roi_demon": roi_demon_save,
+        "Roi_demon_stats": Roi_demon_stats_save
+    }
+    pickle.dump(d, f)
+
+    f.close()
+    g.close()
+
+
+
+roi_demon = pickle_load()
+Roi_demon_stats = pickle_load_stats()
 
 
 def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
@@ -547,7 +567,7 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                                     # action de sauvegarde
                                     os.system("cls")
                                     save(anchor)
-                                    pickle_save(roi_demon,Roi_demon_stats)
+                                    pickle_save()
                                     Sentence("Voulez vous quitter ?")
                                     print("1. oui")
                                     print("2. non")

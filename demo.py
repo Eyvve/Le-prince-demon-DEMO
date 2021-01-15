@@ -836,7 +836,7 @@ def SaveAnchor3(qdone, qwest, qeast, anchor):
 
     final_boss_theme.fadeout(1000)
     sleep(1.0)
-    throne_theme(-1)
+    throne_theme.play(-1)
     print("Bastion Doré - Batisse Royale (salle du trône)")
     print("")
     Sentence("Terrassé par la puissance de cet être inconnu,")

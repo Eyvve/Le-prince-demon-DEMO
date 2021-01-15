@@ -232,6 +232,7 @@ def choice_mode():
             Sentence("Mode histoire")
             sleep(2.0)
             beginning()
+            return
         elif choix == "2":
             validation_sound.play()
             os.system("cls")
@@ -239,6 +240,7 @@ def choice_mode():
             Sentence("DEMO")
             sleep(2.0)
             demo(questdone, qeastdone, qwestdone, Anchor)
+            return
         elif choix != "1" and choix != "2":
             print("veuillez choisir un mode qui existe")
             choix = str(input("Choisissez un mode de jeu :"))

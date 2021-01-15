@@ -172,7 +172,7 @@ def Retraite():
     from intro import Sentence
     print("Champ de bataille de la citadelle - coeur de la bataille")
     print("")
-    gates_music.fadout(1000)
+    gates_music.fadeout(1000)
     sleep(1.0)
     throne_theme.play()
     Sentence("Laissant votre regard planer sur le désastre de ce champ de bataille, votre résolution flanche.")

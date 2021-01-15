@@ -153,27 +153,31 @@ def main_menu():
     print("                  4: Quitter le jeu")
     choice = str(input("=> "))
     validation_sound.play()
-    if choice == "1":
-        intro_music.stop()
-        intro_music_bis.stop()
-        sleep(2.0)
-        choice_mode()
-    if choice == "2":
-        intro_music.stop()
-        intro_music_bis.stop()
-        sleep(2.0)
-        load()
-    elif choice == "3":
-        intro_music.stop()
-        intro_music_bis.stop()
-        sleep(2.0)
-        About()
-    elif choice == "4":
-        intro_music.stop()
-        intro_music_bis.stop()
-        Sentence("À bientôt ! :)")
-        sleep(2.0)
-        os.system("exit")
+    while choice != "" or choice != "" or choice != "" or choice != "":
+        if choice == "1":
+            intro_music.stop()
+            intro_music_bis.stop()
+            sleep(2.0)
+            choice_mode()
+        elif choice == "2":
+            intro_music.stop()
+            intro_music_bis.stop()
+            sleep(2.0)
+            load()
+        elif choice == "3":
+            intro_music.stop()
+            intro_music_bis.stop()
+            sleep(2.0)
+            About()
+        elif choice == "4":
+            intro_music.stop()
+            intro_music_bis.stop()
+            Sentence("À bientôt ! :)")
+            sleep(2.0)
+            os.system("exit")
+        if choice != "" or choice != "" or choice != "" or choice != "":
+            Sentence("Veuillez entrer un choix valide")
+        choice = str(input("=> "))
 
 
 def PlayGame():

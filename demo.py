@@ -170,6 +170,7 @@ def SaveAnchor1(qdone, qwest, qeast, anchor):
 def Retraite():
     from roi_demon_inv import Roi_demon_stats
     from intro import Sentence
+    os.system("cls")
     print("Champ de bataille de la citadelle - coeur de la bataille")
     print("")
     gates_music.fadeout(1000)

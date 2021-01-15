@@ -29,6 +29,7 @@ L'installation de l'interpréteur Python (3.9 de préférence) est obligatoire e
 
 Vous devez ensuite installer la librairie PyGame dont le processus d'installation est résumé ici https://www.pygame.org/wiki/GettingStarted
 
+### VERSION CONSOLE
 Une fois tous ces outils installés vous devez ouvrir votre powershell et le configurer de la manière suivante (recommandé) :
 - Police > Taille : 22
 - Configuration > Taille de la fenêtre : Largeur : 123
@@ -43,6 +44,9 @@ pour vous y rendre faites cd .\"votre chemin "\ par exemple, sur mon pc j'entre 
 Une fois dans mon dossier de jeu, lancez le script main.py, pour cela entrez:
 
           py .\main.py
+
+### VERSION .EXE
+double cliquez simplement sur "le prince demon.exe"
           
 Bon jeu à vous.
 

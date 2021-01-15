@@ -1763,7 +1763,7 @@ def bossfightking(MobStats):
             MobStats[5] = mob_life
             sleep(1.5)
             os.system("cls")
-            if mob_life < 0:
+            if mob_life <= 0:
                 print(MobStats[0], "est vaincu")
                 Roi_demon_stats[10] = mp
                 enemy_death.play()

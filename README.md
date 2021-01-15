@@ -57,3 +57,6 @@ Les potions de mana de la démo sont donc à ce jour inutiles. Elles sont prése
 ### SYSTÈME DE COUPS SPECIAUX (ou coups bas dans le mode histoire)
 Ces coups sont à double tranchant, d'un côté ils nerfent totalement l'adversaire, jusqu'à la fin du combat.
 Mais cet avantage à un prix, les attaques ont beaucoup de chances de rater.
+
+### SYSTÈME DE SAUVEGARDE
+La sauvegarde s'écrase à chaque fois que vous selectionnez "Nouvelle Partie".

@@ -729,7 +729,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     print("Zazranoth")
     Sentence("Regardez ça là bas.")
     print("")
-    Sentence("Des espèces d'immenses harnais, cages, et ce qui ressemblait à du matériel de geolier.")
+    Sentence("D'espèces d'immenses harnais, cages, et ce qui ressemblait à du matériel de geolier.")
     Sentence("A la différence près que tout ce attirail, imposant, ")
     Sentence("avait une taille suffisante pour restreindre les mouvements d'une créature massive,")
     Sentence("au moins grosse comme une hydre, voire plus pour certaines pièces.")

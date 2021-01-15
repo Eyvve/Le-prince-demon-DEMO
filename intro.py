@@ -149,7 +149,7 @@ def titleintro():
 
 
 def main_menu():
-    print("                  1: Lancer partie")
+    print("                  1: Nouvelle partie")
     print("                  2: Charger partie")
     print("                  3: À propos")
     print("                  4: Quitter le jeu")

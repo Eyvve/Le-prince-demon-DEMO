@@ -1030,7 +1030,7 @@ def demo_mob_action(MobStats):
             degats = Roi_demon_stats[5]
             return degats
         else:
-            degats = attaque_mob(MobStats[0], MobStats[1], MobStats[2], Roi_demon_stats[3], MobStats[4], Roi_demon_stats[5])
+            degats = round(attaque_mob(MobStats[0], MobStats[1], MobStats[2], Roi_demon_stats[3], MobStats[4], Roi_demon_stats[5]))
             sword_sound.play()
             fork_sound.play()
             return degats

@@ -193,14 +193,18 @@ def PlayGame():
     Sentence("Il est recommandé de jouer avec un casque.")
     Sentence("Ecrivez 'jouer' lorsque vous êtes prêt.")
     rep = str(input("=> "))
-    if rep == "jouer":
-        validation_sound.play()
-        import time
-        Sentence("Bon jeu !")
-        time.sleep(2.0)
-        import os
-        os.system("cls")
-        titleintro()
+    while rep != "jouer":
+        if rep == "jouer":
+            validation_sound.play()
+            import time
+            Sentence("Bon jeu !")
+            time.sleep(2.0)
+            import os
+            os.system("cls")
+            titleintro()
+        if rep != "jouer":
+            Sentence("Ecrivez 'jouer' lorsque vous êtes prêt.")
+        rep = str(input("=> "))
 
 
 def choice_mode():

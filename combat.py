@@ -711,6 +711,61 @@ def fight(princes_stats, MobStats):
 # //////////////////////////////////////////////////////////// FONCTIONS DE COMBAT CLASSIQUE //////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+def demodefaite():
+    Sentence("Vous tombez au sol, mort, laissant votre peuple à l'extinction...")
+    sleep(1.5)
+    Sentence( "Aucun contact ne fut jamais pris avec les humains, ")
+    Sentence("qui se contentèrent de bouter les démons dans les montagnes d'Aurgelmirtann, au nord de Ljosalfer...")
+    skip_touch()
+    os.system("cls")
+    demo_deva_combat.fadeout(1000)
+    battle_sound_effect.fadeout(1000)
+    print("")
+    Sentence("Jusque des siècles plus tard, les hommes se rappellent de cet évènement comme la Bataille de la Couronne,")
+    Sentence("ou grâce à une alliance avec des créatures célestes, les humains ont repoussé les démons.")
+    sleep(1.5)
+    Sentence("Ces derniers finirent sous le joug des premiers,")
+    Sentence("le peu d'entre eux encore libres se terrant dans les montagnes. ")
+    sleep(1.5)
+    print("")
+    Sentence("A ce jour, nul ne sait comment les humains ont obtenu l'aide des anges,")
+    Sentence("mais depuis, un certain 'Prince en Blanc', que personne ne voit jamais,")
+    Sentence("semble avoir remplacé le roi précédent, et règne sur Ljosalfer d'une main juste,  ")
+    Sentence("ferme,")
+    Sentence("et désinteressée...")
+    sleep(3.0)
+    os.system("cls")
+    print("")
+    print("")
+    Sentence("Voulez vous continuer ?")
+    print("1. Oui")
+    print("2. Non")
+    print("")
+    rep = str(input("=> "))
+    while rep != "1" or rep != "2":
+        if rep == "1":
+            os.system("cls")
+            print("")
+            Sentence("Chargement de la dernière sauvegarde...")
+            sleep(2.0)
+            os.system("cls")
+            load()
+            return
+        elif rep == "2":
+            os.system("cls")
+            print("")
+            Sentence("Retour au menu principal...")
+            sleep(2.0)
+            os.system("cls")
+            titlebis()
+            return
+        if rep != "1" or rep != "2":
+            Sentence("veuillez entrer un chiffre valide")
+        rep = str(input("=> "))
+
+
+
+
 def demo_attaque_mob(name, atkmini, atkmax, df, mult, hp):
     total_atk = randint(atkmini, atkmax) * mult
     final_atk = total_atk - df
@@ -1083,6 +1138,7 @@ def demofight(MobStats):
                 print("Défaite")
                 Roi_demon_stats[5] = hp
                 Roi_demon_stats[10] = mp
+                demodefaite()
                 #la musique s'arrête
                 #fonction défaite avec tp au sancturaire des démons
                 victoire = False,
@@ -1124,9 +1180,6 @@ def demofight(MobStats):
                 Roi_demon_stats[10] = mp
                 enemy_death.play()
                 sleep(4.0)
-                #la musique s'arrête
-                #fonction victoire avec musique de victoire + affichage du loot + xp
-                # faire en sorte de return la vie restante et de la réattribuer à la liste Prince_Stats
                 victoire = True
                 return victoire
 
@@ -1140,6 +1193,7 @@ def demofight(MobStats):
                 print("Défaite")
                 Roi_demon_stats[10] = mp
                 Roi_demon_stats[5] = hp
+                demodefaite()
                 # la musique s'arrête
                 # fonction défaite avec tp au sancturaire des démons
                 victoire = False
@@ -1440,6 +1494,7 @@ def bossfightulric(MobStats):
                 print("Défaite")
                 Roi_demon_stats[5] = hp
                 Roi_demon_stats[10] = mp
+                demodefaite()
                 #la musique s'arrête
                 #fonction défaite avec tp au sancturaire des démons
                 victoire = False,
@@ -1457,9 +1512,6 @@ def bossfightulric(MobStats):
                 Roi_demon_stats[10] = mp
                 enemy_death.play()
                 sleep(4.0)
-                # la musique s'arrête
-                # fonction victoire avec musique de victoire + affichage du loot + xp
-                # faire en sorte de return la vie restante et de la réattribuer à la liste Prince_Stats
                 victoire = True
                 return victoire
             elif mob_life < 100 and mess3done == False:
@@ -1510,9 +1562,6 @@ def bossfightulric(MobStats):
                 Roi_demon_stats[10] = mp
                 enemy_death.play()
                 sleep(4.0)
-                #la musique s'arrête
-                #fonction victoire avec musique de victoire + affichage du loot + xp
-                # faire en sorte de return la vie restante et de la réattribuer à la liste Prince_Stats
                 victoire = True
                 return victoire
             elif mob_life < 100 and mess3done == False:
@@ -1553,6 +1602,7 @@ def bossfightulric(MobStats):
                 print("Défaite")
                 Roi_demon_stats[10] = mp
                 Roi_demon_stats[5] = hp
+                demodefaite()
                 # la musique s'arrête
                 # fonction défaite avec tp au sancturaire des démons
                 victoire = False

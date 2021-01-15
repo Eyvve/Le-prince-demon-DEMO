@@ -2,7 +2,7 @@ from time import sleep
 from maps import skip_touch
 from Music_sounds import *
 from roi_demon_inv import *
-# from combat import *
+from combat import *
 from intro import *
 from os import *
 
@@ -14,17 +14,6 @@ Anchor = 0
 def demo(qdone, qwest, qeast, anchor):
     from intro import Sentence
     from combat import demofight
-    # //////////test gameplau///////////
-    # questdone = True
-    # qeastdone = True
-    # qwestdone = True
-    # assautportes(questdone, qeastdone, qwestdone)
-    # //////////////////////////////////
-    # Ulric = ["Ulric Luminis", 50, 60, 17, 1.2, 550, 75, 5]
-    # bossfightulric(Ulric)
-    # cotterie_stats = ["Chef de Cotterie", 45, 55, 20, 1.2, 350, 85, 5]
-    # demofight(cotterie_stats)
-    # signif1ications : nom, attaque mini, attaque max, défense, multiplicateur de dégat (arme), vie, précision, esquive
     deva_stats = ["Deva", 30, 40, 15, 1.2, 200, 85, 5]
     cotterie_stats = ["Chef de Cotterie", 45, 55, 20, 1.2, 300, 85, 5]
     Sentence("Conformement au lore établi, le Roi démon ou Dieu-Roi porte le nom d'Ibliss Nizidramanii'yt.")
@@ -209,14 +198,14 @@ def Retraite():
     Sentence("L'ordre fut donné, relayé, sonné. ")
     Sentence("La retraite, à deux doigts de se transformer en fuite ou en débandade, se fit.")
     sleep(1.5)
-    Sentence("Aucun contact ne fut jamais pris avec les humains qui se contentèrent des de bouter les démons dans les montagnes")
-    Sentence("d'Aurgelmirtann, au nord de Ljosalfer...")
+    Sentence("Aucun contact ne fut jamais pris avec les humains ")
+    Sentence("qui se contentèrent de bouter les démons dans les montagnes d'Aurgelmirtann, au nord de Ljosalfer...")
     skip_touch()
     os.system("cls")
     throne_theme.fadeout(1000)
     battle_sound_effect.fadeout(1000)
     print("")
-    Sentence("Jusque des siècles plus tard, les hommes se rappellent cet évènement comme la Bataille de la Couronne,")
+    Sentence("Jusque des siècles plus tard, les hommes se rappellent de cet évènement comme la Bataille de la Couronne,")
     Sentence("ou grâce à une alliance avec des créatures célestes, les humains ont repoussé les démons.")
     sleep(1.5)
     Sentence("Ces derniers finirent sous le joug des premiers,")

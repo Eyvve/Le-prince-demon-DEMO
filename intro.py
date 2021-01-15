@@ -6,6 +6,7 @@ from Music_sounds import *
 from about import *
 from combat import *
 from demo import *
+import sys
 from roi_demon_inv import *
 
 pygame.init()
@@ -178,7 +179,7 @@ def main_menu():
             intro_music_bis.stop()
             Sentence("À bientôt ! :)")
             sleep(2.0)
-            os.system("exit")
+            sys.exit()
             return
         if choice != "" or choice != "" or choice != "" or choice != "":
             Sentence("Veuillez entrer un choix valide")

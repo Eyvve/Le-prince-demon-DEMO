@@ -14,10 +14,14 @@ Anchor = 0
 def demo(qdone, qwest, qeast, anchor):
     from intro import Sentence
     from combat import demofight
+    from roi_demon_inv import Roi_demon_stats
+    from roi_demon_inv import pickle_save
+
     deva_stats = ["Deva", 30, 40, 15, 1.2, 200, 85, 5]
     cotterie_stats = ["Chef de Cotterie", 45, 55, 20, 1.2, 300, 85, 5]
     Sentence("Conformement au lore établi, le Roi démon ou Dieu-Roi porte le nom d'Ibliss Nizidramanii'yt.")
     print("")
+    pickle_return_save()
     Sentence("Quel est votre nom ? Si vous souhaitez le nom lore friendly, appuyez simplement sur Entrée.")
     kingsName = str(input("=> "))
     if kingsName == "":
@@ -25,6 +29,9 @@ def demo(qdone, qwest, qeast, anchor):
     else:
         Roi_demon_stats[0] = kingsName
     validation_sound.play()
+    pickle_save()
+    pickle_print_save()
+    sleep(5)
     sleep(2.0)
     os.system("cls")
     demo_intro_sound.play()
@@ -106,9 +113,12 @@ def demo(qdone, qwest, qeast, anchor):
     os.system("cls")
     anchor = 1
     SaveAnchor1(qdone, qwest, qeast, anchor)
+    return
 
 def SaveAnchor1(qdone, qwest, qeast, anchor):
     from intro import Sentence
+    from roi_demon_inv import menu_roi
+    anchor = 1
     menu_roi(anchor)
     battle_sound_effect.fadeout(1000)
     battle_sound_effect.play(-1)
@@ -219,10 +229,12 @@ def Retraite():
     Sentence("et désinteressée...")
     from outro import outro
     outro()
+    return
 
 
 def qassautportes(qdone, qwest, qeast, anchor):
     from intro import Sentence
+    from roi_demon_inv import Roi_demon_stats
     os.system("cls")
     print("Champ de bataille de la citadelle - coeur de la bataille")
     print("")
@@ -280,10 +292,12 @@ def qassautportes(qdone, qwest, qeast, anchor):
         direction = str(input())
 
 
+
 #      - Choix à faire, aller planter l'un des sceptres sceptre à gauche ou a droite.
 
 def qassautportesest(qdone, qwest, qeast, anchor):
     from intro import Sentence
+    from roi_demon_inv import Roi_demon_stats
     if qeast == True:
         os.system("cls")
         print("Champ de bataille de la citadelle - champs est")
@@ -383,6 +397,7 @@ def assautportesouest(qdone, qwest, qeast, anchor):
     from intro import Sentence
     from combat import Prince_stats
     from combat import demofight
+    from roi_demon_inv import Roi_demon_stats
     cotteriepui_stats = ["Chef de Cotterie", 55, 65, 20, 1.2, 400, 75, 5]
     if qwest == True:
         os.system("cls")
@@ -556,6 +571,9 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     from intro import SentenceSlow
     from combat import demofight
     from combat import bossfightulric
+    from roi_demon_inv import Roi_demon_stats
+
+    anchor = 2
     menu_roi(anchor)
     combat_music_2.play(-1)
     battle_sound_effect.play(-1)
@@ -738,12 +756,15 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     citadel_walk.fadeout(1000)
     anchor = 3
     SaveAnchor3(qdone, qwest, qeast, anchor)
+    return
 
 def SaveAnchor3(qdone, qwest, qeast, anchor):
     prince = ["Le Prince en Blanc", 65, 75, 17, 1.2, 999, 90, 10]
     from combat import bossfightking
     from intro import Sentence
     from intro import SentenceSlow
+    from roi_demon_inv import menu_roi
+    anchor = 3
     menu_roi(anchor)
     Sentence("")
     Sentence("Vous vous assurez que tout le monde soit prêt et vous annoncez le départ.")
@@ -845,4 +866,5 @@ def SaveAnchor3(qdone, qwest, qeast, anchor):
     Sentence("ne sont plus...")
     from outro import outro
     outro()
+    return
 

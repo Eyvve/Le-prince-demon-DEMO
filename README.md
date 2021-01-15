@@ -9,7 +9,7 @@ Cette version est appelée DEMO, elle est accessible depuis le menu principal.
 Malgré tout, le prologue de l'histoire originale est disponible et fait office de tutoriel complet (comptez 15-20 min).
 
 La démo comporte à ce jour :
-- 30 min de gameplay
+- 30 min de durée de vie
 - des combats classiques
 - des combats de boss
 - Un système de magie et de coups spéciaux handicapant l'adversaire
@@ -18,7 +18,7 @@ La démo comporte à ce jour :
 - un système de choix
 - une quête nécessitant des objets de l'inventaire
 - un nom de héros personnalisable
-- Un système de sauvegarde (disclamer plus bas)
+- Un système de sauvegarde
 
 
 ## INSTALLATION
@@ -51,11 +51,9 @@ Bon jeu à vous.
 CECI EST UN TEXT GAME NARRATIF et non un RPG classique, ce qui nous à fait faire le choix de mettre en avant la narration et le confort de jeu, impliquant donc moins de libertés.
 
 ### SYSTÈME DE MAGIE
-Le système de magie est aussi spécial, la mana se recharge a chaque combat (à l'inverse des pdv) néanmoins, l'utilisation des sorts coûte beaucoup de mana.
+Le système de magie est spécial, la mana se recharge a chaque combat (à l'inverse des pdv) néanmoins, l'utilisation des sorts coûte beaucoup de mana.
 Les potions de mana de la démo sont donc à ce jour inutiles. Elles sont présentes par soucis de démonstration.
 
 ### SYSTÈME DE COUPS SPECIAUX (ou coups bas dans le mode histoire)
 Ces coups sont à double tranchant, d'un côté ils nerfent totalement l'adversaire, jusqu'à la fin du combat.
 Mais cet avantage à un prix, les attaques ont beaucoup de chances de rater.
-
-DISCLAMER SAUVEGARDE : le jeu est incapable de récupérer vos données si vous fermez le PowerShell

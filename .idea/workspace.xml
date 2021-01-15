@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9cb49a0b-c8cc-482e-ac80-b14b99fedd06" name="Default Changelist" comment="maj ajout de contenu scénario" />
+    <list default="true" id="9cb49a0b-c8cc-482e-ac80-b14b99fedd06" name="Default Changelist" comment="maj ajout de contenu scénario">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.py" beforeDir="false" afterPath="$PROJECT_DIR$/about.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outro.py" beforeDir="false" afterPath="$PROJECT_DIR$/outro.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,13 +92,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610115872015</updated>
-    </task>
-    <task id="LOCAL-00012" summary="ajout du choix + dialogues">
-      <created>1610401712825</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1610401712825</updated>
     </task>
     <task id="LOCAL-00013" summary="ajout du choix + dialogues">
       <created>1610401912496</created>
@@ -430,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610697104218</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="correction menu">
+      <created>1610699278962</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1610699278962</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -458,7 +464,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mhp" />
     <MESSAGE value="ajout du choix" />
     <MESSAGE value="ajout du choix + dialogues" />
     <MESSAGE value="correction des fautes d'orthographe roi_demon_inv + ajout des bruitages de menu (sauf equipement et objets)" />
@@ -483,6 +488,7 @@
     <MESSAGE value="ajout déplacement quête" />
     <MESSAGE value="Finalisation contenu démo" />
     <MESSAGE value="ajout de la fonction de défaite" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout de la fonction de défaite" />
+    <MESSAGE value="correction menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction menu" />
   </component>
 </project>

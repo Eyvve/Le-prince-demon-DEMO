@@ -93,7 +93,7 @@ def outro():
     sleep(0.36)
     print("")
     sleep(0.36)
-    print("             SYSTEME DE COMBAT, SOUND DESIGN, VISUELS, ERGONOMIE ")
+    print("             SYSTEME DE COMBAT, SOUND DESIGN, VISUELS, GAME DESIGN ")
     sleep(0.36)
     print("                                             et plein d'autres choses")
     sleep(0.36)

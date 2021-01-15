@@ -89,7 +89,7 @@ def demo(qdone, qwest, qeast, anchor):
     sleep(6.0)
     demofight(deva_stats)
     os.system("cls")
-    Sentence("Alors que vous veniez à peine de tuer le deva, le chef de cotterie tente de vous porter un coup d'épee.")
+    Sentence("Alors que vous veniez à peine de tuer le deva, le chef de cotterie tente de vous porter un coup d'épée.")
     sleep(1.5)
     demofight(cotterie_stats)
     demo_deva_combat.fadeout(1000)

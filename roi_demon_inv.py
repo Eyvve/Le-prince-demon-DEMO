@@ -445,25 +445,20 @@ def save(anchor):
         print("Ulric")
         skip_touch()
 
+
 def pickle_return_save():
-    f = open("save", "wb")
-    g = open("save_0", "rb")
-    x = pickle.load(g)
-    roi_demon = x["roi_demon"]
-    Roi_demon_stats = x["Roi_demon_stats"]
-
-    roi_demon_save = roi_demon
-    Roi_demon_stats_save = Roi_demon_stats
-
-    d = {
-        "roi_demon": roi_demon_save,
-        "Roi_demon_stats": Roi_demon_stats_save
-    }
-    pickle.dump(d, f)
-
+    f = open("save_0", "rb")
+    d = pickle.load(f)
+    roi_demon = d["roi_demon"]
     f.close()
-    g.close()
+    return(roi_demon)
 
+def pickle_return_save_stats():
+    f = open("save_0","rb")
+    d = pickle.load(f)
+    Roi_demon_stats = d["Roi_demon_stats"]
+    f.close()
+    return(Roi_demon_stats)
 
 
 roi_demon = pickle_load()

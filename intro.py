@@ -83,6 +83,7 @@ def title():
 
 def titlebis():
     import time
+    os.system("cls")
     print("NotPirates studios présente...")
     intro_music_bis.play(-1)
     time.sleep(1.1)
@@ -159,22 +160,26 @@ def main_menu():
             intro_music_bis.stop()
             sleep(2.0)
             choice_mode()
+            return
         elif choice == "2":
             intro_music.stop()
             intro_music_bis.stop()
             sleep(2.0)
             load()
+            return
         elif choice == "3":
             intro_music.stop()
             intro_music_bis.stop()
             sleep(2.0)
             About()
+            return
         elif choice == "4":
             intro_music.stop()
             intro_music_bis.stop()
             Sentence("À bientôt ! :)")
             sleep(2.0)
             os.system("exit")
+            return
         if choice != "" or choice != "" or choice != "" or choice != "":
             Sentence("Veuillez entrer un choix valide")
         choice = str(input("=> "))
@@ -243,8 +248,13 @@ def load():
     from roi_demon_inv import roi_demon
     from roi_demon_inv import Roi_demon_stats
     Sentence("Veuillez entrer un mot de passe")
+    print("1. Retour")
     mdp = str(input("=> "))
-    while mdp != "Zazranoth" or mdp != "Ginn" or mdp != "Ulric":
+    while mdp != "Zazranoth" or mdp != "Ginn" or mdp != "Ulric" or mdp != "1":
+        if mdp == "1":
+            sleep(0.2)
+            titlebis()
+            return
         if mdp == "Zazranoth":
             questdone = False
             qeastdone = False
@@ -263,7 +273,7 @@ def load():
             qwestdone = False
             SaveAnchor3(questdone, qeastdone, qwestdone, Anchor)
             return
-        if mdp != "1" or mdp != "2" or mdp != "3":
+        if mdp != "Zazranoth" or mdp != "Ginn" or mdp != "Ulric" or mdp != "1":
             Sentence("Ce mot de passe n'existe pas.")
         mdp = str(input("=> "))
 

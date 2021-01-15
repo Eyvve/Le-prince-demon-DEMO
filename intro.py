@@ -222,6 +222,8 @@ def choice_mode():
     print("           Ce mode est à privilégier si vous souhaitez                 du jeu final. Ce mode est à privilegier si ")
     print("           prendre le temps de découvrir un univers                    vous souhaitez tester rapidement le jeu et/ou")
     print("           de A à Z.                                                   en savoir plus sur l'histoire de Prince Démon.")
+    print("                !!!FAIT OFFICE DE TUTO!!!                              Cette version est complète et en test.")
+    print("                 !!!EN DEVELOPPEMENT!!!")
     print("""
     
     

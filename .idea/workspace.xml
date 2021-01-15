@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9cb49a0b-c8cc-482e-ac80-b14b99fedd06" name="Default Changelist" comment="maj ajout de contenu scénario">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intro.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,27 +89,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610115872015</updated>
-    </task>
-    <task id="LOCAL-00020" summary="maj ajout de contenu scénario">
-      <created>1610456115249</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1610456115249</updated>
-    </task>
-    <task id="LOCAL-00021" summary="maj ajout de contenu scénario">
-      <created>1610471264269</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1610471264270</updated>
-    </task>
-    <task id="LOCAL-00022" summary="maj ajout de contenu scénario">
-      <created>1610471281753</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1610471281753</updated>
     </task>
     <task id="LOCAL-00023" summary="update contenu">
       <created>1610471904730</created>
@@ -434,7 +412,28 @@
       <option name="project" value="LOCAL" />
       <updated>1610722156485</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="fix retraite">
+      <created>1610723878770</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1610723878770</updated>
+    </task>
+    <task id="LOCAL-00070" summary="fix retraite">
+      <created>1610724103561</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1610724103561</updated>
+    </task>
+    <task id="LOCAL-00071" summary="fix retraite">
+      <created>1610724155071</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1610724155071</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -462,7 +461,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ajout du choix + dialogues" />
     <MESSAGE value="correction des fautes d'orthographe roi_demon_inv + ajout des bruitages de menu (sauf equipement et objets)" />
     <MESSAGE value="maj mineure" />
     <MESSAGE value="maj ajout de contenu" />
@@ -487,6 +485,7 @@
     <MESSAGE value="ajout de la fonction de défaite" />
     <MESSAGE value="correction menu" />
     <MESSAGE value="fix degats float" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix degats float" />
+    <MESSAGE value="fix retraite" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix retraite" />
   </component>
 </project>

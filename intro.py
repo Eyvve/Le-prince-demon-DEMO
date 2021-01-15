@@ -10,7 +10,10 @@ from roi_demon_inv import *
 
 pygame.init()
 
-
+questdone = False
+qeastdone = False
+qwestdone = False
+Anchor = 0
 
 def Sentence(x):
     lines = [x]
@@ -80,7 +83,6 @@ def title():
 
 def titlebis():
     import time
-    os.system("cls")
     print("NotPirates studios présente...")
     intro_music_bis.play(-1)
     time.sleep(1.1)
@@ -151,31 +153,31 @@ def main_menu():
     print("                  4: Quitter le jeu")
     choice = str(input("=> "))
     validation_sound.play()
-    if choice == "1":
-        intro_music.stop()
-        intro_music_bis.stop()
-        sleep(2.0)
-        choice_mode()
-        return
-    if choice == "2":
-        intro_music.stop()
-        intro_music_bis.stop()
-        sleep(2.0)
-        load()
-        return
-    elif choice == "3":
-        intro_music.stop()
-        intro_music_bis.stop()
-        sleep(2.0)
-        About()
-        return
-    elif choice == "4":
-        intro_music.stop()
-        intro_music_bis.stop()
-        Sentence("À bientôt ! :)")
-        sleep(2.0)
-        os.system("exit")
-        return
+    while choice != "" or choice != "" or choice != "" or choice != "":
+        if choice == "1":
+            intro_music.stop()
+            intro_music_bis.stop()
+            sleep(2.0)
+            choice_mode()
+        elif choice == "2":
+            intro_music.stop()
+            intro_music_bis.stop()
+            sleep(2.0)
+            load()
+        elif choice == "3":
+            intro_music.stop()
+            intro_music_bis.stop()
+            sleep(2.0)
+            About()
+        elif choice == "4":
+            intro_music.stop()
+            intro_music_bis.stop()
+            Sentence("À bientôt ! :)")
+            sleep(2.0)
+            os.system("exit")
+        if choice != "" or choice != "" or choice != "" or choice != "":
+            Sentence("Veuillez entrer un choix valide")
+        choice = str(input("=> "))
 
 
 def PlayGame():
@@ -218,8 +220,6 @@ def choice_mode():
     """)
     choix = str(input("Choisissez un mode de jeu : "))
     while choix != "1" or choix != "2":
-        pickle_print_save()
-        sleep(4)
         if choix == "1":
             validation_sound.play()
             os.system("cls")
@@ -242,16 +242,9 @@ def choice_mode():
 def load():
     from roi_demon_inv import roi_demon
     from roi_demon_inv import Roi_demon_stats
-    sleep(0.5)
-    os.system("cls")
-
     Sentence("Veuillez entrer un mot de passe")
-    print("1. Retour")
     mdp = str(input("=> "))
-    while mdp != "Zazranoth" or mdp != "Ginn" or mdp != "Ulric" or mdp != "1":
-        if mdp == "1":
-            titlebis()
-            return
+    while mdp != "Zazranoth" or mdp != "Ginn" or mdp != "Ulric":
         if mdp == "Zazranoth":
             questdone = False
             qeastdone = False
@@ -270,7 +263,7 @@ def load():
             qwestdone = False
             SaveAnchor3(questdone, qeastdone, qwestdone, Anchor)
             return
-        if mdp != "Zazranoth" or mdp != "Ginn" or mdp != "Ulric" or mdp != "1":
+        if mdp != "1" or mdp != "2" or mdp != "3":
             Sentence("Ce mot de passe n'existe pas.")
         mdp = str(input("=> "))
 

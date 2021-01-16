@@ -814,7 +814,7 @@ def demo_Magic_action(nivatkmag, MobStats):
             mob_hp_remaining = action()
             return mob_hp_remaining
         else:
-            print("veuillez entrer un chiffre valide")
+            print("Veuillez entrer un chiffre valide")
             sleep(1.5)
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
@@ -1003,7 +1003,7 @@ def demo_Magic_action(nivatkmag, MobStats):
             mob_hp_remaining = demo_action(MobStats)
             return mob_hp_remaining
         else:
-            print("Veuillez entrer un chiffre valide")
+            Sentence("Veuillez entrer un chiffre valide")
             sleep(1.5)
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")

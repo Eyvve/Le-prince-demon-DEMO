@@ -824,7 +824,7 @@ def SaveAnchor3(qdone, qwest, qeast, anchor):
     final_boss_theme.play(-1)
     print("Bastion Doré - Batisse Royale (salle du trône)")
     print("")
-    print("Le Prince en Blanc (Prince héritier Zoltàn")
+    print("Le Prince en Blanc (Prince héritier Zoltàn)")
     Sentence("'Vos exactions s'arrêtent ici.'")
     Sentence("'Nul ne mettra en péril l'avenir de l'humanité.'")
     sleep(1.0)

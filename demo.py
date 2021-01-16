@@ -63,7 +63,7 @@ def demo(qdone, qwest, qeast, anchor):
     print("")
     Sentence("La bataille faisait rage.")
     sleep(1.5)
-    Sentence(" Les cieux étaient aussi rougeâtre que le sol devant la citadelle dorée des Hommes..")
+    Sentence("Les cieux étaient aussi rougeâtre que le sol devant la citadelle dorée des Hommes..")
     sleep(1.5)
     Sentence("Les corps, de différentes formes et couleurs, jonchaient le sol.")
     sleep(1.5)

@@ -80,6 +80,7 @@ def title():
                       """)
     time.sleep(0.8)
     main_menu()
+    return
 
 
 def titlebis():
@@ -117,6 +118,7 @@ def titlebis():
 
                       """)
     main_menu()
+    return
 
 
 def titleintro():
@@ -146,6 +148,7 @@ def titleintro():
     import os
     os.system("cls")
     title()
+    return
 
 
 def main_menu():
@@ -155,7 +158,7 @@ def main_menu():
     print("                  4: Quitter le jeu")
     choice = str(input("=> "))
     validation_sound.play()
-    while choice != "" or choice != "" or choice != "" or choice != "":
+    while choice != "1" or choice != "2" or choice != "3" or choice != "4":
         if choice == "1":
             intro_music.stop()
             intro_music_bis.stop()
@@ -181,7 +184,7 @@ def main_menu():
             sleep(2.0)
             sys.exit()
             return
-        if choice != "" or choice != "" or choice != "" or choice != "":
+        if choice != "1" or choice != "2" or choice != "3" or choice != "4":
             Sentence("Veuillez entrer un choix valide")
         choice = str(input("=> "))
 
@@ -230,7 +233,7 @@ def choice_mode():
             validation_sound.play()
             os.system("cls")
             print("")
-            Sentence("MODE TUTO")
+            Sentence("Mode TUTO")
             sleep(2.0)
             beginning()
             return

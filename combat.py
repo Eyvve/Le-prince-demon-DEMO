@@ -1427,7 +1427,7 @@ def demo_ulric_action(MobStats):
                 degats = Roi_demon_stats[5]
                 return degats
             else:
-                degats = demo_attaque_mob(MobStats[0], MobStats[1], MobStats[2], Roi_demon_stats[3], MobStats[4], Roi_demon_stats[5])
+                degats = round(demo_attaque_mob(MobStats[0], MobStats[1], MobStats[2], Roi_demon_stats[3], MobStats[4], Roi_demon_stats[5]))
                 sword_sound.play()
                 fork_sound.play()
                 return degats

@@ -107,7 +107,7 @@ def demo(qdone, qwest, qeast, anchor):
     Sentence("Vous ressortez de ce combat blessé, vous trouvez judicieux de regagner de la santé avant de retourner au voir vos troupes.")
     sleep(1.5)
     Sentence("Par chance vous avez suffisamment de potions sur vous pour reprendre des forces.")
-    sleep(2.0)
+    skip_touch()
     os.system("cls")
     anchor = 1
     SaveAnchor1(qdone, qwest, qeast, anchor)
@@ -117,7 +117,6 @@ def SaveAnchor1(qdone, qwest, qeast, anchor):
     from intro import Sentence
     from roi_demon_inv import menu_roi
     anchor = 1
-    sleep(1)
     menu_roi(anchor)
     battle_sound_effect.fadeout(1000)
     battle_sound_effect.play(-1)
@@ -560,6 +559,7 @@ def assautportes(qdone, qwest, qeast, anchor):
         combat_music_2.fadeout(1000)
         battle_sound_effect.fadeout(1000)
         anchor = 2
+        skip_touch()
         SaveAnchor2(qdone, qwest, qeast, anchor)
         return
 
@@ -576,8 +576,6 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     from roi_demon_inv import Roi_demon_stats
 
     anchor = 2
-    sleep(1)
-    sleep(1)
     menu_roi(anchor)
     combat_music_2.play(-1)
     battle_sound_effect.play(-1)
@@ -759,6 +757,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     Sentence("vous suivez vous même votre conseil.")
     citadel_walk.fadeout(1000)
     anchor = 3
+    skip_touch()
     SaveAnchor3(qdone, qwest, qeast, anchor)
     return
 
@@ -769,7 +768,6 @@ def SaveAnchor3(qdone, qwest, qeast, anchor):
     from intro import SentenceSlow
     from roi_demon_inv import menu_roi
     anchor = 3
-    sleep(1)
     menu_roi(anchor)
     Sentence("")
     Sentence("Vous vous assurez que tout le monde soit prêt et vous annoncez le départ.")
@@ -869,6 +867,7 @@ def SaveAnchor3(qdone, qwest, qeast, anchor):
     Sentence("alors que les démons,")
     Sentence("eux,")
     Sentence("ne sont plus...")
+    skip_touch()
     from outro import outro
     outro()
     return

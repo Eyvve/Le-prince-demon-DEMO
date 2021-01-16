@@ -63,7 +63,7 @@ def demo(qdone, qwest, qeast, anchor):
     print("")
     Sentence("La bataille faisait rage.")
     sleep(1.5)
-    Sentence("Les cieux étaient aussi rougeatres que le sol devant la citadelle dorée des hommes.")
+    Sentence(" Les cieux étaient aussi rougeâtre que le sol devant la citadelle dorée des Hommes..")
     sleep(1.5)
     Sentence("Les corps, de différentes formes et couleurs, jonchaient le sol.")
     sleep(1.5)
@@ -107,7 +107,7 @@ def demo(qdone, qwest, qeast, anchor):
     Sentence("Vous ressortez de ce combat blessé, vous trouvez judicieux de regagner de la santé avant de retourner au voir vos troupes.")
     sleep(1.5)
     Sentence("Par chance vous avez suffisamment de potions sur vous pour reprendre des forces.")
-    sleep(2.0)
+    skip_touch()
     os.system("cls")
     anchor = 1
     SaveAnchor1(qdone, qwest, qeast, anchor)
@@ -329,6 +329,7 @@ def qassautportesest(qdone, qwest, qeast, anchor):
             Sentence("Plantons le second sceptre.")
         elif qwest == False:
             Sentence("Plantons le premier sceptre.")
+        sleep(1)
         menu_roi_sceptre()
         sleep(1.5)
         os.system("cls")
@@ -421,6 +422,7 @@ def assautportesouest(qdone, qwest, qeast, anchor):
         skip_touch()
         print("Champ de bataille de la citadelle - tour de garde ouest")
         print("")
+        sleep(1)
         menu_roi_sceptre()
         os.system("cls")
         print("Champ de bataille de la citadelle - tour de garde ouest")
@@ -557,6 +559,7 @@ def assautportes(qdone, qwest, qeast, anchor):
         combat_music_2.fadeout(1000)
         battle_sound_effect.fadeout(1000)
         anchor = 2
+        skip_touch()
         SaveAnchor2(qdone, qwest, qeast, anchor)
         return
 
@@ -681,7 +684,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     sleep(1.5)
     Sentence("Vous apercevez des larmes de déception et de frustration couler sous son casque boursouflé.")
     sleep(1.5)
-    Sentence("Il était un fier combattant, puissant pour son jeune age...")
+    Sentence("Il était un fier combattant, puissant pour son jeune âge...")
     sleep(1.5)
     Sentence("Il vous rappelle le jeune Ginn.")
     skip_touch()
@@ -754,6 +757,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     Sentence("vous suivez vous même votre conseil.")
     citadel_walk.fadeout(1000)
     anchor = 3
+    skip_touch()
     SaveAnchor3(qdone, qwest, qeast, anchor)
     return
 
@@ -820,7 +824,7 @@ def SaveAnchor3(qdone, qwest, qeast, anchor):
     final_boss_theme.play(-1)
     print("Bastion Doré - Batisse Royale (salle du trône)")
     print("")
-    print("Le Prince en Blanc (Prince héritier Zoltàn")
+    print("Le Prince en Blanc (Prince héritier Zoltàn)")
     Sentence("'Vos exactions s'arrêtent ici.'")
     Sentence("'Nul ne mettra en péril l'avenir de l'humanité.'")
     sleep(1.0)
@@ -863,6 +867,7 @@ def SaveAnchor3(qdone, qwest, qeast, anchor):
     Sentence("alors que les démons,")
     Sentence("eux,")
     Sentence("ne sont plus...")
+    skip_touch()
     from outro import outro
     outro()
     return

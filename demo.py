@@ -846,7 +846,7 @@ def SaveAnchor3(qdone, qwest, qeast, anchor):
     Sentence("Terrassé par la puissance de cet être inconnu,")
     Sentence("malgré votre force maudite jusque là inégalée et vos incantations les plus secrètes, ")
     Sentence("vous vous rendez rapidement à l'évidence,")
-    Sentence("vous est vaincu.")
+    Sentence("vous êtes vaincu.")
     sleep(1.5)
     print("")
     Sentence("Après une petite pensée pour votre fils nouveau-né, et un regard au corps de Ginn, ")

@@ -248,7 +248,7 @@ def outro():
     sleep(2.0)
     from intro import Sentence
     Sentence("Mais l'histoire des démons n'en est pas à son dernier récit.")
-    sleep(1.0)
+    sleep(2.0)
     from intro import titlebis
     titlebis()
     return

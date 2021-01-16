@@ -623,7 +623,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     sleep(1.0)
     Sentence("Le reste de votre armée en position chargea vers la citadelle, motivé par ce retournement de situation.")
     Sentence("Il était important de profiter de l'impact, qui avait tué ou mis en fuite la plupart des défenseurs,")
-    Sentence("quand les derniers n'étaient pâs déjà aux prises avec les élémentaires ou d'autres combattants.")
+    Sentence("quand les derniers n'étaient pas déjà aux prises avec les élémentaires ou d'autres combattants.")
     skip_touch()
     print("Bastion Doré - rues de la citadelle")
     print("")

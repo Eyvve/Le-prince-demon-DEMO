@@ -230,7 +230,7 @@ def choice_mode():
             validation_sound.play()
             os.system("cls")
             print("")
-            Sentence("Mode histoire")
+            Sentence("MODE TUTO")
             sleep(2.0)
             beginning()
             return

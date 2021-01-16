@@ -15,10 +15,14 @@ def skip_touch():
             break
 
 def beginning():
-    from intro import Sentence
+    from intro import Sentence, titlebis
     from combat import Prince_stats
     from combat import fight
-    Prince_stats[0] = str(input("Quel est votre nom : "))
+    kingsName = str(input("Quel est votre nom : "))
+    if kingsName == "":
+        Prince_stats[0] = "Izzoth"
+    else:
+        Prince_stats[0] = kingsName
     validation_sound.play()
     sleep(2.0)
     os.system("cls")
@@ -34,14 +38,14 @@ def beginning():
     print("")
     print("")
     print("""
-                          ██████╗ ██████╗  ██████╗ ██╗      ██████╗  ██████╗ ██╗   ██╗███████╗          
-                          ██╔══██╗██╔══██╗██╔═══██╗██║     ██╔═══██╗██╔════╝ ██║   ██║██╔════╝          
+                          ██████╗ ██████╗  ██████╗ ██╗      ██████╗  ██████╗ ██╗   ██╗███████╗
+                          ██╔══██╗██╔══██╗██╔═══██╗██║     ██╔═══██╗██╔════╝ ██║   ██║██╔════╝
                 █████╗    ██████╔╝██████╔╝██║   ██║██║     ██║   ██║██║  ███╗██║   ██║█████╗      █████╗
                 ╚════╝    ██╔═══╝ ██╔══██╗██║   ██║██║     ██║   ██║██║   ██║██║   ██║██╔══╝      ╚════╝
-                          ██║     ██║  ██║╚██████╔╝███████╗╚██████╔╝╚██████╔╝╚██████╔╝███████╗          
-                          ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝   
-                                                 
-                                                 Le prince exilé                                                                                       
+                          ██║     ██║  ██║╚██████╔╝███████╗╚██████╔╝╚██████╔╝╚██████╔╝███████╗
+                          ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝
+
+                                                 Le prince exilé
     """)
     sleep(4.0)
     os.system("cls")
@@ -308,7 +312,7 @@ def beginning():
     Sentence("Tu vas t'aventurer seul dans un monde hostile, certains humains sont très forts ou très résistants,")
     Sentence("tu vas devoir faire preuve de ruse...")
     sleep(2.0)
-    Sentence("La ruse s'illuste en combat par l'art du coup bas.")
+    Sentence("La ruse s'illustre* en combat par l'art du coup bas.")
     Sentence("Rien de mieux qu'un coup déshonorable pour prendre l'avantage sur l'adversaire.")
     Sentence("Elles sont très utiles mais ont peu de chance de réussir.")
     sleep(2.0)
@@ -341,7 +345,7 @@ def beginning():
     Sentence("Et il t'en faut aussi pour imaginer des yeux à un mannequin...")
     Sentence("Bref, supposons que ce mannequin a des yeux, tu lui balances du sable !")
     sleep(2.0)
-    Sentence("Malheureusement, les yeux c'est petit, donc peu de chance de réussir.")
+    Sentence("Malheureusement, les yeux, c'est petit, donc peu de chance de réussir..")
     Sentence("Ta probabilité de toucher est située à côté du nom de l'attaque.")
     Sentence("Mais vas y tente ta chance !")
     sleep(2.0)
@@ -452,6 +456,7 @@ def beginning():
     Sentence("Le vieux Zazranoth posa alors sa main sur l'épaule du jeune prince puis s'en alla...")
     Sentence("laissant le jeune " + Prince_stats[0] + " face à son destin.")
     sleep(3.0)
+    beginning_music.stop()
     titlebis()
     return
 

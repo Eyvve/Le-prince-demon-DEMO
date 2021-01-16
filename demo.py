@@ -63,7 +63,7 @@ def demo(qdone, qwest, qeast, anchor):
     print("")
     Sentence("La bataille faisait rage.")
     sleep(1.5)
-    Sentence("Les cieux étaient aussi rougeatres que le sol devant la citadelle dorée des hommes.")
+    Sentence(" Les cieux étaient aussi rougeâtre que le sol devant la citadelle dorée des Hommes..")
     sleep(1.5)
     Sentence("Les corps, de différentes formes et couleurs, jonchaient le sol.")
     sleep(1.5)
@@ -117,6 +117,7 @@ def SaveAnchor1(qdone, qwest, qeast, anchor):
     from intro import Sentence
     from roi_demon_inv import menu_roi
     anchor = 1
+    sleep(1)
     menu_roi(anchor)
     battle_sound_effect.fadeout(1000)
     battle_sound_effect.play(-1)
@@ -329,6 +330,7 @@ def qassautportesest(qdone, qwest, qeast, anchor):
             Sentence("Plantons le second sceptre.")
         elif qwest == False:
             Sentence("Plantons le premier sceptre.")
+        sleep(1)
         menu_roi_sceptre()
         sleep(1.5)
         os.system("cls")
@@ -421,6 +423,7 @@ def assautportesouest(qdone, qwest, qeast, anchor):
         skip_touch()
         print("Champ de bataille de la citadelle - tour de garde ouest")
         print("")
+        sleep(1)
         menu_roi_sceptre()
         os.system("cls")
         print("Champ de bataille de la citadelle - tour de garde ouest")
@@ -573,6 +576,8 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     from roi_demon_inv import Roi_demon_stats
 
     anchor = 2
+    sleep(1)
+    sleep(1)
     menu_roi(anchor)
     combat_music_2.play(-1)
     battle_sound_effect.play(-1)
@@ -681,7 +686,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     sleep(1.5)
     Sentence("Vous apercevez des larmes de déception et de frustration couler sous son casque boursouflé.")
     sleep(1.5)
-    Sentence("Il était un fier combattant, puissant pour son jeune age...")
+    Sentence("Il était un fier combattant, puissant pour son jeune âge...")
     sleep(1.5)
     Sentence("Il vous rappelle le jeune Ginn.")
     skip_touch()
@@ -764,6 +769,7 @@ def SaveAnchor3(qdone, qwest, qeast, anchor):
     from intro import SentenceSlow
     from roi_demon_inv import menu_roi
     anchor = 3
+    sleep(1)
     menu_roi(anchor)
     Sentence("")
     Sentence("Vous vous assurez que tout le monde soit prêt et vous annoncez le départ.")

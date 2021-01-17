@@ -161,6 +161,7 @@ def use_objet_roi(anchor) :
                     if index_objet[str(objet)][2] == 1:
                         if Roi_demon_stats[5] == Roi_demon_stats[13] :
                             Sentence("Pourquoi vous avez bu la potion, vos pv sont déjà au max.")
+                            roi_demon['inv'][str(objet)] -= 1
                             sleep(0.5)
                         else:
                             absorbtion_soundeffect.play()
@@ -169,11 +170,13 @@ def use_objet_roi(anchor) :
                             if Roi_demon_stats[5] > Roi_demon_stats[13] :
                                 Roi_demon_stats[5] = Roi_demon_stats[13]
                             print("")
+                            roi_demon['inv'][str(objet)] -= 1
                             print("Vie :", str(Roi_demon_stats[5]) , "/",  str(Roi_demon_stats[13]), " Mana :", str(Roi_demon_stats[10]) , "/" , str(Roi_demon_stats[14]))
 
                     elif index_objet[str(objet)][2] == 2:
                         if Roi_demon_stats[10] == Roi_demon_stats[14] :
                             Sentence("Pourquoi vous avez bu la potion, vos pm sont déjà au max.")
+                            roi_demon['inv'][str(objet)] -= 1
                             sleep(0.5)
                         else:
                             absorbtion_soundeffect.play()
@@ -184,7 +187,7 @@ def use_objet_roi(anchor) :
                             Sentence("")
                             roi_demon['inv'][str(objet)] -= 1
                             print("Vie :", str(Roi_demon_stats[5]) , "/",  str(Roi_demon_stats[13]), " Mana :", str(Roi_demon_stats[10]) , "/" , str(Roi_demon_stats[14]))
-                        roi_demon['inv'][str(objet)] -= 1
+
 
                     elif index_objet[str(objet)][2] == None:
                         print("Vous ne pouvez pas utiliser cet objet tout de suite.")
@@ -605,6 +608,7 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                                     save(anchor)
                                     print("Progression sauvegardée !")
                                     save_sound.play()
+                                    sleep(1)
                                     os.system("cls")
                                     print("")
                                     Sentence("Voulez vous quitter ?")

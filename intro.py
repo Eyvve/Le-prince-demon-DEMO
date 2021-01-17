@@ -278,6 +278,7 @@ def load():
         return
     elif save_number == 0:
         Sentence("Vous n'avez pas encore de sauvgarde")
+        sleep(1)
         titlebis()
         return
 

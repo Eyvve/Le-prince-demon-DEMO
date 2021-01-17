@@ -29,7 +29,7 @@ def demo(qdone, qwest, qeast, anchor):
     else:
         Roi_demon_stats[0] = kingsName
     validation_sound.play()
-    pickle_save()
+    pickle_save(save_number)
     sleep(5)
     sleep(2.0)
     os.system("cls")

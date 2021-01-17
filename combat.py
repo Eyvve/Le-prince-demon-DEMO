@@ -774,11 +774,13 @@ def demo_attaque_mob(name, atkmini, atkmax, df, mult, hp):
         Prince_hp_remaining = hp - final_atk
         round(Prince_hp_remaining)
         print(name, "vous inflige", int(final_atk), "dégats.")
+        print(1.0)
         return Prince_hp_remaining
     else:
         Prince_hp_remaining = hp - final_atk
         round(Prince_hp_remaining)
         print(name, "vous inflige", int(final_atk), "dégats.")
+        print(1.0)
         return Prince_hp_remaining
 
 
@@ -787,6 +789,7 @@ def demo_attaque(name, atkmini, atkmax, df, mult, hp):
     final_atk = total_atk - df
     mob_hp_remaining = hp - final_atk
     print("vous infligez", int(final_atk), "dégats", "à", name)
+    print(1.0)
     return round(mob_hp_remaining)
 
 
@@ -1026,6 +1029,7 @@ def demo_mob_action(MobStats):
         rateesq = randint(1, 100)
         if rateesq <= Roi_demon_stats[11]:
             print("Vous esquivez l'attaque !")
+            print(1.0)
             degats = Roi_demon_stats[5]
             return degats
         else:
@@ -1035,6 +1039,7 @@ def demo_mob_action(MobStats):
             return degats
     else:
         print(MobStats[0], "rate son attaque !")
+        print(1.0)
         degats = Roi_demon_stats[5]
         return degats
 
@@ -1615,6 +1620,7 @@ def demo_sort_boss(name, atkmini, atkmax, mult, hp):
     Prince_hp_remaining = hp - total_atk
     round(Prince_hp_remaining)
     print(name, "vous inflige", int(total_atk), "dégats.")
+    print(1.5)
     return Prince_hp_remaining
 
 def demo_boss_action(MobStats):

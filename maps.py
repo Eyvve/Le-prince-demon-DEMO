@@ -8,7 +8,7 @@ from Music_sounds import *
 def skip_touch():
     while True:
         print("")
-        print("Appuier sur entrée pour passer.")
+        print("Appuier sur Entrée pour passer.")
         skip = str(input())
         if skip == "":
             os.system("cls")

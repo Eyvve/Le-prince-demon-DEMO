@@ -789,7 +789,7 @@ def demo_attaque(name, atkmini, atkmax, df, mult, hp):
     final_atk = total_atk - df
     mob_hp_remaining = hp - round(final_atk)
     print("vous infligez", round(final_atk), "dégats", "à", name)
-    print(1.0)
+    sleep(1.0)
     return round(mob_hp_remaining)
 
 
@@ -1029,7 +1029,7 @@ def demo_mob_action(MobStats):
         rateesq = randint(1, 100)
         if rateesq <= Roi_demon_stats[11]:
             print("Vous esquivez l'attaque !")
-            print(1.0)
+            sleep(1.0)
             degats = Roi_demon_stats[5]
             return degats
         else:
@@ -1039,7 +1039,7 @@ def demo_mob_action(MobStats):
             return degats
     else:
         print(MobStats[0], "rate son attaque !")
-        print(1.0)
+        sleep(1.0)
         degats = Roi_demon_stats[5]
         return degats
 
@@ -1620,7 +1620,7 @@ def demo_sort_boss(name, atkmini, atkmax, mult, hp):
     Prince_hp_remaining = hp - round(total_atk)
     round(Prince_hp_remaining)
     print(name, "vous inflige", total_atk, "dégats.")
-    print(1.5)
+    sleep(1.5)
     return Prince_hp_remaining
 
 def demo_boss_action(MobStats):
@@ -1748,7 +1748,10 @@ def bossfightking(MobStats):
                 print(MobStats[0], "est vaincu")
                 Roi_demon_stats[10] = mp
                 enemy_death.play()
-                sleep(4.0)
+                print("")
+                print("Les Devs")
+                Sentence("Bravo ! Mais pour le bien du jeu et le respect du lore... Vous perdez. :'(")
+                sleep(3.0)
 
                 victoire = True
                 return victoire
@@ -1775,6 +1778,10 @@ def bossfightking(MobStats):
                 enemy_death.play()
                 sleep(4.0)
                 victoire = True
+                print("")
+                print("Les Devs")
+                Sentence("Bravo ! Mais pour le bien du jeu et le respect du lore... Vous perdez. :'(")
+                sleep(3.0)
                 return victoire
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")

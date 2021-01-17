@@ -22,26 +22,26 @@ Prince_stats = ["Izzoth", 8, 12, 2, 1.3, 60, 90, 5, 4, 0, 40, 5, 4, 60, 40]
 
 def attaque_mob(name, atkmini, atkmax, df, mult, hp):
     total_atk = randint(atkmini, atkmax) * mult
-    final_atk = total_atk - df
+    final_atk = round(total_atk) - df
     if final_atk < 0:
         final_atk = 0
         Prince_hp_remaining = hp - final_atk
         round(Prince_hp_remaining)
-        print(name, "vous inflige", int(final_atk), "dégats.")
+        print(name, "vous inflige", final_atk, "dégats.")
         return Prince_hp_remaining
     else:
         Prince_hp_remaining = hp - final_atk
         round(Prince_hp_remaining)
-        print(name, "vous inflige", int(final_atk), "dégats.")
+        print(name, "vous inflige", final_atk, "dégats.")
         return Prince_hp_remaining
 
 
 def attaque(name, atkmini, atkmax, df, mult, hp):
     total_atk = randint(atkmini, atkmax) * mult
     final_atk = total_atk - df
-    mob_hp_remaining = hp - final_atk
+    mob_hp_remaining = hp - round(final_atk)
     round(mob_hp_remaining)
-    print("vous infligez", int(final_atk), "dégats", "à", name)
+    print("vous infligez", round(final_atk), "dégats", "à", name)
     return mob_hp_remaining
 
 
@@ -768,27 +768,27 @@ def demodefaite():
 
 def demo_attaque_mob(name, atkmini, atkmax, df, mult, hp):
     total_atk = randint(atkmini, atkmax) * mult
-    final_atk = total_atk - df
+    final_atk = round(total_atk) - df
     if final_atk < 0:
         final_atk = 0
         Prince_hp_remaining = hp - final_atk
         round(Prince_hp_remaining)
-        print(name, "vous inflige", int(final_atk), "dégats.")
-        print(1.0)
+        print(name, "vous inflige", final_atk, "dégats.")
+        sleep(1.0)
         return Prince_hp_remaining
     else:
         Prince_hp_remaining = hp - final_atk
         round(Prince_hp_remaining)
-        print(name, "vous inflige", int(final_atk), "dégats.")
-        print(1.0)
+        print(name, "vous inflige", final_atk, "dégats.")
+        sleep(1.0)
         return Prince_hp_remaining
 
 
 def demo_attaque(name, atkmini, atkmax, df, mult, hp):
     total_atk = randint(atkmini, atkmax) * mult
     final_atk = total_atk - df
-    mob_hp_remaining = hp - final_atk
-    print("vous infligez", int(final_atk), "dégats", "à", name)
+    mob_hp_remaining = hp - round(final_atk)
+    print("vous infligez", round(final_atk), "dégats", "à", name)
     print(1.0)
     return round(mob_hp_remaining)
 
@@ -1033,7 +1033,7 @@ def demo_mob_action(MobStats):
             degats = Roi_demon_stats[5]
             return degats
         else:
-            degats = round(attaque_mob(MobStats[0], MobStats[1], MobStats[2], Roi_demon_stats[3], MobStats[4], Roi_demon_stats[5]))
+            degats = round(demo_attaque_mob(MobStats[0], MobStats[1], MobStats[2], Roi_demon_stats[3], MobStats[4], Roi_demon_stats[5]))
             sword_sound.play()
             fork_sound.play()
             return degats
@@ -1617,9 +1617,9 @@ def bossfightulric(MobStats):
 
 def demo_sort_boss(name, atkmini, atkmax, mult, hp):
     total_atk = randint(atkmini, atkmax)
-    Prince_hp_remaining = hp - total_atk
+    Prince_hp_remaining = hp - round(total_atk)
     round(Prince_hp_remaining)
-    print(name, "vous inflige", int(total_atk), "dégats.")
+    print(name, "vous inflige", total_atk, "dégats.")
     print(1.5)
     return Prince_hp_remaining
 

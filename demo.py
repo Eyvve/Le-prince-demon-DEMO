@@ -10,6 +10,7 @@ questdone = False
 qeastdone = False
 qwestdone = False
 Anchor = 0
+save_number = 0
 
 def demo(qdone, qwest, qeast, anchor):
     from intro import Sentence

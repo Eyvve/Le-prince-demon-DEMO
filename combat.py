@@ -1750,8 +1750,11 @@ def bossfightking(MobStats):
                 enemy_death.play()
                 print("")
                 print("Les Devs")
-                Sentence("Bravo ! Mais pour le bien du jeu et le respect du lore... Vous perdez. :'(")
+                Sentence("Bravo !")
+                SentenceSlow("...")
+                Sentence("Malheureusement pour le bien du jeu et le respect du lore... Vous devez perdre... :'(")
                 sleep(3.0)
+                os.system("cls")
 
                 victoire = True
                 return victoire
@@ -1780,8 +1783,11 @@ def bossfightking(MobStats):
                 victoire = True
                 print("")
                 print("Les Devs")
-                Sentence("Bravo ! Mais pour le bien du jeu et le respect du lore... Vous perdez. :'(")
+                Sentence("Bravo !")
+                SentenceSlow("...")
+                Sentence("Malheureusement pour le bien du jeu et le respect du lore... Vous devez perdre... :'(")
                 sleep(3.0)
+                os.system("cls")
                 return victoire
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")

@@ -10,7 +10,6 @@ questdone = False
 qeastdone = False
 qwestdone = False
 Anchor = 0
-save_number = 0
 
 def demo(qdone, qwest, qeast, anchor):
     from intro import Sentence
@@ -20,97 +19,96 @@ def demo(qdone, qwest, qeast, anchor):
 
     deva_stats = ["Deva", 30, 40, 15, 1.2, 200, 85, 5]
     cotterie_stats = ["Chef de Cotterie", 45, 55, 20, 1.2, 300, 85, 5]
-    new_game()
-    # Sentence("Conformement au lore établi, le Roi démon ou Dieu-Roi porte le nom d'Ibliss Nizidramanii'yt.")
-    # print("")
-    # Sentence("Quel est votre nom ? Si vous souhaitez le nom lore friendly, appuyez simplement sur Entrée.")
-    # kingsName = str(input("=> "))
-    # if kingsName == "":
-    #     Roi_demon_stats[0] = "Ibliss"
-    # else:
-    #     Roi_demon_stats[0] = kingsName
-    # validation_sound.play()
-    # pickle_save()
-    # sleep(5)
-    # sleep(2.0)
-    # os.system("cls")
-    # demo_intro_sound.play()
-    # print("")
-    # print("")
-    # print("")
-    # print("")
-    # print("")
-    # print("")
-    # print("")
-    # print("")
-    # print("")
-    # print("")
-    # print("""
-    #                           ██████╗ ██████╗  ██████╗ ██╗      ██████╗  ██████╗ ██╗   ██╗███████╗
-    #                           ██╔══██╗██╔══██╗██╔═══██╗██║     ██╔═══██╗██╔════╝ ██║   ██║██╔════╝
-    #                 █████╗    ██████╔╝██████╔╝██║   ██║██║     ██║   ██║██║  ███╗██║   ██║█████╗      █████╗
-    #                 ╚════╝    ██╔═══╝ ██╔══██╗██║   ██║██║     ██║   ██║██║   ██║██║   ██║██╔══╝      ╚════╝
-    #                           ██║     ██║  ██║╚██████╔╝███████╗╚██████╔╝╚██████╔╝╚██████╔╝███████╗
-    #                           ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝
-    #
-    #                                                     Le Dieu Roi
-    #     """)
-    # sleep(11.0)
-    # os.system("cls")
-    # narration_intro_music.play(-1)
-    # # wind_thunder_sound.play(-1)
-    # battle_sound_effect.play(-1)
-    # os.system("cls")
-    # print("Champ de bataille de la citadelle - coeur de la bataille")
-    # print("")
-    # Sentence("La bataille faisait rage.")
-    # sleep(1.5)
-    # Sentence("Les cieux étaient aussi rougeâtre que le sol devant la citadelle dorée des Hommes..")
-    # sleep(1.5)
-    # Sentence("Les corps, de différentes formes et couleurs, jonchaient le sol.")
-    # sleep(1.5)
-    # Sentence("Dans le flou du combat, impossible pour vous, le Dieu-roi S'rhaal, de faire le point sur la situation.")
-    # skip_touch()
-    # os.system("cls")
-    # print("Champ de bataille de la citadelle - coeur de la bataille")
-    # print("")
-    # Sentence("Vous débarrassant de votre opposant d'un lourd coup de lame,")
-    # Sentence("fendant du même mouvement la lourde armure et le corps du paladin, avant de lancer un long cri de ralliement.")
-    # sleep(1.5)
-    # Sentence("La situation des forces en présence est désastreuse.")
-    # skip_touch()
-    # os.system("cls")
-    # print("Champ de bataille de la citadelle - coeur de la bataille")
-    # print("")
-    # Sentence("Les brutes ont bien encaissé la mêlée,")
-    # Sentence("mais tous vos suivants plus fragiles se sont fait découper par l'acier chantant des créatures célestes...")
-    # sleep(1.5)
-    # Sentence("Avant de pouvoir lancer une série d'ordres, deux silhouettes d'or et de sang se dressent devant vous. ")
-    # print("")
-    # Sentence("A vue d'oeil, un chef de cotterie et un déva.")
-    # skip_touch()
-    # narration_intro_music.fadeout(1000)
-    # sleep(2)
-    # demo_deva_combat.play(-1)
-    # Sentence("Ils ne sont rien.")
-    # sleep(6.0)
-    # demofight(deva_stats)
-    # os.system("cls")
-    # Sentence("Alors que vous veniez à peine de tuer le deva, le chef de cotterie tente de vous porter un coup d'épée.")
-    # sleep(1.5)
-    # demofight(cotterie_stats)
-    # demo_deva_combat.fadeout(1000)
-    # sleep(1.0)
-    # os.system("cls")
-    # print("Champ de bataille de la citadelle - coeur de la bataille")
-    # print("")
-    # sleep(1.0)
-    # # fin des deux combats, si le joueur est pas mort il à pris un peu cher, hop sequence gameplay potion
-    # Sentence("Vous ressortez de ce combat blessé, vous trouvez judicieux de regagner de la santé avant de retourner au voir vos troupes.")
-    # sleep(1.5)
-    # Sentence("Par chance vous avez suffisamment de potions sur vous pour reprendre des forces.")
-    # skip_touch()
-    # os.system("cls")
+    Sentence("Conformement au lore établi, le Roi démon ou Dieu-Roi porte le nom d'Ibliss Nizidramanii'yt.")
+    print("")
+    Sentence("Quel est votre nom ? Si vous souhaitez le nom lore friendly, appuyez simplement sur Entrée.")
+    kingsName = str(input("=> "))
+    if kingsName == "":
+        Roi_demon_stats[0] = "Ibliss"
+    else:
+        Roi_demon_stats[0] = kingsName
+    validation_sound.play()
+    pickle_save()
+    sleep(5)
+    sleep(2.0)
+    os.system("cls")
+    demo_intro_sound.play()
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("""
+                              ██████╗ ██████╗  ██████╗ ██╗      ██████╗  ██████╗ ██╗   ██╗███████╗
+                              ██╔══██╗██╔══██╗██╔═══██╗██║     ██╔═══██╗██╔════╝ ██║   ██║██╔════╝
+                    █████╗    ██████╔╝██████╔╝██║   ██║██║     ██║   ██║██║  ███╗██║   ██║█████╗      █████╗
+                    ╚════╝    ██╔═══╝ ██╔══██╗██║   ██║██║     ██║   ██║██║   ██║██║   ██║██╔══╝      ╚════╝
+                              ██║     ██║  ██║╚██████╔╝███████╗╚██████╔╝╚██████╔╝╚██████╔╝███████╗
+                              ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝
+
+                                                        Le Dieu Roi
+        """)
+    sleep(11.0)
+    os.system("cls")
+    narration_intro_music.play(-1)
+    # wind_thunder_sound.play(-1)
+    battle_sound_effect.play(-1)
+    os.system("cls")
+    print("Champ de bataille de la citadelle - coeur de la bataille")
+    print("")
+    Sentence("La bataille faisait rage.")
+    sleep(1.5)
+    Sentence("Les cieux étaient aussi rougeâtre que le sol devant la citadelle dorée des Hommes..")
+    sleep(1.5)
+    Sentence("Les corps, de différentes formes et couleurs, jonchaient le sol.")
+    sleep(1.5)
+    Sentence("Dans le flou du combat, impossible pour vous, le Dieu-roi S'rhaal, de faire le point sur la situation.")
+    skip_touch()
+    os.system("cls")
+    print("Champ de bataille de la citadelle - coeur de la bataille")
+    print("")
+    Sentence("Vous débarrassant de votre opposant d'un lourd coup de lame,")
+    Sentence("fendant du même mouvement la lourde armure et le corps du paladin, avant de lancer un long cri de ralliement.")
+    sleep(1.5)
+    Sentence("La situation des forces en présence est désastreuse.")
+    skip_touch()
+    os.system("cls")
+    print("Champ de bataille de la citadelle - coeur de la bataille")
+    print("")
+    Sentence("Les brutes ont bien encaissé la mêlée,")
+    Sentence("mais tous vos suivants plus fragiles se sont fait découper par l'acier chantant des créatures célestes...")
+    sleep(1.5)
+    Sentence("Avant de pouvoir lancer une série d'ordres, deux silhouettes d'or et de sang se dressent devant vous. ")
+    print("")
+    Sentence("A vue d'oeil, un chef de cotterie et un déva.")
+    skip_touch()
+    narration_intro_music.fadeout(1000)
+    sleep(2)
+    demo_deva_combat.play(-1)
+    Sentence("Ils ne sont rien.")
+    sleep(6.0)
+    demofight(deva_stats)
+    os.system("cls")
+    Sentence("Alors que vous veniez à peine de tuer le deva, le chef de cotterie tente de vous porter un coup d'épée.")
+    sleep(1.5)
+    demofight(cotterie_stats)
+    demo_deva_combat.fadeout(1000)
+    sleep(1.0)
+    os.system("cls")
+    print("Champ de bataille de la citadelle - coeur de la bataille")
+    print("")
+    sleep(1.0)
+    # fin des deux combats, si le joueur est pas mort il à pris un peu cher, hop sequence gameplay potion
+    Sentence("Vous ressortez de ce combat blessé, vous trouvez judicieux de regagner de la santé avant de retourner au voir vos troupes.")
+    sleep(1.5)
+    Sentence("Par chance vous avez suffisamment de potions sur vous pour reprendre des forces.")
+    skip_touch()
+    os.system("cls")
     anchor = 1
     SaveAnchor1(qdone, qwest, qeast, anchor)
     return

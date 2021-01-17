@@ -217,12 +217,12 @@ def choice_mode():
     print("                    1 - MODE TUTO                                                  2 - DEMO")
     print("")
     print("           Le mode tuto est à choisir si vous                          Vivez les dernières heures de la Grande ")
-    print("           Souhaitez connaître l'histoire du prince                    Guerre en incarnant le Roi Démon.")
+    print("           souhaitez connaître l'histoire du prince                    Guerre en incarnant le Roi Démon.")
     print("           et vivre les premières minutes de ce qu'était               Ce mode fait office de préquelle et de ")
-    print("           sensé être le jeu à la base.                                démo incluant tout ce que offre le gameplay")
-    print("           Ce mode est à privilégier si vous souhaitez                 du jeu final. Ce mode est à privilegier si ")
-    print("           prendre le temps de découvrir le système                    en savoir plus sur l'histoire de Prince Démon.")
-    print("           de combat.")
+    print("           censé être le jeu à la base.                                démo incluant tout ce qu'offre le gameplay")
+    print("           Ce mode est à privilégier si vous souhaitez                 du jeu final. Ce mode est à privilégier si ")
+    print("           prendre le temps de découvrir le système                    vous souhaitezen savoir plus sur l'histoire ")
+    print("           de combat.                                                  du Prince Démon.")
     print("""
     
     

@@ -1381,7 +1381,7 @@ def demo_Low_Blow(MobStats):
     elif rep == "4":
         rate = randint(1, 10)
         if rate > 5:
-            print("vous saisissez l'arme de votre adversaire et la faîtes rouiller en un instant !")
+            print("vous saisissez l'arme de votre adversaire et la faites rouiller en un instant !")
             sleep(1.0)
             acid_sound.play()
             print("les dégats de l'adversaire sont réduits !")

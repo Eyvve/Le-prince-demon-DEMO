@@ -190,6 +190,7 @@ def main_menu():
 
 
 def PlayGame():
+    from maps import skip_touch
     import os
     os.system("cls")
     Sentence("Disclamer : pour éviter des choix involontaires, n'appuyez sur votre clavier que quand on vous le demande.")
@@ -253,36 +254,30 @@ def choice_mode():
 def load():
     from roi_demon_inv import roi_demon
     from roi_demon_inv import Roi_demon_stats
-    Sentence("Veuillez entrer un mot de passe")
-    print("1. Retour")
-    mdp = str(input("=> "))
-    while mdp != "Zazranoth" or mdp != "Ginn" or mdp != "Ulric" or mdp != "1":
-        if mdp == "1":
-            sleep(0.2)
-            titlebis()
-            return
-        if mdp == "Zazranoth":
-            pickle_load()
-            questdone = False
-            qeastdone = False
-            qwestdone = False
-            SaveAnchor1(questdone, qeastdone, qwestdone, Anchor)
-            return
-        elif mdp == "Ginn":
-            pickle_load()
-            questdone = False
-            qeastdone = False
-            qwestdone = False
-            SaveAnchor2(questdone, qeastdone, qwestdone, Anchor)
-            return
-        elif mdp == "Ulric":
-            pickle_load()
-            questdone = False
-            qeastdone = False
-            qwestdone = False
-            SaveAnchor3(questdone, qeastdone, qwestdone, Anchor)
-            return
-        if mdp != "Zazranoth" or mdp != "Ginn" or mdp != "Ulric" or mdp != "1":
-            Sentence("Ce mot de passe n'existe pas.")
-        mdp = str(input("=> "))
+    save_number = save_number_load()
+    if save_number == 1 :
+        pickle_load()
+        questdone = False
+        qeastdone = False
+        qwestdone = False
+        SaveAnchor1(questdone, qeastdone, qwestdone, Anchor)
+        return
+    elif save_number == 2:
+        pickle_load()
+        questdone = False
+        qeastdone = False
+        qwestdone = False
+        SaveAnchor2(questdone, qeastdone, qwestdone, Anchor)
+        return
+    elif save_number == 3:
+        pickle_load()
+        questdone = False
+        qeastdone = False
+        qwestdone = False
+        SaveAnchor3(questdone, qeastdone, qwestdone, Anchor)
+        return
+    elif save_number == 0:
+        Sentence("Vous n'avez pas encore de sauvgarde")
+        titlebis()
+        return
 

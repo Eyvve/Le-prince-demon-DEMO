@@ -10,6 +10,7 @@ questdone = False
 qeastdone = False
 qwestdone = False
 Anchor = 0
+save_number = 0
 
 def demo(qdone, qwest, qeast, anchor):
     from intro import Sentence
@@ -19,7 +20,7 @@ def demo(qdone, qwest, qeast, anchor):
 
     deva_stats = ["Deva", 30, 40, 15, 1.2, 200, 85, 5]
     cotterie_stats = ["Chef de Cotterie", 45, 55, 20, 1.2, 300, 85, 5]
-    Sentence("Conformément au lore établi, le Roi démon ou Dieu-Roi porte le nom d'Ibliss Nizidramanii'yt.")
+    Sentence("Conformement au lore établi, le Roi démon ou Dieu-Roi porte le nom d'Ibliss Nizidramanii'yt.")
     print("")
     Sentence("Quel est votre nom ? Si vous souhaitez le nom lore friendly, appuyez simplement sur Entrée.")
     kingsName = str(input("=> "))
@@ -63,7 +64,7 @@ def demo(qdone, qwest, qeast, anchor):
     print("")
     Sentence("La bataille faisait rage.")
     sleep(1.5)
-    Sentence("Les cieux étaient aussi rougeâtres que le sol devant la citadelle dorée des Hommes..")
+    Sentence("Les cieux étaient aussi rougeâtre que le sol devant la citadelle dorée des Hommes..")
     sleep(1.5)
     Sentence("Les corps, de différentes formes et couleurs, jonchaient le sol.")
     sleep(1.5)
@@ -245,7 +246,7 @@ def qassautportes(qdone, qwest, qeast, anchor):
     Sentence("Ces portes sont bardées de magie défensives, il va me falloir utiliser une puissante magie pour en venir à bout.")
     sleep(1.5)
     Sentence("Zazranoth, retourne auprès des troupes, nous lançons l'assaut final.")
-    Sentence("Ginn ! Libère moi le chemin jusqu'aux emplacements que je t'indiquerai !")
+    Sentence("Ginn ! Libère moi le chemin jusqu'aux emplacement que je t'indiquerai !")
     Sentence("Je vais devoir planter deux sceptres de pouvoir pour en canaliser l'énergie!")
     skip_touch()
     os.system("cls")
@@ -260,7 +261,7 @@ def qassautportes(qdone, qwest, qeast, anchor):
     quest_sound.play()
     print("Quête ajoutée : L'assaut")
     sleep(1.0)
-    Sentence("Objectif : Planter un sceptre catalyseur sur chaque position est et ouest des portes.")
+    Sentence("Objectif : planter un sceptre catalyseur sur chaque position est et ouest des portes.")
     skip_touch()
     os.system("cls")
     print("Champ de bataille de la citadelle - coeur de la bataille")
@@ -354,7 +355,7 @@ def qassautportesest(qdone, qwest, qeast, anchor):
             combat_music_2.play()
             print(Roi_demon_stats[0])
             Sentence("Le second sceptre est en place ! On bouge, et repousse moi ces vermisseaux !")
-            Sentence("On a une porte à détruire et une bataille à remporter !")
+            Sentence("On à une porte à détruire et une bataille à remporter !")
             print()
             Sentence("Après vous être assuré par un échange de regard que votre second ait bien entendu les ordres,")
             Sentence("Vous prenez la direction de la porte principale. ")
@@ -414,9 +415,9 @@ def assautportesouest(qdone, qwest, qeast, anchor):
         os.system("cls")
         print("Champ de bataille de la citadelle - tour de garde ouest")
         print("")
-        Sentence("Naviguant entre les amoncellements de corps, hurlant parmi les cris, ")
+        Sentence("Naviguant entre les amoncellements de corps, hurlant parmis les cris, ")
         Sentence("glissant sur les flaques de sang et les morceaux de métal,")
-        Sentence("le duo arriva au point ouest des portes, ")
+        Sentence("le duo arrive au point ouest des portes, ")
         Sentence("où la lumière du soleil couchant se reflétant contre les portes métalliques donnait à la scène une lumière saisissante. ")
         sleep(1.5)
         skip_touch()
@@ -506,7 +507,7 @@ def assautportesouest(qdone, qwest, qeast, anchor):
             print("")
             print(Roi_demon_stats[0])
             Sentence("Ginn! Le sceptre est planté, on y va !")
-            Sentence("On a une porte à détruire et une bataille à remporter !")
+            Sentence("On à une porte à détruire et une bataille à remporter !")
             skip_touch()
             qdone = True
             assautportes(qdone, qwest, qeast, anchor)

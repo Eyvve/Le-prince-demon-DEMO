@@ -1126,7 +1126,7 @@ def demofight(MobStats):
         sleep(1.5)
         MobStats[5] = mob_life
         os.system("cls")
-        while prince_life >= 0 or mob_life >= 0:
+        while prince_life > 0 or mob_life > 0:
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             prince_life = demo_mob_action(MobStats)
@@ -1167,7 +1167,7 @@ def demofight(MobStats):
         Roi_demon_stats[5] = prince_life
         sleep(1.5)
         os.system("cls")
-        while prince_life >= 0 or mob_life >= 0:
+        while prince_life > 0 or mob_life > 0:
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_life = demo_action(MobStats)
@@ -1481,7 +1481,7 @@ def bossfightulric(MobStats):
         mob_life = demo_action(MobStats)
         sleep(1.5)
         MobStats[5] = mob_life
-        while prince_life >= 0 or mob_life >= 0:
+        while prince_life > 0 or mob_life > 0:
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
@@ -1548,7 +1548,7 @@ def bossfightulric(MobStats):
         Roi_demon_stats[5] = prince_life
         sleep(1.5)
         os.system("cls")
-        while prince_life >= 0 or mob_life >= 0:
+        while prince_life > 0 or mob_life > 0:
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
@@ -1690,7 +1690,7 @@ def bossfightking(MobStats):
         mob_life = demo_action(MobStats)
         sleep(1.5)
         MobStats[5] = mob_life
-        while prince_life >= 0 or mob_life >= 0:
+        while prince_life > 0 or mob_life > 0:
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
@@ -1755,7 +1755,7 @@ def bossfightking(MobStats):
         Roi_demon_stats[5] = prince_life
         sleep(1.5)
         os.system("cls")
-        while prince_life >= 0 or mob_life >= 0:
+        while prince_life > 0 or mob_life > 0:
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])

@@ -15,7 +15,7 @@ def skip_touch():
             break
 
 def beginning():
-    from intro import Sentence
+    from intro import Sentence, titlebis
     from combat import Prince_stats
     from combat import fight
     Sentence("Conformement au lore établi, le prince démon porte le nom d'Izzoth.")

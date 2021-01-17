@@ -159,24 +159,33 @@ def use_objet_roi(anchor) :
                     print("Vous utilisez " + str(objet) + ".")
                     sleep(0.5)
                     if index_objet[str(objet)][2] == 1:
-                        absorbtion_soundeffect.play()
-                        print("Vous gagnez ", str(index_objet[str(objet)][1]), "Pv.")
-                        Roi_demon_stats[5] += index_objet[str(objet)][1]
-                        if Roi_demon_stats[5] > Roi_demon_stats[13] :
-                            Roi_demon_stats[5] = Roi_demon_stats[13]
-                        print("")
-                        roi_demon['inv'][str(objet)] -= 1
-                        print("Vie :", str(Roi_demon_stats[5]) , "/",  str(Roi_demon_stats[13]), " Mana :", str(Roi_demon_stats[10]) , "/" , str(Roi_demon_stats[14]))
+                        if Roi_demon_stats[5] == Roi_demon_stats[13] :
+                            Sentence("Pourquoi vous avez bu la potion, vos pv sont déjà au max.")
+                            sleep(0.5)
+                        else:
+                            absorbtion_soundeffect.play()
+                            print("Vous gagnez ", str(index_objet[str(objet)][1]), "Pv.")
+                            Roi_demon_stats[5] += index_objet[str(objet)][1]
+                            if Roi_demon_stats[5] > Roi_demon_stats[13] :
+                                Roi_demon_stats[5] = Roi_demon_stats[13]
+                            print("")
+                            print("Vie :", str(Roi_demon_stats[5]) , "/",  str(Roi_demon_stats[13]), " Mana :", str(Roi_demon_stats[10]) , "/" , str(Roi_demon_stats[14]))
 
                     elif index_objet[str(objet)][2] == 2:
-                        #bruitage de heal popo
-                        print("Vous gagnez ", str(index_objet[str(objet)][1]), "Pm.")
-                        Roi_demon_stats[10] += index_objet[str(objet)][1]
-                        if Roi_demon_stats[10] > Roi_demon_stats[14] :
-                            Roi_demon_stats[10] = Roi_demon_stats[14]
-                        Sentence("")
+                        if Roi_demon_stats[10] == Roi_demon_stats[14] :
+                            Sentence("Pourquoi vous avez bu la potion, vos pm sont déjà au max.")
+                            sleep(0.5)
+                        else:
+                            absorbtion_soundeffect.play()
+                            print("Vous gagnez ", str(index_objet[str(objet)][1]), "Pm.")
+                            Roi_demon_stats[10] += index_objet[str(objet)][1]
+                            if Roi_demon_stats[10] > Roi_demon_stats[14] :
+                                Roi_demon_stats[10] = Roi_demon_stats[14]
+                            Sentence("")
+                            roi_demon['inv'][str(objet)] -= 1
+                            print("Vie :", str(Roi_demon_stats[5]) , "/",  str(Roi_demon_stats[13]), " Mana :", str(Roi_demon_stats[10]) , "/" , str(Roi_demon_stats[14]))
                         roi_demon['inv'][str(objet)] -= 1
-                        print("Vie :", str(Roi_demon_stats[5]) , "/",  str(Roi_demon_stats[13]), " Mana :", str(Roi_demon_stats[10]) , "/" , str(Roi_demon_stats[14]))
+
                     elif index_objet[str(objet)][2] == None:
                         print("Vous ne pouvez pas utiliser cet objet tout de suite.")
                         sleep(2)
@@ -394,7 +403,8 @@ def remove_armor_roi(armor) :
                 Sentence("Veuillez entrer un chiffre valide")
 
 
-def pickle_save():
+def pickle_save(save):
+    from demo import save_number
     f = open("save", "wb")
     roi_demon_save_hands = roi_demon["hands"]
     roi_demon_save_inv = roi_demon["inv"]
@@ -404,6 +414,7 @@ def pickle_save():
     Roi_demon_stats_save_3 = Roi_demon_stats[3]
     Roi_demon_stats_save_4 = Roi_demon_stats[4]
     Roi_demon_stats_save_5 = Roi_demon_stats[5]
+    save_number_save = save
 
     d = {
         "roi_demon_hands" : roi_demon_save_hands,
@@ -414,6 +425,7 @@ def pickle_save():
         "Roi_demon_stats_3" : Roi_demon_stats_save_3,
         "Roi_demon_stats_4" : Roi_demon_stats_save_4,
         "Roi_demon_stats_5" : Roi_demon_stats_save_5,
+        "save_number" : save_number_save
     }
 
     pickle.dump(d,f)
@@ -421,6 +433,16 @@ def pickle_save():
 
 def pickle_print_save():
     pickle_file = open("save", "rb")
+    objects = []
+    while True:
+        try:
+            objects.append(pickle.load(pickle_file))
+        except EOFError:
+            break
+    pickle_file.close()
+    print(objects)
+def pickle_print_new_game() :
+    pickle_file = open("new_game", "rb")
     objects = []
     while True:
         try:
@@ -445,20 +467,42 @@ def pickle_load():
 
     f.close()
 
+def save_number_load():
+    f = open("save", "rb")
+    d = pickle.load(f)
+
+    save_number = d["save_number"]
+
+
+    return save_number
+
+
 def save(anchor):
     from intro import Sentence
-    from intro import skip_touch
-    Sentence("Le mot de passe associé à votre progression est :")
-    print("")
+    from maps import skip_touch
+    from demo import save_number
     if anchor == 1:
-        print("Zazranoth")
-        skip_touch()
+        save_number = 1
+        pickle_save(save_number)
     elif anchor == 2:
-        print("Ginn")
-        skip_touch()
+        save_number = 2
+        pickle_save(save_number)
     elif anchor == 3:
-        print("Ulric")
-        skip_touch()
+        save_number = 3
+        pickle_save(save_number)
+
+def new_game() :
+    f = open("new_game", "rb")
+    d = pickle.load(f)
+    roi_demon["hands"] = d["roi_demon_hands"]
+    roi_demon["inv"] = d["roi_demon_inv"]
+    roi_demon["equipement"] = d["roi_demon_equipement"]
+    roi_demon["armor"] = d["roi_demon_armor"]
+    Roi_demon_stats[0] = d["Roi_demon_stats_0"]
+    Roi_demon_stats[3] = d["Roi_demon_stats_3"]
+    Roi_demon_stats[4] = d["Roi_demon_stats_4"]
+    Roi_demon_stats[5] = d["Roi_demon_stats_5"]
+    f.close()
 
 
 
@@ -559,7 +603,6 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                                     # action de sauvegarde
                                     os.system("cls")
                                     save(anchor)
-                                    pickle_save()
                                     print("Progression sauvegardée !")
                                     save_sound.play()
                                     os.system("cls")

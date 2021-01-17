@@ -118,8 +118,8 @@ def SaveAnchor1(qdone, qwest, qeast, anchor):
     from intro import Sentence
     from roi_demon_inv import menu_roi
     anchor = 1
-    menu_roi(anchor)
     battle_sound_effect.fadeout(1000)
+    menu_roi(anchor)
     battle_sound_effect.play(-1)
     os.system("cls")
     print("Champ de bataille de la citadelle - coeur de la bataille")

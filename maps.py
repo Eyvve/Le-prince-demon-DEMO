@@ -458,7 +458,9 @@ def beginning():
     print("")
     Sentence("Le vieux Zazranoth posa alors sa main sur l'épaule du jeune prince puis s'en alla...")
     Sentence("laissant le jeune " + Prince_stats[0] + " face à son destin.")
+    beginning_music.fadeout(1000)
     sleep(3.0)
+    os.system("cls")
     titlebis()
     return
 

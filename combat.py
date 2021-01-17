@@ -721,14 +721,14 @@ def demodefaite():
     demo_deva_combat.fadeout(1000)
     battle_sound_effect.fadeout(1000)
     print("")
-    Sentence("Jusque des siècles plus tard, les hommes se rappellent de cet évènement comme la Bataille de la Couronne,")
+    Sentence("Jusqu'à des siècles plus tard, les hommes se rappellent de cet évènement comme la Bataille de la Couronne,")
     Sentence("ou grâce à une alliance avec des créatures célestes, les humains ont repoussé les démons.")
     sleep(1.5)
     Sentence("Ces derniers finirent sous le joug des premiers,")
     Sentence("le peu d'entre eux encore libres se terrant dans les montagnes. ")
     sleep(1.5)
     print("")
-    Sentence("A ce jour, nul ne sait comment les humains ont obtenu l'aide des anges,")
+    Sentence("À ce jour, nul ne sait comment les humains ont obtenu l'aide des anges,")
     Sentence("mais depuis, un certain 'Prince en Blanc', que personne ne voit jamais,")
     Sentence("semble avoir remplacé le roi précédent, et règne sur Ljosalfer d'une main juste,  ")
     Sentence("ferme,")
@@ -814,7 +814,7 @@ def demo_Magic_action(nivatkmag, MobStats):
             mob_hp_remaining = action()
             return mob_hp_remaining
         else:
-            print("veuillez entrer un chiffre valide")
+            print("Veuillez entrer un chiffre valide")
             sleep(1.5)
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
@@ -885,11 +885,11 @@ def demo_Magic_action(nivatkmag, MobStats):
                 evil_beam_spell.play()
                 Roi_demon_stats[10] = Roi_demon_stats[10] - 12
                 magic_attack = 20
-                print("vous infligez" , magic_attack , "dégats magiques !")
+                print("Vous infligez" , magic_attack , "dégats magiques !")
                 mob_hp_remaining = MobStats[5] - magic_attack
                 return mob_hp_remaining
             else:
-                Sentence("pas assez de mana")
+                Sentence("Pas assez de mana")
                 mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
                 return mob_hp_remaining
         elif rep == "2":
@@ -902,7 +902,7 @@ def demo_Magic_action(nivatkmag, MobStats):
                 recup = randint(12, 15)
                 Roi_demon_stats[5] = Roi_demon_stats[5] + recup
                 absorbtion_gain_hp.play(3)
-                print("vous récupérez", recup, "points de vie !")
+                print("Vous récupérez", recup, "points de vie !")
                 sleep(1.0)
                 mob_hp_remaining = MobStats[5] - magic_attack
                 if Roi_demon_stats[5] > Roi_demon_stats[13]:
@@ -911,7 +911,7 @@ def demo_Magic_action(nivatkmag, MobStats):
                 else:
                     return mob_hp_remaining
             else:
-                Sentence("pas assez de mana")
+                Sentence("Pas assez de mana")
                 mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
                 return mob_hp_remaining
         elif rep == "3":
@@ -946,7 +946,7 @@ def demo_Magic_action(nivatkmag, MobStats):
         print("1. Rayon Infernal | coût : 16 mana")
         print("2. Grande moisson | coût : 10 mana")
         print("3. Peau du Seigneur démon | coût : 20 mana")
-        print("4. retour au menu des actions")
+        print("4. Retour au menu des actions")
         rep = str(input("=> "))
         if rep == "1":
             if Roi_demon_stats[10] >= 16:
@@ -957,7 +957,7 @@ def demo_Magic_action(nivatkmag, MobStats):
                 mob_hp_remaining = MobStats[5] - magic_attack
                 return mob_hp_remaining
             else:
-                Sentence("pas assez de mana")
+                Sentence("Pas assez de mana")
                 mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
                 return mob_hp_remaining
         elif rep == "2":
@@ -979,7 +979,7 @@ def demo_Magic_action(nivatkmag, MobStats):
                 else:
                     return mob_hp_remaining
             else:
-                Sentence("pas assez de mana")
+                Sentence("Pas assez de mana")
                 mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
                 return mob_hp_remaining
         elif rep == "3":
@@ -993,7 +993,7 @@ def demo_Magic_action(nivatkmag, MobStats):
                 mob_hp_remaining = MobStats[5]
                 return mob_hp_remaining
             else:
-                Sentence("pas assez de mana")
+                Sentence("Pas assez de mana")
                 mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
                 return mob_hp_remaining
         elif rep == "4":
@@ -1003,7 +1003,7 @@ def demo_Magic_action(nivatkmag, MobStats):
             mob_hp_remaining = demo_action(MobStats)
             return mob_hp_remaining
         else:
-            print("veuillez entrer un chiffre valide")
+            Sentence("Veuillez entrer un chiffre valide")
             sleep(1.5)
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
@@ -1044,7 +1044,7 @@ def demo_action(MobStats):
     print("1. Attaquer")
     print("2. Magie")
     print("3. Attaque spéciale")
-    print("4. éviter le combat")
+    print("4. Éviter le combat")
     rep = str(input("=> "))
     if rep == "1":
         Sentence("Vous attaquez !")
@@ -1071,7 +1071,7 @@ def demo_action(MobStats):
         degats = demo_Low_Blow(MobStats)
         return degats
     elif rep == "4":
-        Sentence("Pensez vous que la fuite est digne du roi des démons ?")
+        Sentence("Pensez-vous que la fuite est digne du roi des démons ?")
         sleep(1.5)
         os.system("cls")
         print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
@@ -1081,7 +1081,7 @@ def demo_action(MobStats):
         return degats
     else:
         while rep != "1" or rep != "2" or rep != "3" or rep != "4":
-            Sentence("veuillez entrer un chiffre valide")
+            Sentence("Veuillez entrer un chiffre valide")
             sleep(1.5)
             os.system("cls")
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
@@ -1204,7 +1204,7 @@ def demo_Low_Blow(MobStats):
     print("2. Seisme (esquive - ) | 7 chances sur 10")
     print("3. Brise armure (armure - )| 1 chance sur 2")
     print("4. Oxydation (dégats - )| 1 chance sur 2")
-    print("5. retour au menu des actions")
+    print("5. Retour au menu des actions")
     rep = str(input("=> "))
     if rep == "1":
         rate = randint(1, 10)
@@ -1270,7 +1270,7 @@ def demo_Low_Blow(MobStats):
     elif rep == "4":
         rate = randint(1, 10)
         if rate > 5:
-            print("vous saisissez l'arme de votre adversaire et la faîtes rouiller en un instant !")
+            print("Vous saisissez l'arme de votre adversaire et la faîtes rouiller en un instant !")
             sleep(1.0)
             acid_sound.play()
             print("les dégats de l'adversaire sont réduits !")
@@ -1295,7 +1295,7 @@ def demo_Low_Blow(MobStats):
         mob_hp_remaining = demo_action(MobStats)
         return mob_hp_remaining
     else:
-        print("veuillez entrer un chiffre valide")
+        print("Veuillez entrer un chiffre valide")
         sleep(1.5)
         os.system("cls")
         print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
@@ -1310,7 +1310,7 @@ def demo_Low_Blow(MobStats):
     print("2. Seisme (esquive - ) | 7 chances sur 10")
     print("3. Brise armure (armure - )| 1 chance sur 2")
     print("4. Oxydation (dégats - )| 1 chance sur 2")
-    print("5. retour au menu des actions")
+    print("5. Retour au menu des actions")
     rep = str(input("=> "))
     if rep == "1":
         rate = randint(1, 10)
@@ -1427,7 +1427,7 @@ def demo_ulric_action(MobStats):
                 degats = Roi_demon_stats[5]
                 return degats
             else:
-                degats = demo_attaque_mob(MobStats[0], MobStats[1], MobStats[2], Roi_demon_stats[3], MobStats[4], Roi_demon_stats[5])
+                degats = round(demo_attaque_mob(MobStats[0], MobStats[1], MobStats[2], Roi_demon_stats[3], MobStats[4], Roi_demon_stats[5]))
                 sword_sound.play()
                 fork_sound.play()
                 return degats

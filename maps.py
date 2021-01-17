@@ -8,7 +8,7 @@ from Music_sounds import *
 def skip_touch():
     while True:
         print("")
-        print("Appuiez sur entrée pour passer.")
+        print("Appuier sur entrée pour passer.")
         skip = str(input())
         if skip == "":
             os.system("cls")
@@ -18,7 +18,14 @@ def beginning():
     from intro import Sentence
     from combat import Prince_stats
     from combat import fight
-    Prince_stats[0] = str(input("Quel est votre nom : "))
+    Sentence("Conformement au lore établi, le prince démon porte le nom d'Izzoth.")
+    print("")
+    Sentence("Quel est votre nom ? Si vous souhaitez le nom lore friendly, appuyez simplement sur Entrée.")
+    PrincesName = str(input("=> "))
+    if PrincesName == "":
+        Prince_stats[0] = "Izzoth"
+    else:
+        Prince_stats[0] = PrincesName
     validation_sound.play()
     sleep(2.0)
     os.system("cls")

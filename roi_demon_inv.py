@@ -145,7 +145,7 @@ def use_objet_roi(anchor) :
             return
         else:
             if int(Ninv) < 1 or int(Ninv) > len(Kinv_list)+1:
-                Sentence("veuillez entrer un chiffre valide")
+                Sentence("Veuillez entrer un chiffre valide")
             else:
                 objet = Kinv_list[int(Ninv)-1]
                 if roi_demon['inv'][objet] == 0:
@@ -204,7 +204,7 @@ def use_objet_roi(anchor) :
                                     menu_roi(anchor)
                                     return
                             else:
-                                Sentence("veuillez entrer un chiffre valide")
+                                Sentence("Veuillez entrer un chiffre valide")
                 else:
                     Sentence("Ceci n'est pas un objet utilisable")
                     use_objet_roi(anchor)
@@ -251,7 +251,7 @@ def use_equipement_wapon_roi():
                     roi_demon['equipement'][str(wapone_equipement)] -= 1
                     return
                 else:
-                    Sentence("veuillez entrer un chiffre valide")
+                    Sentence("Veuillez entrer un chiffre valide")
 
     elif roi_demon['hands']['hand1'] != None:
         sleep(0.5)
@@ -263,7 +263,7 @@ def use_equipement_wapon_roi():
             choix = input("Choix :")
             menu_sound.play()
             if str(choix) == "":
-                Sentence("veuillez entrer un chiffre valide")
+                Sentence("Veuillez entrer un chiffre valide")
             else:
                 if int(choix) >= 1 and int(choix) <= 2:
                     if int(choix) == 1:
@@ -272,7 +272,7 @@ def use_equipement_wapon_roi():
                     elif int(choix) == 2:
                         return
                 else:
-                    Sentence("veuillez entrer un chiffre valide")
+                    Sentence("Veuillez entrer un chiffre valide")
 
 
 def remove_equipement_roi(wapone) :
@@ -290,7 +290,7 @@ def remove_equipement_roi(wapone) :
         choix = input("Choix :")
         menu_sound.play()
         if str(choix) == "":
-            Sentence("veuillez entrer un chiffre valide")
+            Sentence("Veuillez entrer un chiffre valide")
         else:
             if int(choix) >= 1 and int(choix) <= 2:
                 if int(choix) == 1:
@@ -299,7 +299,7 @@ def remove_equipement_roi(wapone) :
                 elif int(choix) == 2:
                     return
             else:
-                Sentence("veuillez entrer un chiffre valide")
+                Sentence("Veuillez entrer un chiffre valide")
 
 
 def print_armor_roi():
@@ -325,7 +325,7 @@ def use_equipement_armor_roi():
             armor = str(input("Quel equipement :"))
             menu_sound.play()
             if str(armor) == "":
-                Sentence("veuillez entrer un chiffre valide")
+                Sentence("Veuillez entrer un chiffre valide")
 
             elif int(armor) == len(Karmor_list) + 1:
                 menu_roi(Anchor)
@@ -343,7 +343,7 @@ def use_equipement_armor_roi():
                     roi_demon['armor'][str(armor_equipement)] += 1
                     return
                 else:
-                    Sentence("veuillez entrer un chiffre valide")
+                    Sentence("Veuillez entrer un chiffre valide")
 
     elif roi_demon['hands']['armor'] != None:
         sleep(0.5)
@@ -355,7 +355,7 @@ def use_equipement_armor_roi():
             choix = input("Choix :")
             menu_sound.play()
             if str(choix) == "":
-                Sentence("veuillez entrer un chiffre valide")
+                Sentence("Veuillez entrer un chiffre valide")
             else:
                 if int(choix) >= 1 and int(choix) <= 2:
                     if int(choix) == 1:
@@ -364,7 +364,7 @@ def use_equipement_armor_roi():
                     elif int(choix) == 2:
                         return
                 else:
-                    Sentence("veuillez entrer un chiffre valide")
+                    Sentence("Veuillez entrer un chiffre valide")
 
 
 def remove_armor_roi(armor) :
@@ -382,7 +382,7 @@ def remove_armor_roi(armor) :
         choix = input("Choix :")
         menu_sound.play()
         if str(choix) == "":
-            Sentence("veuillez entrer un chiffre valide")
+            Sentence("Veuillez entrer un chiffre valide")
         else:
             if int(choix) >= 1 and int(choix) <= 2:
                 if int(choix) == 1:
@@ -391,7 +391,7 @@ def remove_armor_roi(armor) :
                 elif int(choix) == 2:
                     return
             else:
-                Sentence("veuillez entrer un chiffre valide")
+                Sentence("Veuillez entrer un chiffre valide")
 
 
 def pickle_save():
@@ -469,7 +469,7 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
     os.system("cls")
     Sentence("Voulez-vous faire quelque chose ?")
     print("1. Inventaire")
-    print("2. Sauvgarder")
+    print("2. Sauvegarder")
     print("3. Continuer")
     while True :
         choix = input("Choix :")
@@ -489,7 +489,7 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                         choix = input("Choix :")
                         menu_sound.play()
                         if str(choix) == "":
-                            Sentence("veuillez entrer un chiffre valide")
+                            Sentence("Veuillez entrer un chiffre valide")
                         else:
                             if int(choix) >= 1 and int(choix) <= 3:
                                 if int(choix) == 1:
@@ -511,7 +511,7 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                                         choix = input("Choix :")
                                         menu_sound.play()
                                         if str(choix) == "":
-                                            Sentence("veuillez entrer un chiffre valide")
+                                            Sentence("Veuillez entrer un chiffre valide")
                                         else:
                                             if int(choix) >= 1 and int(choix) <= 3:
                                                 if int(choix) == 1:
@@ -532,14 +532,14 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                                                     menu_roi(anchor)
                                                     return
                                             else:
-                                                Sentence("veuillez entrer un chiffre valide")
+                                                Sentence("Veuillez entrer un chiffre valide")
                                 elif int(choix) == 3:
                                     sleep(0.5)
                                     os.system("cls")
                                     menu_roi(anchor)
                                     return
                             else:
-                                Sentence("veuillez entrer un chiffre valide")
+                                Sentence("Veuillez entrer un chiffre valide")
                 elif int(choix) == 2 : #sauvgarder :
                     menu_sound.play()
                     sleep(0.5)
@@ -551,7 +551,7 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                         choix = input("Choix :")
                         menu_sound.play()
                         if str(choix) == "":
-                            Sentence("veuillez entrer un chiffre valide")
+                            Sentence("Veuillez entrer un chiffre valide")
                         else:
                             if int(choix) >= 1 and int(choix) <= 2:
                                 if int(choix) == 1:
@@ -560,7 +560,10 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                                     os.system("cls")
                                     save(anchor)
                                     pickle_save()
+                                    print("Progression sauvegardée !")
                                     save_sound.play()
+                                    os.system("cls")
+                                    print("")
                                     Sentence("Voulez vous quitter ?")
                                     print("1. oui")
                                     print("2. non")
@@ -568,7 +571,7 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                                         choix = input("Choix :")
                                         menu_sound.play()
                                         if str(choix) == "":
-                                            Sentence("veuillez entrer un chiffre valide")
+                                            Sentence("Veuillez entrer un chiffre valide")
                                         if int(choix) >= 1 and int(choix) <= 2:
                                             if int(choix) == 1:
                                                 sleep(0.5)
@@ -581,21 +584,21 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                                                 menu_roi(anchor)
                                                 return
                                         else:
-                                            Sentence("veuillez entrer un chiffre valide")
+                                            Sentence("Veuillez entrer un chiffre valide")
                                 elif int(choix) == 2:
                                     sleep(0.5)
                                     os.system("cls")
                                     menu_roi(anchor)
                                     return
                             else:
-                                Sentence("veuillez entrer un chiffre valide")
+                                Sentence("Veuillez entrer un chiffre valide")
                 elif int(choix) == 3:
                     validation_sound.play()
                     sleep(0.5)
                     os.system("cls")
                     return
             else:
-                Sentence("veuillez entrer un chiffre valide")
+                Sentence("Veuillez entrer un chiffre valide")
 
 
 
@@ -612,7 +615,7 @@ def menu_roi_sceptre() :#use in demo (utilisation quand tu dois planter un scept
     while True:
         Ninv = input("Utiliser quel objet ? :")
         if str(Ninv) == "":
-            Sentence("veuillez entrer un chiffre valide")
+            Sentence("Veuillez entrer un chiffre valide")
         else:
             if int(Ninv) >= 1 and int(Ninv) <= len(Kinv_list):
                 objet = Kinv_list[int(Ninv) - 1]
@@ -628,7 +631,7 @@ def menu_roi_sceptre() :#use in demo (utilisation quand tu dois planter un scept
                     menu_roi_sceptre()
                     return
             else:
-                Sentence("veuillez entrer un chiffre valide")
+                Sentence("Veuillez entrer un chiffre valide")
                 menu_roi_sceptre()
                 return
     return

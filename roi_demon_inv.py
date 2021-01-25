@@ -49,7 +49,7 @@ Deva_stats = ["Deva", 25, 38, 15, 1.2, 250, 85, 5]
 def win_roi(enemie): #use in demo (en cas de victoire)
     from intro import Sentence
     sleep(0.5)
-    os.system("cls")
+    clsglobal()
     Sentence("Victoire !")
     Sentence("Vous gagnez contre " + str(enemie["nom"]) + ".")
     #bruitage de victoir (optinelle)
@@ -126,7 +126,7 @@ def print_objet_roi():
 def use_objet_roi(anchor) :
     from intro import Sentence
     sleep(0.2)
-    os.system("cls")
+    clsglobal()
     Sentence("objet")
     print("Vie :", str(Roi_demon_stats[5]) , "/",  str(Roi_demon_stats[13]), " Mana :", str(Roi_demon_stats[10]) , "/" , str(Roi_demon_stats[14]))
     print_objet_roi()
@@ -155,7 +155,7 @@ def use_objet_roi(anchor) :
                     return
                 if len(index_objet[str(objet)]) >= 2 and len(index_objet[str(objet)]) <= 4 :
                     sleep(0.5)
-                    os.system("cls")
+                    clsglobal()
                     print("Vous utilisez " + str(objet) + ".")
                     sleep(0.5)
                     if index_objet[str(objet)][2] == 1:
@@ -196,7 +196,7 @@ def use_objet_roi(anchor) :
                         return
 
                     sleep(2)
-                    os.system("cls")
+                    clsglobal()
                     Sentence("Utiliser un autre objet ? :")
                     print("1. oui")
                     print("2. non")
@@ -209,7 +209,7 @@ def use_objet_roi(anchor) :
                             if int(choix) >= 1 and int(choix) <= 2:
                                 if int(choix) == 1:
                                     sleep(0.5)
-                                    os.system("cls")
+                                    clsglobal()
                                     use_objet_roi(anchor)
                                     return
                                 elif int(choix) == 2:
@@ -235,7 +235,7 @@ def use_equipement_wapon_roi():
     from index import index_wapone
     if roi_demon['hands']['hand1'] == None:
         sleep(0.5)
-        os.system("cls")
+        clsglobal()
         Sentence("Arme")
         Kequipement = roi_demon['equipement'].keys()
         Kequipement_list = list(Kequipement)
@@ -267,7 +267,7 @@ def use_equipement_wapon_roi():
 
     elif roi_demon['hands']['hand1'] != None:
         sleep(0.5)
-        os.system("cls")
+        clsglobal()
         Sentence("Voulez-vous le retirer ?")
         print("1. Oui")
         print("2. Non")
@@ -290,7 +290,7 @@ def use_equipement_wapon_roi():
 def remove_equipement_roi(wapone) :
     from intro import Sentence
     sleep(0.5)
-    os.system("cls")
+    clsglobal()
     roi_demon['hands']['hand1'] = None
     Roi_demon_stats[4] = 1
     roi_demon['equipement'][str(wapone)] = 1
@@ -327,7 +327,7 @@ def use_equipement_armor_roi():
     from intro import Sentence
     if roi_demon['hands']['armor'] == None:
         sleep(0.5)
-        os.system("cls")
+        clsglobal()
         Sentence("Armure")
         Karmor = roi_demon['armor'].keys()
         Karmor_list = list(Karmor)
@@ -359,7 +359,7 @@ def use_equipement_armor_roi():
 
     elif roi_demon['hands']['armor'] != None:
         sleep(0.5)
-        os.system("cls")
+        clsglobal()
         Sentence("Voulez-vous le retirer ?")
         print("1. Oui")
         print("2. Non")
@@ -385,7 +385,7 @@ def remove_armor_roi(armor) :
     roi_demon['armor'][str(armor)] += 1
     roi_demon['hands']['armor'] = None
     sleep(0.5)
-    os.system("cls")
+    clsglobal()
     # bruitage retire equipement armure
     Sentence("Équiper un autre objet à la place ?")
     print("1. Oui")
@@ -513,7 +513,7 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
     from intro import titlebis
     from intro import Sentence
     sleep(0.5)
-    os.system("cls")
+    clsglobal()
     Sentence("Voulez-vous faire quelque chose ?")
     print("1. Inventaire")
     print("2. Sauvegarder")
@@ -527,7 +527,7 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                 if int(choix) == 1 : #inventaire
                     menu_sound.play()
                     sleep(0.5)
-                    os.system("cls")
+                    clsglobal()
                     print(roi_demon['gold']['Argent'], "or.")
                     print("1. Objet")
                     print("2. Équipement")
@@ -541,12 +541,12 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                             if int(choix) >= 1 and int(choix) <= 3:
                                 if int(choix) == 1:
                                     sleep(0.5)
-                                    os.system("cls")
+                                    clsglobal()
                                     use_objet_roi(anchor)
                                     return
                                 elif int(choix) == 2:
                                     sleep(0.5)
-                                    os.system("cls")
+                                    clsglobal()
                                     if roi_demon['hands']['hand1'] != None:
                                         Sentence("Vous avez " + str(roi_demon['hands']['hand1']) + " d'équipé.")
                                     if roi_demon['hands']['armor'] != None:
@@ -563,26 +563,26 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                                             if int(choix) >= 1 and int(choix) <= 3:
                                                 if int(choix) == 1:
                                                     sleep(0.5)
-                                                    os.system("cls")
+                                                    clsglobal()
                                                     use_equipement_wapon_roi()
                                                     menu_roi(anchor)
                                                     return
                                                 elif int(choix) == 2:
                                                     sleep(0.5)
-                                                    os.system("cls")
+                                                    clsglobal()
                                                     use_equipement_armor_roi()
                                                     menu_roi(anchor)
                                                     return
                                                 elif int(choix) == 3:
                                                     sleep(0.5)
-                                                    os.system("cls")
+                                                    clsglobal()
                                                     menu_roi(anchor)
                                                     return
                                             else:
                                                 Sentence("Veuillez entrer un chiffre valide")
                                 elif int(choix) == 3:
                                     sleep(0.5)
-                                    os.system("cls")
+                                    clsglobal()
                                     menu_roi(anchor)
                                     return
                             else:
@@ -590,7 +590,7 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                 elif int(choix) == 2 : #sauvgarder :
                     menu_sound.play()
                     sleep(0.5)
-                    os.system("cls")
+                    clsglobal()
                     Sentence("Êtes vous sur de vouloir sauvegarder ?")
                     print("1. oui")
                     print("2. non")
@@ -604,12 +604,12 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                                 if int(choix) == 1:
                                     sleep(0.5)
                                     # action de sauvegarde
-                                    os.system("cls")
+                                    clsglobal()
                                     save(anchor)
                                     print("Progression sauvegardée !")
                                     save_sound.play()
                                     sleep(1)
-                                    os.system("cls")
+                                    clsglobal()
                                     print("")
                                     Sentence("Voulez vous quitter ?")
                                     print("1. oui")
@@ -622,19 +622,19 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                                         if int(choix) >= 1 and int(choix) <= 2:
                                             if int(choix) == 1:
                                                 sleep(0.5)
-                                                os.system("cls")
+                                                clsglobal()
                                                 titlebis()
                                                 return
                                             elif int(choix) == 2:
                                                 sleep(0.5)
-                                                os.system("cls")
+                                                clsglobal()
                                                 menu_roi(anchor)
                                                 return
                                         else:
                                             Sentence("Veuillez entrer un chiffre valide")
                                 elif int(choix) == 2:
                                     sleep(0.5)
-                                    os.system("cls")
+                                    clsglobal()
                                     menu_roi(anchor)
                                     return
                             else:
@@ -642,7 +642,7 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
                 elif int(choix) == 3:
                     validation_sound.play()
                     sleep(0.5)
-                    os.system("cls")
+                    clsglobal()
                     return
             else:
                 Sentence("Veuillez entrer un chiffre valide")
@@ -653,7 +653,7 @@ def menu_roi(anchor) :#use in demo (entré de map et sortie de map)
 def menu_roi_sceptre() :#use in demo (utilisation quand tu dois planter un sceptre de pouvoir)
     from intro import Sentence
     sleep(1.5)
-    os.system("cls")
+    clsglobal()
     Sentence("Utiliser un sceptre de pouvoir.")
     from intro import Sentence
     print_objet_roi()

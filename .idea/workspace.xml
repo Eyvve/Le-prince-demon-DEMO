@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cb49a0b-c8cc-482e-ac80-b14b99fedd06" name="Default Changelist" comment="maj ajout de contenu scénario">
-      <change beforePath="$PROJECT_DIR$/.idea/Le-prince-demon-DEMO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Le-prince-demon-DEMO.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/combat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps.py" beforeDir="false" afterPath="$PROJECT_DIR$/maps.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +30,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/My Games/Le prince demon" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Python.demo">
@@ -91,62 +90,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610115872015</updated>
-    </task>
-    <task id="LOCAL-00029" summary="update contenu, mise à jour des attaques spéciales adaptées au Roi-Démon (anciennement coups bas pour le prince)">
-      <created>1610480114334</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1610480114334</updated>
-    </task>
-    <task id="LOCAL-00030" summary="update contenu, mise à jour des attaques spéciales adaptées au Roi-Démon (anciennement coups bas pour le prince)">
-      <created>1610481069855</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1610481069855</updated>
-    </task>
-    <task id="LOCAL-00031" summary="update contenu, mise à jour des attaques spéciales adaptées au Roi-Démon (anciennement coups bas pour le prince)">
-      <created>1610485491537</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1610485491537</updated>
-    </task>
-    <task id="LOCAL-00032" summary="update contenu, correction du bug combat.py">
-      <created>1610487239784</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1610487239784</updated>
-    </task>
-    <task id="LOCAL-00033" summary="update contenu, correction du bug combat.py">
-      <created>1610488372828</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1610488372828</updated>
-    </task>
-    <task id="LOCAL-00034" summary="correction faute menu &gt; inventaire">
-      <created>1610488789217</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1610488789217</updated>
-    </task>
-    <task id="LOCAL-00035" summary="correction">
-      <created>1610488958306</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1610488958306</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Passage de balais + ajout de la fonction sceptre sur la map west">
-      <created>1610489241575</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1610489241575</updated>
     </task>
     <task id="LOCAL-00037" summary="Ajout de contenu pour la demo">
       <created>1610525900713</created>
@@ -435,7 +378,63 @@
       <option name="project" value="LOCAL" />
       <updated>1610903474878</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="fix pre release">
+      <created>1610905658715</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1610905658715</updated>
+    </task>
+    <task id="LOCAL-00079" summary="correction fautes">
+      <created>1610914347643</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1610914347643</updated>
+    </task>
+    <task id="LOCAL-00080" summary="correction timing combat">
+      <created>1610914841267</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1610914841267</updated>
+    </task>
+    <task id="LOCAL-00081" summary="correction valeurs combat">
+      <created>1610916275296</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1610916275297</updated>
+    </task>
+    <task id="LOCAL-00082" summary="correction pre release">
+      <created>1610918075799</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1610918075799</updated>
+    </task>
+    <task id="LOCAL-00083" summary="correction pre release">
+      <created>1610918196842</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1610918196842</updated>
+    </task>
+    <task id="LOCAL-00084" summary="correction pre release">
+      <created>1610919703853</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1610919703853</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Dernière maj avant la sortie">
+      <created>1610922002367</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1610922002368</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -463,11 +462,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="maj ajout de contenu" />
-    <MESSAGE value="maj ajout de contenu scénario" />
-    <MESSAGE value="update contenu" />
-    <MESSAGE value="update contenu, ajout des attaques spéciales adaptées au Roi-Démon (anciennement coups bas pour le prince)" />
-    <MESSAGE value="update contenu, mise à jour des attaques spéciales adaptées au Roi-Démon (anciennement coups bas pour le prince)" />
     <MESSAGE value="update contenu, correction du bug combat.py" />
     <MESSAGE value="correction faute menu &gt; inventaire" />
     <MESSAGE value="correction" />
@@ -488,6 +482,11 @@
     <MESSAGE value="fix retraite" />
     <MESSAGE value="fix" />
     <MESSAGE value="fix pre release" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix pre release" />
+    <MESSAGE value="correction fautes" />
+    <MESSAGE value="correction timing combat" />
+    <MESSAGE value="correction valeurs combat" />
+    <MESSAGE value="correction pre release" />
+    <MESSAGE value="Dernière maj avant la sortie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dernière maj avant la sortie" />
   </component>
 </project>

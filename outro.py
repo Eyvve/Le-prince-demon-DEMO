@@ -276,7 +276,7 @@ def outro():
     print("")
     sleep(5.0)
     bakamitai.fadeout(3000)
-    os.system("cls")
+    clsglobal()
     sleep(2.0)
     from intro import Sentence
     Sentence("Mais l'histoire des démons n'en est pas à son dernier récit.")

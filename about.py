@@ -243,7 +243,7 @@ def About():
     sleep(0.3)
     print("")
     sleep(3.0)
-    os.system("cls")
+    clsglobal()
     from intro import titlebis
     titlebis()
     return

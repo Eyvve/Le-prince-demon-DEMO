@@ -4,6 +4,17 @@ from about import *
 from Music_sounds import *
 #from data import *
 
+def clsglobal():
+    osuser = os.name
+    if osuser == "nt":
+        os.system("cls")
+        # print("windows")
+        return
+    elif osuser == "posix":
+        os.system("clear")
+        # print("linux/mac")
+        return
+
 
 def skip_touch():
     while True:
@@ -11,7 +22,7 @@ def skip_touch():
         print("Appuier sur Entrée pour passer.")
         skip = str(input())
         if skip == "":
-            os.system("cls")
+            clsglobal()
             break
 
 def beginning():
@@ -28,7 +39,7 @@ def beginning():
         Prince_stats[0] = PrincesName
     validation_sound.play()
     sleep(2.0)
-    os.system("cls")
+    clsglobal()
     jingle.play()
     print("")
     print("")
@@ -51,9 +62,9 @@ def beginning():
                                                  Le prince exilé                                                                                       
     """)
     sleep(4.0)
-    os.system("cls")
+    clsglobal()
     beginning_music.play(-1)
-    os.system("cls")
+    clsglobal()
     print("")
     print("")
     Sentence("Vous êtes " + Prince_stats[0] + " , heritier du royaume des démons.")
@@ -149,7 +160,7 @@ def beginning():
     beginning_music.fadeout(1000)
     sleep(1.0)
     tutorial_music.play(-1)
-    os.system("cls")
+    clsglobal()
     print("")
     print( "Mannequin : 20 pv", "                         ", Prince_stats[0], ": 60 pv")
     print("                                                                 Mana : 15")
@@ -166,7 +177,7 @@ def beginning():
     sleep(2.0)
     Sentence("Voyons maintenant les bases du combat jeune prince.")
     sleep(3.0)
-    os.system("cls")
+    clsglobal()
     print("")
     print("Mannequin : 20 pv", "                         ", Prince_stats[0], ": 60 pv")
     print("                                                                 Mana : 15")
@@ -188,7 +199,7 @@ def beginning():
     sleep(2.0)
     Sentence("Pour une raison que j'ignore, tu as récupéré ce bout de métal rouillé, mais bref il t'apporte un bonus de 1.2 dégâts.")
     sleep(3.0)
-    os.system("cls")
+    clsglobal()
     print("")
     print("Mannequin : 30 pv", "                         ", Prince_stats[0], ": 60 pv")
     print("                                                                 Mana : 15")
@@ -212,7 +223,7 @@ def beginning():
     print("")
     print("vous infligez 9 dégâts au mannequin")
     sleep(2.0)
-    os.system("cls")
+    clsglobal()
     print("")
     print("Mannequin : 21 pv", "                         ", Prince_stats[0], ": 60 pv")
     print("                                                                 Mana : 15")
@@ -229,7 +240,7 @@ def beginning():
     sleep(2.0)
     Sentence("Je pense qu'il est inutile de recommencer, passons à présent à la magie.")
     sleep(3.0)
-    os.system("cls")
+    clsglobal()
     print("")
     print("Mannequin : 21 pv", "                         ", Prince_stats[0], ": 60 pv")
     print("                                                                 Mana : 15")
@@ -254,7 +265,7 @@ def beginning():
         elif rep == "2":
             print("")
     validation_sound.play()
-    os.system("cls")
+    clsglobal()
     print("")
     print("Mannequin : 21 pv", "                         ", Prince_stats[0], ": 60 pv")
     print("                                                                 Mana : 15")
@@ -281,7 +292,7 @@ def beginning():
     print("")
     print("Vous infligez 11 dégâts au mannequin")
     sleep(2.0)
-    os.system("cls")
+    clsglobal()
     print("")
     print("Mannequin : 10 pv", "                         ", Prince_stats[0], ": 60 pv")
     print("                                                                 Mana : 8")
@@ -298,7 +309,7 @@ def beginning():
     sleep(2.0)
     Sentence("Il est temps pour toi de voir une dernière façon de combattre.")
     sleep(3.0)
-    os.system("cls")
+    clsglobal()
     print("")
     print("Mannequin : 10 pv", "                         ", Prince_stats[0], ": 60 pv")
     print("                                                                 Mana : 8")
@@ -333,7 +344,7 @@ def beginning():
             print("")
     validation_sound.play()
     sleep(1.0)
-    os.system("cls")
+    clsglobal()
     print("")
     print("Mannequin : 10 pv", "                         ", Prince_stats[0], ": 60 pv")
     print("                                                                 Mana : 8")
@@ -366,7 +377,7 @@ def beginning():
     sleep(2.0)
     print("Mannequin perd 10% de précision !")
     sleep(2.0)
-    os.system("cls")
+    clsglobal()
     print("")
     print("Mannequin : 10 pv", "                         ", Prince_stats[0], ": 60 pv")
     print("                                                                 Mana : 8")
@@ -396,7 +407,7 @@ def beginning():
     sleep(2.0)
     Sentence("Achève ce mannequin d'un coup d'épée.")
     sleep(2.0)
-    os.system("cls")
+    clsglobal()
     print("")
     print("Mannequin : 10 pv", "                         ", Prince_stats[0], ": 60 pv")
     print("                                                                 Mana : 8")
@@ -416,10 +427,10 @@ def beginning():
     sword_sound.play()
     print("D'un dernier coup d'épée, vous tranchez le mannequin de combat en deux.")
     sleep(1.5)
-    os.system("cls")
+    clsglobal()
     print("")
     print("vous infligez 11 dégats au mannequin")
-    os.system("cls")
+    clsglobal()
     tutorial_music.fadeout(1000)
     sleep(1.0)
     beginning_music.play()
@@ -460,7 +471,7 @@ def beginning():
     Sentence("laissant le jeune " + Prince_stats[0] + " face à son destin.")
     beginning_music.fadeout(1000)
     sleep(3.0)
-    os.system("cls")
+    clsglobal()
     titlebis()
     return
 

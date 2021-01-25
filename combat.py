@@ -63,7 +63,7 @@ def Magic_action(nivatkmag):
                 mob_hp_remaining = Magic_action(Prince_stats[12])
                 return mob_hp_remaining
         elif rep == "2":
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = action()
@@ -71,7 +71,7 @@ def Magic_action(nivatkmag):
         else:
             print("veuillez entrer un chiffre valide")
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = Magic_action(Prince_stats[12])
@@ -116,7 +116,7 @@ def Magic_action(nivatkmag):
                 mob_hp_remaining = Magic_action(Prince_stats[12])
                 return mob_hp_remaining
         elif rep == "3":
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = action()
@@ -124,7 +124,7 @@ def Magic_action(nivatkmag):
         else:
             print("veuillez entrer un chiffre valide")
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = Magic_action(Prince_stats[12])
@@ -184,7 +184,7 @@ def Magic_action(nivatkmag):
                 mob_hp_remaining = Magic_action(Prince_stats[12])
                 return mob_hp_remaining
         elif rep == "4":
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = action()
@@ -192,7 +192,7 @@ def Magic_action(nivatkmag):
         else:
             print("veuillez entrer un chiffre valide")
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = Magic_action(Prince_stats[12])
@@ -257,7 +257,7 @@ def Magic_action(nivatkmag):
             mob_hp_remaining = Mob_stats[5]
             return mob_hp_remaining
         elif rep == "5":
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = action()
@@ -265,7 +265,7 @@ def Magic_action(nivatkmag):
         else:
             print("veuillez entrer un chiffre valide")
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = Magic_action(Prince_stats[12])
@@ -300,7 +300,7 @@ def Low_Blow(x):
                 mob_hp_remaining = Mob_stats[5]
                 return mob_hp_remaining
         elif rep == "2":
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = action()
@@ -308,7 +308,7 @@ def Low_Blow(x):
         else:
             print("veuillez entrer un chiffre valide")
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = Low_Blow(Prince_stats[8])
@@ -352,7 +352,7 @@ def Low_Blow(x):
                 mob_hp_remaining = Mob_stats[5]
                 return mob_hp_remaining
         elif rep == "3":
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = action()
@@ -360,7 +360,7 @@ def Low_Blow(x):
         else:
             print("veuillez entrer un chiffre valide")
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = Low_Blow(Prince_stats[8])
@@ -427,7 +427,7 @@ def Low_Blow(x):
                 mob_hp_remaining = Mob_stats[5]
                 return mob_hp_remaining
         elif rep == "4":
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = action()
@@ -435,7 +435,7 @@ def Low_Blow(x):
         else:
             print("veuillez entrer un chiffre valide")
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = Low_Blow(Prince_stats[8])
@@ -523,7 +523,7 @@ def Low_Blow(x):
                 mob_hp_remaining = Mob_stats[5]
                 return mob_hp_remaining
         elif rep == "5":
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = action()
@@ -531,7 +531,7 @@ def Low_Blow(x):
         else:
             print("veuillez entrer un chiffre valide")
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_hp_remaining = Low_Blow(Prince_stats[8])
@@ -606,7 +606,7 @@ def action():
         while rep != "1" or rep != "2" or rep != "3" or rep != "4":
             Sentence("veuillez entrer un chiffre valide")
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             degats = action()
@@ -621,7 +621,7 @@ def fight(princes_stats, MobStats):
     mob_life = Mob_stats[5]
     mp = Prince_stats[10]
     hp = Prince_stats[5]
-    os.system("cls")
+    clsglobal()
     if first < 5:
         Sentence("Vous frappez en premier !")
         print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
@@ -629,14 +629,14 @@ def fight(princes_stats, MobStats):
         mob_life = action()
         sleep(1.5)
         Mob_stats[5] = mob_life
-        os.system("cls")
+        clsglobal()
         while prince_life > 0 or mob_life > 0:
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             prince_life = mob_action()
             Prince_stats[5] = prince_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if prince_life < 0:
                 print("Défaite")
                 Prince_stats[5] = hp
@@ -651,7 +651,7 @@ def fight(princes_stats, MobStats):
             mob_life = action()
             Mob_stats[5] = mob_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if mob_life < 0:
                 print(Mob_stats[0], "est vaincu")
                 Prince_stats[10] = mp
@@ -669,14 +669,14 @@ def fight(princes_stats, MobStats):
         prince_life = mob_action()
         Prince_stats[5] = prince_life
         sleep(1.5)
-        os.system("cls")
+        clsglobal()
         while prince_life > 0 or mob_life > 0:
             print(Mob_stats[0], ":", int(Mob_stats[5]), "pv", "                         ", Prince_stats[0], ":", Prince_stats[5], "pv")
             print("                                                                 Mana :", Prince_stats[10])
             mob_life = action()
             Mob_stats[5] = mob_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if mob_life < 0:
                 print(Mob_stats[0], "est vaincu")
                 Prince_stats[10] = mp
@@ -693,7 +693,7 @@ def fight(princes_stats, MobStats):
             prince_life = mob_action()
             Prince_stats[5] = prince_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if prince_life < 0:
                 print("Défaite")
                 Prince_stats[10] = mp
@@ -717,7 +717,7 @@ def demodefaite():
     Sentence( "Aucun contact ne fut jamais pris avec les humains, ")
     Sentence("qui se contentèrent de bouter les démons dans les montagnes d'Aurgelmirtann, au nord de Ljosalfer...")
     skip_touch()
-    os.system("cls")
+    clsglobal()
     demo_deva_combat.fadeout(1000)
     battle_sound_effect.fadeout(1000)
     print("")
@@ -734,7 +734,7 @@ def demodefaite():
     Sentence("ferme,")
     Sentence("et désinteressée...")
     sleep(3.0)
-    os.system("cls")
+    clsglobal()
     print("")
     print("")
     Sentence("Voulez vous continuer ?")
@@ -744,19 +744,19 @@ def demodefaite():
     rep = str(input("=> "))
     while rep != "1" or rep != "2":
         if rep == "1":
-            os.system("cls")
+            clsglobal()
             print("")
             Sentence("Chargement de la dernière sauvegarde...")
             sleep(2.0)
-            os.system("cls")
+            clsglobal()
             load()
             return
         elif rep == "2":
-            os.system("cls")
+            clsglobal()
             print("")
             Sentence("Retour au menu principal...")
             sleep(2.0)
-            os.system("cls")
+            clsglobal()
             titlebis()
             return
         if rep != "1" or rep != "2":
@@ -811,7 +811,7 @@ def demo_Magic_action(nivatkmag, MobStats):
                 mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
                 return mob_hp_remaining
         elif rep == "2":
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_hp_remaining = action()
@@ -819,7 +819,7 @@ def demo_Magic_action(nivatkmag, MobStats):
         else:
             print("Veuillez entrer un chiffre valide")
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
@@ -864,7 +864,7 @@ def demo_Magic_action(nivatkmag, MobStats):
                 mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
                 return mob_hp_remaining
         elif rep == "3":
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_hp_remaining = action()
@@ -872,7 +872,7 @@ def demo_Magic_action(nivatkmag, MobStats):
         else:
             print("veuillez entrer un chiffre valide")
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
@@ -932,7 +932,7 @@ def demo_Magic_action(nivatkmag, MobStats):
                 mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
                 return mob_hp_remaining
         elif rep == "4":
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_hp_remaining = action()
@@ -940,7 +940,7 @@ def demo_Magic_action(nivatkmag, MobStats):
         else:
             print("veuillez entrer un chiffre valide")
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
@@ -1000,7 +1000,7 @@ def demo_Magic_action(nivatkmag, MobStats):
                 mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
                 return mob_hp_remaining
         elif rep == "4":
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_hp_remaining = demo_action(MobStats)
@@ -1008,7 +1008,7 @@ def demo_Magic_action(nivatkmag, MobStats):
         else:
             Sentence("Veuillez entrer un chiffre valide")
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_hp_remaining = demo_Magic_action(Roi_demon_stats[12], MobStats)
@@ -1078,7 +1078,7 @@ def demo_action(MobStats):
     elif rep == "4":
         Sentence("Pensez-vous que la fuite est digne du roi des démons ?")
         sleep(1.5)
-        os.system("cls")
+        clsglobal()
         print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":",
               Roi_demon_stats[5], "pv")
         print("                                                                 Mana :", Roi_demon_stats[10])
@@ -1088,7 +1088,7 @@ def demo_action(MobStats):
         while rep != "1" or rep != "2" or rep != "3" or rep != "4":
             Sentence("Veuillez entrer un chiffre valide")
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             degats = demo_action(MobStats)
@@ -1096,7 +1096,7 @@ def demo_action(MobStats):
 
 
 def demofight(MobStats):
-    os.system("cls")
+    clsglobal()
     sleep(0.3)
     print("")
     print("")
@@ -1117,7 +1117,7 @@ def demofight(MobStats):
                                  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═════╝ ╚═╝  ╚═╝   ╚═╝       ╚═╝
                 """)
     sleep(2.0)
-    os.system("cls")
+    clsglobal()
     first = randint(1, 10)
     prince_life = Roi_demon_stats[5]
     mob_life = MobStats[5]
@@ -1130,14 +1130,14 @@ def demofight(MobStats):
         mob_life = demo_action(MobStats)
         sleep(1.5)
         MobStats[5] = mob_life
-        os.system("cls")
+        clsglobal()
         while prince_life > 0 or mob_life > 0:
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             prince_life = demo_mob_action(MobStats)
             Roi_demon_stats[5] = prince_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if prince_life <= 0:
                 print("Défaite")
                 Roi_demon_stats[5] = hp
@@ -1153,7 +1153,7 @@ def demofight(MobStats):
             mob_life = demo_action(MobStats)
             MobStats[5] = mob_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if mob_life <= 0:
                 print(MobStats[0], "est vaincu")
                 Roi_demon_stats[10] = mp
@@ -1171,14 +1171,14 @@ def demofight(MobStats):
         prince_life = demo_mob_action(MobStats)
         Roi_demon_stats[5] = prince_life
         sleep(1.5)
-        os.system("cls")
+        clsglobal()
         while prince_life > 0 or mob_life > 0:
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_life = demo_action(MobStats)
             MobStats[5] = mob_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if mob_life <= 0:
                 print(MobStats[0], "est vaincu")
                 Roi_demon_stats[10] = mp
@@ -1192,7 +1192,7 @@ def demofight(MobStats):
             prince_life = demo_mob_action(MobStats)
             Roi_demon_stats[5] = prince_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if prince_life <= 0:
                 print("Défaite")
                 Roi_demon_stats[10] = mp
@@ -1294,7 +1294,7 @@ def demo_Low_Blow(MobStats):
             mob_hp_remaining = MobStats[5]
             return mob_hp_remaining
     elif rep == "5":
-        os.system("cls")
+        clsglobal()
         print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
         print("                                                                 Mana :", Roi_demon_stats[10])
         mob_hp_remaining = demo_action(MobStats)
@@ -1302,7 +1302,7 @@ def demo_Low_Blow(MobStats):
     else:
         print("Veuillez entrer un chiffre valide")
         sleep(1.5)
-        os.system("cls")
+        clsglobal()
         print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
         print("                                                                 Mana :", Roi_demon_stats[10])
         mob_hp_remaining = demo_Low_Blow(MobStats)
@@ -1400,7 +1400,7 @@ def demo_Low_Blow(MobStats):
             mob_hp_remaining = MobStats[5]
             return mob_hp_remaining
     elif rep == "5":
-        os.system("cls")
+        clsglobal()
         print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
         print("                                                                 Mana :", Roi_demon_stats[10])
         mob_hp_remaining = demo_action(MobStats)
@@ -1408,7 +1408,7 @@ def demo_Low_Blow(MobStats):
     else:
         print("veuillez entrer un chiffre valide")
         sleep(1.5)
-        os.system("cls")
+        clsglobal()
         print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
         print("                                                                 Mana :", Roi_demon_stats[10])
         mob_hp_remaining = demo_Low_Blow(MobStats)
@@ -1451,7 +1451,7 @@ def bossfightulric(MobStats):
     mess1done = False
     mess2done = False
     mess3done = False
-    os.system("cls")
+    clsglobal()
     sleep(0.3)
     print("")
     print("")
@@ -1473,7 +1473,7 @@ def bossfightulric(MobStats):
                                                 Chef de cotterie Ulric
                 """)
     sleep(2.0)
-    os.system("cls")
+    clsglobal()
     first = randint(1, 10)
     prince_life = Roi_demon_stats[5]
     mob_life = MobStats[5]
@@ -1487,13 +1487,13 @@ def bossfightulric(MobStats):
         sleep(1.5)
         MobStats[5] = mob_life
         while prince_life > 0 or mob_life > 0:
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             prince_life = demo_ulric_action(MobStats)
             Roi_demon_stats[5] = prince_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if prince_life <= 0:
                 print("Défaite")
                 Roi_demon_stats[5] = hp
@@ -1504,13 +1504,13 @@ def bossfightulric(MobStats):
                 victoire = False,
                 return victoire
 
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_life = demo_action(MobStats)
             MobStats[5] = mob_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if mob_life <= 0:
                 print(MobStats[0], "est vaincu")
                 Roi_demon_stats[10] = mp
@@ -1552,15 +1552,15 @@ def bossfightulric(MobStats):
         prince_life = demo_ulric_action(MobStats)
         Roi_demon_stats[5] = prince_life
         sleep(1.5)
-        os.system("cls")
+        clsglobal()
         while prince_life > 0 or mob_life > 0:
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_life = demo_action(MobStats)
             MobStats[5] = mob_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if mob_life <= 0:
                 print(MobStats[0], "est vaincu")
                 Roi_demon_stats[10] = mp
@@ -1595,13 +1595,13 @@ def bossfightulric(MobStats):
                 Sentence("Je vengerai mon peuple !")
                 sleep(1.5)
                 mess1done = True
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             prince_life = demo_ulric_action(MobStats)
             Roi_demon_stats[5] = prince_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if prince_life <= 0:
                 print("Défaite")
                 Roi_demon_stats[10] = mp
@@ -1661,7 +1661,7 @@ def bossfightking(MobStats):
     messb1done = False
     messb2done = False
     messb3done = False
-    os.system("cls")
+    clsglobal()
     sleep(0.3)
     print("")
     print("")
@@ -1683,7 +1683,7 @@ def bossfightking(MobStats):
                                                   Le Prince en Blanc
                 """)
     sleep(2.0)
-    os.system("cls")
+    clsglobal()
     first = randint(1, 10)
     prince_life = Roi_demon_stats[5]
     mob_life = MobStats[5]
@@ -1697,13 +1697,13 @@ def bossfightking(MobStats):
         sleep(1.5)
         MobStats[5] = mob_life
         while prince_life > 0 or mob_life > 0:
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             prince_life = demo_boss_action(MobStats)
             Roi_demon_stats[5] = prince_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if prince_life <= 0:
                 Roi_demon_stats[5] = hp
                 Roi_demon_stats[10] = mp
@@ -1737,13 +1737,13 @@ def bossfightking(MobStats):
                 sleep(1.5)
                 messb1done = True
 
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_life = demo_action(MobStats)
             MobStats[5] = mob_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if mob_life <= 0:
                 print(MobStats[0], "est vaincu")
                 Roi_demon_stats[10] = mp
@@ -1754,7 +1754,7 @@ def bossfightking(MobStats):
                 SentenceSlow("...")
                 Sentence("Malheureusement pour le bien du jeu et le respect du lore... Vous devez perdre... :'(")
                 sleep(3.0)
-                os.system("cls")
+                clsglobal()
 
                 victoire = True
                 return victoire
@@ -1766,15 +1766,15 @@ def bossfightking(MobStats):
         prince_life = demo_boss_action(MobStats)
         Roi_demon_stats[5] = prince_life
         sleep(1.5)
-        os.system("cls")
+        clsglobal()
         while prince_life > 0 or mob_life > 0:
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             mob_life = demo_action(MobStats)
             MobStats[5] = mob_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if mob_life <= 0:
                 print(MobStats[0], "est vaincu")
                 Roi_demon_stats[10] = mp
@@ -1787,15 +1787,15 @@ def bossfightking(MobStats):
                 SentenceSlow("...")
                 Sentence("Malheureusement pour le bien du jeu et le respect du lore... Vous devez perdre... :'(")
                 sleep(3.0)
-                os.system("cls")
+                clsglobal()
                 return victoire
-            os.system("cls")
+            clsglobal()
             print(MobStats[0], ":", int(MobStats[5]), "pv", "                         ", Roi_demon_stats[0], ":", Roi_demon_stats[5], "pv")
             print("                                                                 Mana :", Roi_demon_stats[10])
             prince_life = demo_boss_action(MobStats)
             Roi_demon_stats[5] = prince_life
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             if prince_life <= 0:
                 Roi_demon_stats[10] = mp
                 Roi_demon_stats[5] = hp

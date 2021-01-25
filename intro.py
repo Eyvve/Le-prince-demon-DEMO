@@ -85,7 +85,7 @@ def title():
 
 def titlebis():
     import time
-    os.system("cls")
+    clsglobal()
     print("NotPirates studios présente...")
     intro_music_bis.play(-1)
     time.sleep(1.1)
@@ -123,7 +123,7 @@ def titlebis():
 
 def titleintro():
     import os
-    os.system("cls")
+    clsglobal()
     intro_music.play(-1)
     lines = ["Il y a 200 ans, une guerre entre humains et démons faisait rage...",
              "Les démons perdirent cette guerre et furent forcés à se cacher pour survivre...",
@@ -146,7 +146,7 @@ def titleintro():
     import time
     time.sleep(2.7)
     import os
-    os.system("cls")
+    clsglobal()
     title()
     return
 
@@ -192,7 +192,7 @@ def main_menu():
 def PlayGame():
     from maps import skip_touch
     import os
-    os.system("cls")
+    clsglobal()
     Sentence("Disclamer : pour éviter des choix involontaires, n'appuyez sur votre clavier que quand on vous le demande.")
     Sentence("Il est recommandé de jouer avec un casque.")
     Sentence("Appuyez sur 'Entrée' lorsque vous êtes prêt.")
@@ -202,14 +202,14 @@ def PlayGame():
     Sentence("Bon jeu !")
     time.sleep(2.0)
     import os
-    os.system("cls")
+    clsglobal()
     titleintro()
     return
 
 
 
 def choice_mode():
-    os.system("cls")
+    clsglobal()
     print("""
     
     """)
@@ -232,7 +232,7 @@ def choice_mode():
     while choix != "1" or choix != "2":
         if choix == "1":
             validation_sound.play()
-            os.system("cls")
+            clsglobal()
             print("")
             Sentence("Mode TUTO")
             sleep(2.0)
@@ -240,7 +240,7 @@ def choice_mode():
             return
         elif choix == "2":
             validation_sound.play()
-            os.system("cls")
+            clsglobal()
             print("")
             Sentence("DEMO")
             sleep(2.0)

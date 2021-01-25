@@ -32,7 +32,7 @@ def demo(qdone, qwest, qeast, anchor):
     pickle_save(save_number)
     sleep(5)
     sleep(2.0)
-    os.system("cls")
+    clsglobal()
     demo_intro_sound.play()
     print("")
     print("")
@@ -55,11 +55,11 @@ def demo(qdone, qwest, qeast, anchor):
                                                         Le Dieu Roi
         """)
     sleep(11.0)
-    os.system("cls")
+    clsglobal()
     narration_intro_music.play(-1)
     # wind_thunder_sound.play(-1)
     battle_sound_effect.play(-1)
-    os.system("cls")
+    clsglobal()
     print("Champ de bataille de la citadelle - coeur de la bataille")
     print("")
     Sentence("La bataille faisait rage.")
@@ -70,7 +70,7 @@ def demo(qdone, qwest, qeast, anchor):
     sleep(1.5)
     Sentence("Dans le flou du combat, impossible pour vous, le Dieu-roi S'rhaal, de faire le point sur la situation.")
     skip_touch()
-    os.system("cls")
+    clsglobal()
     print("Champ de bataille de la citadelle - coeur de la bataille")
     print("")
     Sentence("Vous débarrassant de votre opposant d'un lourd coup de lame,")
@@ -78,7 +78,7 @@ def demo(qdone, qwest, qeast, anchor):
     sleep(1.5)
     Sentence("La situation des forces en présence est désastreuse.")
     skip_touch()
-    os.system("cls")
+    clsglobal()
     print("Champ de bataille de la citadelle - coeur de la bataille")
     print("")
     Sentence("Les brutes ont bien encaissé la mêlée,")
@@ -94,13 +94,13 @@ def demo(qdone, qwest, qeast, anchor):
     Sentence("Ils ne sont rien.")
     sleep(6.0)
     demofight(deva_stats)
-    os.system("cls")
+    clsglobal()
     Sentence("Alors que vous veniez à peine de tuer le deva, le chef de cotterie tente de vous porter un coup d'épée.")
     sleep(1.5)
     demofight(cotterie_stats)
     demo_deva_combat.fadeout(1000)
     sleep(1.0)
-    os.system("cls")
+    clsglobal()
     print("Champ de bataille de la citadelle - coeur de la bataille")
     print("")
     sleep(1.0)
@@ -109,7 +109,7 @@ def demo(qdone, qwest, qeast, anchor):
     sleep(1.5)
     Sentence("Par chance vous avez suffisamment de potions sur vous pour reprendre des forces.")
     skip_touch()
-    os.system("cls")
+    clsglobal()
     anchor = 1
     SaveAnchor1(qdone, qwest, qeast, anchor)
     return
@@ -121,7 +121,7 @@ def SaveAnchor1(qdone, qwest, qeast, anchor):
     battle_sound_effect.fadeout(1000)
     menu_roi(anchor)
     battle_sound_effect.play(-1)
-    os.system("cls")
+    clsglobal()
     print("Champ de bataille de la citadelle - coeur de la bataille")
     print("")
     gates_music.play(-1)
@@ -132,7 +132,7 @@ def SaveAnchor1(qdone, qwest, qeast, anchor):
     Sentence("Zazranoth, votre général, et Ginn, son fils et aide de camp viennent vers vous,")
     Sentence("se mouvant dans le charnier avec difficulté, le visage de l'un grave, celui de l'autre en détresse. ")
     skip_touch()
-    os.system("cls")
+    clsglobal()
     print("Champ de bataille de la citadelle - coeur de la bataille")
     print("")
     print("Zazranoth :")
@@ -171,7 +171,7 @@ def SaveAnchor1(qdone, qwest, qeast, anchor):
 def Retraite():
     from roi_demon_inv import Roi_demon_stats
     from intro import Sentence
-    os.system("cls")
+    clsglobal()
     print("Champ de bataille de la citadelle - coeur de la bataille")
     print("")
     gates_music.fadeout(1000)
@@ -198,12 +198,12 @@ def Retraite():
     Sentence("Devant la réalité imposée par l'étude des faits, et la mort dans la l'âme, ne pouvant vous")
     Sentence("donner l'ordre à vous-même, vous annoncez à voix basse, comme brisée :")
     sleep(1.5)
-    os.system("cls")
+    clsglobal()
     print("")
     print(Roi_demon_stats[0])
     Sentence('"Zaz... Sonne la retraite."')
     Sentence(""" "Je ne serais pas l'instigateur de la destruction des nôtres... Ils sont plus redoutables que ce qu'il semblait." """)
-    os.system("cls")
+    clsglobal()
     sleep(2.0)
     Sentence("L'ordre fut donné, relayé, sonné. ")
     Sentence("La retraite, à deux doigts de se transformer en fuite ou en débandade, se fit.")
@@ -211,7 +211,7 @@ def Retraite():
     Sentence("Aucun contact ne fut jamais pris avec les humains ")
     Sentence("qui se contentèrent de bouter les démons dans les montagnes d'Aurgelmirtann, au nord de Ljosalfer...")
     skip_touch()
-    os.system("cls")
+    clsglobal()
     throne_theme.fadeout(1000)
     battle_sound_effect.fadeout(1000)
     print("")
@@ -235,7 +235,7 @@ def Retraite():
 def qassautportes(qdone, qwest, qeast, anchor):
     from intro import Sentence
     from roi_demon_inv import Roi_demon_stats
-    os.system("cls")
+    clsglobal()
     print("Champ de bataille de la citadelle - coeur de la bataille")
     print("")
     sleep(2.0)
@@ -249,7 +249,7 @@ def qassautportes(qdone, qwest, qeast, anchor):
     Sentence("Ginn ! Libère moi le chemin jusqu'aux emplacement que je t'indiquerai !")
     Sentence("Je vais devoir planter deux sceptres de pouvoir pour en canaliser l'énergie!")
     skip_touch()
-    os.system("cls")
+    clsglobal()
     print("Champ de bataille de la citadelle - coeur de la bataille")
     print("")
     print("Ginn")
@@ -263,7 +263,7 @@ def qassautportes(qdone, qwest, qeast, anchor):
     sleep(1.0)
     Sentence("Objectif : planter un sceptre catalyseur sur chaque position est et ouest des portes.")
     skip_touch()
-    os.system("cls")
+    clsglobal()
     print("Champ de bataille de la citadelle - coeur de la bataille")
     print("")
     Sentence("A l'est se trouve un champ détruit par les combats, il ne devrait pas contenir beaucoup d'ennemis.")
@@ -299,19 +299,19 @@ def qassautportesest(qdone, qwest, qeast, anchor):
     from intro import Sentence
     from roi_demon_inv import Roi_demon_stats
     if qeast == True:
-        os.system("cls")
+        clsglobal()
         print("Champ de bataille de la citadelle - champs est")
         print("")
         Sentence("Vous n'avez plus rien à faire ici, vous devriez aller planter l'autre sceptre.")
         skip_touch()
-        os.system("cls")
+        clsglobal()
         print("")
         print("Retour à la porte")
         sleep(1.5)
         assautportes(qdone, qwest, qeast, anchor)
         return
     elif qeast == False:
-        os.system("cls")
+        clsglobal()
         print("Champ de bataille de la citadelle - champs est")
         print("")
         Sentence("Précédé par votre serviteur, vous vous dirigez vers l'est des portes, ")
@@ -321,7 +321,7 @@ def qassautportesest(qdone, qwest, qeast, anchor):
         Sentence("assurément fauchés là par l'un des sorts favoris et reconnaissable de Seraphos,")
         Sentence("le maître sorcier et général en second de votre armée.")
         skip_touch()
-        os.system("cls")
+        clsglobal()
         print("Champ de bataille de la citadelle - champs est")
         print("")
         print(Roi_demon_stats[0])
@@ -333,7 +333,7 @@ def qassautportesest(qdone, qwest, qeast, anchor):
         sleep(1)
         menu_roi_sceptre()
         sleep(1.5)
-        os.system("cls")
+        clsglobal()
         print("Champ de bataille de la citadelle - champs est")
         print("")
         Sentence("Connectant directement les filaments encore perceptibles de magie destructrice, il les attacha à son sceptre, ")
@@ -345,11 +345,11 @@ def qassautportesest(qdone, qwest, qeast, anchor):
         skip_touch()
         if qwest == True:
             gates_music.fadeout(1000)
-            os.system("cls")
+            clsglobal()
             print("Quête terminée: L'assaut")
             questdonesound.play()
             sleep(2.0)
-            os.system("cls")
+            clsglobal()
             print("Champ de bataille de la citadelle - champs est")
             print("")
             combat_music_2.play()
@@ -365,7 +365,7 @@ def qassautportesest(qdone, qwest, qeast, anchor):
             return qdone
         elif qwest == False:
             sleep(1.5)
-            os.system("cls")
+            clsglobal()
             print("Champ de bataille de la citadelle - champs est")
             print("")
             print(Roi_demon_stats[0])
@@ -401,7 +401,7 @@ def assautportesouest(qdone, qwest, qeast, anchor):
     from roi_demon_inv import Roi_demon_stats
     cotteriepui_stats = ["Chef de Cotterie", 55, 65, 20, 1.2, 400, 75, 5]
     if qwest == True:
-        os.system("cls")
+        clsglobal()
         print("Champ de bataille de la citadelle - tour de garde ouest")
         print("")
         Sentence("Vous n'avez plus rien à faire ici, vous devriez aller planter l'autre sceptre.")
@@ -412,7 +412,7 @@ def assautportesouest(qdone, qwest, qeast, anchor):
         assautportes(qdone, qwest, qeast, anchor)
         return
     if qwest == False:
-        os.system("cls")
+        clsglobal()
         print("Champ de bataille de la citadelle - tour de garde ouest")
         print("")
         Sentence("Naviguant entre les amoncellements de corps, hurlant parmis les cris, ")
@@ -425,7 +425,7 @@ def assautportesouest(qdone, qwest, qeast, anchor):
         print("")
         sleep(1)
         menu_roi_sceptre()
-        os.system("cls")
+        clsglobal()
         print("Champ de bataille de la citadelle - tour de garde ouest")
         print("")
         Sentence("Sans vous laisser émouvoir ou perdre de temps, ")
@@ -433,7 +433,7 @@ def assautportesouest(qdone, qwest, qeast, anchor):
         Sentence("les scellant autour du sceptre avant de le ficher profondément dans le sol, brisant le sol au passage. ")
         skip_touch()
         gates_music.fadeout(1500)
-        os.system("cls")
+        clsglobal()
         print("Champ de bataille de la citadelle - tour de garde ouest")
         print("")
         Sentence("Sortant de votre concentration, vous prenez un instant pour observer Ginn ")
@@ -459,12 +459,12 @@ def assautportesouest(qdone, qwest, qeast, anchor):
         Sentence("Ginn et son escouade ne l'avaient pas vu vous approcher.")
         Sentence("Il à l'air bien plus puissant que son confrère. Mais vous êtes bien plus rapide.")
         sleep(2.0)
-        os.system("cls")
+        clsglobal()
         demofight(cotteriepui_stats)
         demo_deva_combat.fadeout(1500)
         sleep(1.5)
         if qeast == False:
-            os.system("cls")
+            clsglobal()
             print("Champ de bataille de la citadelle - tour de garde ouest")
             print("")
             gates_music.play(-1)
@@ -496,11 +496,11 @@ def assautportesouest(qdone, qwest, qeast, anchor):
                 direction = str(input())
 
         if qeast == True:
-            os.system("cls")
+            clsglobal()
             print("Quête terminée: L'assaut")
             questdonesound.play()
             sleep(2.0)
-            os.system("cls")
+            clsglobal()
             print("Champ de bataille de la citadelle - tour de garde ouest")
             print("")
             combat_music_2.play()
@@ -520,7 +520,7 @@ def assautportesouest(qdone, qwest, qeast, anchor):
 def assautportes(qdone, qwest, qeast, anchor):
     from intro import Sentence
     if qdone == False:
-        os.system("cls")
+        clsglobal()
         print("Champ de bataille de la citadelle - portes de la citadelle")
         print("")
         Sentence("*Je ne peux rien faire tant que les deux sceptres ne sont pas plantés*")
@@ -545,7 +545,7 @@ def assautportes(qdone, qwest, qeast, anchor):
                 Sentence("Impossible d'aller autre part.")
             direction = str(input())
     elif qdone == True:
-        os.system("cls")
+        clsglobal()
         print("Champ de bataille de la citadelle - portes de la citadelle")
         print("")
         # Sentence("")
@@ -568,8 +568,8 @@ def assautportes(qdone, qwest, qeast, anchor):
 def SaveAnchor2(qdone, qwest, qeast, anchor):
     from roi_demon_inv import menu_roi
     from intro import Sentence
-    Paladin_démotivé = ["Paladin démotivé", 20, 25, 15, 1.2, 150, 85, 5]
-    Paladin_bléssé = ["Paladin blessé", 25, 35, 15, 1.2, 100, 85, 5]
+    Paladin_demotive = ["Paladin démotivé", 20, 25, 15, 1.2, 150, 85, 5]
+    Paladin_blesse = ["Paladin blessé", 25, 35, 15, 1.2, 100, 85, 5]
     Ulric = ["Ulric Luminis", 50, 60, 17, 1.2, 550, 75, 5]
     from intro import SentenceSlow
     from combat import demofight
@@ -580,7 +580,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     menu_roi(anchor)
     combat_music_2.play(-1)
     battle_sound_effect.play(-1)
-    os.system("cls")
+    clsglobal()
     print("Champ de bataille de la citadelle - portes de la citadelle")
     print("")
     sleep(1.5)
@@ -650,8 +650,8 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     Sentence("A peine eut-il le temps de finir sa phrase que l'un des paladins se jeta sur vous de toutes ses forces,")
     Sentence("Appelant en lui le peu de lumière qu'il restait.")
     skip_touch()
-    demofight(Paladin_démotivé)
-    os.system("cls")
+    demofight(Paladin_demotive)
+    clsglobal()
     print("Bastion Doré - rues de la citadelle")
     print("")
     print("Ulric Luminis")
@@ -660,11 +660,11 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     Sentence("Le second paladin, dans un geste déséspéré,")
     Sentence("fait comme son ami et court vers vous en boîtant et hurlant à la lumière, sous le regard tétanisé du chef de cotterie.")
     sleep(1.5)
-    demofight(Paladin_bléssé)
+    demofight(Paladin_blesse)
     demo_deva_combat.fadeout(1000)
     sleep(1.0)
     ulric_theme.play(-1)
-    os.system("cls")
+    clsglobal()
     print("Bastion Doré - rues de la citadelle")
     print("")
     Sentence("Alors que vous retirez le corps du paladin de votre épée,")
@@ -674,7 +674,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     Sentence("Il tend son gigantesque marteau enchanté vers vous,")
     Sentence("Les yeux baignés de lumière.")
     sleep(1.5)
-    os.system("cls")
+    clsglobal()
     bossfightulric(Ulric)
     print("Bastion Doré - rues de la citadelle")
     print("")
@@ -698,7 +698,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
     choix = str(input("=>"))
     while choix != "1" or choix != "2":
         if choix == "1":
-            os.system("cls")
+            clsglobal()
             print("Bastion Doré - rues de la citadelle")
             print("")
             Sentence("Vous soulevez votre épée et vous la plantez dans le corps du dévot.")
@@ -710,7 +710,7 @@ def SaveAnchor2(qdone, qwest, qeast, anchor):
             skip_touch()
             break
         elif choix == "2":
-            os.system("cls")
+            clsglobal()
             print("Bastion Doré - rues de la citadelle")
             print("")
             Sentence("Une pensée traverse votre esprit...")
